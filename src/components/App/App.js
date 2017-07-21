@@ -10,7 +10,9 @@ import {
 //Importing static assets (i.e. stylesheets, images)
 import './App.css';
 
+
 // Importing Firebase
+
 import firebase from '../../firebase';
 
 //Importing React Components
@@ -23,9 +25,11 @@ import Signup from '../Signup/Signup';
 
 class App extends Component {
 
+
   constructor(props) {
     super(props);
   }
+
 
   render() {
     return (
