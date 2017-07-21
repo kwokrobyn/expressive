@@ -1,24 +1,44 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
+import { localSignUp, localSignIn, signOut } from '../../actions/userActions';
+
 /**
  * Landing
  */
-export class Landing extends Component { // eslint-disable-line react/prefer-stateless-function
+export class Landing extends Component {
 
   constructor(props){
     super(props)
-
   }
 
   localSignUp = (e) => {
     e.preventDefault();
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('pwd').value;
+    const email = document.getElementById('email-signup').value;
+    const password = document.getElementById('pwd-signup').value;
+    const name = document.getElementById('name-signup').value;
+    const user = {
+                  email: email,
+                  password: password,
+                  name: name
+                };
+    this.props.localSignUp(user);
+  }
+
+  localSignIn = (e) => {
+    e.preventDefault();
+    const email = document.getElementById('email-signin').value;
+    const password = document.getElementById('pwd-signin').value;
     const user = {
                   email: email,
                   password: password
-                };
+    };
+    this.props.localSignIn(user);
+  }
+
+  signOut = (e) => {
+    e.preventDefault();
+    this.props.signOut();
   }
 
   render() {
@@ -28,14 +48,32 @@ export class Landing extends Component { // eslint-disable-line react/prefer-sta
         <form>
           <div className="form-group">
             <label htmlFor="email">Email address:</label>
-            <input type="email" className="form-control" id="email" />
+            <input type="email" className="form-control" id="email-signup" />
           </div>
           <div className="form-group">
             <label htmlFor="pwd">Password:</label>
-            <input type="password" className="form-control" id="pwd" />
+            <input type="password" className="form-control" id="pwd-signup" />
           </div>
-          <button type="submit" className="btn btn-default" onClick={this.localSignUp}>Submit</button>
+          <div className="form-group">
+            <label htmlFor="email">Name:</label>
+            <input type="email" className="form-control" id="name-signup" />
+          </div>
+          <button type="submit" className="btn btn-default" onClick={this.localSignUp}>Sign Up</button>
         </form>
+
+        <form>
+          <div className="form-group">
+            <label htmlFor="email">Email address:</label>
+            <input type="email" className="form-control" id="email-signin" />
+          </div>
+          <div className="form-group">
+            <label htmlFor="pwd">Password:</label>
+            <input type="password" className="form-control" id="pwd-signin" />
+          </div>
+          <button type="submit" className="btn btn-default" onClick={this.localSignIn}>Sign In</button>
+        </form>
+
+        <button type="submit" className="btn btn-default" onClick={this.signOut}>Log Out</button>
       </div>
 
     );
@@ -50,7 +88,15 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-
+    localSignUp: (user) => {
+      dispatch(localSignUp(user))
+    },
+    localSignIn: (user) => {
+      dispatch(localSignIn(user))
+    },
+    signOut: () => {
+      dispatch(signOut())
+    }
   }
 }
 
