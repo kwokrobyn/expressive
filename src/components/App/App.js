@@ -14,7 +14,7 @@ import './App.css';
 import firebase from '../../firebase';
 
 //Importing React Components
-import Landing from '../LandingPage/LandingPage';
+import Landing from '../Landing/Landing';
 import Signup from '../Signup/Signup';
 
 /**
