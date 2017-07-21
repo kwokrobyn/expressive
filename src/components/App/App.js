@@ -11,7 +11,7 @@ import {
 import logo from '../../logo.svg';
 import './App.css';
 
-// Firebase 
+// Firebase
 import firebase from '../../firebase';
 
 // Components
@@ -19,8 +19,6 @@ import Landing from '../Landing/Landing';
 
 
 class App extends Component {
-
-
 
   render() {
     return (
