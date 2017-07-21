@@ -1,9 +1,9 @@
 import uuid from 'uuid';
 
 const defaultUser = {
-  id: uuid.v4(),
+  uid: uuid.v4(),
   email: "",
-  name: "Guest",
+  displayName: "Guest",
   isSignedIn: false
 }
 
@@ -12,9 +12,9 @@ const userReducer = (state = defaultUser, action) => {
   switch (action.type) {
     case "SIGN_IN_SUCCESS":
       return {
-        id: action.user.uid,
+        uid: action.user.uid,
         email: action.user.email,
-        name: action.user.name,
+        displayName: action.user.displayName,
         isSignedIn: true
       }
     case "SIGN_OUT":

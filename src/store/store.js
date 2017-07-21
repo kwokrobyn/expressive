@@ -9,7 +9,7 @@ export let initStore = () => {
 
   // Combine reducers
   const reducer = combineReducers({
-    users: userReducer
+    user: userReducer
   });
 
   // Create the store with all the reducers and allow for chrome redux dev tools to run and read reducers
