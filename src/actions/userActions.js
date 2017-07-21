@@ -2,6 +2,9 @@ import firebase from '../firebase';
 
 const db = firebase.database();
 
+/*
+* ACTIONS to reducer
+*/
 const signInSuccess = (user) => {
   return {
     type: 'SIGN_IN_SUCCESS',
@@ -15,6 +18,9 @@ const signOutAction = () => {
   }
 }
 
+/*
+* SIGN UP (local only)
+*/
 export const localSignUp = (user) => {
   return (dispatch) => {
     firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
@@ -28,6 +34,9 @@ export const localSignUp = (user) => {
   }
 }
 
+/*
+* SIGN IN
+*/
 export const localSignIn = (user) => {
   return (dispatch) => {
     firebase.auth().signInWithEmailAndPassword(user.email, user.password)
@@ -41,6 +50,20 @@ export const localSignIn = (user) => {
   }
 }
 
+// export const socialSignIn = (platform) => {
+//   return (dispatch) => {
+//     let provider;
+//     if (platform === 'facebook') {
+//       provider = new firebase.auth.FacebookAuthProvider();
+//     }
+//     firebase.auth().getRedirectResult
+//   }
+// }
+
+
+/*
+* SIGN OUT
+*/
 export const signOut = (user) => {
   return (dispatch) => {
     firebase.auth().signOut()
