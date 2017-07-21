@@ -12,8 +12,6 @@ import LandingHeader from './LandingHeader/LandingHeader';
 import LandingAbout from './LandingAbout/LandingAbout';
 import Footer from '../Footer/Footer';
 
-import { localSignUp, localSignIn, signOut } from '../../actions/userActions';
-
 /**
  * Landing
  */
@@ -58,7 +56,7 @@ export class Landing extends Component {
 
       <div className="container-fluid">
 
-      
+
         <h1>LandingPage</h1>
         <Navbar title="Navbar"/>
         <LandingHeader title="LandingHeader" />
