@@ -6,7 +6,6 @@ import './Footer.css';
 
 //Importing React Components
 
-
 /**
  * Footer
  */
