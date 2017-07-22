@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { signOut } from '../../actions/userActions';
 import { connect } from 'react-redux';
+
+import { signOut } from '../../actions/userActions';
 
 /**
  * Dash

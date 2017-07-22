@@ -1,7 +1,7 @@
 //Importing required packages
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { localSignUp, signOut, socialSignIn } from '../../actions/userActions';
+import { localSignUp, socialSignIn } from '../../actions/userActions';
 
 //Importing static assets (i.e. stylesheets, images)
 import './Signup.css';
@@ -89,9 +89,6 @@ const mapDispatchToProps = (dispatch) => {
   return {
     localSignUp: (user) => {
       dispatch(localSignUp(user))
-    },
-    signOut: () => {
-      dispatch(signOut())
     },
     socialSignIn: (platform) => {
       dispatch(socialSignIn(platform))
