@@ -22,11 +22,16 @@ class Navbar extends Component {
 
  render() {
    return (
+    <div className="container">
+      <div className="">
+      </div>
+      
 
-    <div className="row">
-      <h2 className="col-sm-8">Navbar</h2>
-      <Link to="/signup" className="col-sm-2 navlink">Signup</Link>
-      <Link to="/login" className="col-sm-2 navlink">Login</Link>
+      <div className="row">
+        <h2 className="col-sm-8">Navbar</h2>
+        <Link to="/signup" className="col-sm-2 navlink">Signup</Link>
+        <Link to="/login" className="col-sm-2 navlink">Login</Link>
+      </div>{ /* row */ }
     </div>
    )
  };

@@ -10,6 +10,9 @@ import {
 
 
 //Importing static assets (i.e. stylesheets, images)
+import 'bootstrap/dist/css/bootstrap.css'; // Bootstrap package CSS
+import 'bootstrap/dist/js/bootstrap.js';  // Bootstrap package jQuery
+import 'bootstrap/dist/js/bootstrap.min.js'; // Bootstrap package jQuery (minified)
 import './App.css';
 
 // Importing Firebase
