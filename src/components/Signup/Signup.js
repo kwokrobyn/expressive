@@ -1,28 +1,41 @@
 //Importing required packages
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { localSignUp, localSignIn, signOut } from '../../actions/userActions';
+import { localSignUp, localSignIn, signOut, socialSignIn } from '../../actions/userActions';
 
 //Importing static assets (i.e. stylesheets, images)
 import './Signup.css';
 
 //Importing React Components
 
+// Import Firebase
+import firebase from '../../firebase';
 
 class Signup extends Component {
   constructor(props) {
     super(props);
   }
 
+  componentDidMount() {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        // User is signed in.
+        console.log('There is a user in firebase', user);
+      } else {
+        console.log('There is no user in firebase', user);
+      }
+    });
+  }
+
   localSignUp = (e) => {
     e.preventDefault();
     const email = document.getElementById('email-signup').value;
     const password = document.getElementById('pwd-signup').value;
-    const name = document.getElementById('name-signup').value;
+    const displayName = document.getElementById('name-signup').value;
     const user = {
                   email: email,
                   password: password,
-                  name: name
+                  displayName: displayName
                 };
     this.props.localSignUp(user);
   }
@@ -36,6 +49,14 @@ class Signup extends Component {
                   password: password
     };
     this.props.localSignIn(user);
+  }
+
+  socialSignIn = (e) => {
+    if (e.target.classList.contains("facebook")) {
+      this.props.socialSignIn('facebook');
+    } else if (e.target.classList.contains("google")) {
+      this.props.socialSignIn('google');
+    }
   }
 
   signOut = (e) => {
@@ -76,6 +97,8 @@ class Signup extends Component {
         </form>
 
         <button type="submit" className="btn btn-default" onClick={this.signOut}>Log Out</button>
+        <button type="submit" className="btn btn-default facebook" onClick={this.socialSignIn}>Facebook</button>
+        <button type="submit" className="btn btn-default google" onClick={this.socialSignIn}>Google</button>
 
       </div>
 
@@ -85,7 +108,7 @@ class Signup extends Component {
 
 const mapStateToProps = (state) => {
     return {
-
+      user: state.user
     }
 }
 
@@ -99,6 +122,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     signOut: () => {
       dispatch(signOut())
+    },
+    socialSignIn: (platform) => {
+      dispatch(socialSignIn(platform))
     }
   }
 }
