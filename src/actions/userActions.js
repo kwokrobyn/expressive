@@ -1,7 +1,5 @@
 import firebase from '../firebase';
 
-const db = firebase.database();
-
 /*
 * ACTIONS to reducer
 */
@@ -25,20 +23,37 @@ const authError = (error) => {
   }
 }
 
-const addNewUser = (user) => {
+/*
+* DATABASE METHODS
+*/
+const db = firebase.database();
 
-  db.ref('users/' + user.uid).set({
-    email: user.email,
-    name: user.displayName,
-    picture: user.photoURL,
-    roomsOwned: []
+const connectToDatabase = (user) => {
+
+  // navigate to user portion of db
+  const userRef = db.ref('/users/' + user.uid);
+
+  // check if user exists in database
+  userRef.once('value')
+  .then((snapshot) => {
+    console.log('This is the snapshot', snapshot.val());
+    if (snapshot.val() === null) {
+      // user does not exist in db, create new user
+      userRef.set({
+        email: user.email,
+        name: user.displayName,
+        picture: user.photoURL
+      });
+    } else {
+      // if user exists in db, update the user profile (in case there's other data)
+      userRef.update({
+        email: user.email,
+        name: user.displayName,
+        picture: user.photoURL
+      });
+    }
   });
 }
-
-const updateUser = (user) => {
-
-}
-
 
 /*
 * SIGN UP (local only)
@@ -58,7 +73,7 @@ export const localSignUp = (inputUser) => {
         // after update displayName, update redux store based on the firebase user
         dispatch(signInSuccess(user));
         // ...add user to firebase db
-        addNewUser(user);
+        connectToDatabase(user);
 
 
       }).catch((error) => {
@@ -74,10 +89,8 @@ export const localSignUp = (inputUser) => {
 }
 
 /*
-* SIGN IN
+* SIGN IN (local)
 */
-
-
 export const localSignIn = (user) => {
   return (dispatch) => {
     firebase.auth().signInWithEmailAndPassword(user.email, user.password)
@@ -92,9 +105,9 @@ export const localSignIn = (user) => {
   }
 }
 
-// Current Bugs - cannot sign up if local account with same email exists
-// Merge is required (there is an implementation on firebase docs which
-// requires additional password input - not optimal)
+/*
+* SIGN IN (social media)
+*/
 export const socialSignIn = (platform) => {
   return (dispatch) => {
 
@@ -117,7 +130,7 @@ export const socialSignIn = (platform) => {
       // update redux store with user information
       dispatch(signInSuccess(result.user));
       // add to firebase db
-      addNewUser(result.user);
+      connectToDatabase(result.user);
     }).catch((error) => {
       console.log('Social authentication failed: ', error.message);
       dispatch(authError(error.message));

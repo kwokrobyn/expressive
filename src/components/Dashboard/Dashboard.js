@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { signOut } from '../../actions/userActions';
 import { connect } from 'react-redux';
 
 /**
@@ -18,6 +18,11 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
     }
   }
 
+  signOut = (e) => {
+    e.preventDefault();
+    this.props.signOut();
+  }
+
   render() {
     return (
       <div className="container-fluid">
@@ -25,6 +30,7 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
           <div className="col-sm-6 col-sm-offset-3">
             <div className="dashboard" id="Dashboard">
               <h1>Dashboard</h1>
+              <button type="submit" className="btn btn-default" onClick={this.signOut}>Log Out</button>
             </div>
           </div>
         </div>
@@ -33,17 +39,17 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
   }
 }
 
-// update UI from state
 const mapStateToProps = (state) => {
     return {
-      // user: state.user
+      user: state.user
     }
 }
 
-// update state in store
 const mapDispatchToProps = (dispatch) => {
   return {
-    // getUser:() => {dispatch(getUser());}
+    signOut: () => {
+      dispatch(signOut())
+    }
   }
 }
 
