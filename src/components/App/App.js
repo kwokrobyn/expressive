@@ -5,6 +5,7 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
+  Redirect
 } from 'react-router-dom';
 
 //Importing static assets (i.e. stylesheets, images)
@@ -29,17 +30,31 @@ class App extends Component {
   }
 
   render() {
+
+    const isSignedIn = this.props.user.isSignedIn;
+
     return (
       <Router>
         <Switch>
-          <Route exact path="/" component={Landing} />
-          <Route exact path="/signup" component={Signup} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/" render= {() => (isSignedIn ? ( <Redirect to="/dashboard"/> ) : ( <Landing/> ))} />
+          <Route exact path="/signup" render= {() => (isSignedIn ? ( <Redirect to="/dashboard"/> ) : ( <Signup/> ))} />
+          <Route exact path="/login" render= {() => (isSignedIn ? ( <Redirect to="/dashboard"/> ) : ( <Login/> ))} />
+          <Route exact path="/dashboard" render= {() => (isSignedIn ? ( <Dashboard/> ) : ( <Redirect to="/login"/> ))} />
         </Switch>
       </Router>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+    return {
+      user: state.user
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
