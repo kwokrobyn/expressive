@@ -21,35 +21,6 @@ export class Landing extends Component {
     super(props)
   }
 
-  // localSignUp = (e) => {
-  //   e.preventDefault();
-  //   const email = document.getElementById('email-signup').value;
-  //   const password = document.getElementById('pwd-signup').value;
-  //   const name = document.getElementById('name-signup').value;
-  //   const user = {
-  //                 email: email,
-  //                 password: password,
-  //                 name: name
-  //               };
-  //   this.props.localSignUp(user);
-  // }
-  //
-  // localSignIn = (e) => {
-  //   e.preventDefault();
-  //   const email = document.getElementById('email-signin').value;
-  //   const password = document.getElementById('pwd-signin').value;
-  //   const user = {
-  //                 email: email,
-  //                 password: password
-  //   };
-  //   this.props.localSignIn(user);
-  // }
-
-  // signOut = (e) => {
-  //   e.preventDefault();
-  //   this.props.signOut();
-  // }
-
 
   render() {
     return (
@@ -78,16 +49,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-
-    // localSignUp: (user) => {
-    //   dispatch(localSignUp(user))
-    // },
-    // localSignIn: (user) => {
-    //   dispatch(localSignIn(user))
-    // },
-    // signOut: () => {
-    //   dispatch(signOut())
-    // }
 
   }
 }

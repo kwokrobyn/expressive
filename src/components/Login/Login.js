@@ -1,22 +1,23 @@
 //Importing required packages
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { localSignUp, signOut, socialSignIn } from '../../actions/userActions';
+import { localSignIn, signOut, socialSignIn } from '../../actions/userActions';
 
 //Importing static assets (i.e. stylesheets, images)
-import './Signup.css';
+import './Login.css';
 
 //Importing React Components
 
 // Import Firebase
 import firebase from '../../firebase';
 
-class Signup extends Component {
+class Login extends Component {
   constructor(props) {
     super(props);
   }
 
   componentDidMount() {
+    // this is test code to see if there is firebase user
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         // User is signed in.
@@ -25,19 +26,17 @@ class Signup extends Component {
         console.log('There is no user in firebase', user);
       }
     });
-  }
+  } // end of test code
 
-  localSignUp = (e) => {
+  localSignIn = (e) => {
     e.preventDefault();
-    const email = document.getElementById('email-signup').value;
-    const password = document.getElementById('pwd-signup').value;
-    const displayName = document.getElementById('name-signup').value;
+    const email = document.getElementById('email-signin').value;
+    const password = document.getElementById('pwd-signin').value;
     const user = {
                   email: email,
-                  password: password,
-                  displayName: displayName
-                };
-    this.props.localSignUp(user);
+                  password: password
+    };
+    this.props.localSignIn(user);
   }
 
   socialSignIn = (e) => {
@@ -56,21 +55,18 @@ class Signup extends Component {
   render() {
     return (
       <div className="container-fluid">
-        <h1>Signup</h1>
+        <h1>Login</h1>
+
         <form>
           <div className="form-group">
             <label htmlFor="email">Email address:</label>
-            <input type="email" className="form-control" id="email-signup" />
+            <input type="email" className="form-control" id="email-signin" />
           </div>
           <div className="form-group">
             <label htmlFor="pwd">Password:</label>
-            <input type="password" className="form-control" id="pwd-signup" />
+            <input type="password" className="form-control" id="pwd-signin" />
           </div>
-          <div className="form-group">
-            <label htmlFor="email">Name:</label>
-            <input type="email" className="form-control" id="name-signup" />
-          </div>
-          <button type="submit" className="btn btn-default" onClick={this.localSignUp}>Sign Up</button>
+          <button type="submit" className="btn btn-default" onClick={this.localSignIn}>Sign In</button>
         </form>
 
         <button type="submit" className="btn btn-default" onClick={this.signOut}>Log Out</button>
@@ -91,8 +87,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    localSignUp: (user) => {
-      dispatch(localSignUp(user))
+
+    localSignIn: (user) => {
+      dispatch(localSignIn(user))
     },
     signOut: () => {
       dispatch(signOut())
@@ -103,4 +100,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Signup);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
