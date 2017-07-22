@@ -18,6 +18,13 @@ const signOutAction = () => {
   }
 }
 
+const authError = (error) => {
+  return {
+    type: 'AUTH_ERROR',
+    error
+  }
+}
+
 /*
 * SIGN UP (local only)
 */
@@ -42,7 +49,8 @@ export const localSignUp = (inputUser) => {
 
     }, (error) => {
       console.log('Local sign up failed: ', error.message);
-      // dispatch(signInError(error.message));
+      // reflect error in user state 
+      dispatch(authError(error.message));
     });
   }
 }
@@ -57,11 +65,11 @@ export const localSignIn = (user) => {
     firebase.auth().signInWithEmailAndPassword(user.email, user.password)
     .then((user) => {
       console.log('User successfully authenticated', user);
-      // update redux store with user information 
+      // update redux store with user information
       dispatch(signInSuccess(user));
     }, (error) => {
       console.log('Local sign in failed: ', error.message);
-      // dispatch(signInError(error.message));
+      dispatch(authError(error.message));
     });
   }
 }
@@ -92,6 +100,7 @@ export const socialSignIn = (platform) => {
       dispatch(signInSuccess(result.user));
     }).catch((error) => {
       console.log('Social authentication failed: ', error.message);
+      dispatch(authError(error.message));
     });
   }
 }
@@ -109,6 +118,7 @@ export const signOut = (user) => {
     })
     .catch((error) => {
       console.log('There was an error when trying to sign out: ', error.message);
+      dispatch(authError(error.message));
     });
   }
 }
