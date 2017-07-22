@@ -1,7 +1,7 @@
 //Importing required packages
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { localSignUp, signOut, socialSignIn } from '../../actions/userActions';
+import { localSignUp, socialSignIn } from '../../actions/userActions';
 
 //Importing static assets (i.e. stylesheets, images)
 import './Signup.css';
@@ -49,11 +49,6 @@ class Signup extends Component {
     }
   }
 
-  signOut = (e) => {
-    e.preventDefault();
-    this.props.signOut();
-  }
-
   render() {
     return (
       <div className="container-fluid">
@@ -75,7 +70,6 @@ class Signup extends Component {
           <button type="submit" className="btn btn-default" onClick={this.localSignUp}>Sign Up</button>
         </form>
 
-        <button type="submit" className="btn btn-default" onClick={this.signOut}>Log Out</button>
         <button type="submit" className="btn btn-default facebook" onClick={this.socialSignIn}>Facebook</button>
         <button type="submit" className="btn btn-default google" onClick={this.socialSignIn}>Google</button>
 
@@ -95,9 +89,6 @@ const mapDispatchToProps = (dispatch) => {
   return {
     localSignUp: (user) => {
       dispatch(localSignUp(user))
-    },
-    signOut: () => {
-      dispatch(signOut())
     },
     socialSignIn: (platform) => {
       dispatch(socialSignIn(platform))
