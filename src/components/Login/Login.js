@@ -7,6 +7,7 @@ import { localSignIn, signOut, socialSignIn } from '../../actions/userActions';
 import './Login.css';
 
 //Importing React Components
+import Navbar from '../Navbar/Navbar';
 
 // Import Firebase
 import firebase from '../../firebase';
@@ -56,7 +57,7 @@ class Login extends Component {
     return (
       <div className="container-fluid">
         <h1>Login</h1>
-
+        <Navbar />
         <form>
           <div className="form-group">
             <label htmlFor="email">Email address:</label>

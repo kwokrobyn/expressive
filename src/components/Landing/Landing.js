@@ -21,22 +21,15 @@ export class Landing extends Component {
     super(props)
   }
 
-
   render() {
     return (
-
       <div className="container-fluid">
-
-
         <h1>LandingPage</h1>
         <Navbar title="Navbar"/>
         <LandingHeader title="LandingHeader" />
         <LandingAbout title="LandingAbout" />
         <Footer title="Footer" />
-
-
       </div>
-
     );
   }
 }
