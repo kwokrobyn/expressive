@@ -18,6 +18,7 @@ import firebase from '../../firebase';
 //Importing React Components
 import Landing from '../Landing/Landing';
 import Signup from '../Signup/Signup';
+import Login from '../Login/Login';
 
 /**
  * App (React Routes)
@@ -37,6 +38,7 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route exact path="/signup" component={Signup} />
+          <Route exact path="/login" component={Login} />
         </Switch>
       </Router>
     );
