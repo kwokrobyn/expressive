@@ -19,6 +19,7 @@ import firebase from '../../firebase';
 import Landing from '../Landing/Landing';
 import Signup from '../Signup/Signup';
 import Login from '../Login/Login';
+import Dashboard from '../Dashboard/Dashboard';
 
 /**
  * App (React Routes)
@@ -39,6 +40,7 @@ class App extends Component {
           <Route exact path="/" component={Landing} />
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/dashboard" component={Dashboard} />
         </Switch>
       </Router>
     );
