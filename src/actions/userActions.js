@@ -25,6 +25,21 @@ const authError = (error) => {
   }
 }
 
+const addNewUser = (user) => {
+
+  db.ref('users/' + user.uid).set({
+    email: user.email,
+    name: user.displayName,
+    picture: user.photoURL,
+    roomsOwned: []
+  });
+}
+
+const updateUser = (user) => {
+
+}
+
+
 /*
 * SIGN UP (local only)
 */
@@ -42,6 +57,9 @@ export const localSignUp = (inputUser) => {
         console.log('Firebase update displayName successful.');
         // after update displayName, update redux store based on the firebase user
         dispatch(signInSuccess(user));
+        // ...add user to firebase db
+        addNewUser(user);
+
 
       }).catch((error) => {
         console.log('Firebase update displayName failed:', error.message);
@@ -49,7 +67,7 @@ export const localSignUp = (inputUser) => {
 
     }, (error) => {
       console.log('Local sign up failed: ', error.message);
-      // reflect error in user state 
+      // reflect error in user state
       dispatch(authError(error.message));
     });
   }
@@ -98,6 +116,8 @@ export const socialSignIn = (platform) => {
 
       // update redux store with user information
       dispatch(signInSuccess(result.user));
+      // add to firebase db
+      addNewUser(result.user);
     }).catch((error) => {
       console.log('Social authentication failed: ', error.message);
       dispatch(authError(error.message));
