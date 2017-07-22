@@ -24,7 +24,7 @@ class Navbar extends Component {
    return (
     <div className="row">
       <h2 className="col-sm-8">Navbar</h2>
-      <Link to="/signup" className="col-sm-2 navlink">Signup</Link>
+      <Link to="/signup" className="col-sm-2 navlink">Woody</Link>
       <Link to="/login" className="col-sm-2 navlink">Login</Link>
     </div>
    )
