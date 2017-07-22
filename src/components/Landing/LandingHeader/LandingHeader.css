@@ -1,0 +1,33 @@
+div.container {
+  margin: 0px;
+  padding: 0px;
+}
+
+div.panelL.col-md-4 {
+  background: url("/images/panel01.png");
+  height: 40vw;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: 5px;
+}
+
+div.panelM.col-md-4 {
+  background: url("/images/panel02.png");
+  height: 40vw;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: 5px;
+}
+
+div.panelR.col-md-4 {
+  background: url("/images/panel03.png");
+  height: 40vw;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: 5px;
+}
+
+div.headerArt {
+  background-color: #ffdf94;
+  height: 41vw;
+}

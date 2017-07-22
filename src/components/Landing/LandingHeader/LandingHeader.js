@@ -1,5 +1,6 @@
 //Importing required packages
 import React, { Component, PropTypes } from 'react';
+import {Col, Grid, Row} from 'react-bootstrap';
 
 //Importing static assets (i.e. stylesheets, images)
 import './LandingHeader.css';
@@ -18,9 +19,11 @@ import './LandingHeader.css';
 
    render() {
      return (
-       <div>
-         <h2>{this.props.title}</h2>
-       </div>
+        <div className="headerArt">
+             <Col xs={4} sm={4} md={4} className="panelL"></Col>
+             <Col xs={4} sm={4} smOffset={0} md={4} className="panelM"></Col>
+             <Col xs={4} sm={4} md={4} className="panelR"></Col>
+        </div>
      );
    }
 
