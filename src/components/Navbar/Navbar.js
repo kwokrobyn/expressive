@@ -7,7 +7,6 @@ import './Navbar.css';
 
 //Importing React Components
 
-
 /**
  * Navbar
  */
@@ -19,6 +18,7 @@ class Navbar extends Component {
  render() {
    return (
      <h2>{this.props.title}</h2>
+     
    )
  };
 };

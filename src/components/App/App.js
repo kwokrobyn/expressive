@@ -10,9 +10,7 @@ import {
 //Importing static assets (i.e. stylesheets, images)
 import './App.css';
 
-
 // Importing Firebase
-
 import firebase from '../../firebase';
 
 //Importing React Components
@@ -26,12 +24,9 @@ import Dashboard from '../Dashboard/Dashboard';
  */
 
 class App extends Component {
-
-
   constructor(props) {
     super(props);
   }
-
 
   render() {
     return (
