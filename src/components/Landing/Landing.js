@@ -2,6 +2,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { localSignUp, localSignIn, signOut } from '../../actions/userActions';
+import {Row, Grid} from 'react-bootstrap';
 
 //Importing static assets (i.e. stylesheets, images)
 import './Landing.css'
@@ -9,8 +10,9 @@ import './Landing.css'
 //Importing React Components
 import Navbar from '../Navbar/Navbar';
 import LandingHeader from './LandingHeader/LandingHeader';
+import LandingFeatures from './LandingFeatures/LandingFeatures';
 import LandingAbout from './LandingAbout/LandingAbout';
-import Footer from '../Footer/Footer';
+import LandingFooter from './LandingFooter/LandingFooter';
 
 /**
  * Landing
@@ -23,13 +25,25 @@ export class Landing extends Component {
 
   render() {
     return (
-      <div className="container-fluid">
-        <h1>LandingPage</h1>
-        <Navbar title="Navbar"/>
-        <LandingHeader title="LandingHeader" />
-        <LandingAbout title="LandingAbout" />
-        <Footer title="Footer" />
-      </div>
+      <Grid fluid>
+        {/*<h1>LandingPage</h1> */}
+        <Row className="nav">
+          <Navbar title="Navbar"/>
+        </Row>
+        <Row className="Lheading">
+          <LandingHeader title="LandingHeader" />
+        </Row>
+        <Row className="LFeatures">
+          <LandingFeatures title="LandingFeatures" />
+        </Row>
+        <Row className="LAbout">
+         <LandingAbout title="LandingAbout" />
+        </Row>
+        <Row className="LFooter">
+         <LandingFooter title="LandingFooter" />
+        </Row>
+      </Grid>
+
     );
   }
 }

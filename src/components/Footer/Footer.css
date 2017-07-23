@@ -1,0 +1,19 @@
+img.footerLogo {
+  height: 30px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+}
+
+div.footerImg {
+  background-color: #089a88;
+  height: 25%;
+
+}
+
+p.copyright {
+  color: white;
+  font-size: 10px;
+  font-family: 'Raleway', sans-serif;
+  margin: 20px 20px 10px 40px;
+  padding: 20px;
+}

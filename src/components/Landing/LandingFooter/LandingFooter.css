@@ -1,0 +1,48 @@
+div.footer {
+  background-color: #6cb8ae;
+}
+
+/*
+* copyright
+*/
+
+img.footerLogo {
+  height: 30px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+}
+
+div.footerImg {
+  background-color: #089a88;
+  height: 25%;
+
+}
+
+p.copyright {
+  color: white;
+  font-size: 10px;
+  font-family: 'Raleway', sans-serif;
+  margin: 20px 20px 10px 40px;
+  padding: 20px;
+}
+
+/*
+* Mission Statement
+*/
+
+h2.MissionTitle {
+  text-align: center;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.5em;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+p.Mission {
+  text-align: center;
+  font-size: 1em;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  margin-bottom: 70px;
+}

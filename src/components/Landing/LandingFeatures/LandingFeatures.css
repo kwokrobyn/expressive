@@ -1,0 +1,113 @@
+/*
+* Join Room Input
+*/
+
+div.form-group.has-feedback {
+    width: 60vw;
+}
+
+.joinRm {
+ margin-top: 10vw;
+}
+
+.joinRmLabel {
+  margin-bottom: 20px;
+  font-size: 1.2em;
+}
+
+input#formBasicText.joinRmInput {
+  width: 25vw;
+  height: 5vw;
+  display: inline;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+button.Join {
+  display: inline;
+  height: 5vw;
+  width: 8vw;
+  border: 4px solid #089a88;
+  color: #089a88;
+  font-weight: 900;
+  font-size: 1.5vw;
+}
+
+button.Join:hover {
+    background-color: #00d6bc;
+    border: 3px solid #006054;
+    color: #006054;
+}
+
+/*
+* about
+*/
+h1.how {
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  margin-top: 10vw;
+  color: #494949
+  /*padding-left: 8vw;*/
+}
+
+div.featureFrame01.col-md-4.col-xs-4{
+  padding-left: 0px;
+  padding-right:30px;
+}
+
+div.featureFrame03.col-md-4.col-xs-4{
+  padding-left: 30px;
+  padding-right: 0px;
+}
+
+div.features01 {
+  background-color: orange;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  height: 15vw;
+  margin-top: 30px;
+  -webkit-transition: margin 0.5s ease-out;
+  -moz-transition: margin 0.5s ease-out;
+  -o-transition: margin 0.5s ease-out;
+}
+
+div.features01:hover {
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+
+div.features02 {
+  background-color: gray;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  height: 15vw;
+  margin-top: 30px;
+  -webkit-transition: margin 0.5s ease-out;
+  -moz-transition: margin 0.5s ease-out;
+  -o-transition: margin 0.5s ease-out;
+}
+
+div.features02:hover {
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+div.features03 {
+  background-color: orange;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  height: 15vw;
+  margin-top: 30px;
+  -webkit-transition: margin 0.5s ease-out;
+  -moz-transition: margin 0.5s ease-out;
+  -o-transition: margin 0.5s ease-out;
+}
+
+div.features03:hover {
+  cursor: pointer;
+  margin-top: 5px;
+}
