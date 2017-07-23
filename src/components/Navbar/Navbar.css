@@ -6,6 +6,10 @@
 /* BELOW: navbar */
 
 /*scroll effect*/
+.navbar-trial > nav {
+  background-color: black;
+}
+
 .navbar-trans {
   background-color: transparent;
   border: none;
