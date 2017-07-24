@@ -3,7 +3,15 @@ div.container {
   padding: 0px;
 }
 
-div.panelL.col-md-4 {
+div.headerArtImg.col-md-12 {
+  background: url("/images/headerArt.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 40vw;
+  margin-top: 5px;
+}
+
+/*div.panelL.col-md-4 {
   background: url("/images/panel01.png");
   height: 40vw;
   background-repeat: no-repeat;
@@ -25,9 +33,9 @@ div.panelR.col-md-4 {
   background-repeat: no-repeat;
   background-size: contain;
   margin-top: 5px;
-}
+}*/
 
 div.headerArt {
-  background-color: #ffdf94;
+  background-color: #302f2f;
   height: 41vw;
 }

@@ -19,11 +19,15 @@ import './LandingHeader.css';
 
    render() {
      return (
+
+
         <div className="headerArt">
-             <Col xs={4} sm={4} md={4} className="panelL"></Col>
-             <Col xs={4} sm={4} smOffset={0} md={4} className="panelM"></Col>
-             <Col xs={4} sm={4} md={4} className="panelR"></Col>
+             <Col md={12} className="headerArtImg"></Col>
+          {/* <Col xs={4} sm={4} md={4} className="panelL"></Col> */}
+          {/* <Col xs={4} sm={4} smOffset={0} md={4} className="panelM"></Col> */}
+          {/* <Col xs={4} sm={4} md={4} className="panelR"></Col> */}
         </div>
+      
      );
    }
 
