@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 
 /**
@@ -8,20 +8,19 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
 
   constructor(props){
     super(props);
+  }
 
-    this.state = {
-      roomID: ""
-    }
+  static propTypes = {
+    match: PropTypes.object.isRequired
   }
 
   componentDidMount() {
-    this.setState({roomID: window.location.toString()});
+
   }
 
   render() {
-
     return (
-      <div>{this.state.roomID}</div>
+      <div>{this.props.match.params.id}</div>
     )
   }
 }
