@@ -23,7 +23,9 @@
 
 /*These styles below are exclusive to small tablets and mobile display sizes.*/
 @media only screen and (max-width: 767px) {
+
   /*These styles below are for the ul of the mobile menu.*/
+
   #bs-example-navbar-collapse-1 > div:nth-child(1) > div.col-sm-push-9.col-sm-3.col-md-push-8.col-md-4.col-lg-push-9.col-lg-3 > ul {
     background-color: none;
 
@@ -36,7 +38,7 @@
   }
 
   .navbar-inverse .navbar-toggle:hover,
-    .navbar-inverse .navbar-toggle:active,
+  .navbar-inverse .navbar-toggle:active,
   .navbar-inverse .navbar-toggle:focus {
     border-color: rgba(243,245,242,1);
   }
@@ -73,77 +75,173 @@
 
   /*These styles above are for the button that drops down the mobile menu.*/
 
+  /*These styles above are for the button group list*/
+
+  #bs-example-navbar-collapse-1 > div:nth-child(1) > div.col-sm-push-7.col-sm-5.col-md-push-8.col-md-4.col-lg-push-9.col-lg-3 > ul {
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
+
   /*Mobile Log In Button - below*/
-  #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(1) > form > button {
-    background-color: rgba(243,245,242,1);
-    border: 2px solid rgba(8,154,136,1);
-    color: rgba(8,154,136,1);
-    border-radius: 0.5em 0.5em 0.5em 0.5em;
-    left: 10px;
-    width: 24vw;
-  }
-
-  #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(1) > form > button:hover {
-    background-color: rgba(8,154,136,1);
-    border: 2px solid rgba(8,154,136,1);
-    color: rgba(243,245,242,1);
-  }
-
-  #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(1) > form > button:hover:active {
-    background-color: rgba(110,107,102,1);
-    border: 2px solid rgba(110,107,102,1);
-    color: rgba(243,245,242,1);
-  }
-
-/*Mobile Log In Button - above*/
-/*Mobile Sign Up Button - below*/
-  /*Mobile Sign Up Button : default - below*/
-  #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up {
-    background-color: rgba(8,154,136,1);
-    margin-top: 10px;
-    color: rgba(243,245,242,1);
-    border-radius: 0.5em 0.5em 0.5em 0.5em;
-    height: 100%;
-    transition: all .4s ease;
-    text-align: center;
-    box-shadow: none;
-  }
-    #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up > a {
-      color: rgba(243,245,242,1);
+    /*Mobile Log In Button : default - below*/
+    .login-btn, .login-btn:active, .login-btn:focus {
+      display: block;
+      position: relative;
+      margin: 0 auto auto;
+      border: 5px solid rgba(8,154,136,1);
+      border-radius: 0em 0em 2em 2em;
+      padding: 0 0 0 0;
+      transition: all .4s ease;
+      position: relative;
+      height: 40px;
+      width: 60%;
+      box-shadow: none;
+      background-color: rgba(8,154,136,1);
+      background-image: none;
     }
-  /*Mobile Sign Up Button : default - above*/
-  /*Mobile Sign Up Button : Hover - below*/
-  #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up:hover {
-    background-color: rgba(243,245,242,1);
-    box-shadow: none;
-    border: solid rgba(8,154,136,1);
-    color: rgba(8,154,136,1);
-  }
-    #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up:hover > a {
+
+    .login-btn:before, .login-btn:active:before, .login-btn:focus:before {
+      z-index: -1;
+      -webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+      transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+      -webkit-transform-origin: 0 100%;
+      transform-origin: 0 100%;
+      -webkit-transition: -webkit-transform .3s, opacity .3s, background-color .3s;
+      transition: transform .3s, opacity .3s, background-color .3s
+    }
+
+    .login-btn > a {
+      color: rgba(243,245,242,1);
+      text-shadow: none;
+      text-decoration: none;
+    }
+    /*Mobile Log In Button : default - above*/
+
+    .login-btn:before {
+      opacity: 1;
+      -webkit-transform: rotate3d(0, 0, 1, 0deg);
+      transform: rotate3d(0, 0, 1, 0deg);
+      -webkit-transition-timing-function: cubic-bezier(.2, 1, .3, 1);
+      transition-timing-function: cubic-bezier(.2, 1, .3, 1)
+    }
+
+    /*Mobile Log In Button : Hover - below*/
+
+    .login-btn:hover:before {
+      opacity: 1;
+      -webkit-transform: rotate3d(0, 0, 1, 0deg);
+      transform: rotate3d(0, 0, 1, 0deg);
+      -webkit-transition-timing-function: cubic-bezier(.2, 1, .3, 1);
+      transition-timing-function: cubic-bezier(.2, 1, .3, 1);
+    }
+
+    .login-btn:hover {
+      border: 5px solid rgba(8,154,136,1);
+      background-color: rgba(243,245,242,1);
+    }
+
+    .login-btn:hover > a {
       color: rgba(8,154,136,1);
     }
-  /*Mobile Sign Up Button : Hover - above*/
-  /*Mobile Sign Up Button : Hover : Active - below*/
-  #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up:hover:active {
-    background-color: rgba(110,107,102,1);
-    box-shadow: none;
-    color: rgba(243,245,242,1);
-    border-color: rgba(110,107,102,1);
-  }
-    #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up:hover:active > a {
-      color: rgba(243,245,242,1);
+    /*Mobile Log In Button : Hover - above*/
+    /*Mobile Log In Button : Hover : Active - below*/
+
+    .login-btn:hover:active {
+      border: 5px solid rgba(243,150,72,1);
+      box-shadow: none;
+      background-color: rgba(243,150,72,1);
     }
-  /*Mobile Sign Up Button : Hover : Active - above*/
+
+    .login-btn:hover:active > a {
+      color: rgba(243,245,242,1);
+      text-shadow: none;
+      text-decoration: none;
+    }
+
+    /*Mobile Log In Button : Hover : Active - above*/
+  /* Mobile Log In Button - above  */
+  /* Mobile Sign Up Button - below */
+    /*Mobile Sign Up Button : default - below*/
+
+    .signup-btn, .signup-btn:active, .signup-btn:focus {
+      display: block;
+      position: relative;
+      margin: 0 auto;
+      border: 5px solid rgba(8,154,136,1);
+      border-radius: 2em 2em 0em 0em;
+      padding: 0 0 0 0;
+      transition: all .4s ease;
+      position: relative;
+      height: 40px;
+      width: 60%;
+      box-shadow: none;
+      background-color: rgba(8,154,136,0);
+      background-image: none;
+    }
+
+    .signup-btn:before, .signup-btn:before:active, .signup-btn:before:focus {
+      z-index: -1;
+      -webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+      transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+      -webkit-transform-origin: 0 100%;
+      transform-origin: 0 100%;
+      -webkit-transition: -webkit-transform .3s, opacity .3s, background-color .3s;
+      transition: transform .3s, opacity .3s, background-color .3s
+    }
+
+    .signup-btn > a {
+      color: rgba(243,245,242,1);
+      text-decoration: none;
+      transition: all .4s ease;
+    }
+
+    /*Mobile Sign Up Button : default - above*/
+    /*Mobile Sign Up Button : Hover - below*/
+
+    .signup-btn:hover:before {
+      opacity: 1;
+      -webkit-transform: rotate3d(0, 0, 1, 0deg);
+      transform: rotate3d(0, 0, 1, 0deg);
+      -webkit-transition-timing-function: cubic-bezier(.2, 1, .3, 1);
+      transition-timing-function: cubic-bezier(.2, 1, .3, 1);
+    }
+
+    .signup-btn:hover {
+      border: 5px solid rgba(8,154,136,1);
+      background-color: rgba(243,245,242,1);
+    }
+
+    .signup-btn:hover > a {
+      color: rgba(8,154,136,1);
+    }
+
+    /*Mobile Sign Up Button : Hover - above*/
+    /*Mobile Sign Up Button : Hover : Active - below*/
+    .signup-btn:hover:active {
+      border: 5px solid rgba(243,150,72,1);
+      box-shadow: none;
+      background-color: rgba(243,150,72,1);
+    }
+
+    .signup-btn:hover:active > a {
+      color: rgba(243,245,242,1);
+      text-shadow: none;
+      text-decoration: none;
+    }
+    /*Mobile Sign Up Button : Hover : Active - above*/
   /*Mobile Sign Up Button - above*/
 
 /*These styles above are for the mobile login form and button on the UL.*/
 }
 /*These styles above are exclusive to small tablets and mobile display sizes.*/
+
 /*These styles below are exclusive to tablets and desktop display sizes.*/
 @media only screen and (min-width: 768px) {
 
-  /*These styles below are for the log in button*/
-  /*These styles above are for the log in button*/
+  #bs-example-navbar-collapse-1 > div:nth-child(1) > div.col-sm-push-7.col-sm-5.col-md-push-8.col-md-4.col-lg-push-9.col-lg-3 > ul {
+    margin-top: 4px;
+  }
 
   /*These styles below are for the sign up button*/
   .signup-btn {
@@ -167,6 +265,31 @@
   }
   /*These styles below are for the sign up button*/
 
+
+  /*These styles below are for the log in button*/
+
+  .login-btn {
+    display: inline-block;
+    vertical-align: top;
+    border: 5px solid rgba(8,154,136,1);
+    border-radius: 2em 2em 2em 2em;
+    padding: 0 0 0 0;
+    transition: all .4s ease;
+    position: relative;
+    height: 40px;
+    box-shadow: none;
+    background-color: rgba(8,154,136,0);
+    background-image: none;
+    margin-left: 10px;
+  }
+
+  .login-btn > a {
+    color: rgba(243,245,242,1);
+    text-shadow: none;
+    text-decoration: none;
+  }
+
+  /*These styles above are for the log in button*/
 
 }
 /*These styles above are exclusive to tablets and desktop display sizes.*/
