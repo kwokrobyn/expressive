@@ -31,19 +31,36 @@ class Navbar extends Component {
               {/*Three Icon Bars in mobile displays*/}
               <span className="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
             </button>
-            <a href="./" className="navbar-brand"></a>
+            <a href="./" className="navbar-brand">expressive</a>
           </div>
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <div className="row">
-              <div className="col-md-push-2 col-md-8 col-lg-push-4 col-lg-6">
+              <div className="col-sm-7 col-md-8 col-lg-9"></div>
+              <div className="col-sm-push-7 col-sm-5 col-md-push-8 col-md-4 col-lg-push-9 col-lg-3">
                 <ul className="nav navbar-nav">
-                  <li><Link to="/signup" className="col-sm-2 navlink">Signup</Link></li>
-                  <li><Link to="/login" className="col-sm-2 navlink">Login</Link></li>
+                  <li>
+
+                    <button className="btn btn-success signup-btn">
+                      <Link to="/signup" className="col-sm-2 navlink">
+                        Sign up
+                      </Link>
+                    </button>
+
+                  </li>
+                  <li>
+
+                    <button className="btn btn-default login-btn">
+                      <Link to="/login" className="col-sm-2 navlink">
+                        Log in
+                      </Link>
+                    </button>
+
+                  </li>
                 </ul>{/* /nav narbar-nav */}
               </div>
             </div>
             <div className="row">
-              {/* Notification bar */}
+              {/* Notification bar - if any */}
             </div>{/* /row */}
           </div>{/* /bs-example-navbar-collapse-1 */}
         </div>{/* container */}
