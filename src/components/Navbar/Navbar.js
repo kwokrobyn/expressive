@@ -21,6 +21,9 @@ class Navbar extends Component {
  };
 
  render() {
+
+   
+
    return (
     <div className="container">
       <nav className="navbar navbar-inverse navbar-fixed-top"     role="navigation">
@@ -39,22 +42,18 @@ class Navbar extends Component {
               <div className="col-sm-push-7 col-sm-5 col-md-push-8 col-md-4 col-lg-push-9 col-lg-3">
                 <ul className="nav navbar-nav">
                   <li>
-
                     <button className="btn btn-success signup-btn">
                       <Link to="/signup" className="col-sm-2 navlink">
                         Sign up
                       </Link>
                     </button>
-
                   </li>
                   <li>
-
                     <button className="btn btn-default login-btn">
                       <Link to="/login" className="col-sm-2 navlink">
                         Log in
                       </Link>
                     </button>
-
                   </li>
                 </ul>{/* /nav narbar-nav */}
               </div>
