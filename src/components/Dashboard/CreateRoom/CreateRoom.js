@@ -20,7 +20,7 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
 
     // unique string checker to input here
 
-    // pass room info to actions for firebase call. current user object is passed. 
+    // pass room info to actions for firebase call. current user object is passed.
     const roomInfo = {
       name: name,
       uid: id,
@@ -53,9 +53,9 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
             <label>Room String:</label>
             <input type="text" className="form-control" id="roomstring" onChange={this.checkExisting}/>
             {this.props.existing ? (
-              <h1>yes</h1>
+              <h1>this room has been taken</h1>
             ) : (
-              <h1>no</h1>
+              <h1>this room is available</h1>
             )}
           </div>
           <button type="submit" className="btn btn-default" onClick={this.createRoom}>Create Room</button>
