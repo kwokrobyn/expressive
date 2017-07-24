@@ -65,8 +65,8 @@ class Login extends Component {
           <button type="submit" className="btn btn-default" onClick={this.localSignIn}>Sign In</button>
         </form>
 
-        <button type="submit" className="btn btn-default facebook" onClick={this.socialSignIn}>Facebook</button>
-        <button type="submit" className="btn btn-default google" onClick={this.socialSignIn}>Google</button>
+        <button type="submit" className="btn btn-default" onClick={this.socialSignIn}>Facebook</button>
+        <button type="submit" className="btn btn-danger" onClick={this.socialSignIn}>Google</button>
 
       </div>
 
