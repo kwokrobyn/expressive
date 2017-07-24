@@ -32,10 +32,10 @@ export const checkExisting = (roomString) => {
       if (snapshot.exists()) {
         // roomstring does not exist in db, create new room
         console.log("exists");
-        dispatch(roomStringAvail());
+        dispatch(roomStringExists());
       } else {
         // roomstring exists in db, do not create
-        dispatch(roomStringExists());
+        dispatch(roomStringAvail());
       }
     });
   }
