@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 
 import { signOut } from '../../actions/userActions';
 
+import Navbar from '../Navbar/Navbar';
+import CreateRoom from '../CreateRoom/CreateRoom';
+
 /**
  * Dash
  */
@@ -27,11 +30,13 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
   render() {
     return (
       <div className="container-fluid">
+        <Navbar />
         <div className="row">
           <div className="col-sm-6 col-sm-offset-3">
             <div className="dashboard" id="Dashboard">
               <h1>Dashboard</h1>
               <button type="submit" className="btn btn-default" onClick={this.signOut}>Log Out</button>
+              <CreateRoom />
             </div>
           </div>
         </div>
