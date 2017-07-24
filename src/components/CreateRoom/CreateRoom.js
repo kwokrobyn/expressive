@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { signOut } from '../../actions/userActions';
 
 /**
- * Dash
+ * CreateRoom
  */
-export class Dashboard extends Component { // eslint-disable-line react/prefer-stateless-function
+export class CreateRoom extends Component { // eslint-disable-line react/prefer-stateless-function
 
   constructor(props){
     super(props);
@@ -57,4 +57,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Dashboard);
+export default connect(mapStateToProps, mapDispatchToProps)(CreateRoom);
