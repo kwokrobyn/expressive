@@ -1,10 +1,23 @@
 /*
-* Room Actions
-* Actions needed: CRUD for rooms
+* Actions to Reducer
 */
+
 
 import firebase from '../firebase';
 const db = firebase.database();
+
+// ADD ROOM TO USER
+const addRoomToUserRoomList = (roomInfo) => {
+
+  const userRef = db.ref('users/' + roomInfo.master.uid + '/ownedRooms/' + roomInfo.uid);
+  userRef.set({
+    name: roomInfo.name
+  }).then(() => {
+    console.log('Room added to user roomlist success.');
+  }).catch((error) => {
+    console.log('Error adding room to user roomlist: ', error.message);
+  })
+}
 
 // CREATE ROOM
 export const createRoom = (roomInfo) => {
@@ -25,8 +38,8 @@ export const createRoom = (roomInfo) => {
       }
     }).then(() => {
       console.log('Room created');
-
-
+      // add room to user's list of created rooms
+      addRoomToUserRoomList(roomInfo);
 
     }).catch((error) => {
       console.log('Error while creating room: ', error.message);
