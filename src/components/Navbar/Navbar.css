@@ -1,3 +1,284 @@
-.navlink {
-  margin-top: 20px
+/* NOTE: This stylesheet has an extension named NavbarUser.css dependent on this stylesheet. It is used in conjunction with NavbarUser.css for NavbarUser.js. */
+
+/*Entire header styling - for that beige*/
+.navbar-inverse {
+  background-color: rgba(248,240,214,1);
+  box-shadow: 0px 0px 30px black;
+  border-bottom: none;
+  background-image: -moz-gradient(to bottom,rgba(47,120,139,1) 0,rgba(8,154,136,1) 100%);
+  background-image: -webkit-gradient(to bottom,rgba(47,120,139,1) 0,rgba(8,154,136,1) 100%);
+  background-image: linear-gradient(to bottom,rgba(47,120,139,1) 0,rgba(8,154,136,1) 100%);
 }
+
+#bs-example-navbar-collapse-1 > .row {
+  position: relative;
+  float: inherit;
+}
+
+/*These styles below are exclusive to small tablets and mobile display sizes.*/
+@media only screen and (max-width: 767px) {
+
+  /*These styles below are for the button that drops down the mobile menu.*/
+  .navbar-inverse .navbar-toggle {
+    border: 2px solid;
+    border-color: rgba(8,154,136,1);
+  }
+
+  .navbar-inverse .navbar-toggle:hover,
+  .navbar-inverse .navbar-toggle:active,
+  .navbar-inverse .navbar-toggle:focus {
+    border: 2px solid;
+    border-color: rgba(8,154,136,1);
+    background-color: rgba(8,154,136,1);
+  }
+
+  .navbar-header > button {
+    height: 60px;
+    width: 60px;
+    top: 7px;
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+  }
+
+  .navbar-header > button > .glyphicon-menu-hamburger {
+    color: rgba(8,154,136,1);
+    font-size: 25px;
+    top: 3px;
+  }
+
+  .navbar-inverse .navbar-toggle:hover,
+  .navbar-inverse .navbar-toggle:active,
+  .navbar-inverse .navbar-toggle:focus {
+    background-color: rgba(248,240,214,1);
+  }
+
+  .navbar-header > button > .glyphicon-menu-hamburger:hover:active {
+    color: rgba(248,240,214,1);
+  }
+
+  .navbar-inverse .navbar-toggle:hover:active {
+    border: 2px solid;
+    border-color: rgba(8,154,136,1);
+    background-color: rgba(8,154,136,1);
+  }
+
+  /*These styles above are for the button that drops down the mobile menu.*/
+  /*These styles below are for the login form and button on the UL.*/
+  #bs-example-navbar-collapse-1 > div > div > ul {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+
+  .login-group > div > input {
+    background-color: rgba(223,217,198,1);
+  }
+
+  /*Mobile Log In Button - below*/
+  #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(1) > form > button {
+    background-color: rgba(248,240,214,1);
+    border: 2px solid rgba(8,154,136,1);
+    color: rgba(8,154,136,1);
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+    left: 10px;
+    width: 24vw;
+  }
+
+  #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(1) > form > button:hover {
+    background-color: rgba(8,154,136,1);
+    border: 2px solid rgba(8,154,136,1);
+    color: rgba(248,240,214,1);
+  }
+
+  #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(1) > form > button:hover:active {
+    background-color: rgba(110,107,102,1);
+    border: 2px solid rgba(110,107,102,1);
+    color: rgba(248,240,214,1);
+  }
+
+  /*Mobile Log In Button - above*/
+  /*Mobile Sign Up Button - below*/
+  /*Mobile Sign Up Button : default - below*/
+  #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up {
+    background-color: rgba(8,154,136,1);
+    margin-top: 10px;
+    border: 2px solid rgba(8,154,136,1);
+    color: rgba(248,240,214,1);
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+    height: 100%;
+    text-align: center;
+    width: 24vw;
+  }
+    #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up > a {
+      top: 0;
+      color: rgba(248,240,214,1);
+    }
+  /*Mobile Sign Up Button : default - above*/
+  /*Mobile Sign Up Button : Hover - below*/
+  #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up:hover {
+    background-color: rgba(248,240,214,1);
+    border: 2px solid rgba(8,154,136,1);
+    color: rgba(8,154,136,1);
+  }
+    #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up:hover > a {
+      color: rgba(8,154,136,1);
+    }
+  /*Mobile Sign Up Button : Hover - above*/
+  /*Mobile Sign Up Button : Hover : Active - below*/
+  #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up:hover:active {
+    background-color: rgba(110,107,102,1);
+    color: rgba(248,240,214,1);
+    border: 2px solid rgba(110,107,102,1);
+  }
+    #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up:hover:active > a {
+      color: rgba(248,240,214,1);
+    }
+  /*Mobile Sign Up Button : Hover : Active - above*/
+  /*Mobile Sign Up Button - above*/
+
+  /*These styles above are for the mobile login form and button on the UL.*/
+}
+/*These styles above are exclusive to small tablets and mobile display sizes.*/
+/*These styles below are exclusive to tablets and desktop display sizes.*/
+@media only screen and (min-width: 768px) {
+
+  #bs-example-navbar-collapse-1 > div > div {
+    position: relative;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+  }
+
+  /*These styles below takes care of the log in/signup buttons/form.*/
+
+  .login-group {
+    position: relative;
+    width: 100%;
+    top: 25px;
+    float: right;
+  }
+
+    /*These styles below are for the main search bar on the nav bar.*/
+    .login-group > div > input {
+      background-color: rgba(223,217,198,1);
+      padding: 5px 9px 5px 9px;
+    }
+
+    #navbar-email-input {
+      border-radius: 4px 0 0 4px;
+      border: solid rgba(110,107,102,0.2) 2px 1px 2px 2px;
+    }
+
+    #navbar-password-input {
+      border-radius: 0 0 0 0;
+      border: solid rgba(110,107,102,0.2) 2px 2px 2px 1px;
+    }
+
+    /*These styles below are for the log in button*/
+    #bs-example-navbar-collapse-1 > div.row > div > ul > li:nth-child(1) > form > button {
+      background-color: rgba(248,240,214,1);
+      border: 2px solid rgba(8,154,136,1);
+      color: rgba(8,154,136,1);
+      border-radius: 0em 0.5em 0.5em 0em;
+      left: 10px;
+    }
+
+    #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(1) > form > button:active {
+      border-style: solid;
+      border-width: 2px;
+      border-color: rgba(8,154,136,1);
+      border-radius: 0em 0.5em 0.5em 0em;
+      background-color: rgba(8,154,136,1);
+      color: rgba(248,240,214,1);
+    }
+
+    #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(1) > form > button:hover {
+      border-style: solid;
+      border-width: 2px;
+      border-color: rgba(8,154,136,1);
+      border-radius: 0em 0.5em 0.5em 0em;
+      background-color: rgba(8,154,136,1);
+      color: rgba(248,240,214,1)
+    }
+
+    #bs-example-navbar-collapse-1 > div > div > ul > li:nth-child(1) > form > button:hover:active {
+      border-style: solid;
+      border-width: 2px;
+      border-color: rgba(110,107,102,1);
+      border-radius: 0em 0.5em 0.5em 0em;
+      background-color: rgba(110,107,102,1);
+      color: rgba(248,240,214,1)
+    }
+    /*These styles above are for the log in button*/
+
+  /*These styles below are for the sign up button*/
+
+  #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up {
+    border: 2px solid rgba(8,154,136,1);
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+    background-color: rgba(8,154,136,1);
+    color: rgba(248,240,214,1);
+    height: 60px;
+    top: 15px;
+    left: 20px;
+  }
+
+    #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up> a {
+      color: rgba(248,240,214,1);
+      top: 2px;
+    }
+
+  #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up:active {
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgba(110,107,102,1);
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+    background-color: rgba(110,107,102,1);
+    color: rgba(248,240,214,1);
+  }
+
+  #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up:hover {
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgba(8,154,136,1);
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+    background-color: rgba(110,107,102,1);
+    background-color: rgba(248,240,214,1);
+  }
+
+    #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up:hover > a {
+      color: rgba(8,154,136,1);
+    }
+
+  #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up:hover:active {
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgba(110,107,102,1);
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+    background-color: rgba(110,107,102,1);
+  }
+    #bs-example-navbar-collapse-1 > div > div > ul > li.nav-sign-up:hover:active > a {
+      color: rgba(248,240,214,1);
+    }
+  /*These styles below are for the sign up button*/
+  /*These styles above takes care of the log in/signup buttons/form.*/
+
+}
+/*These styles above are exclusive to tablets and desktop display sizes.*/
+
+.navbar-toggle {
+  top: 20px;
+  height: 100%;
+}
+
+.navbar-brand {
+  height: 100%;
+}
+
+  .navbar-brand img {
+    height: 60px;
+    width: 191px;
+  }
+
+/* NOTE: This stylesheet has an extension named NavbarUser.css dependent on this stylesheet. It is used in conjunction with NavbarUser.css for NavbarUser.js. */
+
+
+/* Styles for the experimental navbar links above */
