@@ -19,6 +19,7 @@ import Landing from '../Landing/Landing';
 import Signup from '../Signup/Signup';
 import Login from '../Login/Login';
 import Dashboard from '../Dashboard/Dashboard';
+import Room from '../Room/Room';
 
 /**
  * App (React Routes)

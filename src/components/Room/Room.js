@@ -10,14 +10,19 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
     super(props);
 
     this.state = {
-
+      roomID: ""
     }
   }
 
-  render() {
-    return (
+  componentDidMount() {
+    this.setState({roomID: window.location.toString()});
+  }
 
-    );
+  render() {
+
+    return (
+      <div>{this.state.roomID}</div>
+    )
   }
 }
 
