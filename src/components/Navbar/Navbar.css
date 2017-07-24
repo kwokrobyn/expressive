@@ -324,27 +324,11 @@
 
 
 /**/
-.btn:before, .slick-track {
-  left: 0;
-  top: 0
-}
-
-#desc li, #white-block .graph, .btn, .half, .slick-list, header.fixed, section {
-  overflow: hidden
-}
-
-.btn, .slick-dots, header #head-cont {
-  text-align: center
-}
-
-#desc li span:before, .btn:before, section.top:before {
-  content: ''
-}
-
 .btn {
+  overflow: hidden;
+  text-align: center;
   display: inline-block;
   vertical-align: top;
-  font: 700 24px/44px Bebas, sans-serif;
   border: 3px solid #fff;
   color: #fff;
   padding: 0 18px;
@@ -358,6 +342,9 @@
 }
 
 .btn:before {
+  left: 0;
+  top: 0;
+  content: '';
   position: absolute;
   width: 150%;
   height: 100%;
@@ -411,21 +398,6 @@
   vertical-align: top;
   margin: 16px 0 0 6px;
   background-position: -204px -123px
-}
-@media screen and (max-width:800px) and (max-width:670px) {
-
-  #logo, .btn {
-    font-size: 20px
-  }
-
-  .btn {
-    line-height: 34px
-  }
-
-  #white-block .btn {
-  margin-top: 0
-  }
-
 }
 /**/
 
