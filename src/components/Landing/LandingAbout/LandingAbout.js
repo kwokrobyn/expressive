@@ -1,7 +1,12 @@
 //Importing required packages
 import React, { Component, PropTypes } from 'react';
 import {Grid, Col, form, FormGroup, FormControl, ControlLabel, HelpBlock, Row, Button} from 'react-bootstrap';
-
+import { connect } from 'react-redux';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 //Importing static assets (i.e. stylesheets, images)
 import './LandingAbout.css';
 
@@ -15,22 +20,12 @@ class LandingAbout extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-        value: ''
-        }
   }
 
+  // onClick = (e) => {
+  //  this.props.Signup(this.props.history);
+  // }
 
-  getValidationState() {
-    const length = this.state.value.length;
-    if (length > 10) return 'success';
-    else if (length > 5) return 'warning';
-    else if (length > 0) return 'error';
-  }
-
-  handleChange(e) {
-    this.setState({ value: e.target.value });
-  }
 
   render() {
     return (
@@ -67,7 +62,7 @@ class LandingAbout extends Component {
         <Row>
           <Col md={6} sm={6} smOffset={4} xs={6} xsOffset={3}>
             <h2 className="signUpTitle">Create a room by signing up now!</h2>
-              <Button bsSize="large" block className="SignUp" onClick={this.onClick}>Sign Up</Button>
+              <Button bsSize="large" block className="SignUp"><Link to="/signup">Sign Up</Link></Button>
 
           </Col>
         </Row>
@@ -79,4 +74,18 @@ class LandingAbout extends Component {
 
 }
 
+// const mapStateToProps = (state) => {
+//     return state;
+// }
+//
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//       Signup(history){
+//         history.push("/signup/")
+//       }
+//     }
+// }
+//
+//
+// export default connect(mapStateToProps, mapDispatchToProps) (LandingAbout);
 export default LandingAbout;

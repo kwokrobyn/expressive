@@ -37,6 +37,40 @@ button.Join:hover {
     background-color: #00d6bc;
     border: 3px solid #006054;
     color: #006054;
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(0,159,139, 0.8);
+  }
+  70% {
+      -webkit-box-shadow: 0 0 0 10px rgba(0,159,139, 0);
+  }
+  100% {
+      -webkit-box-shadow: 0 0 0 0 rgba(0,159,139, 0);
+  }
+}
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(0,159,139, 0.8);
+    box-shadow: 0 0 0 0 rgba(0,159,139, 0.8);
+  }
+  70% {
+      -moz-box-shadow: 0 0 0 10px rgba(0,159,139, 0);
+      box-shadow: 0 0 0 10px rgba(0,159,139, 0);
+  }
+  100% {
+      -moz-box-shadow: 0 0 0 0 rgba(0,159,139, 0);
+      box-shadow: 0 0 0 0 rgba(0,159,139, 0);
+  }
 }
 
 /*

@@ -30,7 +30,7 @@ export class Landing extends Component {
         <Row className="nav">
           <Navbar title="Navbar"/>
         </Row>
-        <Row className="Lheading">
+        <Row className="LHeading">
           <LandingHeader title="LandingHeader" />
         </Row>
         <Row className="LFeatures">
