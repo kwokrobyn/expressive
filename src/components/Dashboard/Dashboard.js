@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { signOut } from '../../actions/userActions';
 
 import Navbar from '../Navbar/Navbar';
-import CreateRoom from '../CreateRoom/CreateRoom';
+import CreateRoom from './CreateRoom/CreateRoom';
 
 /**
  * Dash

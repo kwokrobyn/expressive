@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { signOut } from '../../actions/userActions';
+import { signOut } from '../../../actions/userActions';
 
 /**
  * CreateRoom
