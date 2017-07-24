@@ -20,6 +20,7 @@ import Landing from '../Landing/Landing';
 import Signup from '../Signup/Signup';
 import Login from '../Login/Login';
 import Dashboard from '../Dashboard/Dashboard';
+import Room from '../Room/Room';
 
 /**
  * App (React Routes)
@@ -41,6 +42,7 @@ class App extends Component {
           <Route exact path="/signup" render= {() => (isSignedIn ? ( <Redirect to="/dashboard"/> ) : ( <Signup/> ))} />
           <Route exact path="/login" render= {() => (isSignedIn ? ( <Redirect to="/dashboard"/> ) : ( <Login/> ))} />
           <Route exact path="/dashboard" render= {() => (isSignedIn ? ( <Dashboard/> ) : ( <Redirect to="/login"/> ))} />
+          <Route path="/room/:id" component={Room} />
         </Switch>
       </Router>
     );
