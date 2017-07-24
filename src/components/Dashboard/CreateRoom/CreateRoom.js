@@ -11,6 +11,10 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
 
   constructor(props){
     super(props);
+
+    this.state = ({
+      errMessage: false
+    })
   }
 
   createRoom = (e) => {
@@ -19,17 +23,20 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
     const id = document.getElementById('roomstring').value;
 
     // unique string checker to input here
+    if (!this.props.existing) {
+      // pass room info to actions for firebase call. current user object is passed.
+      const roomInfo = {
+        name: name,
+        uid: id,
+        master: this.props.user
+      }
 
-    // pass room info to actions for firebase call. current user object is passed. 
-    const roomInfo = {
-      name: name,
-      uid: id,
-      master: this.props.user
+      this.props.createRoom(roomInfo);
+    } else {
+      this.setState({errMessage: true});
+      console.log("false here");
+      console.log(this.state.errMessage);
     }
-
-    this.props.createRoom(roomInfo);
-
-
   }
 
   checkExisting = (e) => {
@@ -53,12 +60,15 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
             <label>Room String:</label>
             <input type="text" className="form-control" id="roomstring" onChange={this.checkExisting}/>
             {this.props.existing ? (
-              <h1>yes</h1>
+              <h1>this room has been taken</h1>
             ) : (
-              <h1>no</h1>
+              <h1>this room is available</h1>
             )}
           </div>
           <button type="submit" className="btn btn-default" onClick={this.createRoom}>Create Room</button>
+          {this.state.errMessage &&
+            <h1>not allowed</h1>
+          }
         </form>
       </div>
     );
