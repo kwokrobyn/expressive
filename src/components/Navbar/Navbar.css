@@ -322,4 +322,112 @@
     margin-left: 20px;
   }
 
+
+/**/
+.btn:before, .slick-track {
+  left: 0;
+  top: 0
+}
+
+#desc li, #white-block .graph, .btn, .half, .slick-list, header.fixed, section {
+  overflow: hidden
+}
+
+.btn, .slick-dots, header #head-cont {
+  text-align: center
+}
+
+#desc li span:before, .btn:before, section.top:before {
+  content: ''
+}
+
+.btn {
+  display: inline-block;
+  vertical-align: top;
+  font: 700 24px/44px Bebas, sans-serif;
+  border: 3px solid #fff;
+  color: #fff;
+  padding: 0 18px;
+  z-index: 5;
+  transition: all .4s ease;
+  position: relative
+}
+
+.btn-green, .btn:hover {
+  color: #10c18a
+}
+
+.btn:before {
+  position: absolute;
+  width: 150%;
+  height: 100%;
+  background-color: #fff;
+  z-index: -1;
+  -webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+  transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  -webkit-transition: -webkit-transform .3s, opacity .3s, background-color .3s;
+  transition: transform .3s, opacity .3s, background-color .3s
+}
+
+.btn:hover:before {
+  opacity: 1;
+  -webkit-transform: rotate3d(0, 0, 1, 0deg);
+  transform: rotate3d(0, 0, 1, 0deg);
+  -webkit-transition-timing-function: cubic-bezier(.2, 1, .3, 1);
+  transition-timing-function: cubic-bezier(.2, 1, .3, 1)
+}
+
+.btn-green {
+  border-color: #10c18a
+}
+
+.btn-green:before {
+  background-color: #10c18a
+}
+
+.btn-green:hover {
+  color: #fff!important
+}
+
+#contacts .form .btn:hover {
+  color: #0f2647!important
+}
+
+#tnx .btn {
+  margin-top: 30px;
+  width: 250px!important
+}
+
+#tnx .btn .arrow, #tnx .btn:hover .arrow {
+  width: 14px;
+  height: 12px;
+  background-image: none;
+}
+
+#tnx .btn .arrow {
+  display: inline-block;
+  vertical-align: top;
+  margin: 16px 0 0 6px;
+  background-position: -204px -123px
+}
+@media screen and (max-width:800px) and (max-width:670px) {
+
+  #logo, .btn {
+    font-size: 20px
+  }
+
+  .btn {
+    line-height: 34px
+  }
+
+  #white-block .btn {
+  margin-top: 0
+  }
+
+}
+/**/
+
+
 /* NOTE: This stylesheet has an extension named NavbarUser.css dependent on this stylesheet. It is used in conjunction with NavbarUser.css for NavbarUser.js. */

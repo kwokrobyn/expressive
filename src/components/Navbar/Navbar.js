@@ -22,7 +22,7 @@ class Navbar extends Component {
 
  render() {
 
-   
+
 
    return (
     <div className="container">
@@ -54,6 +54,9 @@ class Navbar extends Component {
                         Log in
                       </Link>
                     </button>
+                  </li>
+                  <li>
+                    <a href="http://freshdesign.agency/documents/presentations/FreshDesign-2017-presentation.pdf" class="btn btn-green">Download presentation</a>
                   </li>
                 </ul>{/* /nav narbar-nav */}
               </div>
