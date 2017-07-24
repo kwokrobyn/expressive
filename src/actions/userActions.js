@@ -42,6 +42,7 @@ const connectToDatabase = (user) => {
       userRef.set({
         email: user.email,
         name: user.displayName,
+        uid: user.uid,
         picture: user.photoURL
       });
     } else {
@@ -49,6 +50,7 @@ const connectToDatabase = (user) => {
       userRef.update({
         email: user.email,
         name: user.displayName,
+        uid: user.uid,
         picture: user.photoURL
       });
     }
