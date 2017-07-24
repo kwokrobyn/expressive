@@ -10,12 +10,6 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
   constructor(props){
     super(props);
 
-    this.state = {
-        email:"",
-        password:"",
-        error:"",
-        user:""
-    }
   }
 
   createRoom = (e) => {
@@ -44,17 +38,11 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
 }
 
 const mapStateToProps = (state) => {
-    return {
-      user: state.user
-    }
+
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-    signOut: () => {
-      dispatch(signOut())
-    }
-  }
+
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateRoom);
