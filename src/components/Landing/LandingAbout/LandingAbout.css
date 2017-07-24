@@ -51,6 +51,7 @@ button.SignUp {
 button.SignUp:hover {
   background-color: #00d6bc;
   border: 3px solid #006054;
+  text-decoration: none;
 }
 
 @-webkit-keyframes pulse {
@@ -79,7 +80,6 @@ button.SignUp:hover {
   }
 }
 
-/*button.SignUp:hover {
-    background-color: #00d6bc;
-    border: 3px solid #006054;
-}*/
+Link:hover {
+  text-decoration: none;
+}

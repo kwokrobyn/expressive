@@ -32,7 +32,7 @@ class LandingAbout extends Component {
       <Grid>
         {/* About Title */}
         <Row>
-          <Col md={8} mdOffset={3} sm={8} smOffset={3}>
+          <Col md={12} mdOffset={2} sm={8} smOffset={3}>
             <h1 className="about">-About-</h1>
           </Col>
         </Row>
@@ -62,7 +62,7 @@ class LandingAbout extends Component {
         <Row>
           <Col md={6} sm={6} smOffset={4} xs={6} xsOffset={3}>
             <h2 className="signUpTitle">Create a room by signing up now!</h2>
-              <Button bsSize="large" block className="SignUp"><Link to="/signup">Sign Up</Link></Button>
+              <Link to="/signup"><Button bsSize="large" block className="SignUp">Sign Up</Button></Link>
 
           </Col>
         </Row>

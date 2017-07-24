@@ -39,7 +39,7 @@ class LandingFeatures extends Component {
 
       {/* Join Room Input */}
         <Row>
-          <Col md={6} mdOffset={4} sm={6} smOffset={3} xs={6} xsOffset={3} className="joinRm">
+          <Col md={10} mdOffset={4} sm={8} smOffset={3} xs={11} xsOffset={2} className="joinRm">
 
            <FormGroup
              controlId="formBasicText"
@@ -72,13 +72,14 @@ class LandingFeatures extends Component {
         {/* Featurettes */}
         <Row>
           <Col md={10} mdOffset={2} sm={10} smOffset={2} xs={10} xsOffset={1}>
-            <Col md={4} xs={4} className="featureFrame01">
+          {/* make xs stack on top of each other when scaling responsively */}
+            <Col md={4} xs={12} className="featureFrame01">
               <div className="features01">About</div>
             </Col>
-            <Col md={4} xs={4} className="featureFrame02">
+            <Col md={4} xs={12} className="featureFrame02">
               <div className="features02">Feature</div>
             </Col>
-            <Col md={4} xs={4} className="featureFrame03">
+            <Col md={4} xs={12} className="featureFrame03">
               <div className="features03">Hello</div>
             </Col>
           </Col>
