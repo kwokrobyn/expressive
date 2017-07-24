@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { signOut } from '../../../actions/userActions';
+import { checkExisting } from '../../../actions/roomActions';
 
 /**
  * CreateRoom
@@ -18,6 +19,12 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
     const roomString = document.getElementById('roomstring').value;
   }
 
+  checkExisting = (e) => {
+    e.preventDefault();
+    const roomString = document.getElementById('roomstring').value;
+    this.props.checkExisting(roomString);
+  }
+
   render() {
     return (
       <div className="container-fluid">
@@ -28,7 +35,7 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
           </div>
           <div className="form-group">
             <label>Room String:</label>
-            <input type="text" className="form-control" id="roomstring" />
+            <input type="text" className="form-control" id="roomstring" onChange={this.checkExisting}/>
           </div>
           <button type="submit" className="btn btn-default" onClick={this.createRoom}>Create Room</button>
         </form>
@@ -38,11 +45,17 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
 }
 
 const mapStateToProps = (state) => {
-
+  return {
+    user: state.user
+  }
 }
 
 const mapDispatchToProps = (dispatch) => {
-
+  return {
+    checkExisting: (roomString) => {
+      dispatch(checkExisting(roomString));
+    }
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateRoom);

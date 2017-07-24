@@ -46,9 +46,9 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
 }
 
 const mapStateToProps = (state) => {
-    return {
-      user: state.user
-    }
+  return {
+    user: state.user
+  }
 }
 
 const mapDispatchToProps = (dispatch) => {

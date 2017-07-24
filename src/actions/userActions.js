@@ -31,7 +31,7 @@ const db = firebase.database();
 const connectToDatabase = (user) => {
 
   // navigate to user portion of db
-  const userRef = db.ref('/users/' + user.uid);
+  const userRef = db.ref('users/' + user.uid);
 
   // check if user exists in database
   userRef.once('value')
