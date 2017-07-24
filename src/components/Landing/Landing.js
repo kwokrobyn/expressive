@@ -2,7 +2,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { localSignUp, localSignIn, signOut } from '../../actions/userActions';
-import {Row, Grid} from 'react-bootstrap';
+import { Row, Grid } from 'react-bootstrap';
 
 //Importing static assets (i.e. stylesheets, images)
 import './Landing.css'
