@@ -3,11 +3,12 @@
 */
 
 div.form-group.has-feedback {
-    width: 60vw;
+    width: 70vw;
 }
 
 .joinRm {
  margin-top: 10vw;
+ height: 10vw;
 }
 
 .joinRmLabel {
@@ -19,8 +20,8 @@ input#formBasicText.joinRmInput {
   width: 25vw;
   height: 5vw;
   display: inline;
-  margin-right: 10px;
-  margin-left: 10px;
+  margin-right: 2vw;
+  margin-left: 3vw;
 }
 
 button.Join {
