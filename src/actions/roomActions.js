@@ -39,6 +39,8 @@ export const checkExisting = (roomString) => {
         dispatch(roomStringAvail());
       }
     });
+  }
+}
 
 // ADD ROOM TO USER
 const addRoomToUserRoomList = (roomInfo) => {
