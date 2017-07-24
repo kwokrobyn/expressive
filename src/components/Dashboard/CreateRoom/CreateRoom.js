@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { signOut } from '../../../actions/userActions';
+
+import { createRoom } from '../../../actions/roomActions';
 
 /**
  * CreateRoom
@@ -14,8 +15,21 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
 
   createRoom = (e) => {
     e.preventDefault();
-    const roomName = document.getElementById('roomname').value;
-    const roomString = document.getElementById('roomstring').value;
+    const name = document.getElementById('roomname').value;
+    const id = document.getElementById('roomstring').value;
+
+    // unique string checker to input here
+
+    // pass room info to actions for firebase call. current user object is passed. 
+    const roomInfo = {
+      name: name,
+      uid: id,
+      master: this.props.user
+    }
+
+    this.props.createRoom(roomInfo);
+
+
   }
 
   render() {
@@ -38,11 +52,17 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
 }
 
 const mapStateToProps = (state) => {
-
+  return {
+    user: state.user
+  }
 }
 
 const mapDispatchToProps = (dispatch) => {
-
+  return {
+    createRoom: (roomInfo) => {
+      dispatch(createRoom(roomInfo))
+    }
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateRoom);
