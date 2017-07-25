@@ -46,7 +46,7 @@ class Profile extends Component {
     return (
       <div className="container-fluid">
         <Navbar />
-        <h1>Editing {this.props.user.displayName}'s profile</h1>
+        <h1>Editing {this.props.user.displayName}s profile</h1>
 
         <form>
           <div className="form-group">
