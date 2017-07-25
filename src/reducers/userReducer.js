@@ -13,7 +13,7 @@ const userReducer = (state = defaultUser, action) => {
 
   switch (action.type) {
     case "SIGN_IN_SUCCESS":
-    // uid, email, displayName currently pulled from default firebase.auth() db.  
+    // uid, email, displayName currently pulled from default firebase.auth() db.
       return {
         uid: action.user.uid,
         email: action.user.email,
@@ -30,6 +30,17 @@ const userReducer = (state = defaultUser, action) => {
         ...state,
         hasAuthError: true,
         errorMessage: action.error
+      }
+    case "DELETE_USER":
+      return defaultUser;
+    case "UPDATE_USER":
+      return {
+        uid: action.user.uid,
+        email: action.user.email,
+        displayName: action.user.displayName,
+        isSignedIn: true,
+        hasAuthError: false,
+        errorMessage: ""
       }
     default:
         return state;
