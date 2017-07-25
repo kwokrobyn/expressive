@@ -29,10 +29,18 @@ class Profile extends Component {
   } // end of test code
 
   render() {
+    console.log(this.props.user);
+
     return (
       <div className="container-fluid">
         <Navbar />
         <h1>Profile</h1>
+        <form>
+        Name<input defaultValue={this.props.user.displayName}/>
+        <br />
+        Email<input defaultValue={this.props.user.email}/>
+        </form>
+
       </div>
     );
   }
