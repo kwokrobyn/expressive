@@ -43,15 +43,11 @@ class Navbar extends Component {
             </button>
           </li>
           <li>
-
-          <li>
             <button className="btn btn-success middle-btn">
               <Link to="/dashboard" className="col-sm-2">
                 Dashboard
               </Link>
             </button>
-          </li>
-
           </li>
           <li>
             <button type="submit" className="btn btn-default login-btn" onClick={this.signOut}>

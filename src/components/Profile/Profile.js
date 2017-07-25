@@ -1,7 +1,7 @@
 //Importing required packages
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { localSignIn, signOut, socialSignIn } from '../../actions/userActions';
+import { deleteUser, updateUser } from '../../actions/userActions';
 
 //Importing static assets (i.e. stylesheets, images)
 import './Profile.css';
@@ -29,15 +29,22 @@ class Profile extends Component {
     });
   } // end of test code
 
-
-  localUserDelete = (e) => {
+  deleteUser = (e) => {
     e.preventDefault();
-    const email = document.getElementById('profile-form-email').value;
-    const password = document.getElementById('profile-form-newpassword').value;
+    this.props.deleteUser(this.props.user);
+  }
+
+  updateUser = (e) => {
+    e.preventDefault();
+    const displayName = document.getElementById('form-displayName').value;
+    const email = document.getElementById('form-email').value;
+    const password = document.getElementById('form-newpassword').value;
     const user = {
                   email: email,
-                  password: password
-    };
+                  password: password,
+                  displayName: displayName
+                };
+    this.props.updateUser(user);
   }
 
   render() {
@@ -46,23 +53,23 @@ class Profile extends Component {
     return (
       <div className="container-fluid">
         <Navbar />
-        <h1>Editing {this.props.user.displayName}s profile</h1>
+        <h1>Profile</h1>
 
         <form>
           <div className="form-group">
             <label>New name</label>
-            <input type="email" className="form-control" id="profile-form-displayName" placeholder="Update name here" defaultValue={this.props.user.displayName}/>
+            <input type="email" className="form-control" id="form-displayName" placeholder="Update name here" defaultValue={this.props.user.displayName}/>
           </div>
           <div className="form-group">
             <label>New email</label>
-            <input type="email" className="form-control" id="profile-form-email" placeholder="Update email here" defaultValue={this.props.user.email}/>
+            <input type="email" className="form-control" id="form-email" placeholder="Update email here" defaultValue={this.props.user.email}/>
           </div>
           <div className="form-group">
             <label>New password</label>
-            <input type="password" className="form-control" id="profile-form-newpassword" placeholder="Update password here"/>
+            <input type="password" className="form-control" id="form-newpassword" placeholder="Update password here"/>
           </div>
-            <button type="submit" className="btn btn-default">Update user details</button>
-            <button type="submit" className="btn btn-danger">Delete user</button>
+            <button type="submit" className="btn btn-default" onClick={this.updateUser}>Update user</button>
+            <button type="submit" className="btn btn-danger" onClick={this.deleteUser}>Delete user</button>
         </form>
       </div>
     );
@@ -77,14 +84,12 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    localSignIn: (user) => {
-      dispatch(localSignIn(user))
+    deleteUser: (user) => {
+      dispatch(deleteUser(user))
     },
-    signOut: () => {
-      dispatch(signOut())
-    },
-    socialSignIn: (platform) => {
-      dispatch(socialSignIn(platform))
+
+    updateUser: (user) => {
+      dispatch(updateUser(user))
     }
   }
 }
