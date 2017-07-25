@@ -28,6 +28,7 @@ const authError = (error) => {
 */
 const db = firebase.database();
 
+//only used when a user signs in and out only ("insert user into database")
 const connectToDatabase = (user) => {
 
   // navigate to user portion of db
@@ -154,6 +155,21 @@ export const signOut = (user) => {
     .catch((error) => {
       console.log('There was an error when trying to sign out: ', error.message);
       dispatch(authError(error.message));
+    });
+  }
+}
+
+/*
+ * DELETE USER
+ */
+export const deleteUser = (user) => {
+  return (dispatch) => {
+    user = firebase.auth().currentUser;
+    user.delete().then(function() {
+      // User deleted.
+
+    }, function(error) {
+      // An error happened.
     });
   }
 }

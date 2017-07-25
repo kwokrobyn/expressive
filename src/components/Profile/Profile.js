@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { localSignIn, signOut, socialSignIn } from '../../actions/userActions';
 
 //Importing static assets (i.e. stylesheets, images)
+import './Profile.css';
 
 //Importing React Components
 import Navbar from '../Navbar/Navbar';
@@ -28,30 +29,41 @@ class Profile extends Component {
     });
   } // end of test code
 
+
+  localUserDelete = (e) => {
+    e.preventDefault();
+    const email = document.getElementById('profile-form-email').value;
+    const password = document.getElementById('profile-form-newpassword').value;
+    const user = {
+                  email: email,
+                  password: password
+    };
+  }
+
   render() {
     console.log(this.props.user);
 
     return (
       <div className="container-fluid">
         <Navbar />
-        <h1>Profile</h1>
+        <h1>Editing {this.props.user.displayName}'s profile</h1>
 
         <form>
-          Name
-          <input defaultValue={this.props.user.displayName}/>
-          <br />
-          Email
-          <input defaultValue={this.props.user.email}/>
-          <br />
-          New Password<input defaultValue=""/>
+          <div className="form-group">
+            <label for="exampleInputEmail1">New name</label>
+            <input type="email" className="form-control" id="profile-form-displayName" placeholder="Update name here" defaultValue={this.props.user.displayName}/>
+          </div>
+          <div className="form-group">
+            <label for="exampleInputPassword1">New email</label>
+            <input type="password" className="form-control" id="profile-form-email" placeholder="Update email here" defaultValue={this.props.user.email}/>
+          </div>
+          <div className="form-group">
+            <label for="exampleInputPassword1">New Password</label>
+            <input type="password" className="form-control" id="profile-form-newpassword" placeholder="Update password here" defaultValue={this.props.user.email}/>
+          </div>
+            <button type="submit" className="btn btn-default">Update user details</button>
+            <button type="submit" className="btn btn-danger">Delete user</button>
         </form>
-
-        <div>
-          <button className="btn btn-default">Update User</button>
-        </div>
-        <div>
-          <button className="btn btn-danger">Delete User</button>
-        </div>
       </div>
     );
   }
