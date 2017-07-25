@@ -31,7 +31,7 @@ class Navbar extends Component {
 
    let profileElement = null;
     if (isSignedIn) {
-      
+
       /* Navbar unordered list of buttons if user is LOGGED IN */
       profileElement = (
         <ul className="nav navbar-nav" id="navbar-list">
@@ -88,7 +88,9 @@ class Navbar extends Component {
       <nav className="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div className="container">
           <div className="navbar-header">
-            <a href="./" className="navbar-brand">expressive</a>
+            <a href="./" className="navbar-brand">
+              <img src ="../../images/logo_v1.png"/>
+            </a>
             <button type="button"
                     className="navbar-toggle"
                     data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -101,7 +103,9 @@ class Navbar extends Component {
             <div className="row">
               <div className="col-sm-6 col-md-7 col-lg-8 navbar-header-fix">
                 <div className="navbar-header" id="navbar-header-md-lg">
-                  <a href="./" className="navbar-brand">expressive</a>
+                  <a href="./" className="navbar-brand">
+                    <img src ="../../images/logo_v1.png"/>
+                  </a>
                 </div>
               </div>
               <div className="col-sm-6 col-md-5 col-lg-4">
