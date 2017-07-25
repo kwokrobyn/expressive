@@ -396,7 +396,7 @@
     display: inline-block;
   }
 
-  .navbar-list {
+  #navbar-list {
     display: inline-block;
     top: 0;
     left: 0;
@@ -416,6 +416,7 @@
     box-shadow: none;
     background-color: rgba(8,154,136,0);
     background-image: none;
+    margin-right: 1vh;
     /* cool button insert*/
     overflow: hidden; /* Needed for to cover the cool sliding box effect */
     text-align: center;
@@ -469,7 +470,7 @@
     vertical-align: top;
     border: 5px solid rgba(8,154,136,1);
     border-radius: 2em 2em 2em 2em;
-    margin: auto 5px auto 5px;
+    margin: auto 1vh auto 1vh;
     padding: 0 0 0 0;
     position: relative;
     height: 40px;
@@ -536,6 +537,7 @@
     box-shadow: none;
     background-color: rgba(8,154,136,0);
     background-image: none;
+    margin-left: 1vh;
     /* cool button insert*/
     overflow: hidden; /* Needed for to cover the cool sliding box effect */
     text-align: center;
