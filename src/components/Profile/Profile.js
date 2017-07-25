@@ -50,16 +50,16 @@ class Profile extends Component {
 
         <form>
           <div className="form-group">
-            <label for="exampleInputEmail1">New name</label>
+            <label>New name</label>
             <input type="email" className="form-control" id="profile-form-displayName" placeholder="Update name here" defaultValue={this.props.user.displayName}/>
           </div>
           <div className="form-group">
-            <label for="exampleInputPassword1">New email</label>
-            <input type="password" className="form-control" id="profile-form-email" placeholder="Update email here" defaultValue={this.props.user.email}/>
+            <label>New email</label>
+            <input type="email" className="form-control" id="profile-form-email" placeholder="Update email here" defaultValue={this.props.user.email}/>
           </div>
           <div className="form-group">
-            <label for="exampleInputPassword1">New Password</label>
-            <input type="password" className="form-control" id="profile-form-newpassword" placeholder="Update password here" defaultValue={this.props.user.email}/>
+            <label>New password</label>
+            <input type="password" className="form-control" id="profile-form-newpassword" placeholder="Update password here"/>
           </div>
             <button type="submit" className="btn btn-default">Update user details</button>
             <button type="submit" className="btn btn-danger">Delete user</button>

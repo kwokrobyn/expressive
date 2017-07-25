@@ -42,6 +42,12 @@
     padding: 0 0 0 0;
     position: absolute;
   }
+
+  .navbar-header > a {
+    margin: 2vh 0 0 0;
+    padding: 0 0 0 0;
+    position: absolute;
+  }
   /* This above hides the header logo in mobile view  */
 
   #navbar-list {
@@ -398,9 +404,8 @@
 
   #navbar-list {
     display: inline-block;
-    top: 0;
     left: 0;
-    margin: 0 0 0 0;
+    margin: 1vh 0 0 0;
     padding: 0 0 0 0;
     float: right;
   }
@@ -595,9 +600,14 @@
 }
 
 .navbar-brand {
-  height: 100%;
+  height: 7vh;
 }
 
   .navbar-brand img {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
     margin-left: 20px;
+    position: absolute;
+    top: -5px;
+    height: 70px;
   }
