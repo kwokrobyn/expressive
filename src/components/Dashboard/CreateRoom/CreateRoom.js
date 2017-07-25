@@ -47,7 +47,6 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
   }
 
   render() {
-    console.log("shady");
     console.log(this.props.existing);
     return (
       <div className="container-fluid">
