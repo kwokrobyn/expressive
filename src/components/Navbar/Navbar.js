@@ -86,7 +86,6 @@ class Navbar extends Component {
           </div>
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <div className="row">
-              <div className="col-sm-7 col-md-8 col-lg-9"></div>
               <div className="col-sm-push-7 col-sm-5 col-md-push-8 col-md-4 col-lg-push-9 col-lg-3">
 
                 {profileEle}

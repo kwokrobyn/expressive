@@ -274,9 +274,15 @@
 /*These styles below are exclusive to tablets and desktop display sizes.*/
 @media only screen and (min-width: 768px) {
 
+  #bs-example-navbar-collapse-1 > div:nth-child(1) {
+    z-index: -2;
+    padding-top: 1vh;
+  }
+
   .navbar-header {
     margin-left: 50px;
     padding-left: 50px;
+    top: 1vh;
   }
 
   .navbar-list {
