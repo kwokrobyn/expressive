@@ -22,7 +22,7 @@ class Navbar extends Component {
 
  render() {
 
-   
+
 
    return (
     <div className="container">
@@ -40,7 +40,7 @@ class Navbar extends Component {
             <div className="row">
               <div className="col-sm-7 col-md-8 col-lg-9"></div>
               <div className="col-sm-push-7 col-sm-5 col-md-push-8 col-md-4 col-lg-push-9 col-lg-3">
-                <ul className="nav navbar-nav">
+                <ul className="nav navbar-nav" id="navbar-list">
                   <li>
                     <button className="btn btn-success signup-btn">
                       <Link to="/signup" className="col-sm-2 navlink">
