@@ -295,14 +295,52 @@
     box-shadow: none;
     background-color: rgba(8,154,136,0);
     background-image: none;
+    /* cool button insert*/
+    overflow: hidden; /* Needed for to cover the cool sliding box effect */
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    z-index: 5;
+    transition: all .4s ease;
+    position: relative;
+  }
+
+  .signup-btn:before {
+    display: block;
+    left: 0; /* <== Needed for the cool button hover effect */
+    top: 0; /* <== Needed for the cool button hover effect */
+    content: ''; /* <== Needed for the cool button hover effect */
+    position: absolute; /* <== Needed for the cool button hover effect */
+    width: 200%;
+    height: 200%;
+    background-color: rgba(243,150,72,1); /* <== The colour of the cool button chop down effect */
+    -webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+    transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    -webkit-transition: -webkit-transform .3s, opacity .3s, background-color .3s;
+    transition: transform .3s, opacity .3s, background-color .3s
   }
 
   .signup-btn > a {
     color: rgba(243,245,242,1);
     text-decoration: none;
   }
-  /*These styles below are for the sign up button*/
 
+  .signup-btn:hover {
+    border: 5px solid rgba(243,245,242,1);
+    background-color: rgba(8,154,136,1); /* The background of the button before the chop comes into view */
+  }
+
+  .signup-btn:hover:before {
+    opacity: 1;
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+    -webkit-transition-timing-function: cubic-bezier(.2, 1, .3, 1);
+    transition-timing-function: cubic-bezier(.2, 1, .3, 1)
+  }
+
+  /*These styles below are for the sign up button*/
 
   /*These styles below are for the log in button*/
 
@@ -318,12 +356,50 @@
     background-color: rgba(8,154,136,0);
     background-image: none;
     margin-left: 10px;
+    /* cool button insert*/
+    overflow: hidden; /* Needed for to cover the cool sliding box effect */
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    z-index: 5;
+    transition: all .4s ease;
+    position: relative;
   }
 
   .login-btn > a {
     color: rgba(243,245,242,1);
     text-shadow: none;
     text-decoration: none;
+  }
+
+  .login-btn:before {
+    display: block;
+    left: 0; /* <== Needed for the cool button hover effect */
+    top: 0; /* <== Needed for the cool button hover effect */
+    content: ''; /* <== Needed for the cool button hover effect */
+    position: absolute; /* <== Needed for the cool button hover effect */
+    width: 200%;
+    height: 200%;
+    background-color: rgba(243,150,72,1); /* <== The colour of the cool button chop down effect */
+    -webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+    transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    -webkit-transition: -webkit-transform .3s, opacity .3s, background-color .3s;
+    transition: transform .3s, opacity .3s, background-color .3s
+  }
+
+  .login-btn:hover {
+    border: 5px solid rgba(243,245,242,1);
+    background-color: rgba(8,154,136,1); /* The background of the button before the chop comes into view */
+  }
+
+  .login-btn:hover:before {
+    opacity: 1;
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+    -webkit-transition-timing-function: cubic-bezier(.2, 1, .3, 1);
+    transition-timing-function: cubic-bezier(.2, 1, .3, 1)
   }
 
   /*These styles above are for the log in button*/
