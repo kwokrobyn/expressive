@@ -77,17 +77,23 @@ class Navbar extends Component {
       <nav className="navbar navbar-inverse navbar-fixed-top"     role="navigation">
         <div className="container">
           <div className="navbar-header">
-            <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <a href="./" className="navbar-brand">expressive</a>
+            <button type="button"
+                    className="navbar-toggle"
+                    data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
               <span className="sr-only">Toggle navigation</span>
               {/*Three Icon Bars in mobile displays*/}
               <span className="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
             </button>
-            <a href="./" className="navbar-brand">expressive</a>
           </div>
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <div className="row">
-              <div className="col-sm-7 col-md-8 col-lg-9"></div>
-              <div className="col-sm-push-7 col-sm-5 col-md-push-8 col-md-4 col-lg-push-9 col-lg-3">
+              <div className="col-sm-7 col-md-8 col-lg-9 navbar-header-fix">
+                <div className="navbar-header" id="navbar-header-md-lg">
+                  <a href="./" className="navbar-brand">expressive</a>
+                </div>
+              </div>
+              <div className="col-sm-5 col-md-4 col-lg-3">
 
                 {profileEle}
 
