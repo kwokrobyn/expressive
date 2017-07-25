@@ -31,8 +31,8 @@ class Profile extends Component {
   render() {
     return (
       <div className="container-fluid">
-        <h1>Profile</h1>
         <Navbar />
+        <h1>Profile</h1>
       </div>
     );
   }
