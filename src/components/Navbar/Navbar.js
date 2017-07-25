@@ -29,16 +29,16 @@ class Navbar extends Component {
  render() {
    const isSignedIn = this.props.user.isSignedIn;
 
-
-   let profileEle = null;
+   let profileElement = null;
     if (isSignedIn) {
+      
       /* Navbar unordered list of buttons if user is LOGGED IN */
-      profileEle = (
+      profileElement = (
         <ul className="nav navbar-nav" id="navbar-list">
           <li>
             <button className="btn btn-success signup-btn">
               <Link to="/profile" className="col-sm-2 navlink">
-                Profile
+                {this.props.user.displayName}
               </Link>
             </button>
           </li>
@@ -63,8 +63,7 @@ class Navbar extends Component {
         </ul>
       )
     } else { // not signedin
-      /* Navbar unordered list of buttons if user is NOT LOGGED IN */
-      profileEle = (
+      profileElement = (
          <ul className="nav navbar-nav" id="navbar-list">
           <li>
             <button className="btn btn-success signup-btn">
@@ -84,10 +83,9 @@ class Navbar extends Component {
       )
     }
 
-
    return (
     <div className="container">
-      <nav className="navbar navbar-inverse navbar-fixed-top"     role="navigation">
+      <nav className="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div className="container">
           <div className="navbar-header">
             <a href="./" className="navbar-brand">expressive</a>
@@ -107,9 +105,7 @@ class Navbar extends Component {
                 </div>
               </div>
               <div className="col-sm-6 col-md-5 col-lg-4">
-
-                {profileEle}
-
+                {profileElement}
               </div>
             </div>
             <div className="row">

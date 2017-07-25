@@ -42,7 +42,7 @@ class App extends Component {
           <Route exact path="/signup" render= {() => (isSignedIn ? ( <Redirect to="/dashboard"/> ) : ( <Signup/> ))} />
           <Route exact path="/login" render= {() => (isSignedIn ? ( <Redirect to="/dashboard"/> ) : ( <Login/> ))} />
           <Route exact path="/dashboard" render= {() => (isSignedIn ? ( <Dashboard/> ) : ( <Redirect to="/login"/> ))} />
-          <Route path="/profile" component={Profile} />
+          <Route path="/profile" render={() => (isSignedIn ? ( <Profile/> ) : ( <Redirect to="/login"/> ))} />
           <Route path="/room/:id" component={Room} />
         </Switch>
       </Router>
