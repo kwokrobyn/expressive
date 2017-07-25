@@ -111,8 +111,6 @@
       text-align: center;
       display: inline-block;
       vertical-align: top;
-      border: 3px solid #fff;
-      color: #fff;
       z-index: 5;
       transition: all .4s ease;
       position: relative;
@@ -154,8 +152,8 @@
     }
 
     .login-btn:hover {
-      border: 5px solid rgba(8,154,136,1);
-      background-color: rgba(243,245,242,1);
+      border: 5px solid rgba(243,245,242,1);
+      background-color: rgba(243,245,242,1);  /* The background of the button before the chop comes into view */
     }
 
     .login-btn:hover > a {
@@ -202,7 +200,6 @@
       text-align: center;
       display: inline-block;
       vertical-align: top;
-      border: 3px solid #fff;
       color: #fff;
       z-index: 5;
       transition: all .4s ease;
@@ -245,8 +242,8 @@
     }
 
     .signup-btn:hover {
-      border: 5px solid rgba(8,154,136,1);
-      background-color: rgba(243,245,242,1);
+      border: 5px solid rgba(243,245,242,1);
+      background-color: rgba(8,154,136,1); /* The background of the button before the chop comes into view */
     }
 
     .signup-btn:hover > a {
