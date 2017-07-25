@@ -1,0 +1,311 @@
+h1.logInTitle {
+  margin-top: 150px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Raleway', sans-serif;
+  color: #494949;
+}
+
+.socialLogin{
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+
+/*
+*  Login Button
+*/
+
+div.loginSubmit {
+  display: flex;
+  justify-content: center;
+  padding-left: 110px;
+  padding-top: 65px;
+}
+
+a.submitLogIn {
+  /*position: fixed;*/
+  margin-bottom: 0px;
+  /*display: flex;
+  justify-content: center;*/
+  cursor: pointer;
+  top: 50vh;
+  left: 50%;
+  color: black;
+  transform: translate3d(-50%, -50%, 0);
+  padding: 0.7em calc(0.7em * 1.2);
+  display: inline-block;
+  border: 3px solid transparent;
+  /*position: relative;*/
+  font-size: 1.5em;
+  letter-spacing: 0.07em;
+  font-family: "Raleway", sans-serif;
+  text-decoration: none;
+}
+
+a.submitLogIn .text {
+  font-family: "Raleway", sans-serif;
+  transform: translate3d(0, 0.7em, 0);
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1) 0.4s;
+}
+
+a.submitLogIn:after {
+  position: absolute;
+  content: '';
+  bottom: -3px;
+  left: calc(0.7em * 1.2);
+  right: calc(0.7em * 1.2);
+  height: 3px;
+  background: #f26522;
+  z-index: -1;
+  transition: transform 0.8s cubic-bezier(1, 0, 0.37, 1) 0.2s, right 0.2s cubic-bezier(0.04, 0.48, 0, 1) 0.6s, left 0.4s cubic-bezier(0.04, 0.48, 0, 1) 0.6s;
+  transform-origin: left;
+}
+
+.line {
+  position: absolute;
+  background: #f26522;
+}
+.line.-right, .line.-left {
+  width: 3px;
+  bottom: -3px;
+  top: -3px;
+  transform: scale3d(1, 0, 1);
+}
+.line.-top, .line.-bottom {
+  height: 3px;
+  left: -3px;
+  right: -3px;
+  transform: scale3d(0, 1, 1);
+}
+.line.-right {
+  right: -3px;
+  transition: transform 0.1s cubic-bezier(1, 0, 0.65, 1.01) 0.23s;
+  transform-origin: top;
+}
+.line.-top {
+  top: -3px;
+  transition: transform 0.08s linear 0.43s;
+  transform-origin: left;
+}
+.line.-left {
+  left: -3px;
+  transition: transform 0.08s linear 0.51s;
+  transform-origin: bottom;
+}
+.line.-bottom {
+  bottom: -3px;
+  transition: transform 0.3s cubic-bezier(1, 0, 0.65, 1.01);
+  transform-origin: right;
+}
+
+a.submitLogIn:hover .text,
+a.submitLogIn:active .text {
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1) 0.4s;
+}
+a.submitLogIn:hover:after,
+a.submitLogIn:active:after {
+  transform: scale3d(0, 1, 1);
+  right: -3px;
+  left: -3px;
+  transform-origin: right;
+  transition: transform 0.2s cubic-bezier(1, 0, 0.65, 1.01) 0.17s, right 0.2s cubic-bezier(1, 0, 0.65, 1.01), left 0s 0.3s;
+}
+a.submitLogIn:hover .line,
+a.submitLogIn:active .line {
+  transform: scale3d(1, 1, 1);
+}
+a.submitLogIn:hover .line.-right,
+a.submitLogIn:active .line.-right {
+  transition: transform 0.1s cubic-bezier(1, 0, 0.65, 1.01) 0.2s;
+  transform-origin: bottom;
+}
+a.submitLogIn:hover .line.-top,
+a.submitLogIn:active .line.-top {
+  transition: transform 0.08s linear 0.4s;
+  transform-origin: right;
+}
+a.submitLogIn:hover .line.-left,
+a.submitLogIn:active .line.-left {
+  transition: transform 0.08s linear 0.48s;
+  transform-origin: top;
+}
+a.submitLogIn:hover .line.-bottom,
+a.submitLogIn:active .line.-bottom {
+  transition: transform 0.5s cubic-bezier(0, 0.53, 0.29, 1) 0.56s;
+  transform-origin: left;
+}
+
+/*
+*  Social Sign In Buttons
+*/
+
+.icon-circle .fa{
+    font-size           : 25px;
+    color               : #e84700;
+    margin              : 0 auto;
+    height              : 80px;
+    width               : 80px;
+    border-radius       : 50%;
+    border              :2px solid #e84700;
+    line-height         : 80px;
+    cursor              : pointer;
+    -webkit-transition  : all  ease-in-out 0.35s;
+    -moz-transition     : all  ease-in-out 0.35s;
+    -o-transition       : all  ease-in-out 0.35s;
+    -ms-transition      : all  ease-in-out 0.35s;
+    transition          : all  ease-in-out 0.20s,background-color ease-in-out 0.05s;
+}
+
+.icon-circle  .fa:hover{
+
+    background-color        : #e84700;
+    color                   : #fff;
+    border                  : 1px solid #e84711;
+    -moz-box-shadow         : inset 0px 0px 0px 5px #ffffff;
+    -o-box-shadow           : inset 0px 0px 0px 5px #ffffff;
+    -ms-box-shadow          : inset 0px 0px 0px 5px #ffffff;
+    -webkit-box-shadow      : inset 0px 0px 0px 5px #ffffff;
+    box-shadow              : inset 0px 0px 0px 5px #ffffff;
+    -ms-transform           : scale(1.2,1.2);
+    -webkit-transform       : scale(1.2,1.2);
+    -moz-transform          : scale(1.2,1.2);
+    -o-transform            : scale(1.2,1.2);
+    transform               : scale(1.2,1.2);
+}
+
+.icon-circle  i:before{
+    margin-left         : 0px;
+    font-size           : 40px;
+}
+
+@media (min-width:400px) and (max-width:400px) {
+
+
+ .icon-circle .fa{
+    font-size           : 15px;
+    color               : #e84700;
+    margin              : 0 auto;
+    height              : 40px;
+    width               : 40px;
+    border-radius       : 50%;
+    border              :2px solid #e84700;
+    line-height         : 40px;
+    cursor              : pointer;
+    -webkit-transition  : all  ease-in-out 0.35s;
+    -moz-transition     : all  ease-in-out 0.35s;
+    -o-transition       : all  ease-in-out 0.35s;
+    -ms-transition      : all  ease-in-out 0.35s;
+    transition          : all  ease-in-out 0.20s,background-color ease-in-out 0.05s;
+}
+
+.icon-circle  .fa:hover{
+    background-color        : #e84700;
+    color                   : #fff;
+    border                  : 1px solid #e84711;
+    -moz-box-shadow         : inset 0px 0px 0px 5px #ffffff;
+    -o-box-shadow           : inset 0px 0px 0px 5px #ffffff;
+    -ms-box-shadow          : inset 0px 0px 0px 5px #ffffff;
+    -webkit-box-shadow      : inset 0px 0px 0px 5px #ffffff;
+    box-shadow              : inset 0px 0px 0px 5px #ffffff;
+    -ms-transform           : scale(1.2,1.2);
+    -webkit-transform       : scale(1.2,1.2);
+    -moz-transform          : scale(1.2,1.2);
+    -o-transform            : scale(1.2,1.2);
+    transform               : scale(1.2,1.2);
+}
+
+.icon-circle  i:before{
+    margin-left         : 0px;
+    font-size           : 20px;
+}
+}
+
+.ifacebook .fa{
+    color               :#3B5998;
+    border              :2px solid #3B5998;
+}
+
+.ifacebook .fa:hover{
+    background-color        : #3B5998;
+    color                   : #fff;
+    border                  : 1px solid #3B5998;
+}
+
+.igoogle .fa{
+    color               : #BD3518;
+    border              :2px solid #BD3518;
+}
+
+.igoogle .fa:hover{
+    background-color        : #BD3518;
+    color                   : #fff;
+    border                  : 1px solid #BD3518;
+}
+
+
+/*
+* Input fields
+*/
+
+label {
+  display: block;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 4px;
+  padding-top: 30px;
+  text-align: center;
+}
+label .label-text {
+  color: #9B9B9B;
+  cursor: text;
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  line-height: 20px;
+  text-transform: uppercase;
+  -moz-transform: translateY(-34px);
+  -ms-transform: translateY(-34px);
+  -webkit-transform: translateY(-34px);
+  transform: translateY(-34px);
+  transition: all 0.3s;
+}
+
+label input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px solid #686868;
+  color: #686868;
+  font-size: 20px;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 1px;
+  outline: 0;
+  padding: 5px 20px;
+  text-align: center;
+  transition: all 0.3s;
+  width: 200px;
+}
+
+label input:focus {
+  max-width: 100%;
+  width: 400px;
+}
+
+label input:focus + .label-text {
+  color: #F0F0F0;
+  font-size: 13px;
+  -moz-transform: translateY(-74px);
+  -ms-transform: translateY(-74px);
+  -webkit-transform: translateY(-74px);
+  transform: translateY(-7px);
+}
+
+label input:valid + .label-text {
+  font-size: 13px;
+  -moz-transform: translateY(-74px);
+  -ms-transform: translateY(-74px);
+  -webkit-transform: translateY(-74px);
+  transform: translateY(-74px);
+}

@@ -3,6 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { localSignUp, socialSignIn } from '../../actions/userActions';
 import {Grid, Col, form, FormGroup, FormControl, ControlLabel, HelpBlock, Row, Button} from 'react-bootstrap';
+import FontAwesome from 'react-fontawesome';
 
 //Importing static assets (i.e. stylesheets, images)
 import './Signup.css';
@@ -52,42 +53,84 @@ class Signup extends Component {
 
   render() {
     return (
-      <div className="container-fluid">
-        <h1>Sign Up</h1>
+      <div>
         <Navbar />
-
-       <FormGroup controlId="formValidationSuccess1" validationState={null}>
-         <Col componentClass={ControlLabel} sm={2}>Email</Col>
-
-         <Col sm={8}>
-            <FormControl type="email" placeholder="Email" id="email-signup"/>
-            <HelpBlock>Help text with validation state.</HelpBlock>
-         </Col>
-       </FormGroup>
 
 
         <form>
+          <Row>
+            <h1 className="signUpTitle">-Sign Up-</h1>
+          </Row>
 
-        {/*  <div className="form-group">
-            <label htmlFor="email">Email address:</label>
-            <input type="email" className="form-control" id="email-signup" />
-          </div> */}
+        {/* Name */}
+    {/* <Row>
+         <Col sm={8} smOffset={2} xs={10} xsOffset={1} className="username">
+          <form role="form">
+                    <div className="form-group float-label-control">
+                        <label for="">Username</label>
+                        <input type="email" className="form-control" placeholder="Username" id="name-signup"/>
+                    </div>
+          </form>
+         </Col>
+        </Row> */}
 
-          <div className="form-group">
-            <label htmlFor="pwd">Password:</label>
-            <input type="password" className="form-control" id="pwd-signup" />
-          </div>
-          <div className="form-group">
-            <label htmlFor="email">Name:</label>
-            <input type="email" className="form-control" id="name-signup" />
-          </div>
-          <button type="submit" className="btn btn-default" onClick={this.localSignUp}>Sign Up</button>
+
+        <Row>
+           {/* Name */}
+            <label for="">
+              <div class="label-text">Name</div>
+              <input type="email" placeholder="Name" id="name-signup"/>
+            </label>
+           {/* Email */}
+            <label for="">
+              <div class="label-text">Email</div>
+              <input type="email" placeholder="@email" id="email-signup"/>
+            </label>
+
+            {/* Password */}
+            <label for="">
+              <div class="label-text">Password</div>
+              <input type="password" placeholder="Password" id="pwd-signup"/>
+            </label>
+        </Row>
+
+
+        {/* Submit Button */}
+        <Row>
+          <Col className="submitSignUp">
+          <a className="submitButton" onClick={this.localSignUp}>
+            <span className="text">Sign Up?</span>
+            <span className="line -right"></span>
+            <span className="line -top"></span>
+            <span className="line -left"></span>
+            <span className="line -bottom"></span>
+          </a>
+          </Col>
+        </Row>
+
+          {/* Social Sign In */}
+          <Row className="socialSignUp">
+            <div className="sicon">
+            {/* Facebook */}
+              <Col md={6} sm={6} xs={4} className="text-center">
+    				      <div className="icon-circle">
+    					         <a href="#" className="ifacebook" title="Facebook" onClick={this.socialSignIn}><i className="fa fa-facebook"></i></a>
+    				      </div>
+              </Col>
+
+             {/* Google + */}
+              <Col md={6} sm={6} xs={4} className="text-center">
+                  <div className="icon-circle">
+                      <a href="#" className="igoogle" title="Google+" onClick={this.socialSignIn}><i className="fa fa-google-plus"></i></a>
+                  </div>
+              </Col>
+
+             </div>
+           </Row>
+
         </form>
-
-        <button type="submit" className="btn btn-default facebook" onClick={this.socialSignIn}>Facebook</button>
-        <button type="submit" className="btn btn-default google" onClick={this.socialSignIn}>Google</button>
-
       </div>
+
 
     );
   }
