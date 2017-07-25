@@ -2,6 +2,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { localSignUp, socialSignIn } from '../../actions/userActions';
+import {Grid, Col, form, FormGroup, FormControl, ControlLabel, HelpBlock, Row, Button} from 'react-bootstrap';
 
 //Importing static assets (i.e. stylesheets, images)
 import './Signup.css';
@@ -52,13 +53,26 @@ class Signup extends Component {
   render() {
     return (
       <div className="container-fluid">
-        <h1>Signup</h1>
+        <h1>Sign Up</h1>
         <Navbar />
+
+       <FormGroup controlId="formValidationSuccess1" validationState={null}>
+         <Col componentClass={ControlLabel} sm={2}>Email</Col>
+
+         <Col sm={8}>
+            <FormControl type="email" placeholder="Email" id="email-signup"/>
+            <HelpBlock>Help text with validation state.</HelpBlock>
+         </Col>
+       </FormGroup>
+
+
         <form>
-          <div className="form-group">
+
+        {/*  <div className="form-group">
             <label htmlFor="email">Email address:</label>
             <input type="email" className="form-control" id="email-signup" />
-          </div>
+          </div> */}
+
           <div className="form-group">
             <label htmlFor="pwd">Password:</label>
             <input type="password" className="form-control" id="pwd-signup" />
