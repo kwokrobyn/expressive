@@ -10,6 +10,7 @@
 .navbar-brand {
   margin-top: 10px;
   font-family:'Yatra One', cursive;
+  z-index: 5;
 }
 
 .navbar-inverse {
@@ -35,6 +36,13 @@
 @media only screen and (max-width: 767px) {
 
   /*These styles below are for the ul of links (i.e #navbar-list) of the mobile menu.*/
+
+  .navbar-header-fix {
+    display: none;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    position: absolute;
+  }
 
   #navbar-list {
     background-color: none;
@@ -274,19 +282,27 @@
 /*These styles below are exclusive to tablets and desktop display sizes.*/
 @media only screen and (min-width: 768px) {
 
+  .navbar-header-fix {
+    display: inline-block;
+    margin: 0 0 0 0;
+    padding: 0px 0px 0px 0px;
+    position: relative;
+  }
+
   #bs-example-navbar-collapse-1 > div:nth-child(1) {
-    z-index: -2;
     padding-top: 1vh;
   }
 
   .navbar-header {
     margin-left: 50px;
     padding-left: 50px;
-    top: 1vh;
+    display: none;
   }
 
-  .navbar-list {
-    margin-top: 4px;
+  #navbar-header-md-lg {
+    margin-left: 50px;
+    padding-left: 50px;
+    display: inline-block;
   }
 
   .navbar-list {
