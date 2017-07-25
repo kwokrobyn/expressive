@@ -32,6 +32,7 @@ class Navbar extends Component {
 
    let profileEle = null;
     if (isSignedIn) {
+      /* Navbar unordered list of buttons if user is LOGGED IN */
       profileEle = (
         <ul className="nav navbar-nav" id="navbar-list">
           <li>
@@ -40,6 +41,17 @@ class Navbar extends Component {
                 Profile
               </Link>
             </button>
+          </li>
+          <li>
+
+          <li>
+            <button className="btn btn-success middle-btn">
+              <Link to="/dashboard" className="col-sm-2">
+                Dashboard
+              </Link>
+            </button>
+          </li>
+
           </li>
           <li>
             <button type="submit" className="btn btn-default login-btn" onClick={this.signOut}>
@@ -51,6 +63,7 @@ class Navbar extends Component {
         </ul>
       )
     } else { // not signedin
+      /* Navbar unordered list of buttons if user is NOT LOGGED IN */
       profileEle = (
          <ul className="nav navbar-nav" id="navbar-list">
           <li>
@@ -88,12 +101,12 @@ class Navbar extends Component {
           </div>
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <div className="row">
-              <div className="col-sm-7 col-md-8 col-lg-9 navbar-header-fix">
+              <div className="col-sm-6 col-md-7 col-lg-8 navbar-header-fix">
                 <div className="navbar-header" id="navbar-header-md-lg">
                   <a href="./" className="navbar-brand">expressive</a>
                 </div>
               </div>
-              <div className="col-sm-5 col-md-4 col-lg-3">
+              <div className="col-sm-6 col-md-5 col-lg-4">
 
                 {profileEle}
 
