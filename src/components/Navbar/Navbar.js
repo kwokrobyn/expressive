@@ -29,15 +29,14 @@ class Navbar extends Component {
  render() {
    const isSignedIn = this.props.user.isSignedIn;
 
-
-   let profileEle = null;
+   let profileElement = null;
     if (isSignedIn) {
       profileElement = (
         <ul className="nav navbar-nav" id="navbar-list">
           <li>
             <button className="btn btn-success signup-btn">
               <Link to="/profile" className="col-sm-2 navlink">
-                Profile
+                {this.props.user.displayName}
               </Link>
             </button>
           </li>
@@ -51,7 +50,7 @@ class Navbar extends Component {
         </ul>
       )
     } else { // not signedin
-      profileEle = (
+      profileElement = (
          <ul className="nav navbar-nav" id="navbar-list">
           <li>
             <button className="btn btn-success signup-btn">
@@ -71,10 +70,9 @@ class Navbar extends Component {
       )
     }
 
-
    return (
     <div className="container">
-      <nav className="navbar navbar-inverse navbar-fixed-top"     role="navigation">
+      <nav className="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div className="container">
           <div className="navbar-header">
             <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
