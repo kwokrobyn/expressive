@@ -31,6 +31,8 @@ class Navbar extends Component {
 
    let profileElement = null;
     if (isSignedIn) {
+      
+      /* Navbar unordered list of buttons if user is LOGGED IN */
       profileElement = (
         <ul className="nav navbar-nav" id="navbar-list">
           <li>
@@ -39,6 +41,17 @@ class Navbar extends Component {
                 {this.props.user.displayName}
               </Link>
             </button>
+          </li>
+          <li>
+
+          <li>
+            <button className="btn btn-success middle-btn">
+              <Link to="/dashboard" className="col-sm-2">
+                Dashboard
+              </Link>
+            </button>
+          </li>
+
           </li>
           <li>
             <button type="submit" className="btn btn-default login-btn" onClick={this.signOut}>
@@ -75,17 +88,23 @@ class Navbar extends Component {
       <nav className="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div className="container">
           <div className="navbar-header">
-            <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <a href="./" className="navbar-brand">expressive</a>
+            <button type="button"
+                    className="navbar-toggle"
+                    data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
               <span className="sr-only">Toggle navigation</span>
               {/*Three Icon Bars in mobile displays*/}
               <span className="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
             </button>
-            <a href="./" className="navbar-brand">expressive</a>
           </div>
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <div className="row">
-              <div className="col-sm-7 col-md-8 col-lg-9"></div>
-              <div className="col-sm-push-7 col-sm-5 col-md-push-8 col-md-4 col-lg-push-9 col-lg-3">
+              <div className="col-sm-6 col-md-7 col-lg-8 navbar-header-fix">
+                <div className="navbar-header" id="navbar-header-md-lg">
+                  <a href="./" className="navbar-brand">expressive</a>
+                </div>
+              </div>
+              <div className="col-sm-6 col-md-5 col-lg-4">
                 {profileElement}
               </div>
             </div>
