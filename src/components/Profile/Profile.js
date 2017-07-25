@@ -35,12 +35,23 @@ class Profile extends Component {
       <div className="container-fluid">
         <Navbar />
         <h1>Profile</h1>
+
         <form>
-        Name<input defaultValue={this.props.user.displayName}/>
-        <br />
-        Email<input defaultValue={this.props.user.email}/>
+          Name
+          <input defaultValue={this.props.user.displayName}/>
+          <br />
+          Email
+          <input defaultValue={this.props.user.email}/>
+          <br />
+          New Password<input defaultValue=""/>
         </form>
 
+        <div>
+          <button className="btn btn-default">Update User</button>
+        </div>
+        <div>
+          <button className="btn btn-danger">Delete User</button>
+        </div>
       </div>
     );
   }
