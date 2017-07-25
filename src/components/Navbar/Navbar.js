@@ -1,6 +1,7 @@
 //Importing required packages
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { signOut } from '../../actions/userActions';
 import {
   BrowserRouter as Router,
   Route,
@@ -20,9 +21,54 @@ class Navbar extends Component {
    super(props);
  };
 
- render() {
+ signOut = (e) => {
+   e.preventDefault();
+   this.props.signOut();
+ }
 
-   
+ render() {
+   const isSignedIn = this.props.user.isSignedIn;
+
+   let profileEle = null;
+    if (isSignedIn) {
+      profileEle = (
+        <ul className="nav navbar-nav">
+          <li>
+            <button className="btn btn-success signup-btn">
+              <Link to="/profile" className="col-sm-2 navlink">
+                Profile
+              </Link>
+            </button>
+          </li>
+          <li>
+            <button type="submit" className="btn btn-default login-btn" onClick={this.signOut}>
+              <Link to="/login" className="col-sm-2 navlink">
+                Log Out
+              </Link>
+            </button>
+          </li>
+        </ul>
+      )
+    } else { // not signedin
+      profileEle = (
+        <ul className="nav navbar-nav">
+          <li>
+            <button className="btn btn-success signup-btn">
+              <Link to="/signup" className="col-sm-2 navlink">
+                Sign Up
+              </Link>
+            </button>
+          </li>
+          <li>
+            <button className="btn btn-default login-btn">
+              <Link to="/login" className="col-sm-2 navlink">
+                Log In
+              </Link>
+            </button>
+          </li>
+        </ul>
+      )
+    }
 
    return (
     <div className="container">
@@ -40,22 +86,7 @@ class Navbar extends Component {
             <div className="row">
               <div className="col-sm-7 col-md-8 col-lg-9"></div>
               <div className="col-sm-push-7 col-sm-5 col-md-push-8 col-md-4 col-lg-push-9 col-lg-3">
-                <ul className="nav navbar-nav">
-                  <li>
-                    <button className="btn btn-success signup-btn">
-                      <Link to="/signup" className="col-sm-2 navlink">
-                        Sign up
-                      </Link>
-                    </button>
-                  </li>
-                  <li>
-                    <button className="btn btn-default login-btn">
-                      <Link to="/login" className="col-sm-2 navlink">
-                        Log in
-                      </Link>
-                    </button>
-                  </li>
-                </ul>{/* /nav narbar-nav */}
+                {profileEle}
               </div>
             </div>
             <div className="row">
@@ -69,4 +100,18 @@ class Navbar extends Component {
  };
 };
 
-export default Navbar;
+const mapStateToProps = (state) => {
+  return {
+    user: state.user
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signOut: () => {
+      dispatch(signOut())
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
