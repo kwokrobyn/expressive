@@ -7,8 +7,6 @@ import { getUserRooms } from '../../actions/roomActions';
 import Navbar from '../Navbar/Navbar';
 import CreateRoom from './CreateRoom/CreateRoom';
 
-import './Dashboard.css';
-
 /**
  * Dash
  */
@@ -59,7 +57,7 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
           <h2>Your Rooms</h2>
         </div>
         <div className="row dashCreate">
-          <div className="col-md-4 col-sm-12 col-xs-12 createRoomBtn"> Create A New Room </div>
+
         </div>
         <div className="row dashList">
 

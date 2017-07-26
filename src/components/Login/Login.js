@@ -69,13 +69,13 @@ class Login extends Component {
              {/* Email */}
               <label for="">
                 <div className="label-text">Email</div>
-                <input type="email" placeholder="@email" id="email-signin"/>
+                <input type="email" placeholder="@email" id="email-signup"/>
               </label>
 
               {/* Password */}
               <label for="">
                 <div className="label-text">Password</div>
-                <input type="password" placeholder="Password" id="pwd-signin"/>
+                <input type="password" placeholder="Password" id="pwd-signup"/>
               </label>
           </Row>
 
