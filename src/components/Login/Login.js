@@ -51,8 +51,7 @@ class Login extends Component {
   render() {
     return (
       <div className="container-fluid">
-        <h1>Login</h1>
-        <Navbar />
+        <Navbar pageTitle="Log In"/>
         <form>
           <div className="form-group">
             <label htmlFor="email">Email address:</label>

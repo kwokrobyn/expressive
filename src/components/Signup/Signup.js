@@ -52,8 +52,7 @@ class Signup extends Component {
   render() {
     return (
       <div className="container-fluid">
-        <h1>Signup</h1>
-        <Navbar />
+        <Navbar pageTitle="Sign Up"/>
         <form>
           <div className="form-group">
             <label htmlFor="email">Email address:</label>

@@ -1,8 +1,21 @@
 /*Entire header styling*/
 
 .navbar-header {
-  margin-left: 50px;
-  padding-left: 50px;
+  margin-left: 0px;
+  padding-left: 10px;
+  min-width: 110px;
+}
+
+.pageTitle {
+  left: 50px;
+  display: inline-block;
+  color: white;
+  font-size: 20px;
+}
+
+.navContainer.container {
+  width: 100%;
+  padding-right: 10px;
 }
 
 .navbar-brand {
@@ -391,14 +404,14 @@
   }
 
   .navbar-header {
-    margin-left: 50px;
-    padding-left: 50px;
+    margin-left: 0px;
+    padding-left: 10px;
     display: none; /* <== This hides the default navbar header originally used. Because a Bootstrap row was covering the button, the user is unable to click on it in desktop view. navbar-header-fix was introduced (see above) to create a clone that toggles hiding/showing for different screen sizes. As a result, when editing the navbar-header, please change both .navbar-header and .navbar-header-fix.  */
   }
 
   #navbar-header-md-lg {
-    margin-left: 50px;
-    padding-left: 50px;
+    margin-left: 0px;
+    padding-left: 10px;
     display: inline-block;
   }
 

@@ -52,8 +52,7 @@ class Profile extends Component {
 
     return (
       <div className="container-fluid">
-        <Navbar />
-        <h1>Profile</h1>
+        <Navbar pageTitle="Profile Settings"/>
 
         <form>
           <div className="form-group">
