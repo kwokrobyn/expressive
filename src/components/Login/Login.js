@@ -57,7 +57,7 @@ class Login extends Component {
     return (
 
         <div>
-          <Navbar />
+          <Navbar pageTitle="Log In"/>
 
           <form>
             <Row>

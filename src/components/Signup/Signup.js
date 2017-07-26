@@ -54,7 +54,7 @@ class Signup extends Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar pageTitle="Sign Up"/>
 
 
         <form>

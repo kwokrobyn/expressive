@@ -52,11 +52,10 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
 
     return (
       <div className="container-fluid">
-        <Navbar />
+        <Navbar pageTitle="Dashboard"/>
         <div className="row">
           <div className="col-sm-6 col-sm-offset-3">
             <div className="dashboard" id="Dashboard">
-              <h1>Dashboard</h1>
               <CreateRoom />
               <div>{this.roomDisplay()}</div>
             </div>

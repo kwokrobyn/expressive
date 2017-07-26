@@ -80,13 +80,14 @@ class Navbar extends Component {
     }
 
    return (
-    <div className="container">
+
       <nav className="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div className="container">
+        <div className="container navContainer">
           <div className="navbar-header">
             <a href="./" className="navbar-brand">
-              <img src ="../../images/logo_v1.png"/>
+              <img src ="./images/logo_v1.png"/>
             </a>
+
             <button type="button"
                     className="navbar-toggle"
                     data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -100,9 +101,10 @@ class Navbar extends Component {
               <div className="col-sm-6 col-md-7 col-lg-8 navbar-header-fix">
                 <div className="navbar-header" id="navbar-header-md-lg">
                   <a href="./" className="navbar-brand">
-                    <img src ="../../images/logo_v1.png"/>
+                    <img src ="./images/logo_v1.png"/>
                   </a>
                 </div>
+                <div className="pageTitle">{this.props.pageTitle}</div>
               </div>
               <div className="col-sm-6 col-md-5 col-lg-4">
                 {profileElement}
@@ -113,8 +115,8 @@ class Navbar extends Component {
             </div>{/* /row */}
           </div>{/* /bs-example-navbar-collapse-1 */}
         </div>{/* container */}
-      </nav>{/* navbar navbar-inverse navbar-fixed-top */}
-    </div>
+      </nav>
+
    )
  };
 };
