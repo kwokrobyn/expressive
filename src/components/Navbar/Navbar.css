@@ -6,16 +6,16 @@
   min-width: 110px;
 }
 
-.pageTitle {
+.navbar-page-title {
   left: 20vw;
   top: 1.5vh;
   display: inline-block;
   color: rgba(243,245,242,1);
   font-size: 4vh;
-  position: sticky;
+  position: relative;
 }
 
-.navContainer.container {
+.nav-container.container {
   width: 100%;
   padding-right: 10px;
 }
