@@ -11,6 +11,7 @@ import './Room.css';
 
 //Importing React Components
 import Navbar from '../Navbar/Navbar';
+import Footer from '../Footer/Footer';
 
 /**
  * Room
@@ -30,10 +31,10 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
   }
 
   render() {
+
     return (
       <div className="container">
-        <Navbar />
-        <div>{this.props.match.params.id}</div>
+        <Navbar pageTitle={'This is ' + this.props.match.params.id + ' !'} />
       </div>
     )
   }
