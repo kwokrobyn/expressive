@@ -3,7 +3,6 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { localSignUp, socialSignIn } from '../../actions/userActions';
 import {Grid, Col, form, FormGroup, FormControl, ControlLabel, HelpBlock, Row, Button} from 'react-bootstrap';
-import FontAwesome from 'react-fontawesome';
 
 //Importing static assets (i.e. stylesheets, images)
 import './Signup.css';

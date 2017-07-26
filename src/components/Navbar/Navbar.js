@@ -10,6 +10,8 @@ import {
 
 //Importing static assets (i.e. stylesheets, images)
 import './Navbar.css';
+import squareLogo from './logo_v1.png';
+import titledLogo from './title.png';
 
 //Importing React Components
 
@@ -85,7 +87,7 @@ class Navbar extends Component {
         <div className="container navContainer">
           <div className="navbar-header">
             <a href="./" className="navbar-brand">
-              <img src ="./images/logo_v1.png"/>
+              <img src={squareLogo}/>
             </a>
 
             <button type="button"
@@ -101,7 +103,7 @@ class Navbar extends Component {
               <div className="col-sm-6 col-md-7 col-lg-8 navbar-header-fix">
                 <div className="navbar-header" id="navbar-header-md-lg">
                   <a href="./" className="navbar-brand">
-                    <img src ="./images/logo_v1.png"/>
+                    <img src={titledLogo}/>
                   </a>
                 </div>
                 <div className="pageTitle">{this.props.pageTitle}</div>
@@ -116,7 +118,6 @@ class Navbar extends Component {
           </div>{/* /bs-example-navbar-collapse-1 */}
         </div>{/* container */}
       </nav>
-
    )
  };
 };
