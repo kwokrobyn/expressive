@@ -1,5 +1,5 @@
 h1.signUpTitle {
-  margin-top: 120px;
+  margin-top: 100px;
   margin-bottom: 20px;
   display: flex;
   justify-content: center;
@@ -278,11 +278,13 @@ label {
   padding-top: 30px;
   text-align: center;
 }
+
 label .label-text {
   color: #9B9B9B;
   cursor: text;
   font-family: "Raleway", sans-serif;
-  font-size: 20px;
+  font-size: 12px;
+  padding-top: 15px;
   line-height: 20px;
   text-transform: uppercase;
   -moz-transform: translateY(-34px);
@@ -297,8 +299,9 @@ label input {
   border: 0;
   border-bottom: 2px solid #686868;
   color: #686868;
-  font-size: 20px;
+  font-size: 18px;
   font-family: "Raleway", sans-serif;
+  font-weight: 500;
   letter-spacing: 1px;
   outline: 0;
   padding: 5px 20px;
