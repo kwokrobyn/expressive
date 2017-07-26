@@ -25,7 +25,7 @@ export class Landing extends Component {
 
   render() {
     return (
-      <Grid fluid>
+      <Grid fluid className="landingContainer">
         {/*<h1>LandingPage</h1> */}
         <Row className="nav">
           <Navbar title="Navbar"/>
