@@ -31,6 +31,9 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
         master: this.props.user
       }
 
+      // shady shit
+      document.getElementById('close').click();
+      this.setState({errMessage: false});
       this.props.createRoom(roomInfo);
     } else {
       this.setState({errMessage: true});
@@ -84,8 +87,8 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
 
             </div>
             <div className="modal-footer">
-              <button type="submit" className="btn btn-default" onClick={this.createRoom} data-dismiss="modal">Create Room</button>
-              <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="submit" className="btn btn-default" onClick={this.createRoom}>Create Room</button>
+              <button type="button" className="btn btn-default" id="close" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
