@@ -10,7 +10,7 @@ import {
 import './Room.css';
 
 //Importing React Components
-import '../Navbar/Navbar'
+import Navbar from '../Navbar/Navbar';
 
 /**
  * Room

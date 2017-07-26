@@ -7,10 +7,12 @@
 }
 
 .pageTitle {
-  left: 50px;
+  left: 12vw;
+  top: 1vh;
   display: inline-block;
-  color: white;
-  font-size: 20px;
+  color: rgba(243,245,242,1);
+  font-size: 4vh;
+  position: relative;
 }
 
 .navContainer.container {
