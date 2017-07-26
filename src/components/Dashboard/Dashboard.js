@@ -60,7 +60,7 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
 
         </div>
         <div className="row dashList">
-
+          
         </div>
       </div>
     )
