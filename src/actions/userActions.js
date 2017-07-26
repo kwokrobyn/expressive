@@ -236,9 +236,14 @@ export const updateUser = (user) => {
         displayName: user.displayName
       }).then(() => {
         console.log('User displayName successfully updated in firebase');
-        firebaseUser.updatePassword(user.password).then(() => {
-          dispatch(updateUserAction(user));
-        })
+        if (user.password !== null) {
+          firebaseUser.updatePassword(user.password).then(() => {
+            dispatch(updateUserAction(user));
+          })
+          .catch((error) => {
+            console.log('There was an error when updating user password in firebase', error.message);
+          });
+        }
       })
       .catch((error) => {
         console.log('There was an error when updating user displayName in firebase', error.message);
