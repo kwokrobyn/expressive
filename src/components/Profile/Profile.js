@@ -39,13 +39,14 @@ class Profile extends Component {
     const displayName = document.getElementById('form-displayName').value;
     const email = document.getElementById('form-email').value;
     const password = document.getElementById('form-newpassword').value;
+    let user;
     if (password == null) {
-      const user = {
+     user = {
                     email: email,
                     displayName: displayName
                   };
     } else {
-      const user = {
+     user = {
                     email: email,
                     password: password,
                     displayName: displayName
