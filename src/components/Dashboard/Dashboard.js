@@ -7,6 +7,8 @@ import { getUserRooms } from '../../actions/roomActions';
 import Navbar from '../Navbar/Navbar';
 import CreateRoom from './CreateRoom/CreateRoom';
 
+import './Dashboard.css';
+
 /**
  * Dash
  */
@@ -37,9 +39,9 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
 
     const rooms = roomArray.map((e) => {
       return (
-        <div>
-          <div className="col-md-6"> Room ID: {e.key} </div>
-          <div className="col-md-6"> Room Name: {e.name} </div>
+        <div className="col-md-4 col-xs-12 roomBox">
+          <div className="roomBoxName"> {e.name} </div>
+          <div className="roomBoxUser"> Room ID: {e.key} </div>
         </div>
       )
     })
@@ -48,21 +50,32 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
 
   }
 
+
+
   render() {
 
     return (
       <div className="container-fluid">
-        <Navbar pageTitle="Dashboard"/>
-        <div className="row dashTitle">
-          <h2>Your Rooms</h2>
+        <div className="container-fluid dashContainer">
+          <Navbar pageTitle="Dashboard"/>
+          <div className="row dashTitle">
+            <h2>Your Rooms</h2>
+          </div>
+          <div className="row dashCreate">
+            <button className="col-md-3 col-xs-12 createRoomBtn" data-toggle="modal" data-target="#myModal"> Create A New Room </button>
+          </div>
+          <div className="row dashList">
+            {this.roomDisplay()}
+          </div>
         </div>
-        <div className="row dashCreate">
 
-        </div>
-        <div className="row dashList">
-          
-        </div>
+        <CreateRoom/>
+
       </div>
+
+
+
+
     )
 
   }
