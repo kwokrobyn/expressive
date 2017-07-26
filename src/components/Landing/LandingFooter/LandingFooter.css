@@ -4,7 +4,7 @@
 
 #landing-greater-footer {
   width: 100%;
-  height: 50vh;
+  max-height: 50vh;
   background-color: rgba(47,120,139,1);
   position: relative;
 }
@@ -15,7 +15,6 @@
   font-family: 'Raleway', sans-serif;
   font-size: 1.5em;
   margin-top: 50px;
-  margin-bottom: 20px;
 }
 
 #landing-mission-paragraph {
@@ -30,8 +29,9 @@
 
 footer {
   width: 100%;
-  height: 10vh;
+  height: 50px;
   background-color: rgba(8,154,136,1);
+  position: relative;
 }
 
   #landing-footer-group-left {
@@ -43,13 +43,14 @@ footer {
 
   #landing-footer-logo {
     background-color: rgba(8,154,136,1);
-    height: 6vh;
+    max-height: 6vh;
+    min-height: 2vh;
     display: inline-block;
   }
 
   #landing-footer-credits {
     color: white;
-    font-size: 15px;
+    font-size: 1.5vh;
     margin-left: 1vw;
     padding-top: 20px;
     display: inline-block;
