@@ -7,12 +7,12 @@
 }
 
 .pageTitle {
-  left: 13vw;
-  top: 1vh;
+  left: 20vw;
+  top: 1.5vh;
   display: inline-block;
   color: rgba(243,245,242,1);
   font-size: 4vh;
-  position: relative;
+  position: sticky;
 }
 
 .navContainer.container {

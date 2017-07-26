@@ -35,7 +35,6 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
     return (
       <div className="container">
         <Navbar pageTitle={'This is ' + this.props.match.params.id + ' !'} />
-        <Footer />
       </div>
     )
   }
