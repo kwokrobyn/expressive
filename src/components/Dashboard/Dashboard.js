@@ -53,17 +53,35 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
     return (
       <div className="container-fluid">
         <Navbar pageTitle="Dashboard"/>
-        <div className="row">
-          <div className="col-sm-6 col-sm-offset-3">
-            <div className="dashboard" id="Dashboard">
-              <CreateRoom />
-              <div>{this.roomDisplay()}</div>
-            </div>
-          </div>
+        <div className="row dashTitle">
+          <h2>Your Rooms</h2>
+        </div>
+        <div className="row dashCreate">
+
+        </div>
+        <div className="row dashList">
+
         </div>
       </div>
-    );
+    )
+
   }
+  // render() {
+  //
+  //   return (
+  //     <div className="container-fluid">
+  //       <Navbar pageTitle="Dashboard"/>
+  //       <div className="row">
+  //         <div className="col-sm-6 col-sm-offset-3">
+  //           <div className="dashboard" id="Dashboard">
+  //             <CreateRoom />
+  //             <div>{this.roomDisplay()}</div>
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   );
+  // }
 }
 
 const mapStateToProps = (state) => {
