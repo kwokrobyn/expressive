@@ -49,26 +49,46 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
   render() {
     console.log(this.props.existing);
     return (
-      <div className="container-fluid">
-        <form>
-          <div className="form-group">
-            <label>Room Name:</label>
-            <input type="text" className="form-control" id="roomname" />
+      <div id="myModal" className="modal fade" role="dialog">
+        <div className="modal-dialog modal-lg">
+          {/* Modal Content Start*/}
+          <div className="modal-content">
+            <div className="modal-header">
+              <button type="button" className="close" data-dismiss="modal">×</button>
+              <h4 className="modal-title">Create A New Room</h4>
+            </div>
+            <div className="modal-body">
+
+
+              <div className="container-fluid">
+                <form>
+                  <div className="form-group">
+                    <label>Room Name:</label>
+                    <input type="text" className="form-control" id="roomname" />
+                  </div>
+                  <div className="form-group">
+                    <label>Room String:</label>
+                    <input type="text" className="form-control" id="roomstring" onChange={this.checkExisting}/>
+                    {this.props.existing ? (
+                      <h1>this room has been taken</h1>
+                    ) : (
+                      <h1>this room is available</h1>
+                    )}
+                  </div>
+                  {this.state.errMessage &&
+                    <h1>not allowed</h1>
+                  }
+                </form>
+              </div>
+
+
+            </div>
+            <div className="modal-footer">
+              <button type="submit" className="btn btn-default" onClick={this.createRoom} data-dismiss="modal">Create Room</button>
+              <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
           </div>
-          <div className="form-group">
-            <label>Room String:</label>
-            <input type="text" className="form-control" id="roomstring" onChange={this.checkExisting}/>
-            {this.props.existing ? (
-              <h1>this room has been taken</h1>
-            ) : (
-              <h1>this room is available</h1>
-            )}
-          </div>
-          <button type="submit" className="btn btn-default" onClick={this.createRoom}>Create Room</button>
-          {this.state.errMessage &&
-            <h1>not allowed</h1>
-          }
-        </form>
+        </div>
       </div>
     );
   }

@@ -1,7 +1,36 @@
-.createRoomBtn {
-  border: 1px solid black;
+.dashTitle {
+  margin-bottom: 20px;
 }
 
-.dashContainer {
-  
+.modal-content {
+  background-color: #f3f5f2;
+}
+
+.createRoomBtn {
+  background-color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 18px;
+  text-align: center;
+  border: 0px;
+}
+
+.dashContainer.container-fluid {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.dashList {
+  margin-top: 50px;
+}
+
+.roomBox {
+  background-color: white;
+  margin-right: 20px;
+  padding: 40px;
+}
+
+.roomBoxName {
+  font-size: 20px;
 }
