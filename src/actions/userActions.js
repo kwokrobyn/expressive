@@ -3,7 +3,8 @@ import firebase from '../firebase';
 /*
 * ACTIONS to reducer
 */
-const signInSuccess = (user) => {
+export const signInSuccess = (user) => {
+
   return {
     type: 'SIGN_IN_SUCCESS',
     user

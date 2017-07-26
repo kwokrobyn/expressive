@@ -2,7 +2,7 @@
 import firebase from '../firebase';
 
 /*
-* ACTIONS to reducer
+* ROOM EXIST actions
 */
 const roomStringExists = () => {
   return {
@@ -17,12 +17,22 @@ const roomStringAvail = () => {
 }
 
 /*
+* DASHBOARD ROOM LIST actions
+*/
+const getUserRoomsAction = (rooms) => {
+  return {
+    type: 'GET_USER_ROOMS',
+    rooms
+  }
+}
+
+/*
 * DATABASE METHODS
 */
 const db = firebase.database();
 
 /*
-* CHECK EXISTING
+* CHECK EXISTING (to checkExistReducer)
 */
 export const checkExisting = (roomString) => {
   return (dispatch) => {
@@ -41,6 +51,21 @@ export const checkExisting = (roomString) => {
     });
   }
 }
+
+// GET USER ROOMS
+export const getUserRooms = (id) => {
+  return (dispatch) => {
+    const ownedRoomsRef = db.ref("users/" + id + '/ownedRooms/');
+    ownedRoomsRef.on("value", (snapshot) => {
+      console.log('get user rooms snapshot', snapshot.val());
+
+      ownedRoomsRef.once("value", (innerSnapshot) => {
+        dispatch(getUserRoomsAction(innerSnapshot.val()));
+      })
+    })
+  }
+}
+
 
 // ADD ROOM TO USER
 const addRoomToUserRoomList = (roomInfo) => {

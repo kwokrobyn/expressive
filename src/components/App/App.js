@@ -22,6 +22,9 @@ import Login from '../Login/Login';
 import Dashboard from '../Dashboard/Dashboard';
 import Room from '../Room/Room';
 
+// Import Actions
+import { signInSuccess } from '../../actions/userActions';
+
 /**
  * App (React Routes)
  */
@@ -29,6 +32,18 @@ import Room from '../Room/Room';
 class App extends Component {
   constructor(props) {
     super(props);
+  }
+
+  componentDidMount() {
+    // updates user redux state based on firebase current user
+    firebase.auth().onAuthStateChanged((user) => {
+      console.log('Auth state changed', user);
+        if (user) {
+          this.props.dispatch(signInSuccess(user));
+        } else {
+          console.log('There is no user');
+        }
+    });
   }
 
   render() {
@@ -57,6 +72,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    dispatch: dispatch
   }
 }
 

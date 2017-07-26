@@ -47,8 +47,6 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
   }
 
   render() {
-    console.log("shady");
-    console.log(this.props.existing);
     return (
       <div className="container-fluid">
         <form>
@@ -77,7 +75,8 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
 
 const mapStateToProps = (state) => {
   return {
-    existing: state.checkExist
+    existing: state.checkExist,
+    user: state.user
   }
 }
 

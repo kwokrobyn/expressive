@@ -11,9 +11,11 @@ const defaultUser = {
 
 const userReducer = (state = defaultUser, action) => {
 
+  console.log('Action: ', action.type);
+
   switch (action.type) {
     case "SIGN_IN_SUCCESS":
-    // uid, email, displayName currently pulled from default firebase.auth() db.  
+    // uid, email, displayName currently pulled from default firebase.auth() db.
       return {
         uid: action.user.uid,
         email: action.user.email,
