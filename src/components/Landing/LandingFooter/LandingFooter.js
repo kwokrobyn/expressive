@@ -6,6 +6,7 @@ import {Row, Col} from 'react-bootstrap';
 import './LandingFooter.css';
 
 //Importing React Components
+import Footer from '../../Footer/Footer';
 
 /**
  * Footer
@@ -17,24 +18,29 @@ import './LandingFooter.css';
 
    render() {
      return (
-       <div className="footer">
+       <div id="landing-greater-footer">
 
       {/* Mission Statement */}
         <Row>
            <Col md={8} mdOffset={2} sm={8} smOffset={2} xs={8} xsOffset={2}>
-             <h2 className="MissionTitle">-Our Mission-</h2>
-              <p className="Mission">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+             <h2 id="landing-mission-title">Our Mission</h2>
+              <p id="landing-mission-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
            </Col>
         </Row>
 
         {/* Copyright */}
+
         <Row>
          <footer>
-          <div className = "footerImg">
-            <p className ="copyright"> © Copyright expressive 2017 <img src ="../../images/logo_v1.png" className="footerLogo"/></p>
+          <div id="footer-group-left">
+            <img src ="../../images/logo_v1.png" id="footer-logo"/>
+            <p id="footer-credits">
+              expressive 2017 by Bryan, Dionne, Robyn & Woody
+            </p>
           </div>
          </footer>
         </Row>
+
       </div>
      );
    }
