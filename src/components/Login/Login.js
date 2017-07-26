@@ -43,9 +43,9 @@ class Login extends Component {
   }
 
   socialSignIn = (e) => {
-    if (e.target.classList.contains("facebook")) {
+    if (e.target.id === "facebook") {
       this.props.socialSignIn('facebook');
-    } else if (e.target.classList.contains("google")) {
+    } else if (e.target.id === "google") {
       this.props.socialSignIn('google');
     }
   }
@@ -67,13 +67,13 @@ class Login extends Component {
           <Row>
              {/* Email */}
               <label for="">
-                <div class="label-text">Email</div>
+                <div className="label-text">Email</div>
                 <input type="email" placeholder="@email" id="email-signup"/>
               </label>
 
               {/* Password */}
               <label for="">
-                <div class="label-text">Password</div>
+                <div className="label-text">Password</div>
                 <input type="password" placeholder="Password" id="pwd-signup"/>
               </label>
           </Row>
@@ -98,14 +98,14 @@ class Login extends Component {
               {/* Facebook */}
                 <Col md={6} sm={6} xs={4} className="text-center">
       				      <div className="icon-circle">
-      					         <a href="#" className="ifacebook" title="Facebook" onClick={this.socialSignIn}><i className="fa fa-facebook"></i></a>
+      					         <a href="#" className="ifacebook" title="Facebook"><i className="fa fa-facebook" id="facebook" onClick={this.socialSignIn}></i></a>
       				      </div>
                </Col>
 
                {/* Google + */}
                <Col md={6} sm={6} xs={4} className="text-center">
                     <div className="icon-circle">
-                        <a href="#" className="igoogle" title="Google+" onClick={this.socialSignIn}><i className="fa fa-google-plus"></i></a>
+                        <a href="#" className="igoogle" title="Google+"><i className="fa fa-google-plus" id="google" onClick={this.socialSignIn}></i></a>
                     </div>
                </Col>
 
