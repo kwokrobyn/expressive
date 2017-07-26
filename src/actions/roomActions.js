@@ -60,12 +60,15 @@ export const getUserRooms = (id) => {
       console.log('get user rooms snapshot', snapshot.val());
 
       ownedRoomsRef.once("value", (innerSnapshot) => {
-        dispatch(getUserRoomsAction(innerSnapshot.val()));
+        if (innerSnapshot.exists()) {
+          dispatch(getUserRoomsAction(innerSnapshot.val()));
+        } else {
+          console.log('No rooms owned by this user.');
+        }
       })
     })
   }
 }
-
 
 // ADD ROOM TO USER
 const addRoomToUserRoomList = (roomInfo) => {
