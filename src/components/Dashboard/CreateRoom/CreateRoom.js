@@ -76,7 +76,8 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
 
 const mapStateToProps = (state) => {
   return {
-    existing: state.checkExist
+    existing: state.checkExist,
+    user: state.user
   }
 }
 

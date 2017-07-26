@@ -1,6 +1,6 @@
 import uuid from 'uuid';
 
-const defaultState = false
+const defaultState = false;
 
 const checkExistReducer = (state = defaultState, action) => {
   switch (action.type) {

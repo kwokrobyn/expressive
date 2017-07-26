@@ -8,6 +8,8 @@ import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
 import { initStore } from './store/store';
 
+import firebase from './firebase';
+
 const store = initStore();
 
 store.subscribe( () => {

@@ -59,7 +59,6 @@ class Login extends Component {
         <div>
           <Navbar />
 
-
           <form>
             <Row>
               <h1 className="logInTitle">-Log In-</h1>
@@ -79,9 +78,6 @@ class Login extends Component {
               </label>
           </Row>
 
-
-
-
           {/* Submit Button */}
           <Row>
             <Col className="loginSubmit">
@@ -93,7 +89,6 @@ class Login extends Component {
               <span className="line -bottom"></span>
             </a>
             </Col>
-
           </Row>
 
 
@@ -119,8 +114,6 @@ class Login extends Component {
 
           </form>
         </div>
-
-
 
     );
   }

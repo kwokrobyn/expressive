@@ -5,13 +5,15 @@ import thunk from 'redux-thunk';
 // Import reducers'
 import userReducer from '../reducers/userReducer';
 import checkExistReducer from '../reducers/checkExistReducer';
+import ownedRoomsReducer from '../reducers/ownedRoomsReducer';
 
 export let initStore = () => {
 
   // Combine reducers
   const reducer = combineReducers({
     user: userReducer,
-    checkExist: checkExistReducer
+    checkExist: checkExistReducer,
+    ownedRooms: ownedRoomsReducer
   });
 
   // Create the store with all the reducers and allow for chrome redux dev tools to run and read reducers
