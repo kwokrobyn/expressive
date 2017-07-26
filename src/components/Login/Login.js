@@ -43,10 +43,10 @@ class Login extends Component {
   }
 
   socialSignIn = (e) => {
-    e.preventDefault();
-    if (e.target.classList.contains("facebook")) {
+
+    if (e.target.id === "facebook") {
       this.props.socialSignIn('facebook');
-    } else if (e.target.classList.contains("google")) {
+    } else if (e.target.id === "google") {
       this.props.socialSignIn('google');
     }
   }
@@ -74,7 +74,7 @@ class Login extends Component {
 
               {/* Password */}
               <label for="">
-                <div class="label-text">Password</div>
+                <div className="label-text">Password</div>
                 <input type="password" placeholder="Password" id="pwd-signup"/>
               </label>
           </Row>
@@ -95,8 +95,22 @@ class Login extends Component {
 
             {/* Social Sign In */}
             <Row className="socialLogin">
-              <button type="submit" className="btn btn-default facebook" onClick={this.socialSignIn}>Facebook</button>
-              <button type="submit" className="btn btn-default google" onClick={this.socialSignIn}>Google</button>
+              <div className="sicon">
+              {/* Facebook */}
+                <Col md={6} sm={6} xs={4} className="text-center">
+      				      <div className="icon-circle">
+      					         <a href="#" className="ifacebook" title="Facebook"><i className="fa fa-facebook" id="facebook" onClick={this.socialSignIn}></i></a>
+      				      </div>
+               </Col>
+
+               {/* Google + */}
+               <Col md={6} sm={6} xs={4} className="text-center">
+                    <div className="icon-circle">
+                        <a href="#" className="igoogle" title="Google+"><i className="fa fa-google-plus" id="google" onClick={this.socialSignIn}></i></a>
+                    </div>
+               </Col>
+
+               </div>
              </Row>
 
           </form>
