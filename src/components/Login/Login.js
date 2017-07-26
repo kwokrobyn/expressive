@@ -43,7 +43,12 @@ class Login extends Component {
   }
 
   socialSignIn = (e) => {
+<<<<<<< HEAD
     if (e.target.id === "facebook") {
+=======
+    e.preventDefault();
+    if (e.target.classList.contains("facebook")) {
+>>>>>>> 7a66ed9368f32358b54d158d8af50abc6d0f5c9b
       this.props.socialSignIn('facebook');
     } else if (e.target.id === "google") {
       this.props.socialSignIn('google');
@@ -94,6 +99,7 @@ class Login extends Component {
 
             {/* Social Sign In */}
             <Row className="socialLogin">
+<<<<<<< HEAD
               <div className="sicon">
               {/* Facebook */}
                 <Col md={6} sm={6} xs={4} className="text-center">
@@ -110,6 +116,10 @@ class Login extends Component {
                </Col>
 
                </div>
+=======
+              <button type="submit" className="btn btn-default facebook" onClick={this.socialSignIn}>Facebook</button>
+              <button type="submit" className="btn btn-default google" onClick={this.socialSignIn}>Google</button>
+>>>>>>> 7a66ed9368f32358b54d158d8af50abc6d0f5c9b
              </Row>
 
           </form>
