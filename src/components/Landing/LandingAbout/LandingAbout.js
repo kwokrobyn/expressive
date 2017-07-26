@@ -33,7 +33,7 @@ class LandingAbout extends Component {
         {/* About Title */}
         <Row>
           <Col md={12} mdOffset={2} sm={8} smOffset={3}>
-            <h1 className="about">-About-</h1>
+            <h1 className="about">About</h1>
           </Col>
         </Row>
 
