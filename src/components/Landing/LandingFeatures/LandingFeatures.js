@@ -65,7 +65,7 @@ class LandingFeatures extends Component {
         {/* How to Use Title */}
         <Row>
           <Col md={8} mdOffset={3} sm={8} smOffset={3}>
-            <h1 className="how">-How to use-</h1>
+            <h1 className="how">How to use</h1>
           </Col>
         </Row>
 

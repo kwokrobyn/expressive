@@ -1,6 +1,6 @@
-div.container-fluid {
+.landingContainer {
   margin-top: 60px;
-  background-color: #f3f5f2;
+  background-color: rgba(243,245,242,1);
   overflow-x: hidden;
   overflow-y: auto;
   height: 100%;
