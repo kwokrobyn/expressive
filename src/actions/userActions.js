@@ -24,16 +24,33 @@ const authError = (error) => {
   }
 }
 
+const deleteUserAction = () => {
+  return {
+    type: 'DELETE_USER'
+  }
+}
+
+const updateUserAction = (user) => {
+  return {
+    type: 'UPDATE_USER',
+    user
+  }
+}
+
 /*
 * DATABASE METHODS
 */
 const db = firebase.database();
 
+/*
+* ADD TO FIREBASE
+*/
+//only used when a user signs in and out only ("insert user into database")
 const connectToDatabase = (user) => {
 
   // navigate to user portion of db
   const userRef = db.ref('users/' + user.uid);
-
+  console.log(user.uid);
   // check if user exists in database
   userRef.once('value')
   .then((snapshot) => {
@@ -59,6 +76,29 @@ const connectToDatabase = (user) => {
 }
 
 /*
+* REMOVE FROM FIREBASE
+*/
+//remove from firebase user database
+const removeFromDatabase = (user) => {
+
+  // navigate to user portion of db
+  const userRef = db.ref('users/' + user.uid);
+
+  // check if user exists in database
+  userRef.once('value')
+  .then((snapshot) => {
+    console.log('This is the snapshot', snapshot.val());
+    if (snapshot.val() === null) {
+      // user does not exist in db
+      console.log("no such user found");
+    } else {
+      // if user exists in db, delete the user
+      userRef.remove();
+    }
+  });
+}
+
+/*
 * SIGN UP (local only)
 */
 export const localSignUp = (inputUser) => {
@@ -77,7 +117,6 @@ export const localSignUp = (inputUser) => {
         dispatch(signInSuccess(user));
         // ...add user to firebase db
         connectToDatabase(user);
-
 
       }).catch((error) => {
         console.log('Firebase update displayName failed:', error.message);
@@ -156,5 +195,55 @@ export const signOut = (user) => {
       console.log('There was an error when trying to sign out: ', error.message);
       dispatch(authError(error.message));
     });
+  }
+}
+
+/*
+ * DELETE USER
+ */
+export const deleteUser = (user) => {
+  return (dispatch) => {
+    var user = firebase.auth().currentUser;
+    //remove from firebase user database
+    removeFromDatabase(user);
+
+    //remove from firebase user auth
+    user.delete().then(() => {
+      console.log('User successfully deleted in firebase.');
+      dispatch(deleteUserAction());
+    })
+    .catch((error) => {
+      console.log('There was an error when deleting in firebase', error.message);
+    });
+  }
+}
+
+/*
+ * UPDATE USER
+ */
+export const updateUser = (user) => {
+  return (dispatch) => {
+    console.log(user);
+    var firebaseUser = firebase.auth().currentUser;
+    //update in firebase user database
+    console.log(firebaseUser);
+    connectToDatabase(firebaseUser);
+
+    //update in firebase auth email
+    firebaseUser.updateEmail(user.email).then(() => {
+      //update in firebase auth displayName
+      firebaseUser.updateProfile({
+        displayName: user.displayName
+      }).then(() => {
+        console.log('User displayName successfully updated in firebase');
+        firebaseUser.updatePassword(user.password).then(() => {
+          dispatch(updateUserAction(user));
+        })
+      })
+      .catch((error) => {
+        console.log('There was an error when updating user displayName in firebase', error.message);
+      });
+    })
+
   }
 }

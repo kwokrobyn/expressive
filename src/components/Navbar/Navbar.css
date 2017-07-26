@@ -1,5 +1,3 @@
-/* NOTE: This stylesheet has an extension named NavbarUser.css dependent on this stylesheet. It is used in conjunction with NavbarUser.css for NavbarUser.js. */
-
 /*Entire header styling*/
 
 .navbar-header {
@@ -10,6 +8,7 @@
 .navbar-brand {
   margin-top: 10px;
   font-family:'Yatra One', cursive;
+  z-index: 5;
 }
 
 .navbar-inverse {
@@ -26,7 +25,7 @@
   float: inherit;
 }
 
-#bs-example-navbar-collapse-1 > div:nth-child(1) > div.col-sm-push-9.col-sm-3.col-md-push-8.col-md-4.col-lg-push-9.col-lg-3 > ul {
+.navbar-list {
   position: inherit;
   float: left;
 }
@@ -34,11 +33,25 @@
 /*These styles below are exclusive to small tablets and mobile display sizes.*/
 @media only screen and (max-width: 767px) {
 
-  /*These styles below are for the ul of the mobile menu.*/
+  /*These styles below are for the ul of links (i.e #navbar-list) of the mobile menu.*/
 
-  #bs-example-navbar-collapse-1 > div:nth-child(1) > div.col-sm-push-9.col-sm-3.col-md-push-8.col-md-4.col-lg-push-9.col-lg-3 > ul {
+  /* This below hides the header logo in mobile view  */
+  .navbar-header-fix {
+    display: none;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    position: absolute;
+  }
+
+  .navbar-header > a {
+    margin: 2vh 0 0 0;
+    padding: 0 0 0 0;
+    position: absolute;
+  }
+  /* This above hides the header logo in mobile view  */
+
+  #navbar-list {
     background-color: none;
-
   }
   /*These styles above are for the ul of the mobile menu.*/
   /*These styles below are for the button that drops down the mobile menu.*/
@@ -78,7 +91,6 @@
   }
 
   .navbar-inverse .navbar-toggle:hover:active {
-    border: 2px solid;
     border-color: rgba(243,245,242,1);
     background-color: rgba(243,245,242,1);
   }
@@ -87,32 +99,46 @@
 
   /*These styles above are for the button group list*/
 
-  #bs-example-navbar-collapse-1 > div:nth-child(1) > div.col-sm-push-7.col-sm-5.col-md-push-8.col-md-4.col-lg-push-9.col-lg-3 > ul {
-    margin: 0;
-    padding: 0;
-    display: block;
+  #navbar-list {
+    align-items: center;
   }
 
   /*Mobile Log In Button - below*/
     /*Mobile Log In Button : default - below*/
-    .login-btn, .login-btn:active, .login-btn:focus {
+    .login-btn, .login-btn:active, .login-btn:focus, .login-btn:active:focus {
+      align-items: center;
       display: block;
       position: relative;
-      margin: 0 auto auto;
+      margin: 0 auto;
       border: 5px solid rgba(8,154,136,1);
       border-radius: 0em 0em 2em 2em;
       padding: 0 0 0 0;
-      transition: all .4s ease;
+      left: 20vw;
       position: relative;
       height: 40px;
       width: 60%;
       box-shadow: none;
-      background-color: rgba(8,154,136,1);
+      background-color: rgba(8,154,136,0);
       background-image: none;
+      /* cool button insert*/
+      overflow: hidden; /* Needed for to cover the cool sliding box effect */
+      text-align: center;
+      display: inline-block;
+      vertical-align: top;
+      z-index: 5;
+      transition: all .4s ease;
+      position: relative;
     }
 
-    .login-btn:before, .login-btn:active:before, .login-btn:focus:before {
-      z-index: -1;
+    .login-btn:before {
+      display: block;
+      left: 0; /* <== Needed for the cool button hover effect */
+      top: 0; /* <== Needed for the cool button hover effect */
+      content: ''; /* <== Needed for the cool button hover effect */
+      position: absolute; /* <== Needed for the cool button hover effect */
+      width: 150%;
+      height: 100%;
+      background-color: rgba(243,150,72,1); /* <== The colour of the cool button chop down effect */
       -webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
       transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
       -webkit-transform-origin: 0 100%;
@@ -125,16 +151,9 @@
       color: rgba(243,245,242,1);
       text-shadow: none;
       text-decoration: none;
+      z-index: 5;
     }
     /*Mobile Log In Button : default - above*/
-
-    .login-btn:before {
-      opacity: 1;
-      -webkit-transform: rotate3d(0, 0, 1, 0deg);
-      transform: rotate3d(0, 0, 1, 0deg);
-      -webkit-transition-timing-function: cubic-bezier(.2, 1, .3, 1);
-      transition-timing-function: cubic-bezier(.2, 1, .3, 1)
-    }
 
     /*Mobile Log In Button : Hover - below*/
 
@@ -143,16 +162,16 @@
       -webkit-transform: rotate3d(0, 0, 1, 0deg);
       transform: rotate3d(0, 0, 1, 0deg);
       -webkit-transition-timing-function: cubic-bezier(.2, 1, .3, 1);
-      transition-timing-function: cubic-bezier(.2, 1, .3, 1);
+      transition-timing-function: cubic-bezier(.2, 1, .3, 1)
     }
 
     .login-btn:hover {
-      border: 5px solid rgba(8,154,136,1);
-      background-color: rgba(243,245,242,1);
+      border: 5px solid rgba(243,245,242,1);
+      background-color: rgba(243,245,242,1);  /* The background of the button before the chop comes into view */
     }
 
     .login-btn:hover > a {
-      color: rgba(8,154,136,1);
+      color: rgba(243,245,242,1);
     }
     /*Mobile Log In Button : Hover - above*/
     /*Mobile Log In Button : Hover : Active - below*/
@@ -166,32 +185,141 @@
     .login-btn:hover:active > a {
       color: rgba(243,245,242,1);
       text-shadow: none;
+      box-shadow: none;
       text-decoration: none;
     }
 
     /*Mobile Log In Button : Hover : Active - above*/
   /* Mobile Log In Button - above  */
-  /* Mobile Sign Up Button - below */
-    /*Mobile Sign Up Button : default - below*/
 
-    .signup-btn, .signup-btn:active, .signup-btn:focus {
+  /* Mobile Middle Button - below  */
+
+    .middle-btn, .middle-btn:active, .middle-btn:focus, .middle-btn:active:focus {
+      align-items: center;
       display: block;
       position: relative;
       margin: 0 auto;
       border: 5px solid rgba(8,154,136,1);
-      border-radius: 2em 2em 0em 0em;
+      border-radius: 0em 0em 0em 0em;
       padding: 0 0 0 0;
-      transition: all .4s ease;
+      left: 20vw;
       position: relative;
       height: 40px;
       width: 60%;
       box-shadow: none;
       background-color: rgba(8,154,136,0);
       background-image: none;
+      /* cool button insert*/
+      overflow: hidden; /* Needed for to cover the cool sliding box effect */
+      text-align: center;
+      display: inline-block;
+      vertical-align: top;
+      color: #fff;
+      z-index: 5;
+      transition: all .4s ease;
+      position: relative;
     }
 
-    .signup-btn:before, .signup-btn:before:active, .signup-btn:before:focus {
-      z-index: -1;
+    .middle-btn:before {
+      display: block;
+      left: 0; /* <== Needed for the cool button hover effect */
+      top: 0; /* <== Needed for the cool button hover effect */
+      content: ''; /* <== Needed for the cool button hover effect */
+      position: absolute; /* <== Needed for the cool button hover effect */
+      width: 150%;
+      height: 100%;
+      background-color: rgba(243,150,72,1); /* <== The colour of the cool button chop down effect */
+      -webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+      transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+      -webkit-transform-origin: 0 100%;
+      transform-origin: 0 100%;
+      -webkit-transition: -webkit-transform .3s, opacity .3s, background-color .3s;
+      transition: transform .3s, opacity .3s, background-color .3s
+    }
+
+    .middle-btn > a {
+      color: rgba(243,245,242,1);
+      text-shadow: none;
+      text-decoration: none;
+      z-index: 5;
+    }
+
+    /*Mobile Middle Button : default - above*/
+    /*Mobile Middle Button : Hover - below*/
+
+    .middle-btn:hover:before {
+      opacity: 1;
+      -webkit-transform: rotate3d(0, 0, 1, 0deg);
+      transform: rotate3d(0, 0, 1, 0deg);
+      -webkit-transition-timing-function: cubic-bezier(.2, 1, .3, 1);
+      transition-timing-function: cubic-bezier(.2, 1, .3, 1)
+    }
+
+    .middle-btn:hover {
+      border: 5px solid rgba(243,245,242,1);
+      background-color: rgba(8,154,136,1); /* The background of the button before the chop comes into view */
+    }
+
+    .middle-btn:hover > a {
+      color: rgba(243,245,242,1);
+    }
+
+    /*Mobile Middle Button : Hover - above*/
+    /*Mobile Middle Button : Hover : Active - below*/
+    .middle-btn:hover:active {
+      border: 5px solid rgba(243,150,72,1);
+      box-shadow: none;
+      background-color: rgba(243,150,72,1);
+    }
+
+    .middle-btn:hover:active > a {
+      color: rgba(243,245,242,1);
+      text-shadow: none;
+      box-shadow: none;
+      text-decoration: none;
+    }
+    /*Mobile Middle Button : Hover : Active - above*/
+
+  /* Mobile Middle Button - above  */
+
+  /* Mobile Sign Up Button - below */
+    /*Mobile Sign Up Button : default - below*/
+
+    .signup-btn, .signup-btn:active, .signup-btn:focus, .signup-btn:active:focus {
+      align-items: center;
+      display: block;
+      position: relative;
+      margin: 0 auto;
+      border: 5px solid rgba(8,154,136,1);
+      border-radius: 2em 2em 0em 0em;
+      padding: 0 0 0 0;
+      left: 20vw;
+      position: relative;
+      height: 40px;
+      width: 60%;
+      box-shadow: none;
+      background-color: rgba(8,154,136,0);
+      background-image: none;
+      /* cool button insert*/
+      overflow: hidden; /* Needed for to cover the cool sliding box effect */
+      text-align: center;
+      display: inline-block;
+      vertical-align: top;
+      color: #fff;
+      z-index: 5;
+      transition: all .4s ease;
+      position: relative;
+    }
+
+    .signup-btn:before {
+      display: block;
+      left: 0; /* <== Needed for the cool button hover effect */
+      top: 0; /* <== Needed for the cool button hover effect */
+      content: ''; /* <== Needed for the cool button hover effect */
+      position: absolute; /* <== Needed for the cool button hover effect */
+      width: 150%;
+      height: 100%;
+      background-color: rgba(243,150,72,1); /* <== The colour of the cool button chop down effect */
       -webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
       transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
       -webkit-transform-origin: 0 100%;
@@ -202,8 +330,9 @@
 
     .signup-btn > a {
       color: rgba(243,245,242,1);
+      text-shadow: none;
       text-decoration: none;
-      transition: all .4s ease;
+      z-index: 5;
     }
 
     /*Mobile Sign Up Button : default - above*/
@@ -214,16 +343,16 @@
       -webkit-transform: rotate3d(0, 0, 1, 0deg);
       transform: rotate3d(0, 0, 1, 0deg);
       -webkit-transition-timing-function: cubic-bezier(.2, 1, .3, 1);
-      transition-timing-function: cubic-bezier(.2, 1, .3, 1);
+      transition-timing-function: cubic-bezier(.2, 1, .3, 1)
     }
 
     .signup-btn:hover {
-      border: 5px solid rgba(8,154,136,1);
-      background-color: rgba(243,245,242,1);
+      border: 5px solid rgba(243,245,242,1);
+      background-color: rgba(8,154,136,1); /* The background of the button before the chop comes into view */
     }
 
     .signup-btn:hover > a {
-      color: rgba(8,154,136,1);
+      color: rgba(243,245,242,1);
     }
 
     /*Mobile Sign Up Button : Hover - above*/
@@ -237,6 +366,7 @@
     .signup-btn:hover:active > a {
       color: rgba(243,245,242,1);
       text-shadow: none;
+      box-shadow: none;
       text-decoration: none;
     }
     /*Mobile Sign Up Button : Hover : Active - above*/
@@ -248,60 +378,215 @@
 
 /*These styles below are exclusive to tablets and desktop display sizes.*/
 @media only screen and (min-width: 768px) {
+  /* This below shows the header logo in desktop view  */
+  .navbar-header-fix {
+    display: inline-block;
+    margin: 0 0 0 0;
+    padding: 0px 0px 0px 0px;
+    position: relative;
+  }
+  /* This above shows the header logo in desktop view  */
+  #bs-example-navbar-collapse-1 > div:nth-child(1) {
+    padding-top: 1vh;
+  }
 
   .navbar-header {
     margin-left: 50px;
     padding-left: 50px;
+    display: none; /* <== This hides the default navbar header originally used. Because a Bootstrap row was covering the button, the user is unable to click on it in desktop view. navbar-header-fix was introduced (see above) to create a clone that toggles hiding/showing for different screen sizes. As a result, when editing the navbar-header, please change both .navbar-header and .navbar-header-fix.  */
   }
 
-  #bs-example-navbar-collapse-1 > div:nth-child(1) > div.col-sm-push-7.col-sm-5.col-md-push-8.col-md-4.col-lg-push-9.col-lg-3 > ul {
-    margin-top: 4px;
+  #navbar-header-md-lg {
+    margin-left: 50px;
+    padding-left: 50px;
+    display: inline-block;
+  }
+
+  #navbar-list {
+    display: inline-block;
+    left: 0;
+    margin: 1vh 0 0 0;
+    padding: 0 0 0 0;
+    float: right;
   }
 
   /*These styles below are for the sign up button*/
-  .signup-btn {
-    display: inline-block;
+  .signup-btn, .signup-btn:active, .signup-btn:focus, .signup-btn:active:focus {
     vertical-align: top;
     border: 5px solid rgba(8,154,136,1);
     border-radius: 2em 2em 2em 2em;
     padding: 0 0 0 0;
-    transition: all .4s ease;
     position: relative;
     height: 40px;
     box-shadow: none;
     background-color: rgba(8,154,136,0);
     background-image: none;
+    margin-right: 1vh;
+    /* cool button insert*/
+    overflow: hidden; /* Needed for to cover the cool sliding box effect */
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    z-index: 5;
+    transition: all .4s ease;
+    position: relative;
+  }
+
+  .signup-btn:before {
+    display: block;
+    left: 0; /* <== Needed for the cool button hover effect */
+    top: 0; /* <== Needed for the cool button hover effect */
+    content: ''; /* <== Needed for the cool button hover effect */
+    position: absolute; /* <== Needed for the cool button hover effect */
+    width: 200%;
+    height: 200%;
+    background-color: rgba(243,150,72,1); /* <== The colour of the cool button chop down effect */
+    -webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+    transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    -webkit-transition: -webkit-transform .3s, opacity .3s, background-color .3s;
+    transition: transform .3s, opacity .3s, background-color .3s
   }
 
   .signup-btn > a {
     color: rgba(243,245,242,1);
     text-decoration: none;
-    transition: all .4s ease;
   }
-  /*These styles below are for the sign up button*/
 
+  .signup-btn:hover {
+    border: 5px solid rgba(243,245,242,1);
+    background-color: rgba(8,154,136,1); /* The background of the button before the chop comes into view */
+  }
 
-  /*These styles below are for the log in button*/
+  .signup-btn:hover:before {
+    opacity: 1;
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+    -webkit-transition-timing-function: cubic-bezier(.2, 1, .3, 1);
+    transition-timing-function: cubic-bezier(.2, 1, .3, 1)
+  }
 
-  .login-btn {
-    display: inline-block;
+  /*These styles above are for the sign up button*/
+
+  /*These styles below are for the middle buttons*/
+
+  .middle-btn, .middle-btn:active, .middle-btn:focus, .middle-btn:active:focus {
     vertical-align: top;
     border: 5px solid rgba(8,154,136,1);
     border-radius: 2em 2em 2em 2em;
+    margin: auto 1vh auto 1vh;
     padding: 0 0 0 0;
-    transition: all .4s ease;
     position: relative;
     height: 40px;
     box-shadow: none;
     background-color: rgba(8,154,136,0);
     background-image: none;
-    margin-left: 10px;
+    /* cool button insert*/
+    overflow: hidden; /* Needed for to cover the cool sliding box effect */
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    z-index: 5;
+    transition: all .4s ease;
+    position: relative;
+  }
+
+  .middle-btn:before {
+    display: block;
+    left: 0; /* <== Needed for the cool button hover effect */
+    top: 0; /* <== Needed for the cool button hover effect */
+    content: ''; /* <== Needed for the cool button hover effect */
+    position: absolute; /* <== Needed for the cool button hover effect */
+    width: 200%;
+    height: 200%;
+    background-color: rgba(243,150,72,1); /* <== The colour of the cool button chop down effect */
+    -webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+    transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    -webkit-transition: -webkit-transform .3s, opacity .3s, background-color .3s;
+    transition: transform .3s, opacity .3s, background-color .3s
+  }
+
+  .middle-btn > a {
+    color: rgba(243,245,242,1);
+    text-decoration: none;
+  }
+
+  .middle-btn:hover {
+    border: 5px solid rgba(243,245,242,1);
+    background-color: rgba(8,154,136,1); /* The background of the button before the chop comes into view */
+  }
+
+  .middle-btn:hover:before {
+    opacity: 1;
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+    -webkit-transition-timing-function: cubic-bezier(.2, 1, .3, 1);
+    transition-timing-function: cubic-bezier(.2, 1, .3, 1)
+  }
+
+  /*These styles above are for the middle buttons*/
+
+  /*These styles below are for the log in button*/
+
+.login-btn, .login-btn:active, .login-btn:focus, .login-btn:active:focus {
+    display: inline-block;
+    vertical-align: top;
+    border: 5px solid rgba(8,154,136,1);
+    border-radius: 2em 2em 2em 2em;
+    padding: 0 0 0 0;
+    position: relative;
+    height: 40px;
+    box-shadow: none;
+    background-color: rgba(8,154,136,0);
+    background-image: none;
+    margin-left: 1vh;
+    /* cool button insert*/
+    overflow: hidden; /* Needed for to cover the cool sliding box effect */
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    z-index: 5;
+    transition: all .4s ease;
+    position: relative;
   }
 
   .login-btn > a {
     color: rgba(243,245,242,1);
     text-shadow: none;
     text-decoration: none;
+  }
+
+  .login-btn:before {
+    display: block;
+    left: 0; /* <== Needed for the cool button hover effect */
+    top: 0; /* <== Needed for the cool button hover effect */
+    content: ''; /* <== Needed for the cool button hover effect */
+    position: absolute; /* <== Needed for the cool button hover effect */
+    width: 200%;
+    height: 200%;
+    background-color: rgba(243,150,72,1); /* <== The colour of the cool button chop down effect */
+    -webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+    transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    -webkit-transition: -webkit-transform .3s, opacity .3s, background-color .3s;
+    transition: transform .3s, opacity .3s, background-color .3s
+  }
+
+  .login-btn:hover {
+    border: 5px solid rgba(243,245,242,1);
+    background-color: rgba(8,154,136,1); /* The background of the button before the chop comes into view */
+  }
+
+  .login-btn:hover:before {
+    opacity: 1;
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg);
+    -webkit-transition-timing-function: cubic-bezier(.2, 1, .3, 1);
+    transition-timing-function: cubic-bezier(.2, 1, .3, 1)
   }
 
   /*These styles above are for the log in button*/
@@ -315,11 +600,14 @@
 }
 
 .navbar-brand {
-  height: 100%;
+  height: 7vh;
 }
 
   .navbar-brand img {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
     margin-left: 20px;
+    position: absolute;
+    top: -5px;
+    height: 70px;
   }
-
-/* NOTE: This stylesheet has an extension named NavbarUser.css dependent on this stylesheet. It is used in conjunction with NavbarUser.css for NavbarUser.js. */

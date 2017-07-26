@@ -33,6 +33,17 @@ const userReducer = (state = defaultUser, action) => {
         hasAuthError: true,
         errorMessage: action.error
       }
+    case "DELETE_USER":
+      return defaultUser;
+    case "UPDATE_USER":
+      return {
+        uid: action.user.uid,
+        email: action.user.email,
+        displayName: action.user.displayName,
+        isSignedIn: true,
+        hasAuthError: false,
+        errorMessage: ""
+      }
     default:
         return state;
   }
