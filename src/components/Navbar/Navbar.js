@@ -11,7 +11,7 @@ import {
 //Importing static assets (i.e. stylesheets, images)
 import './Navbar.css';
 import squareLogo from './logo_v1.png';
-import titledLogo from './title.png';
+import titledLogo from './logo_v1.png';
 
 //Importing React Components
 
