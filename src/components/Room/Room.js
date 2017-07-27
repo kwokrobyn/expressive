@@ -21,15 +21,7 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
   constructor(props){
     super(props);
   }
-
-  static propTypes = {
-    match: PropTypes.object.isRequired
-  }
-
-  componentDidMount() {
-
-  }
-
+  
   render() {
 
     return (

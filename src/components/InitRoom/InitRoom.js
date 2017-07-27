@@ -27,6 +27,8 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
   constructor(props){
     super(props);
 
+    this.props.isFetching(true);
+
     this.state = {
       roomExists: true
     }
