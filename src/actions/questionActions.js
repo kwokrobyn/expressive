@@ -12,11 +12,14 @@ const getQuestionsAction = (questions) => {
 
 export const getQuestions = (roomId) => {
   return (dispatch) => {
+    console.log('getQuestions method.');
     const questionsRef = db.ref("rooms/" + roomId + '/questions');
     questionsRef.on("value", (snapshot) => {
 
       questionsRef.once("value", (innerSnapshot) => {
+        console.log('About to dispatch', innerSnapshot.val());
         if (innerSnapshot.exists()) {
+
           dispatch(getQuestionsAction(innerSnapshot.val()));
         } else {
           console.log('No questions in this room.');
