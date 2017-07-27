@@ -40,7 +40,7 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
     const questions = questionArray.map((e) => {
       return (
         <div className="col-md-4 col-xs-12 dashboard-roombox" key={e.key}>
-          <div className="dashboard-roombox-name"> {e.name} </div>
+          <div className="dashboard-roombox-name"> {e.text} </div>
           <div className="dashboard-roombox-user"> <b>Question</b> {e.key} </div>
         </div>
       )
