@@ -9,7 +9,7 @@ import CreateRoom from './CreateRoom/CreateRoom';
 
 //Importing React Components
 import { signOut } from '../../actions/userActions';
-import { getUserRooms, joinRoom } from '../../actions/roomActions';
+import { getUserRooms } from '../../actions/roomActions';
 
 
 
@@ -37,14 +37,6 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
   signOut = (e) => {
     e.preventDefault();
     this.props.signOut();
-  }
-
-  joinRoom = (e) => {
-    e.preventDefault();
-    console.log("joining room");
-    const roomId = document.getElementById('room-id');
-    console.log(roomId);
-    this.props.joinRoom(roomId);
   }
 
   roomDisplay = () => {
@@ -138,9 +130,6 @@ const mapDispatchToProps = (dispatch) => {
     },
     getUserRooms: (id) => {
       dispatch(getUserRooms(id))
-    },
-    joinRoom: (roomId) => {
-      dispatch(joinRoom(roomId))
     }
   }
 }
