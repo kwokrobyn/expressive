@@ -39,7 +39,7 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
 
     const rooms = roomArray.map((e) => {
       return (
-        <div className="col-md-4 col-xs-12 roomBox" key={e.key}>
+        <div className="col-lg-3 col-md-3 col-sm-6 col-xs-12 roomBox" key={e.key}>
           <div className="roomBoxName"> {e.name} </div>
           <div className="roomBoxUser"> Room ID: {e.key} </div>
         </div>
