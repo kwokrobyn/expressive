@@ -133,21 +133,19 @@ export const joinRoom = (roomInfo) => {
     // Edit Room User List in Firebase DB
     // db structure: name, masterId, isActive, userList (uid: {name: displayName})
     const roomRef = db.ref('rooms/' + roomInfo.uid);
-    roomRef.update({
+    roomRef.child('userList').update({
       // ADD USER TO ROOM
       // add user to room's userList
-      userList: {
-        [roomInfo.master.uid]: {
-          name: roomInfo.master.displayName
-        }
+      [roomInfo.master.uid]: {
+        name: roomInfo.master.displayName
       }
     }).then(() => {
-      console.log('user has joined room');
+      console.log(roomInfo);
       // ADD ROOM TO USER
       // add room to user's list of created rooms
       addRoomToUserRoomList(roomInfo);
       dispatch(joinRoomAction(roomInfo));
-
+      console.log('user has joined room');
     }).catch((error) => {
       console.log('Error while joining room: ', error.message);
     });
