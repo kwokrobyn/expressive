@@ -38,30 +38,38 @@ class Navbar extends Component {
       profileElement = (
         <ul className="nav navbar-nav" id="navbar-list">
           <li>
-            <Link to="/profile" className="col-sm-2 signup-Link">
-              <button className="btn btn-success signup-btn">
+            <Link to="/profile"
+                  className="col-sm-2"
+                  id="navbar-first-Link">
+              <button className="btn btn-success navbar-first-btn">
                 {this.props.user.displayName}
               </button>
             </Link>
           </li>
           <li>
-            <button className="btn btn-success middle-btn">
-              Join room
-            </button>
+            <Link to="/profile"
+                  className="col-sm-2"
+                  id="navbar-middle-Link">
+              <button className="btn btn-success navbar-middle-btn">
+                Join room
+              </button>
+            </Link>
           </li>
           <li>
-            <button className="btn btn-success middle-btn">
-              <Link to="/dashboard" className="col-sm-2">
+            <Link to="/dashboard"
+                  className="col-sm-2" id="navbar-middle-Link">
+              <button className="btn btn-success navbar-middle-btn">
                 Dashboard
-              </Link>
-            </button>
+              </button>
+            </Link>
           </li>
           <li>
-            <button type="submit" className="btn btn-default login-btn" onClick={this.signOut}>
-              <Link to="/login" className="col-sm-2 navlink">
-                Log Out
-              </Link>
-            </button>
+            <Link to="/login" className="col-sm-2" id="navbar-last-Link">
+              <button type="submit"
+                      className="btn btn-default navbar-last-btn" onClick={this.signOut}>
+                  Log out
+              </button>
+            </Link>
           </li>
         </ul>
       )
@@ -69,18 +77,18 @@ class Navbar extends Component {
       profileElement = (
          <ul className="nav navbar-nav" id="navbar-list">
           <li>
-            <button className="btn btn-success signup-btn">
-              <Link to="/signup" className="col-sm-2 navlink">
-                Sign Up
-              </Link>
-            </button>
+            <Link to="/signup" className="col-sm-2" id="navbar-first-Link">
+              <button className="btn btn-success navbar-first-btn">
+              Sign up
+              </button>
+            </Link>
           </li>
           <li>
-            <button className="btn btn-default login-btn">
-              <Link to="/login" className="col-sm-2 navlink">
-                Log In
-              </Link>
-            </button>
+            <Link to="/login" className="col-sm-2" id="navbar-last-Link">
+              <button className="btn btn-default navbar-last-btn">
+                Log in
+              </button>
+            </Link>
           </li>
         </ul>
       )
