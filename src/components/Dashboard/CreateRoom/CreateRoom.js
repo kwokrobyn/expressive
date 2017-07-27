@@ -13,23 +13,28 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
     super(props);
 
     this.state = ({
-      errMessage: false
+      errMessage: false,
+      //define input fields as an empty string by default.
+      roomname: "",
+      roomstring: ""
     })
+
   }
 
   createRoom = (e) => {
     e.preventDefault();
-    const name = document.getElementById('roomname').value;
-    const id = document.getElementById('roomstring').value;
-
+    const name = this.state.roomname;
+    const id = this.state.roomstring
     // unique string checker to input here
     if (!this.props.existing) {
       // pass room info to actions for firebase call. current user object is passed.
       const roomInfo = {
         name: name,
         uid: id,
-        master: this.props.user
-      }
+        master: this.props.user,
+        }
+      // this sets the state of the 2 input fields to "" after room is created.
+      this.setState({roomname: "", roomstring: ""});
 
       // shady shit
       document.getElementById('close').click();
@@ -44,9 +49,17 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
 
   checkExisting = (e) => {
     e.preventDefault();
-    const roomString = document.getElementById('roomstring').value;
+    let value = e.target.value;
+    this.setState({roomstring: value});
+    // const roomString = document.getElementById('roomstring').value;
+    const roomString = value;
     console.log(roomString);
     this.props.checkExisting(roomString);
+  }
+
+  onChange = (e) => {
+    let value = e.target.value;
+    this.setState({roomname: value});
   }
 
   render() {
@@ -67,11 +80,19 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
                 <form>
                   <div className="form-group">
                     <label>Room Name:</label>
-                    <input type="text" className="form-control" id="roomname" />
+                    <input type="text"
+                           className="form-control"
+                           id="roomname"
+                           onChange={this.onChange}
+                           value={this.state.roomname}/>
                   </div>
                   <div className="form-group">
                     <label>Room String:</label>
-                    <input type="text" className="form-control" id="roomstring" onChange={this.checkExisting}/>
+                    <input type="text"
+                           className="form-control"
+                           id="roomstring"
+                           onChange={this.checkExisting}
+                           value={this.state.roomstring}/>
                     {this.props.existing ? (
                       <h1>this room has been taken</h1>
                     ) : (
@@ -87,8 +108,18 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
 
             </div>
             <div className="modal-footer">
-              <button type="submit" className="btn btn-default" onClick={this.createRoom}>Create Room</button>
-              <button type="button" className="btn btn-default" id="close" data-dismiss="modal">Close</button>
+              {/* disabled = true by default. When input fields are not "", disable = false */}
+              <button type="submit"
+                      className="btn btn-default"
+                      id="createBtn"
+                      onClick={this.createRoom}
+                      disabled={!(this.state.roomstring && this.state.roomname)}>
+                      Create Room</button>
+              <button type="button"
+                      className="btn btn-default"
+                      id="close"
+                      data-dismiss="modal">
+                      Close</button>
             </div>
           </div>
         </div>

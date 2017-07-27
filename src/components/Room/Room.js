@@ -34,7 +34,23 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
 
     return (
       <div className="container">
-        <Navbar pageTitle={'This is ' + this.props.match.params.id + ' !'} />
+        <Navbar pageTitle={'This is ' + this.props.roomString + ' !'} />
+        <div className="row post-qn-group">
+          <div className="col-lg-12">
+            <div className="input-group">
+              <input type="text" className="form-control" aria-label="..."/>
+              <div className="input-group-btn">
+                <button type="button" className="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span className="caret"></span></button>
+                <ul className="dropdown-menu dropdown-menu-right">
+                  <li><a href="#">Action</a></li>
+                  <li role="separator" className="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </div>{ /* /btn-group */ }
+            </div>{ /* /input-group */ }
+          </div>{ /* /.col-lg-6 */ }
+        </div>{ /* /.row */ }
+        <Footer />
       </div>
     )
   }

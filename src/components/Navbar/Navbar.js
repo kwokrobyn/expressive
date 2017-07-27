@@ -11,7 +11,7 @@ import {
 //Importing static assets (i.e. stylesheets, images)
 import './Navbar.css';
 import squareLogo from './logo_v1.png';
-import titledLogo from './title.png';
+import titledLogo from './logo_v1.png';
 
 //Importing React Components
 
@@ -84,7 +84,7 @@ class Navbar extends Component {
    return (
 
       <nav className="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div className="container navContainer">
+        <div className="container nav-container">
           <div className="navbar-header">
             <a href="./" className="navbar-brand">
               <img src={squareLogo}/>
@@ -106,7 +106,7 @@ class Navbar extends Component {
                     <img src={titledLogo}/>
                   </a>
                 </div>
-                <div className="pageTitle">{this.props.pageTitle}</div>
+                <div className="navbar-page-title">{this.props.pageTitle}</div>
               </div>
               <div className="col-sm-6 col-md-5 col-lg-4">
                 {profileElement}
