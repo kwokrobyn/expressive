@@ -14,7 +14,7 @@ import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import QuestionList from './QuestionList/QuestionList';
 
-import { addQuestion } from '../../actions/questionActions';
+import { addQuestion, getQuestions } from '../../actions/questionActions';
 
 /**
  * Room
@@ -46,6 +46,32 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
       room: this.props.room.roomId
     }
     this.props.addQuestion(questionInfo);
+  }
+
+  componentDidMount() {
+    this.props.getQuestions(this.props.room.uid);
+    console.log(this.props.question);
+  }
+
+  questionDisplay = () => {
+    const questionArray = [];
+    Object.keys(this.props.questionList).forEach((key) => {
+      questionArray.push({
+        key: key,
+        text: this.props.questionList[key].text
+      })
+    })
+
+    const questions = questionArray.map((e) => {
+      return (
+        <div className="col-md-4 col-xs-12 dashboard-roombox" key={e.key}>
+          <div className="dashboard-roombox-name"> {e.name} </div>
+          <div className="dashboard-roombox-user"> <b>Question</b> {e.key} </div>
+        </div>
+      )
+    })
+
+    return questions;
   }
 
   render() {
@@ -96,7 +122,8 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
 const mapStateToProps = (state) => {
   return {
     user: state.user,
-    room: state.room
+    room: state.room,
+    question: state.questions
   }
 }
 
@@ -104,6 +131,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     addQuestion: (questionInfo) => {
       dispatch(addQuestion(questionInfo))
+    },
+    getQuestions: (id) => {
+      dispatch(getQuestions(id))
     }
   }
 }
