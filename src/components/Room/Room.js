@@ -48,32 +48,6 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
     this.props.addQuestion(questionInfo);
   }
 
-  componentDidMount() {
-    this.props.getQuestions(this.props.room.uid);
-    console.log(this.props.question);
-  }
-
-  questionDisplay = () => {
-    const questionArray = [];
-    Object.keys(this.props.questionList).forEach((key) => {
-      questionArray.push({
-        key: key,
-        text: this.props.questionList[key].text
-      })
-    })
-
-    const questions = questionArray.map((e) => {
-      return (
-        <div className="col-md-4 col-xs-12 dashboard-roombox" key={e.key}>
-          <div className="dashboard-roombox-name"> {e.name} </div>
-          <div className="dashboard-roombox-user"> <b>Question</b> {e.key} </div>
-        </div>
-      )
-    })
-
-    return questions;
-  }
-
   render() {
     return (
       <div className="container-fluid">
