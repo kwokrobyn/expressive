@@ -12,6 +12,7 @@ import './Room.css';
 //Importing React Components
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
+import QuestionList from './QuestionList/QuestionList';
 
 import { addQuestion } from '../../actions/questionActions';
 
@@ -81,9 +82,7 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
 
         <div className="row room-responses-row">
           <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="room-responses-column">
-            <div className="well" id="room-responses-well">
-              { /* Questions are posted in here */ }
-            </div> { /* /#room-responses-well */ }
+            <QuestionList roomString={this.props.roomString}/> { /* /#room-responses-well */ }
           </div> { /* /#room-responses-column */ }
         </div> {/* /.room-responses-row */}
 

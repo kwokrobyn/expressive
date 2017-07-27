@@ -36,10 +36,6 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
 
   }
 
-  static propTypes = {
-    match: PropTypes.object.isRequired
-  }
-
   // this.props.match.params.id
   componentDidMount() {
     const db = firebase.database();
