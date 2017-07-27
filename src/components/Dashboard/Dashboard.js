@@ -66,10 +66,6 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
 
           <Navbar pageTitle="Dashboard"/>
 
-          <div className="row" id="dashboard-title">
-            <h2>Your Rooms</h2>
-          </div>
-
           <div className="row" id="dashboard-create-btn-group">
             {/* Submit Button */}
             <Col className="dashboard-create-btn-Col">
@@ -78,6 +74,8 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
                   data-target="#myModal">
                 <span className="text">
                   Create a new room
+                  <hr id="dashboard-create-btn-text-hr"/>
+                  <span className="glyphicon glyphicon-triangle-bottom" id="dashboard-create-btn-glyphicon" aria-hidden="true"></span>
                 </span>
                 <span className="line -right"></span>
                 <span className="line -top"></span>
