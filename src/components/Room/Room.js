@@ -34,7 +34,7 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
 
     return (
       <div className="container">
-        <Navbar pageTitle={'This is ' + this.props.match.params.id + ' !'} />
+        <Navbar pageTitle={'This is ' + this.props.roomString + ' !'} />
         <div className="row post-qn-group">
           <div className="col-lg-12">
             <div className="input-group">
