@@ -38,7 +38,11 @@ const joinRoomAction = (room) => {
 }
 
 //leave room
-
+const leaveRoomAction = () => {
+  return {
+    type: 'LEAVE_ROOM'
+  }
+}
 
 /*
 * DATABASE METHODS
@@ -130,24 +134,34 @@ export const joinRoom = (roomInfo) => {
   return (dispatch) => {
     console.log(roomInfo);
 
-    // Edit Room User List in Firebase DB
-    // db structure: name, masterId, isActive, userList (uid: {name: displayName})
-    const roomRef = db.ref('rooms/' + roomInfo.uid);
-    roomRef.child('userList').update({
+    const roomRef = db.ref('rooms/' + roomInfo.roomId + '/userList');
+    roomRef.update({
       // ADD USER TO ROOM
       // add user to room's userList
-      [roomInfo.master.uid]: {
-        name: roomInfo.master.displayName
+      [roomInfo.user.uid]: {
+        name: roomInfo.user.displayName
       }
     }).then(() => {
-      console.log(roomInfo);
-      // ADD ROOM TO USER
-      // add room to user's list of created rooms
-      addRoomToUserRoomList(roomInfo);
+
       dispatch(joinRoomAction(roomInfo));
       console.log('user has joined room');
     }).catch((error) => {
       console.log('Error while joining room: ', error.message);
+    });
+  }
+}
+
+export const leaveRoom = (roomInfo) => {
+  return (dispatch) => {
+
+    const roomRef = db.ref('rooms/' + roomInfo.roomId + '/userList/' + roomInfo.user.uid);
+    roomRef.remove()
+    .then(() => {
+      console.log('Room left in DB');
+      dispatch(leaveRoomAction());
+    })
+    .catch((error) => {
+      console.log('Error leaving room: ', error.message);
     });
   }
 }

@@ -12,6 +12,9 @@ import './Room.css';
 //Importing React Components
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
+import QuestionList from './QuestionList/QuestionList';
+
+import { addQuestion, getQuestions } from '../../actions/questionActions';
 
 /**
  * Room
@@ -20,6 +23,29 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
 
   constructor(props){
     super(props);
+
+    this.state = ({
+      question: ""
+    })
+  }
+
+  onChange = (e) => {
+    let value = e.target.value;
+    console.log(value);
+    this.setState({question: value});
+  }
+
+  submitQuestion = (e) => {
+    e.preventDefault();
+    console.log(this.props.user.uid);
+    console.log(this.props.room.roomId);
+
+    const questionInfo = {
+      text: this.state.question,
+      poster: this.props.user.uid, //poster of the question
+      room: this.props.room.roomId
+    }
+    this.props.addQuestion(questionInfo);
   }
 
   render() {
@@ -34,12 +60,12 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
               <div className="form-group">
                 <div className="input-group">
                   {/* Post a question bar */}
-                  <input type="text" className="form-control" aria-label="..." placeholder="Ask a question"/>
+                  <input type="text" className="form-control" aria-label="..." placeholder="Ask a question" onChange={this.onChange}/>
                   {/* Post button */}
                   <div className="input-group-btn room-post-qn-btn">
                     <span className="input-group-btn">
                       <button className="btn btn-default" type="button">
-                        <span className="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                        <span className="glyphicon glyphicon-ok" aria-hidden="true" onClick={this.submitQuestion}></span>
                       </button>
                       </span>
                   </div>{ /* /#room-post-qn-btn (Post button) */ }
@@ -47,7 +73,7 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
               </div>
               <div className="checkbox" id="room-post-anon-checkbox">
                 <label>
-                  <input type="checkbox"/> Post anonynously
+                  <input type="checkbox"/> Post anonymously
                 </label>
               </div>{ /* /#oom-post-anon-checkbox */ }
             </form>{ /* /.post-qn-group */ }
@@ -56,9 +82,7 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
 
         <div className="row room-responses-row">
           <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="room-responses-column">
-            <div className="well" id="room-responses-well">
-              { /* Questions are posted in here */ }
-            </div> { /* /#room-responses-well */ }
+            <QuestionList roomString={this.props.roomString}/> { /* /#room-responses-well */ }
           </div> { /* /#room-responses-column */ }
         </div> {/* /.room-responses-row */}
 
@@ -70,14 +94,21 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
 }
 
 const mapStateToProps = (state) => {
-    return {
-      user: state.user
-    }
+  return {
+    user: state.user,
+    room: state.room,
+    question: state.questions
+  }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-
+    addQuestion: (questionInfo) => {
+      dispatch(addQuestion(questionInfo))
+    },
+    getQuestions: (id) => {
+      dispatch(getQuestions(id))
+    }
   }
 }
 
