@@ -1,4 +1,7 @@
 import uuid from 'uuid';
+import firebase from '../firebase';
+
+const db = firebase.database();
 
 const getQuestionsAction = (questions) => {
   return {
