@@ -1,5 +1,20 @@
-.post-qn-group {
-  position: relative;
-  width: 80vw;
-  margin: 30vh 0 0 0;
+.room-post-qn-row {
+  margin: 0 auto;
 }
+
+#room-post-qn-group {
+  position: relative;
+  width: 90%;
+  margin: 15vh 5vw 0 5vw;
+}
+
+#room-post-anon-checkbox {
+  margin: 1vh 0vw 0 0;
+}
+
+  #room-post-anon-checkbox > label {
+    text-align: left;
+    margin: 1vh 0 0 0;
+    padding: 0 0 0 20px;
+    letter-spacing: normal;
+  }
