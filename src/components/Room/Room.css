@@ -1,11 +1,11 @@
 .room-post-qn-row {
-  margin: 0 auto;
+  margin: 15vh 5vw 0 5vw;
 }
 
 #room-post-qn-group {
   position: relative;
   width: 90%;
-  margin: 15vh 5vw 0 5vw;
+  margin: 0 5vw 3vw 5vw;
 }
 
 #room-post-anon-checkbox {
@@ -18,3 +18,11 @@
     padding: 0 0 0 20px;
     letter-spacing: normal;
   }
+
+#room-responses-column {
+  position: relative;
+}
+
+#room-responses-well {
+  position: relative;
+}

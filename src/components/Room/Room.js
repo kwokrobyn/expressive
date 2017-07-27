@@ -34,31 +34,45 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
 
     return (
       <div className="container-fluid">
+
         <Navbar pageTitle={'This is ' + this.props.match.params.id + ' !'} />
-        <div className="row post-qn-row">
-          <div className="col-lg-12">
+
+        <div className="row room-post-qn-row">
+          <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <form id="room-post-qn-group">
               <div className="form-group">
                 <div className="input-group">
                   {/* Post a question bar */}
-                  <input type="text" className="form-control" aria-label="..."/>
+                  <input type="text" className="form-control" aria-label="..." placeholder="Ask a question"/>
                   {/* Post button */}
                   <div className="input-group-btn room-post-qn-btn">
                     <span className="input-group-btn">
-                      <button className="btn btn-default" type="button">Post</button>
+                      <button className="btn btn-default" type="button">
+                        <span className="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                      </button>
                       </span>
-                  </div>{ /* /Post button */ }
+                  </div>{ /* /#room-post-qn-btn (Post button) */ }
                 </div>{ /* /input-group */ }
               </div>
               <div className="checkbox" id="room-post-anon-checkbox">
                 <label>
                   <input type="checkbox"/> Post anonynously
                 </label>
-              </div>
-            </form>{ /* /post-qn-group */ }
+              </div>{ /* /#oom-post-anon-checkbox */ }
+            </form>{ /* /.post-qn-group */ }
           </div>{ /* /.col-lg-12 */ }
         </div>{ /* /.row */ }
+
+        <div className="row room-responses-row">
+          <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="room-responses-column">
+            <div className="well" id="room-responses-well">
+              { /* Questions are posted in here */ }
+            </div> { /* /#room-responses-well */ }
+          </div> { /* /#room-responses-column */ }
+        </div> {/* /.room-responses-row */}
+
         <Footer />
+
       </div>
     )
   }
