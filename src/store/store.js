@@ -6,8 +6,12 @@ import thunk from 'redux-thunk';
 import userReducer from '../reducers/userReducer';
 import checkExistReducer from '../reducers/checkExistReducer';
 import ownedRoomsReducer from '../reducers/ownedRoomsReducer';
+<<<<<<< HEAD
 import fetchingReducer from '../reducers/fetchingReducer';
 
+=======
+import roomReducer from '../reducers/roomReducer';
+>>>>>>> bryan
 
 export let initStore = () => {
 
@@ -16,7 +20,11 @@ export let initStore = () => {
     user: userReducer,
     checkExist: checkExistReducer,
     ownedRooms: ownedRoomsReducer,
+<<<<<<< HEAD
     isFetching: fetchingReducer
+=======
+    room: roomReducer
+>>>>>>> bryan
   });
 
   // Create the store with all the reducers and allow for chrome redux dev tools to run and read reducers
