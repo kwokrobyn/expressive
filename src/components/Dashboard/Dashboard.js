@@ -9,7 +9,7 @@ import CreateRoom from './CreateRoom/CreateRoom';
 
 //Importing React Components
 import { signOut } from '../../actions/userActions';
-import { getUserRooms, joinRoom } from '../../actions/roomActions';
+import { getUserRooms } from '../../actions/roomActions';
 
 
 
@@ -39,14 +39,6 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
     this.props.signOut();
   }
 
-  joinRoom = (e) => {
-    e.preventDefault();
-    console.log("joining room");
-    const roomId = document.getElementById('room-id');
-    console.log(roomId);
-    this.props.joinRoom(roomId);
-  }
-
   roomDisplay = () => {
     const roomArray = [];
     Object.keys(this.props.ownedRooms).forEach((key) => {
@@ -61,7 +53,7 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
         <div className="col-md-4 col-xs-12 dashboard-roombox" key={e.key}>
           <div className="dashboard-roombox-name"> {e.name} </div>
           <div className="dashboard-roombox-user"> <b>Room ID:</b> {e.key} </div>
-          <Link to={"/room/" + e.key} onClick={this.joinRoom}> Join Room! </Link>
+          <Link to={"/room/" + e.key}> Join Room! </Link>
         </div>
       )
     })
@@ -140,9 +132,6 @@ const mapDispatchToProps = (dispatch) => {
     },
     getUserRooms: (id) => {
       dispatch(getUserRooms(id))
-    },
-    joinRoom: (roomId) => {
-      dispatch(joinRoom(roomId))
     }
   }
 }
