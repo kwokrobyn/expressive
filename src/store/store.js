@@ -7,7 +7,7 @@ import userReducer from '../reducers/userReducer';
 import checkExistReducer from '../reducers/checkExistReducer';
 import ownedRoomsReducer from '../reducers/ownedRoomsReducer';
 import fetchingReducer from '../reducers/fetchingReducer';
-
+import roomReducer from '../reducers/roomReducer';
 
 export let initStore = () => {
 
@@ -16,7 +16,8 @@ export let initStore = () => {
     user: userReducer,
     checkExist: checkExistReducer,
     ownedRooms: ownedRoomsReducer,
-    isFetching: fetchingReducer
+    isFetching: fetchingReducer,
+    room: roomReducer
   });
 
   // Create the store with all the reducers and allow for chrome redux dev tools to run and read reducers

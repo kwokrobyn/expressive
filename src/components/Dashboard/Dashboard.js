@@ -15,6 +15,12 @@ import { getUserRooms } from '../../actions/roomActions';
 
 import './Dashboard.css';
 
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
+
 /**
  * Dash
  */
@@ -34,7 +40,6 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
   }
 
   roomDisplay = () => {
-
     const roomArray = [];
     Object.keys(this.props.ownedRooms).forEach((key) => {
       roomArray.push({
@@ -48,18 +53,15 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
         <div className="col-md-4 col-xs-12 dashboard-roombox" key={e.key}>
           <div className="dashboard-roombox-name"> {e.name} </div>
           <div className="dashboard-roombox-user"> <b>Room ID:</b> {e.key} </div>
+          <Link to={"/room/" + e.key}> Join Room! </Link>
         </div>
       )
     })
 
     return rooms;
-
   }
 
-
-
   render() {
-
     return (
       <div className="container-fluid">
         <div className="container-fluid" id="dashboard-rooms-group">
@@ -91,16 +93,9 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
             {this.roomDisplay()}
           </div>
         </div>{ /* /#dashboard-rooms-group */ }
-
         <CreateRoom/>
-
       </div>
-
-
-
-
     )
-
   }
   // render() {
   //
