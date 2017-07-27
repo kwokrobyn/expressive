@@ -58,16 +58,10 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
 
     const rooms = roomArray.map((e) => {
       return (
-<<<<<<< HEAD
         <div className="col-md-4 col-xs-12 dashboard-roombox" key={e.key}>
           <div className="dashboard-roombox-name"> {e.name} </div>
           <div className="dashboard-roombox-user"> <b>Room ID:</b> {e.key} </div>
-=======
-        <div className="col-md-4 col-xs-12 roomBox" key={e.key}>
-          <div className="roomBoxName"> {e.name} </div>
-          <div className="roomBoxUser" id="room-id"> Room ID: {e.key} </div>
           <Link to={"/room/" + e.key} onClick={this.joinRoom}> Join Room! </Link>
->>>>>>> bryan
         </div>
       )
     })
@@ -106,12 +100,7 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
           <div className="row dashList">
             {this.roomDisplay()}
           </div>
-<<<<<<< HEAD
         </div>{ /* /#dashboard-rooms-group */ }
-
-=======
-        </div>
->>>>>>> bryan
         <CreateRoom/>
       </div>
     )
