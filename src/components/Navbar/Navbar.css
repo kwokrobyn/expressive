@@ -7,11 +7,11 @@
 }
 
 .navbar-page-title {
-  left: 20vw;
+  left: 6vw;
   top: 1.5vh;
   display: inline-block;
   color: rgba(243,245,242,1);
-  font-size: 4vh;
+  font-size: 30px;
   position: relative;
 }
 
@@ -86,6 +86,7 @@
     width: 70px;
     top: -10px;
     border-radius: 0em 0em 0em 3em;
+    margin-right: 0px;
   }
 
   .navbar-header > button > .glyphicon-menu-hamburger {
@@ -387,6 +388,15 @@
     /*Mobile Sign Up Button : Hover : Active - above*/
   /*Mobile Sign Up Button - above*/
 
+  .navbar-brand img {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    margin-left: 5vw;
+    position: absolute;
+    top: 0px;
+    height: 12vh;
+  }
+
 /*These styles above are for the mobile login form and button on the UL.*/
 }
 /*These styles above are exclusive to small tablets and mobile display sizes.*/
@@ -606,6 +616,15 @@
 
   /*These styles above are for the log in button*/
 
+  .navbar-brand img {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    margin-left: 5vw;
+    position: absolute;
+    top: 0px;
+    height: 100px;
+  }
+
 }
 /*These styles above are exclusive to tablets and desktop display sizes.*/
 
@@ -617,12 +636,3 @@
 .navbar-brand {
   height: 7vh;
 }
-
-  .navbar-brand img {
-    margin: 0 0 0 0;
-    padding: 0 0 0 0;
-    margin-left: 20px;
-    position: absolute;
-    top: -5px;
-    height: 70px;
-  }
