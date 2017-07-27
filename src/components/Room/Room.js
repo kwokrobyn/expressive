@@ -26,12 +26,14 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
     match: PropTypes.object.isRequired
   }
 
-  componentDidMount() {
+  componentWillMount() {
+    const matchVar = this.props.match;
+    console.log(matchVar);
+    console.log(matchVar.params.id);
 
   }
 
   render() {
-
     return (
       <div className="container-fluid">
 

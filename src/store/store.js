@@ -7,7 +7,7 @@ import userReducer from '../reducers/userReducer';
 import checkExistReducer from '../reducers/checkExistReducer';
 import ownedRoomsReducer from '../reducers/ownedRoomsReducer';
 import fetchingReducer from '../reducers/fetchingReducer';
-
+import roomReducer from '../reducers/roomReducer';
 
 export let initStore = () => {
 
