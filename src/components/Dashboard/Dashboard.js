@@ -2,12 +2,18 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { signOut } from '../../actions/userActions';
-import { getUserRooms } from '../../actions/roomActions';
+import { getUserRooms, joinRoom } from '../../actions/roomActions';
 
 import Navbar from '../Navbar/Navbar';
 import CreateRoom from './CreateRoom/CreateRoom';
 
 import './Dashboard.css';
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 
 /**
  * Dash
@@ -27,8 +33,15 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
     this.props.signOut();
   }
 
-  roomDisplay = () => {
+  joinRoom = (e) => {
+    e.preventDefault();
+    console.log("joining room");
+    const roomId = document.getElementById('room-id');
+    console.log(roomId);
+    this.props.joinRoom(roomId);
+  }
 
+  roomDisplay = () => {
     const roomArray = [];
     Object.keys(this.props.ownedRooms).forEach((key) => {
       roomArray.push({
@@ -41,19 +54,16 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
       return (
         <div className="col-md-4 col-xs-12 roomBox" key={e.key}>
           <div className="roomBoxName"> {e.name} </div>
-          <div className="roomBoxUser"> Room ID: {e.key} </div>
+          <div className="roomBoxUser" id="room-id"> Room ID: {e.key} </div>
+          <Link to={"/room/" + e.key} onClick={this.joinRoom}> Join Room! </Link>
         </div>
       )
     })
 
     return rooms;
-
   }
 
-
-
   render() {
-
     return (
       <div className="container-fluid">
         <div className="container-fluid dashContainer">
@@ -68,16 +78,9 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
             {this.roomDisplay()}
           </div>
         </div>
-
         <CreateRoom/>
-
       </div>
-
-
-
-
     )
-
   }
   // render() {
   //
@@ -114,6 +117,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     getUserRooms: (id) => {
       dispatch(getUserRooms(id))
+    },
+    joinRoom: (roomId) => {
+      dispatch(joinRoom(roomId))
     }
   }
 }

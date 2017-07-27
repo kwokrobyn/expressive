@@ -27,6 +27,20 @@ const getUserRoomsAction = (rooms) => {
 }
 
 /*
+* JOIN & LEAVE ROOM actions
+*/
+//join room
+const joinRoomAction = (room) => {
+  return {
+    type: 'JOIN_ROOM',
+    room
+  }
+}
+
+//leave room
+
+
+/*
 * DATABASE METHODS
 */
 const db = firebase.database();
@@ -108,6 +122,34 @@ export const createRoom = (roomInfo) => {
     }).catch((error) => {
       console.log('Error while creating room: ', error.message);
     });
+  }
+}
 
+// JOIN ROOM
+export const joinRoom = (roomInfo) => {
+  return (dispatch) => {
+    console.log(roomInfo);
+
+    // Edit Room User List in Firebase DB
+    // db structure: name, masterId, isActive, userList (uid: {name: displayName})
+    const roomRef = db.ref('rooms/' + roomInfo.uid);
+    roomRef.update({
+      // ADD USER TO ROOM
+      // add user to room's userList
+      userList: {
+        [roomInfo.master.uid]: {
+          name: roomInfo.master.displayName
+        }
+      }
+    }).then(() => {
+      console.log('user has joined room');
+      // ADD ROOM TO USER
+      // add room to user's list of created rooms
+      addRoomToUserRoomList(roomInfo);
+      dispatch(joinRoomAction(roomInfo));
+
+    }).catch((error) => {
+      console.log('Error while joining room: ', error.message);
+    });
   }
 }
