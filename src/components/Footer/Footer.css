@@ -2,6 +2,7 @@ footer {
   width: 100%;
   height: 10vh;
   background-color: rgba(8,154,136,1);
+  position: relative;
 }
 
   #footer-group-left {

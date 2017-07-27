@@ -39,7 +39,7 @@ class LandingFeatures extends Component {
 
       {/* Join Room Input */}
         <Row>
-          <Col md={10} mdOffset={4} sm={8} smOffset={3} xs={11} xsOffset={2} className="joinRm">
+          <Col md={10} mdOffset={4} sm={8} smOffset={3} xs={11} xsOffset={2} className="landingfeatures-join-rm">
 
            <FormGroup
              controlId="formBasicText"

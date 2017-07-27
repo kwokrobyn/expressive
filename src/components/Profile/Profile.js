@@ -62,7 +62,7 @@ class Profile extends Component {
       <div className="container-fluid">
         <Navbar pageTitle="Profile Settings"/>
 
-        <form>
+        <form id="profile-form">
           <div className="form-group">
             <label>New name</label>
             <input  type="email"

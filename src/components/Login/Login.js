@@ -11,7 +11,7 @@ import './Login.css';
 //Importing React Components
 import Navbar from '../Navbar/Navbar';
 
-// Import Firebase
+// Importing Firebase
 import firebase from '../../firebase';
 
 class Login extends Component {

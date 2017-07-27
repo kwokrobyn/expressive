@@ -6,7 +6,7 @@ div.form-group.has-feedback {
     width: 70vw;
 }
 
-.joinRm {
+.landingfeatures-join-rm {
  margin-top: 10vw;
  height: 10vw;
 }
@@ -28,14 +28,14 @@ button.Join {
   display: inline;
   height: 5vw;
   width: 8vw;
-  border: 4px solid #089a88;
-  color: #089a88;
+  border: 4px solid rgba(0,159,139,1);
+  color: rgba(0,159,139,1);
   font-weight: 900;
   font-size: 1.5vw;
 }
 
 button.Join:hover {
-    background-color: #00d6bc;
+    background-color: rgba(0,159,139,1);
     border: 3px solid #006054;
     color: #006054;
     -webkit-animation-name: pulse;
@@ -96,7 +96,7 @@ div.featureFrame03.col-md-4.col-xs-4{
 }
 
 div.features01 {
-  background-color: orange;
+  background-color: rgba(243,150,72,1);
   text-align: center;
   font-family: 'Raleway', sans-serif;
   color: white;
@@ -117,7 +117,7 @@ div.features02 {
   background-color: gray;
   text-align: center;
   font-family: 'Raleway', sans-serif;
-  color: white;
+  color: rgba(243,245,242,1);
   height: 15vw;
   margin-top: 30px;
   -webkit-transition: margin 0.5s ease-out;
@@ -131,10 +131,10 @@ div.features02:hover {
 }
 
 div.features03 {
-  background-color: orange;
+  background-color: rgba(243,150,72,1);
   text-align: center;
   font-family: 'Raleway', sans-serif;
-  color: white;
+  color: rgba(243,245,242,1);
   height: 15vw;
   margin-top: 30px;
   -webkit-transition: margin 0.5s ease-out;
