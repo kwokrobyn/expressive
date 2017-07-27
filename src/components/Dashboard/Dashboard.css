@@ -46,7 +46,7 @@
   font-family: "Raleway", sans-serif;
 }
 
-  .text {
+  #dashboard-create-btn-text {
     font-family: "Raleway", sans-serif;
     font-weight: 700;
     color: rgba(47,120,139,1);
@@ -54,10 +54,10 @@
     display: block;
     transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1) 0.4s;
   }
+    #dashboard-create-btn-text-hr {
+      border-color: rgba(47,120,139,1);
+    }
 
-  #dashboard-create-btn-text-hr {
-    border-color: rgba(47,120,139,1);
-  }
 
 .dashboard-create-btn-a:after {
   position: absolute;
@@ -109,8 +109,8 @@
   transform-origin: right;
 }
 
-.dashboard-create-btn-a:hover .text,
-.dashboard-create-btn-a:active .text {
+.dashboard-create-btn-a:hover > #dashboard-create-btn-text,
+.dashboard-create-btn-a:active > #dashboard-create-btn-text {
   transform: translate3d(0, 0, 0);
   transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1) 0.4s;
 }

@@ -72,10 +72,10 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
               <a className="dashboard-create-btn-a"
                   data-toggle="modal"
                   data-target="#myModal">
-                <span className="text">
+                <span className="text" id="dashboard-create-btn-text">
                   Create a new room
                   <hr id="dashboard-create-btn-text-hr"/>
-                  <span className="glyphicon glyphicon-triangle-bottom" id="dashboard-create-btn-glyphicon" aria-hidden="true"></span>
+                  <span className="glyphicon glyphicon-triangle-bottom" id="dashboard-create-btn-text-glyphicon" aria-hidden="true"></span>
                 </span>
                 <span className="line -right"></span>
                 <span className="line -top"></span>
