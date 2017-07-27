@@ -113,7 +113,7 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
                       className="btn btn-default"
                       id="createBtn"
                       onClick={this.createRoom}
-                      disabled={!(this.state.roomstring && this.state.roomname)}>
+                      disabled={!(this.state.roomstring && this.state.roomname && !(this.props.existing))}>
                       Create Room</button>
               <button type="button"
                       className="btn btn-default"
