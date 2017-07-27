@@ -13,7 +13,7 @@ import './Room.css';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 
-import { addQuestion } from '../../../actions/questionActions';
+import { addQuestion } from '../../actions/questionActions';
 
 /**
  * Room
@@ -40,7 +40,7 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
     console.log(this.props.room.roomId);
 
     const questionInfo = {
-      question: this.state.question,
+      text: this.state.question,
       poster: this.props.user.uid, //poster of the question
       room: this.props.room.roomId
     }
