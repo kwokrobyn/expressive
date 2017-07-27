@@ -18,7 +18,7 @@ import Footer from '../Footer/Footer';
 import Room from '../Room/Room';
 
 import { isFetching } from '../../actions/fetchingActions';
-import { joinRoom } from '../../actions/roomActions';
+import { joinRoom, leaveRoom } from '../../actions/roomActions';
 
 /**
  * Room Join
@@ -53,11 +53,11 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
           roomExists: true
         })
         console.log(snapshot.val());
-        //here
+
         const roomInfo = {
-          name: snapshot.val().name,
-          uid: this.props.match.params.id,
-          master: this.props.user,
+          roomName: snapshot.val().name,
+          roomId: this.props.match.params.id,
+          user: this.props.user
           }
         this.props.joinRoom(roomInfo);
       } else {
@@ -67,6 +67,17 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
       }
     })
 
+  }
+
+  componentWillUnmount() {
+    console.log('componentwillunmount');
+    console.log(this.props.user);
+    const roomInfo = {
+      roomName: this.props.room.roomName,
+      roomId: this.props.match.params.id,
+      user: this.props.user
+    }
+    this.props.leaveRoom(roomInfo);
   }
 
   render() {
@@ -119,7 +130,8 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
 const mapStateToProps = (state) => {
     return {
       user: state.user,
-      fetchState: state.isFetching
+      fetchState: state.isFetching,
+      room: state.room
     }
 }
 
@@ -130,6 +142,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     joinRoom: (roomInfo) => {
       dispatch(joinRoom(roomInfo))
+    },
+    leaveRoom: (roomInfo) => {
+      dispatch(leaveRoom(roomInfo))
     }
   }
 }

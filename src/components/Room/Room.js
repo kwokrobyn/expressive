@@ -21,11 +21,7 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
   constructor(props){
     super(props);
   }
-<<<<<<< HEAD
   
-=======
-
->>>>>>> master
   render() {
     return (
       <div className="container-fluid">
