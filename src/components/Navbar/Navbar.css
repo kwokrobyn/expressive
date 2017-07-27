@@ -344,7 +344,7 @@
       transition: transform .3s, opacity .3s, background-color .3s
     }
 
-    .signup-btn > a {
+    .signup-Link {
       color: rgba(243,245,242,1);
       text-shadow: none;
       text-decoration: none;
@@ -367,7 +367,7 @@
       background-color: rgba(8,154,136,1); /* The background of the button before the chop comes into view */
     }
 
-    .signup-btn:hover > a {
+    .signup-Link:hover {
       color: rgba(243,245,242,1);
     }
 
@@ -379,7 +379,7 @@
       background-color: rgba(243,150,72,1);
     }
 
-    .signup-btn:hover:active > a {
+    .signup-Link:hover:active {
       color: rgba(243,245,242,1);
       text-shadow: none;
       box-shadow: none;
@@ -459,6 +459,7 @@
 
   .signup-btn:before {
     display: block;
+    z-index: -1;
     left: 0; /* <== Needed for the cool button hover effect */
     top: 0; /* <== Needed for the cool button hover effect */
     content: ''; /* <== Needed for the cool button hover effect */
@@ -474,7 +475,7 @@
     transition: transform .3s, opacity .3s, background-color .3s
   }
 
-  .signup-btn > a {
+  .signup-Link {
     color: rgba(243,245,242,1);
     text-decoration: none;
   }

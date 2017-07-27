@@ -38,10 +38,15 @@ class Navbar extends Component {
       profileElement = (
         <ul className="nav navbar-nav" id="navbar-list">
           <li>
-            <button className="btn btn-success signup-btn">
-              <Link to="/profile" className="col-sm-2 navlink">
+            <Link to="/profile" className="col-sm-2 signup-Link">
+              <button className="btn btn-success signup-btn">
                 {this.props.user.displayName}
-              </Link>
+              </button>
+            </Link>
+          </li>
+          <li>
+            <button className="btn btn-success middle-btn">
+              Join room
             </button>
           </li>
           <li>

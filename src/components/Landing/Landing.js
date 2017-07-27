@@ -27,7 +27,7 @@ export class Landing extends Component {
     return (
       <Grid fluid className="landingContainer">
         <Row className="nav">
-          <Navbar pageTitle="Landing" title="Navbar"/>
+          <Navbar pageTitle="expressive" title="Navbar"/>
         </Row>
         <Row className="LHeading">
           <LandingHeader title="LandingHeader" />
