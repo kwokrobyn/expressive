@@ -11,8 +11,8 @@ const roomReducer = (state = defaultRoom, action) => {
     case "JOIN_ROOM":
       return {
         isInRoom: true,
-        uid: action.rooms.uid,
-        name: action.rooms.name,
+        uid: action.room.uid,
+        name: action.room.name,
         isMaster: true // join room as master? what about non masters?
       }
     default:

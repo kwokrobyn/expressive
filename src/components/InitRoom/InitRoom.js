@@ -18,6 +18,7 @@ import Footer from '../Footer/Footer';
 import Room from '../Room/Room';
 
 import { isFetching } from '../../actions/fetchingActions';
+import { joinRoom } from '../../actions/roomActions';
 
 /**
  * Room Join
@@ -49,6 +50,14 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
         this.setState({
           roomExists: true
         })
+        console.log(snapshot.val());
+        //here
+        const roomInfo = {
+          name: snapshot.val().name,
+          uid: this.props.match.params.id,
+          master: this.props.user,
+          }
+        this.props.joinRoom(roomInfo);
       } else {
         this.setState({
           roomExists: false
@@ -116,6 +125,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     isFetching: (bool) => {
       dispatch(isFetching(bool))
+    },
+    joinRoom: (roomInfo) => {
+      dispatch(joinRoom(roomInfo))
     }
   }
 }
