@@ -14,7 +14,7 @@ import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import QuestionList from './QuestionList/QuestionList';
 
-import { addQuestion } from '../../actions/questionActions';
+import { addQuestion, getQuestions } from '../../actions/questionActions';
 
 /**
  * Room
@@ -96,7 +96,8 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
 const mapStateToProps = (state) => {
   return {
     user: state.user,
-    room: state.room
+    room: state.room,
+    question: state.questions
   }
 }
 
@@ -104,6 +105,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     addQuestion: (questionInfo) => {
       dispatch(addQuestion(questionInfo))
+    },
+    getQuestions: (id) => {
+      dispatch(getQuestions(id))
     }
   }
 }
