@@ -1,0 +1,282 @@
+div.modal-header {
+  background-color: #1abc9c;
+}
+
+h4.modal-title {
+  color: white;
+}
+
+/*
+* Buttons
+*/
+
+#close:hover,
+#close:focus {
+  box-shadow: inset -3.5em 0 0 0 var(--hover), inset 3.5em 0 0 0 var(--hover);
+}
+
+#close {
+  --color: #ff7f82;
+  --hover: #ffdc7f;
+}
+
+button#close, button#createBtn{
+  color: var(--color);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+}
+button#close:hover, button#close:focus {
+  border-color: var(--hover);
+  color: #fff;
+}
+
+button#createBtn:hover([disabled]), button#createBtn:focus {
+  border-color: var(--hover);
+  color: #00b939;
+}
+
+button#close, button#createBtn{
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+}
+
+#createBtn:hover:not([disabled]),
+#createBtn:focus {
+  -webkit-animation: pulse 1s;
+          animation: pulse 1s;
+  box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--hover);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--hover);
+  }
+}
+
+#createBtn {
+  --color: #00e98f;
+  --hover: #00ff4e;
+}
+
+#createBtn:disabled {
+  --color: #5b5b5b;
+}
+
+
+/*
+*  Flash Message
+*/
+
+h4.successmsg {
+  background-color: #1abc9c;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+  display: inline-block;
+  position: relative;
+  margin-right: 1vw;
+}
+
+svg {
+  position: absolute;
+  max-width: 5%;
+  min-width: 9%;
+  display: block;
+  margin-bottom: 3vw auto 0;
+  display: inline-block;
+  padding-bottom: 5px;
+
+}
+
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+}
+.path.circle {
+  stroke-width: 10px;
+  -webkit-animation: dash 0.9s ease-in-out;
+  animation: dash 0.9s ease-in-out;
+}
+.path.line {
+  stroke-width: 10px;
+  stroke-dashoffset: 1000;
+  -webkit-animation: dash 0.9s 0.35s ease-in-out forwards;
+  animation: dash 0.9s 0.35s ease-in-out forwards;
+}
+.path.check {
+  stroke-dashoffset: -100;
+  stroke-width: 10px;
+  -webkit-animation: dash-check 0.9s 0.35s ease-in-out forwards;
+  animation: dash-check 0.9s 0.35s ease-in-out forwards;
+}
+
+@-webkit-keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@-webkit-keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100;
+  }
+  100% {
+    stroke-dashoffset: 900;
+  }
+}
+@keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100;
+  }
+  100% {
+    stroke-dashoffset: 900;
+  }
+}
+
+/*
+* Error Msg
+*/
+
+ h4.errormsg {
+  background-color: #c70000;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+  z-index: 0;
+}
+
+ h4.errormsg {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  z-index: 0;
+}
+h4.errormsg:before,
+h4.errormsg:after {
+  content: attr(data-content);
+  padding:5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+h4.errormsg:before {
+  color: #00ffff;
+  z-index: 1;
+}
+h4.errormsg:after {
+  color: #ff00ff;
+  z-index: -1;
+}
+h4.errormsg:before {
+  -webkit-animation: glitchy 0.3s ease 0.3s infinite;
+          animation: glitchy 0.3s ease 0.3s infinite;
+}
+h4.errormsg:after {
+  -webkit-animation: glitchy 0.3s ease infinite reverse;
+          animation: glitchy 0.3s ease infinite reverse;
+}
+
+@-webkit-keyframes glitchy {
+  0% {
+    -webkit-transform: translate(-1px, 1px);
+            transform: translate(-1px, 1px);
+  }
+  25% {
+    -webkit-transform: translate(-1px, -1px);
+            transform: translate(-1px, -1px);
+  }
+  50% {
+    -webkit-transform: translate(1px, 1px);
+            transform: translate(1px, 1px);
+  }
+  75% {
+    -webkit-transform: translate(1px, -1px);
+            transform: translate(1px, -1px);
+  }
+  100% {
+    -webkit-transform: translate(-1px, 1px);
+            transform: translate(-1px, 1px);
+  }
+}
+@keyframes glitchy {
+  0% {
+    -webkit-transform: translate(-1px, 1px);
+            transform: translate(-1px, 1px);
+  }
+  25% {
+    -webkit-transform: translate(-1px, -1px);
+            transform: translate(-1px, -1px);
+  }
+  50% {
+    -webkit-transform: translate(1px, 1px);
+            transform: translate(1px, 2px);
+  }
+  75% {
+    -webkit-transform: translate(1px, -1px);
+            transform: translate(1px, -1px);
+  }
+  100% {
+    -webkit-transform: translate(-1px, 1px);
+            transform: translate(-1px, 1px);
+  }
+}
+
+/*
+* Modal Input
+*/
+
+input#roomstring::-webkit-input-placeholder, input#roomname::-webkit-input-placeholder button {
+  font-family: 'Raleway', sans-serif;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+
+input#roomstring, input#roomname {
+  margin: 20px 6px;
+  /*width: 200vw;*/
+  display: block;
+  border: none;
+  padding: 10px 0;
+  border-bottom: solid 1px #1abc9c;
+  -webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+  transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 96%, #1abc9c 4%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #1abc9c 4%);
+  background-position: -200px 0;
+  background-size: 150vw 100%;
+  background-repeat: no-repeat;
+  color: #0e6252;
+}
+
+input#roomstring:focus::-webkit-input-placeholder, input#roomstring:valid::-webkit-input-placeholder,
+input#roomname:focus::-webkit-input-placeholder, input#roomname:valid::-webkit-input-placeholder {
+  color: #1abc9c;
+  font-size: 11px;
+  /*-webkit-transform: translateY(-20px);
+          transform: translateY(-20px); */
+visibility: visible;
+  /*visibility: visible !important;*/
+}
