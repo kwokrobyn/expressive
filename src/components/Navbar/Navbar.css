@@ -14,6 +14,31 @@
   font-size: 30px;
   position: relative;
 }
+  .navbar-page-title > p {
+    overflow: hidden;
+    word-break: break-all;
+    text-align: center;
+    text-overflow: ellipsis;
+    max-width: 25vw;
+    max-height: 6vh;
+  }
+
+  /* Bootstrap - Medium desktop */
+  @media (min-width: 979px) and (max-width: 1200px) {
+    .navbar-page-title > p {
+      width: 10vw;
+    }
+  }
+
+  /* Bootstrap - Portrait tablet to landscape and desktop */
+  @media only screen and (min-width: 768px) and (max-width: 979px) {
+    .navbar-page-title > p {
+      width: 10vw;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+  }
 
 .nav-container.container {
   width: 100%;
@@ -441,10 +466,14 @@
     display: inline-block;
   }
 
+  #bs-example-navbar-collapse-1 > .row:nth-child(1) {
+    margin-top: 0;
+  }
+
   #navbar-list {
     display: inline-block;
     left: 0;
-    margin: 1vh 0 0 0;
+    margin: 0 0 0 0;
     padding: 0 0 0 0;
     float: right;
   }
@@ -462,6 +491,7 @@
     color: rgba(243,245,242,1);
     text-shadow: none;
     text-decoration: none;
+    max-width: 15vw;
     /* cool button insert*/
     overflow: hidden; /* Needed for to cover the cool sliding box effect */
     text-align: center;
@@ -475,7 +505,8 @@
       color: rgba(243,245,242,1);
       text-shadow: none;
       text-decoration: none;
-      margin-right: 1vw;
+      margin-left: 0vw;
+      margin-right: 0.1vw;
     }
 
   .navbar-first-btn:before {
@@ -537,8 +568,8 @@
     #navbar-middle-Link {
       color: rgba(243,245,242,1);
       text-decoration: none;
-      margin-left: 0.5vw;
-      margin-right: 0.5vw;
+      margin-left: 0.1vw;
+      margin-right: 0.1vw;
     }
 
   .navbar-middle-btn:before {
@@ -586,7 +617,6 @@
     box-shadow: none;
     background-color: rgba(8,154,136,0);
     background-image: none;
-    margin-left: 1vh;
     color: rgba(243,245,242,1);
     text-shadow: none;
     text-decoration: none;
@@ -605,6 +635,8 @@
       color: rgba(243,245,242,1);
       text-shadow: none;
       text-decoration: none;
+      margin-left: 0.1vw;
+      margin-right: 0vw;
     }
 
   .navbar-last-btn:before {
