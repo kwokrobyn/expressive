@@ -39,6 +39,7 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
     this.props.signOut();
   }
 
+//{/* seperate to a different component and import back in Dashboard.js */}
   roomDisplay = () => {
     const roomArray = [];
     Object.keys(this.props.ownedRooms).forEach((key) => {
@@ -89,6 +90,7 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
             </Col>{/* /.dashboard-create-btn-Col (Submit Button) */}
           </div>{ /* /#dashboard-create-btn-group */ }
 
+{/* seperate to a different component(dashlist) and import back in Dashboard.js */}
           <div className="row dashList">
             {this.roomDisplay()}
           </div>
@@ -114,6 +116,8 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
   //   );
   // }
 }
+
+{/* seperate to a different component and import back in Dashboard.js */}
 
 const mapStateToProps = (state) => {
   //console.log('mapStateToProps', state);

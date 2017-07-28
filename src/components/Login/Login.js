@@ -59,21 +59,24 @@ class Login extends Component {
 
           <form>
             <Row>
-              <h1 className="logInTitle">-Log In-</h1>
+              <h1 className="logInTitle">Log In</h1>
             </Row>
 
           <Row>
+            <form>
+
              {/* Email */}
               <label htmlFor="">
-                <div className="label-text">Email</div>
+                {/* <div className="label-text">Email</div> */}
                 <input type="email" placeholder="@email" id="email-signin"/>
               </label>
 
               {/* Password */}
               <label for="">
-                <div className="label-text">Password</div>
+                {/* <div className="label-text">Password</div> */}
                 <input type="password" placeholder="Password" id="pwd-signin"/>
               </label>
+              </form>
           </Row>
 
           {/* Submit Button */}
