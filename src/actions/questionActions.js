@@ -36,7 +36,7 @@ export const addQuestion = (questionInfo) => {
     const questionRef = db.ref('rooms/' + questionInfo.room + '/questions/' + uid);
     questionRef.set({
       text: questionInfo.text,
-      upvote: {}, // no effect because object is empty
+      upvote: 0, // no effect because object is empty
       isComplete: false,
       poster: questionInfo.poster
     }).then(() => {
@@ -44,5 +44,41 @@ export const addQuestion = (questionInfo) => {
     }).catch((error) => {
       console.log('Error posting question: ', error.message);
     })
+  }
+}
+
+export const addVote = (voteInfo) => {
+  return (dispatch) => {
+    // const uid = uuid.v4();
+    const questionRef = db.ref('rooms/' + voteInfo.room + '/questions/' + voteInfo.question);
+
+    questionRef.once('value', (snapshot) => {
+      var voteNum = snapshot.val().upvote;
+      voteNum += 1;
+      console.log('this is the snapshot:', voteNum);
+
+      questionRef.update({
+        upvote: voteNum
+      })
+
+    })
+  }
+}
+
+export const unVote = (voteInfo) => {
+  return (dispatch) => {
+    const questionRef = db.ref('rooms/' + voteInfo.room + '/questions/' + voteInfo.question);
+
+    questionRef.once('value', (snapshot) => {
+      var voteNum = snapshot.val().upvote;
+      voteNum -= 1;
+      console.log('this is the snapshot:', voteNum);
+
+      questionRef.update({
+        upvote: voteNum
+      })
+
+    })
+
   }
 }
