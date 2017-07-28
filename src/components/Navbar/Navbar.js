@@ -38,25 +38,38 @@ class Navbar extends Component {
       profileElement = (
         <ul className="nav navbar-nav" id="navbar-list">
           <li>
-            <button className="btn btn-success signup-btn">
-              <Link to="/profile" className="col-sm-2 navlink">
+            <Link to="/profile"
+                  className="col-sm-2"
+                  id="navbar-first-Link">
+              <button className="btn btn-success navbar-first-btn">
                 {this.props.user.displayName}
-              </Link>
-            </button>
+              </button>
+            </Link>
           </li>
           <li>
-            <button className="btn btn-success middle-btn">
-              <Link to="/dashboard" className="col-sm-2">
+            <Link to="/profile"
+                  className="col-sm-2"
+                  id="navbar-middle-Link">
+              <button className="btn btn-success navbar-middle-btn">
+                Join room
+              </button>
+            </Link>
+          </li>
+          <li>
+            <Link to="/dashboard"
+                  className="col-sm-2" id="navbar-middle-Link">
+              <button className="btn btn-success navbar-middle-btn">
                 Dashboard
-              </Link>
-            </button>
+              </button>
+            </Link>
           </li>
           <li>
-            <button type="submit" className="btn btn-default login-btn" onClick={this.signOut}>
-              <Link to="/login" className="col-sm-2 navlink">
-                Log Out
-              </Link>
-            </button>
+            <Link to="/login" className="col-sm-2" id="navbar-last-Link">
+              <button type="submit"
+                      className="btn btn-default navbar-last-btn" onClick={this.signOut}>
+                  Log out
+              </button>
+            </Link>
           </li>
         </ul>
       )
@@ -64,18 +77,18 @@ class Navbar extends Component {
       profileElement = (
          <ul className="nav navbar-nav" id="navbar-list">
           <li>
-            <button className="btn btn-success signup-btn">
-              <Link to="/signup" className="col-sm-2 navlink">
-                Sign Up
-              </Link>
-            </button>
+            <Link to="/signup" className="col-sm-2" id="navbar-first-Link">
+              <button className="btn btn-success navbar-first-btn">
+              Sign up
+              </button>
+            </Link>
           </li>
           <li>
-            <button className="btn btn-default login-btn">
-              <Link to="/login" className="col-sm-2 navlink">
-                Log In
-              </Link>
-            </button>
+            <Link to="/login" className="col-sm-2" id="navbar-last-Link">
+              <button className="btn btn-default navbar-last-btn">
+                Log in
+              </button>
+            </Link>
           </li>
         </ul>
       )
@@ -100,7 +113,7 @@ class Navbar extends Component {
           </div>
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <div className="row">
-              <div className="col-sm-6 col-md-7 col-lg-8 navbar-header-fix">
+              <div className="col-sm-4 col-md-5 col-lg-6 navbar-header-fix">
                 <div className="navbar-header" id="navbar-header-md-lg">
                   <a href="./" className="navbar-brand">
                     <img src={titledLogo}/>
@@ -108,7 +121,7 @@ class Navbar extends Component {
                 </div>
                 <div className="navbar-page-title">{this.props.pageTitle}</div>
               </div>
-              <div className="col-sm-6 col-md-5 col-lg-4">
+              <div className="col-sm-8 col-md-7 col-lg-6">
                 {profileElement}
               </div>
             </div>
