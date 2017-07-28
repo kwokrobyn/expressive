@@ -54,7 +54,7 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
     } else {
       this.props.unVote(voteInfo);
       upvote.dataset.toggle = false;
-      upvote.style.color = "rgb(48, 48, 48)";
+      upvote.style.color = "rgba(48,48,48,1)";
     }
 
   }
@@ -90,7 +90,6 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
       </div>
     )
   }
-
 }
 
 const mapStateToProps = (state) => {

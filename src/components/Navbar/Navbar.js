@@ -142,7 +142,7 @@ class Navbar extends Component {
               <div className="navbar-header" id="navbar-header-md-lg">
                 {titledLogoElement}
               </div>
-              <div className="navbar-page-title">{this.props.pageTitle}</div>
+              <div className="navbar-page-title"><p>{this.props.pageTitle}</p></div>
             </div>
             <div className="col-sm-9 col-md-8 col-lg-7">
               {profileElement}

@@ -14,6 +14,31 @@
   font-size: 30px;
   position: relative;
 }
+  .navbar-page-title > p {
+    overflow: hidden;
+    word-break: break-all;
+    text-align: center;
+    text-overflow: ellipsis;
+    max-width: 25vw;
+    max-height: 6vh;
+  }
+
+  /* Bootstrap - Medium desktop */
+  @media (min-width: 979px) and (max-width: 1200px) {
+    .navbar-page-title > p {
+      width: 10vw;
+    }
+  }
+
+  /* Bootstrap - Portrait tablet to landscape and desktop */
+  @media only screen and (min-width: 768px) and (max-width: 979px) {
+    .navbar-page-title > p {
+      width: 10vw;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+  }
 
 .nav-container.container {
   width: 100%;
