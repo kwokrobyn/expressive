@@ -19,21 +19,21 @@
     word-break: break-all;
     text-align: center;
     text-overflow: ellipsis;
-    max-width: 25vw;
     max-height: 6vh;
   }
 
   /* Bootstrap - Medium desktop */
   @media (min-width: 979px) and (max-width: 1200px) {
     .navbar-page-title > p {
-      width: 10vw;
+      display: none;
     }
   }
 
   /* Bootstrap - Portrait tablet to landscape and desktop */
-  @media only screen and (min-width: 768px) and (max-width: 979px) {
+  @media only screen and (min-width: 768px) and (max-width: 1000px) {
     .navbar-page-title > p {
-      width: 10vw;
+      max-width: 10vw;
+      display: none;
     }
   }
 
