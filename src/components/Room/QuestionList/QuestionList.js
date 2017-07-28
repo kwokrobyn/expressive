@@ -38,6 +38,15 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
   //   this.props.addVote(voteInfo);
   // }
 
+  // https://stackoverflow.com/questions/8837454/sort-array-of-objects-by-single-key-with-date-value
+  sortByKey = (array, key) => {
+    return array.sort((a, b) => {
+      const x = a[key];
+      const y = b[key];
+      return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+    });
+  }
+
   toggleVote = (e) => {
     const upvote = e.target;
     console.log(upvote.dataset.toggle);
@@ -62,14 +71,17 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
 
   // questionDisplay
   questionDisplay = () => {
-    const questionArray = [];
+    var questionArray = [];
     Object.keys(this.props.questions).forEach((key) => {
       questionArray.push({
         key: key,
         text: this.props.questions[key].text,
-        upvoteNum: 0
+        upvote: this.props.questions[key].upvote
       })
     })
+
+    questionArray = this.sortByKey(questionArray, 'upvote');
+
     const questions = questionArray.map((e) => {
       console.log(e.key);
       return (
@@ -77,7 +89,7 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
           <div className="dashboard-roombox-name"> {e.text} </div>
           <div className="dashboard-roombox-user"> <b>Question</b> {e.key} </div>
           <i className="fa fa-chevron-circle-up upvote" aria-hidden="true" data-id={e.key} data-toggle={false} onClick={this.toggleVote}></i>
-          <div className="upvote-num">{e.upvoteNum}</div>
+          <div className="upvote-num">{e.upvote}</div>
         </div>
       )
     })

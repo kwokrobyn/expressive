@@ -41,7 +41,11 @@ class App extends Component {
     firebase.auth().onAuthStateChanged((user) => {
       console.log('Auth state changed', user);
         if (user) {
-          this.props.dispatch(signInSuccess(user));
+          if (user.isAnonymous == true) {
+            console.log('You are Anon');
+          } else {
+            this.props.dispatch(signInSuccess(user));
+          }
         } else {
           console.log('There is no user');
         }
