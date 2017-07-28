@@ -29,11 +29,11 @@ class LandingAbout extends Component {
 
   render() {
     return (
-      <Grid>
+      <Grid className="landing-about">
         {/* About Title */}
         <Row>
-          <Col md={12} mdOffset={2} sm={8} smOffset={3}>
-            <h1 className="about">About</h1>
+          <Col md={9} mdOffset={2} sm={8} smOffset={3}>
+            <h1 className="shake shake-hard shake-constant--hover" id="about-title">About</h1>
           </Col>
         </Row>
 
@@ -58,14 +58,16 @@ class LandingAbout extends Component {
         </Row>
 
         {/* SignUp */}
+        <h2 className="signup-title">Create a room by signing up now!</h2>
 
-        <Row>
-          <Col md={6} sm={6} smOffset={4} xs={6} xsOffset={3}>
-            <h2 className="signUpTitle">Create a room by signing up now!</h2>
-              <Link to="/signup"><Button bsSize="large" block className="SignUp">Sign Up</Button></Link>
+          <div className="signup-section">
 
-          </Col>
-        </Row>
+              <Link to="/signup" className="signup-button-link">
+                <div className="signup-button-about">Sign Up</div>
+              </Link>
+
+          </div>
+
 
       </Grid>
 
