@@ -1,18 +1,17 @@
 //Importing required packages
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 
 // Importing Redux Actions
 import { getQuestions } from '../../../actions/questionActions';
 
 //Importing static assets (i.e. stylesheets, images)
 import './QuestionList.css';
-
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom'
 
 /**
  * Dash
