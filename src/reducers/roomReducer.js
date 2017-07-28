@@ -1,8 +1,7 @@
 const defaultRoom = {
   isInRoom: false,
-  uid: "",
-  name: "",
-  isMaster: false
+  roomId: "",
+  roomName: ""
 }
 
 const roomReducer = (state = defaultRoom, action) => {
@@ -11,10 +10,17 @@ const roomReducer = (state = defaultRoom, action) => {
     case "JOIN_ROOM":
       return {
         isInRoom: true,
-        uid: action.room.uid,
-        name: action.room.name,
-        isMaster: true // join room as master? what about non masters?
+        roomId: action.room.roomId,
+        roomName: action.room.roomName
       }
+
+    case "LEAVE_ROOM":
+      return {
+        isInRoom: false,
+        roomId: "",
+        roomName: ""
+      }
+
     default:
         return state;
   }

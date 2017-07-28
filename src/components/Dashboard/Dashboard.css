@@ -4,11 +4,11 @@
 }
 
 .modal-content {
-  background-color: #f3f5f2;
+  background-color: rgba(243,245,242,1);
 }
 
 #dashboard-create-btn {
-  background-color: white;
+  background-color: rgba(243,245,242,1);
   padding-top: 20px;
   padding-bottom: 20px;
   font-size: 18px;
@@ -21,12 +21,13 @@
 .dashboard-create-btn-Col {
   display: flex;
   justify-content: center;
-  padding-left: 160px;
-  padding-top: 65px;
+  margin-left: 160px;
+  margin-top: 200px;
 }
 
 #dashboard-create-btn-group:hover > .dashboard-create-btn-Col > .dashboard-create-btn-a {
   text-decoration: none;
+  text-align: center;
 }
 
 .dashboard-create-btn-a {
@@ -43,18 +44,25 @@
   display: inline-block;
   border: 3px solid transparent;
   /*position: relative;*/
+  text-decoration: none;
+  text-align: center;
   font-size: 1.5em;
   letter-spacing: 0.07em;
   font-family: "Raleway", sans-serif;
-  text-decoration: none;
 }
 
-.dashboard-create-btn-a .text {
-  font-family: "Raleway", sans-serif;
-  transform: translate3d(0, 0.7em, 0);
-  display: block;
-  transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1) 0.4s;
-}
+  #dashboard-create-btn-text {
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    color: rgba(47,120,139,1);
+    transform: translate3d(0, 0.7em, 0);
+    display: block;
+    transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1) 0.4s;
+  }
+    #dashboard-create-btn-text-hr {
+      border-color: rgba(47,120,139,1);
+    }
+
 
 .dashboard-create-btn-a:after {
   position: absolute;
@@ -63,7 +71,7 @@
   left: calc(0.7em * 1.2);
   right: calc(0.7em * 1.2);
   height: 3px;
-  background: #f26522;
+  background: rgba(243,150,72,1);
   z-index: -1;
   transition: transform 0.8s cubic-bezier(1, 0, 0.37, 1) 0.2s, right 0.2s cubic-bezier(0.04, 0.48, 0, 1) 0.6s, left 0.4s cubic-bezier(0.04, 0.48, 0, 1) 0.6s;
   transform-origin: left;
@@ -71,7 +79,7 @@
 
 .line {
   position: absolute;
-  background: #f26522;
+  background: rgba(242,133,23,1);
 }
 .line.-right, .line.-left {
   width: 3px;
@@ -106,8 +114,8 @@
   transform-origin: right;
 }
 
-.dashboard-create-btn-a:hover .text,
-.dashboard-create-btn-a:active .text {
+.dashboard-create-btn-a:hover > #dashboard-create-btn-text,
+.dashboard-create-btn-a:active > #dashboard-create-btn-text {
   transform: translate3d(0, 0, 0);
   transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1) 0.4s;
 }
