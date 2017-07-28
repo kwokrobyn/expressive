@@ -93,7 +93,7 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
             </div>
             <div className="col-md-11">
               <div className="room-questionbox-name"> {e.text} </div>
-              <div className="room-questionbox-user"> <b>Question</b> {e.key} </div>
+              <div className="room-questionbox-user"> <b>Asked by:</b> {e.posterName} </div>
             </div>
           </div>
         </div>
