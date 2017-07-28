@@ -441,10 +441,14 @@
     display: inline-block;
   }
 
+  #bs-example-navbar-collapse-1 > .row:nth-child(1) {
+    margin-top: 0;
+  }
+
   #navbar-list {
     display: inline-block;
     left: 0;
-    margin: 1vh 0 0 0;
+    margin: 0 0 0 0;
     padding: 0 0 0 0;
     float: right;
   }
@@ -462,6 +466,7 @@
     color: rgba(243,245,242,1);
     text-shadow: none;
     text-decoration: none;
+    max-width: 15vw;
     /* cool button insert*/
     overflow: hidden; /* Needed for to cover the cool sliding box effect */
     text-align: center;
@@ -475,7 +480,8 @@
       color: rgba(243,245,242,1);
       text-shadow: none;
       text-decoration: none;
-      margin-right: 1vw;
+      margin-left: 0vw;
+      margin-right: 0.1vw;
     }
 
   .navbar-first-btn:before {
@@ -537,8 +543,8 @@
     #navbar-middle-Link {
       color: rgba(243,245,242,1);
       text-decoration: none;
-      margin-left: 0.5vw;
-      margin-right: 0.5vw;
+      margin-left: 0.1vw;
+      margin-right: 0.1vw;
     }
 
   .navbar-middle-btn:before {
@@ -586,7 +592,6 @@
     box-shadow: none;
     background-color: rgba(8,154,136,0);
     background-image: none;
-    margin-left: 1vh;
     color: rgba(243,245,242,1);
     text-shadow: none;
     text-decoration: none;
@@ -605,6 +610,8 @@
       color: rgba(243,245,242,1);
       text-shadow: none;
       text-decoration: none;
+      margin-left: 0.1vw;
+      margin-right: 0vw;
     }
 
   .navbar-last-btn:before {

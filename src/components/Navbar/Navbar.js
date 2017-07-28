@@ -29,109 +29,132 @@ class Navbar extends Component {
  }
 
  render() {
-   const isSignedIn = this.props.user.isSignedIn;
+  const isSignedIn = this.props.user.isSignedIn;
 
-   let profileElement = null;
-    if (isSignedIn) {
+  let profileElement = null;
+  let squareLogoElement = null;
+  let titledLogoElement = null;
 
-      /* Navbar unordered list of buttons if user is LOGGED IN */
-      profileElement = (
-        <ul className="nav navbar-nav" id="navbar-list">
-          <li>
-            <Link to="/profile"
-                  className="col-sm-2"
-                  id="navbar-first-Link">
-              <button className="btn btn-success navbar-first-btn">
-                {this.props.user.displayName}
-              </button>
-            </Link>
-          </li>
-          <li>
-            <Link to="/profile"
-                  className="col-sm-2"
-                  id="navbar-middle-Link">
-              <button className="btn btn-success navbar-middle-btn">
-                Join room
-              </button>
-            </Link>
-          </li>
-          <li>
-            <Link to="/dashboard"
-                  className="col-sm-2" id="navbar-middle-Link">
-              <button className="btn btn-success navbar-middle-btn">
-                Dashboard
-              </button>
-            </Link>
-          </li>
-          <li>
-            <Link to="/login" className="col-sm-2" id="navbar-last-Link">
-              <button type="submit"
-                      className="btn btn-default navbar-last-btn" onClick={this.signOut}>
-                  Log out
-              </button>
-            </Link>
-          </li>
-        </ul>
-      )
-    } else { // not signedin
-      profileElement = (
-         <ul className="nav navbar-nav" id="navbar-list">
-          <li>
-            <Link to="/signup" className="col-sm-2" id="navbar-first-Link">
-              <button className="btn btn-success navbar-first-btn">
-              Sign up
-              </button>
-            </Link>
-          </li>
-          <li>
-            <Link to="/login" className="col-sm-2" id="navbar-last-Link">
-              <button className="btn btn-default navbar-last-btn">
-                Log in
-              </button>
-            </Link>
-          </li>
-        </ul>
-      )
-    }
+  if (isSignedIn) {
 
-   return (
+    squareLogoElement = (
+      <a href="/dashboard" className="navbar-brand">
+        <img src={squareLogo}/>
+      </a>
+    )
 
-      <nav className="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div className="container nav-container">
-          <div className="navbar-header">
-            <a href="./" className="navbar-brand">
-              <img src={squareLogo}/>
-            </a>
+    titledLogoElement = (
+      <a href="/dashboard" className="navbar-brand">
+        <img src={titledLogo}/>
+      </a>
+    )
 
-            <button type="button"
-                    className="navbar-toggle"
-                    data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-              <span className="sr-only">Toggle navigation</span>
-              {/*Three Icon Bars in mobile displays*/}
-              <span className="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+    /* Navbar unordered list of buttons if user is LOGGED IN */
+    profileElement = (
+      <ul className="nav navbar-nav" id="navbar-list">
+        <li>
+          <Link to="/profile"
+                className="col-sm-2"
+                id="navbar-first-Link">
+            <button className="btn btn-success navbar-first-btn">
+              {this.props.user.displayName}
             </button>
-          </div>
-          <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <div className="row">
-              <div className="col-sm-4 col-md-5 col-lg-6 navbar-header-fix">
-                <div className="navbar-header" id="navbar-header-md-lg">
-                  <a href="./" className="navbar-brand">
-                    <img src={titledLogo}/>
-                  </a>
-                </div>
-                <div className="navbar-page-title">{this.props.pageTitle}</div>
+          </Link>
+        </li>
+        <li>
+          <Link to="/profile"
+                className="col-sm-2"
+                id="navbar-middle-Link">
+            <button className="btn btn-success navbar-middle-btn">
+              Join room
+            </button>
+          </Link>
+        </li>
+        <li>
+          <Link to="/dashboard"
+                className="col-sm-2" id="navbar-middle-Link">
+            <button className="btn btn-success navbar-middle-btn">
+              Dashboard
+            </button>
+          </Link>
+        </li>
+        <li>
+          <Link to="/login" className="col-sm-2" id="navbar-last-Link">
+            <button type="submit"
+                    className="btn btn-default navbar-last-btn" onClick={this.signOut}>
+                Log out
+            </button>
+          </Link>
+        </li>
+      </ul>
+    )
+  } else { // not signedin
+
+    squareLogoElement = (
+      <a href="/" className="navbar-brand">
+        <img src={squareLogo}/>
+      </a>
+    )
+
+    titledLogoElement = (
+      <a href="/" className="navbar-brand">
+        <img src={titledLogo}/>
+      </a>
+    )
+
+    profileElement = (
+       <ul className="nav navbar-nav" id="navbar-list">
+        <li>
+          <Link to="/signup" className="col-sm-2" id="navbar-first-Link">
+            <button className="btn btn-success navbar-first-btn">
+            Sign up
+            </button>
+          </Link>
+        </li>
+        <li>
+          <Link to="/login" className="col-sm-2" id="navbar-last-Link">
+            <button className="btn btn-default navbar-last-btn">
+              Log in
+            </button>
+          </Link>
+        </li>
+      </ul>
+    )
+  }
+
+  return (
+
+    <nav className="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div className="container nav-container">
+        <div className="navbar-header">
+          {squareLogoElement}
+          <button type="button"
+                  className="navbar-toggle"
+                  data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span className="sr-only">Toggle navigation</span>
+            {/*Three Icon Bars in mobile displays*/}
+            <span className="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+          </button>
+        </div>
+        <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <div className="row">
+            <div className="col-sm-3 col-md-4 col-lg-5 navbar-header-fix">
+              <div className="navbar-header" id="navbar-header-md-lg">
+                {titledLogoElement}
               </div>
-              <div className="col-sm-8 col-md-7 col-lg-6">
-                {profileElement}
-              </div>
+              <div className="navbar-page-title">{this.props.pageTitle}</div>
             </div>
-            <div className="row">
-              {/* Notification bar - if any */}
-            </div>{/* /row */}
-          </div>{/* /bs-example-navbar-collapse-1 */}
-        </div>{/* container */}
-      </nav>
-   )
+            <div className="col-sm-9 col-md-8 col-lg-7">
+              {profileElement}
+            </div>
+          </div>
+          <div className="row">
+            {/* Notification bar - if any */}
+          </div>{/* /row */}
+        </div>{/* /bs-example-navbar-collapse-1 */}
+      </div>{/* container */}
+    </nav>
+  )
  };
 };
 
