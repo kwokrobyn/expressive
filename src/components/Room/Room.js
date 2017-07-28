@@ -25,7 +25,8 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
     super(props);
 
     this.state = ({
-      question: ""
+      question: "",
+      isAnonymous: !this.props.user.isSignedIn
     })
   }
 
@@ -35,14 +36,31 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
     this.setState({question: value});
   }
 
+  toggleAnon = (e) => {
+    if (e.target.checked) {
+      console.log('this just got checked');
+      this.setState({
+        isAnonymous: true
+      })
+    } else {
+      console.log('this just got unchecked');
+      this.setState({
+        isAnonymous: false
+      })
+    }
+  }
+
   submitQuestion = (e) => {
     e.preventDefault();
     console.log(this.props.user.uid);
     console.log(this.props.room.roomId);
 
+    // if Anonymous checkbox is checked, set poster name as anonymous
+    const posterName = (this.state.isAnonymous ? 'Anonymous' : this.props.user.displayName);
+
     const questionInfo = {
       text: this.state.question,
-      posterName: this.props.user.displayName, //poster of the question
+      posterName: posterName, //poster of the question
       posterID: this.props.user.uid,
       room: this.props.room.roomId
     }
@@ -78,7 +96,7 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
               </div>
               <div className="checkbox" id="room-post-anon-checkbox">
                 <label>
-                  <input type="checkbox"/> Post anonymously
+                  {this.state.isAnonymous ? (<input type="checkbox" onChange={this.toggleAnon} checked/>) : (<input type="checkbox" onChange={this.toggleAnon}/>)} Post anonymously
                 </label>
               </div>{ /* /#oom-post-anon-checkbox */ }
             </form>{ /* /.post-qn-group */ }
