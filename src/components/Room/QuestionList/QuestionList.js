@@ -84,9 +84,9 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
     const questions = questionArray.map((e) => {
       console.log(e.key);
       return (
-        <div className="col-md-4 col-xs-12 dashboard-roombox" key={e.key}>
-          <div className="dashboard-roombox-name"> {e.text} </div>
-          <div className="dashboard-roombox-user"> <b>Question</b> {e.key} </div>
+        <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 room-questionbox" key={e.key}>
+          <div className="room-questionbox-name"> {e.text} </div>
+          <div className="room-questionbox-user"> <b>Question</b> {e.key} </div>
           <i className="fa fa-chevron-circle-up upvote" aria-hidden="true" data-id={e.key} data-toggle={false} onClick={this.toggleVote}></i>
           <div className="upvote-num">{e.upvote}</div>
         </div>
@@ -102,6 +102,7 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
       </div>
     )
   }
+
 }
 
 const mapStateToProps = (state) => {
