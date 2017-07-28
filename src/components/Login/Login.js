@@ -72,8 +72,8 @@ class Login extends Component {
               </label>
 
               {/* Password */}
-              <label for="">
-                {/* <div className="label-text">Password</div> */}
+              <label htmlFor="">
+                {/*<div className="label-text">Password</div>*/}
                 <input type="password" placeholder="Password" id="pwd-signin"/>
               </label>
               </form>
