@@ -38,30 +38,66 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
 
   // this.props.match.params.id
   componentDidMount() {
-    const db = firebase.database();
 
-    const roomRef = db.ref("rooms/" + this.props.match.params.id);
-    roomRef.once("value")
-    .then((snapshot) => {
-      this.props.isFetching(false);
-      if (snapshot.exists()) {
-        this.setState({
-          roomExists: true
-        })
-        console.log(snapshot.val());
+    if (this.props.user.isSignedIn) {
+      const db = firebase.database();
 
-        const roomInfo = {
-          roomName: snapshot.val().name,
-          roomId: this.props.match.params.id,
-          user: this.props.user
+      const roomRef = db.ref("rooms/" + this.props.match.params.id);
+      roomRef.once("value")
+      .then((snapshot) => {
+        this.props.isFetching(false);
+        if (snapshot.exists()) {
+          this.setState({
+            roomExists: true
+          })
+          console.log(snapshot.val());
+
+          const roomInfo = {
+            roomName: snapshot.val().name,
+            roomId: this.props.match.params.id,
+            user: this.props.user
+            }
+          this.props.joinRoom(roomInfo);
+        } else {
+          this.setState({
+            roomExists: false
+          })
+        }
+      })
+    } else {
+      firebase.auth().signInAnonymously().then(() => {
+        const db = firebase.database();
+
+        const roomRef = db.ref("rooms/" + this.props.match.params.id);
+        roomRef.once("value")
+        .then((snapshot) => {
+          this.props.isFetching(false);
+          if (snapshot.exists()) {
+            this.setState({
+              roomExists: true
+            })
+            console.log(snapshot.val());
+
+            const roomInfo = {
+              roomName: snapshot.val().name,
+              roomId: this.props.match.params.id,
+              user: this.props.user
+              }
+            this.props.joinRoom(roomInfo);
+          } else {
+            this.setState({
+              roomExists: false
+            })
           }
-        this.props.joinRoom(roomInfo);
-      } else {
-        this.setState({
-          roomExists: false
         })
-      }
-    })
+      })
+      .catch((error) => {
+        console.log('Anonymous Sign In Failed: ', error.message);
+        window.location.href = '/'
+      })
+    }
+
+
 
   }
 
