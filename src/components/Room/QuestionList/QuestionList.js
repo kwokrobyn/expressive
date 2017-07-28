@@ -92,8 +92,8 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
               <div className="upvote-num">{e.upvote}</div>
             </div>
             <div className="col-md-11">
-              <div className="dashboard-roombox-name"> {e.text} </div>
-              <div className="dashboard-roombox-user"> <b>Asked by: </b> {e.posterName} </div>
+              <div className="room-questionbox-name"> {e.text} </div>
+              <div className="room-questionbox-user"> <b>Question</b> {e.key} </div>
             </div>
           </div>
         </div>
@@ -109,6 +109,7 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
       </div>
     )
   }
+
 }
 
 const mapStateToProps = (state) => {
