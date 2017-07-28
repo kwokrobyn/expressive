@@ -60,7 +60,7 @@ class Signup extends Component {
 
         <form>
           <Row>
-            <h1 className="signUpTitle">-Sign Up-</h1>
+            <h1 className="signUpTitle">Sign Up</h1>
           </Row>
 
         {/* Name */}
@@ -77,37 +77,42 @@ class Signup extends Component {
 
 
         <Row>
+          <form>
            {/* Name */}
             <label htmlFor="">
-              <div className="label-text">Name</div>
+            {/*<div className="label-text">Name</div> */}
               <input type="email" placeholder="Name" id="name-signup"/>
             </label>
            {/* Email */}
             <label htmlFor="">
-              <div className="label-text">Email</div>
-              <input type="email" placeholder="@email" id="email-signup"/>
+            {/*  <div className="label-text">Email</div> */}
+              <input type="email" placeholder="email" id="email-signup"/>
             </label>
 
             {/* Password */}
             <label htmlFor="">
-              <div className="label-text">Password</div>
+              {/* <div className="label-text">Password</div> */}
               <input type="password" placeholder="Password" id="pwd-signup"/>
             </label>
+
+
+
+          </form>
         </Row>
 
 
         {/* Submit Button */}
-        <Row>
-          <Col className="submitSignUp">
-          <a className="submitButton" onClick={this.localSignUp}>
-            <span className="text">Sign Up?</span>
-            <span className="line -right"></span>
-            <span className="line -top"></span>
-            <span className="line -left"></span>
-            <span className="line -bottom"></span>
-          </a>
-          </Col>
-        </Row>
+          <Row>
+            <Col className="submitSignUp">
+            <a className="submitButton" onClick={this.localSignUp} type="submit">
+              <span className="text">Sign Up?</span>
+              <span className="line -right"></span>
+              <span className="line -top"></span>
+              <span className="line -left"></span>
+              <span className="line -bottom"></span>
+            </a>
+            </Col>
+          </Row>
 
           {/* Social Sign In */}
           <Row className="socialSignUp">

@@ -13,3 +13,7 @@
   };
 };
 /*These styles above are exclusive to tablets and desktop display sizes.*/
+
+.upvote {
+  color: rgb(48, 48, 48);
+}
