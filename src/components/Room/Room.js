@@ -42,7 +42,8 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
 
     const questionInfo = {
       text: this.state.question,
-      poster: this.props.user.uid, //poster of the question
+      posterName: this.props.user.displayName, //poster of the question
+      posterID: this.props.user.uid,
       room: this.props.room.roomId
     }
     this.props.addQuestion(questionInfo);
