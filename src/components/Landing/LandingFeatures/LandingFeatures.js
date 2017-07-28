@@ -1,6 +1,8 @@
 //Importing required packages
 import React, { Component, PropTypes } from 'react';
 import {Grid, Col, form, FormGroup, FormControl, ControlLabel, HelpBlock, Row, Button} from 'react-bootstrap';
+import { checkExisting } from '../../../actions/roomActions';
+import { connect } from 'react-redux';
 
 
 //Importing static assets (i.e. stylesheets, images)
@@ -22,15 +24,26 @@ class LandingFeatures extends Component {
   }
 
 
-  getValidationState() {
-    const length = this.state.value.length;
-    if (length > 10) return 'success';
-    else if (length > 5) return 'warning';
-    else if (length > 0) return 'error';
-  }
+  // getValidationState() {
+  //   const length = this.state.value.length;
+  //   if (length > 10) return 'success';
+  //   else if (length > 5) return 'warning';
+  //   else if (length > 0) return 'error';
+  // }
+  //
+  // handleChange(e) {
+  //   this.setState({ value: e.target.value });
+  // }
 
-  handleChange(e) {
-    this.setState({ value: e.target.value });
+  checkExisting = (e) => {
+    e.preventDefault();
+    let value = e.target.value;
+    this.setState({joinroom: value});
+    // const roomString = document.getElementById('roomstring').value;
+    const joinroom = value;
+    console.log(joinroom);
+    this.props.checkExisting(joinroom);
+    //test commit
   }
 
   render() {
@@ -43,20 +56,20 @@ class LandingFeatures extends Component {
 
            <FormGroup
              controlId="formBasicText"
-             validationState={this.getValidationState()}
              >
              <ControlLabel className="joinRmLabel">Join A Room</ControlLabel>
              <FormControl
                type="text"
-               value={this.state.value}
                placeholder="Enter Room URL"
                className="joinRmInput"
-               onChange={this.handleChange}
+               id="joinroom"
+               onChange={this.checkExisting}
+               value={this.state.joinroom}
              />
              <FormControl.Feedback />
              {/*<HelpBlock>Validation is based on string length.</HelpBlock>*/}
 
-              <Button className="Join">Join</Button>
+              <Button className="Join"}>Join</Button>
 
            </FormGroup>
            </Col>
