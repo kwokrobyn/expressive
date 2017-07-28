@@ -1,3 +1,19 @@
+#room-responses-well {
+  display: flex;
+  flex-direction: column;
+  min-height: 57.5vh;
+};
+
+/*These styles below are exclusive to tablets and desktop display sizes.*/
+@media only screen and (min-width: 768px) {
+  #room-responses-well {
+    display: flex;
+    flex-direction: column;
+    min-height: 40vh;
+  };
+};
+/*These styles above are exclusive to tablets and desktop display sizes.*/
+
 .upvote {
   color: rgb(48, 48, 48);
 }

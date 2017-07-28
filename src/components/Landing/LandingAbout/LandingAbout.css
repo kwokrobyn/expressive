@@ -1,15 +1,22 @@
 /*
 * about
 */
-h1 {
+
+@import 'https://csshake.surge.sh/csshake-hard.min.css';
+
+h1#about-title {
   text-align: center;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 600;
+  font: 250% 'Raleway', sans-serif, monospace;
   margin-top: 10vw;
+  /*margin-left: 10vw;*/
   color: #494949;
-  /*padding-left: 8vw;*/
+  display: flex;
+  justify-content: center;
 }
 
+/*
+* About content
+*/
 div.aboutImg {
   background-color: rgba(243,150,72,1);
   text-align: center;
@@ -32,55 +39,95 @@ div.aboutText p {
 /*
 * signUp
 */
+div.signup-section {
+  display: flex;
+  justify-content: center;
+  margin-left: 8vw;
+}
 
-h2.signUpTitle {
+h2.signup-title {
   margin-top: 75px;
+  margin-left: 8vw;
+  display: flex;
+  justify-content: center;
   text-align: center;
   color: #494949;
   font-family: 'Raleway', sans-serif;
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
-button.SignUp {
-  margin-top: 25px;
-  margin-bottom: 50px;
-  color: white;
-  background-color: #007579;
-  animation: pulse 2s infinite;
-}
-
-button.SignUp:hover {
-  background-color: #00d6bc;
-  border: 3px solid #006054;
+a.signup-button-link {
   text-decoration: none;
+  display: flex;
+  justify-content: center;
 }
 
-@-webkit-keyframes pulse {
-  0% {
-    -webkit-box-shadow: 0 0 0 0 rgba(0,159,139, 0.8);
-  }
-  70% {
-      -webkit-box-shadow: 0 0 0 10px rgba(0,159,139, 0);
-  }
-  100% {
-      -webkit-box-shadow: 0 0 0 0 rgba(0,159,139, 0);
-  }
-}
-@keyframes pulse {
-  0% {
-    -moz-box-shadow: 0 0 0 0 rgba(0,159,139, 0.8);
-    box-shadow: 0 0 0 0 rgba(0,159,139, 0.8);
-  }
-  70% {
-      -moz-box-shadow: 0 0 0 10px rgba(0,159,139, 0);
-      box-shadow: 0 0 0 10px rgba(0,159,139, 0);
-  }
-  100% {
-      -moz-box-shadow: 0 0 0 0 rgba(0,159,139, 0);
-      box-shadow: 0 0 0 0 rgba(0,159,139, 0);
-  }
-}
+div.signup-button-about {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  position:relative;
+  vertical-align: middle;
+  color: #0b7;
 
-#root > div > div.LAbout.row > div > div:nth-child(3) > div > a > button {
+  width: 40vw;
+  height: 60px;
   text-decoration: none;
+  line-height: 60px;
+  text-align: center;
+  transition: 0.5s;
+  padding: 0 20px;
+  cursor: pointer;
+  border: 2px solid #0b7;
+  -webkit-transition:0.5s;
+  -moz-transition:0.5s;
+  -ms-transition:0.5s;
+  -o-transition:0.5s;
+}
+
+div.signup-button-about:hover {
+  border: 2px solid rgba(0,160,80,0);
+  color: #ff9000;
+}
+
+div.signup-button-about::before, div.signup-button-about::after {
+  width: 100%;
+  height:100%;
+  z-index: 3;
+  content:'';
+  position: absolute;
+  top:0;
+  left:0;
+  box-sizing: border-box;
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transition: 0.5s;
+}
+
+div.signup-button-about::before {
+  border-bottom: 3px solid #ff9000;
+  border-left: 3px solid #ff9000;
+  -webkit-transform-origin: 100% 0%;
+  -moz-transform-origin: 100% 0%;
+  -ms-transform-origin: 100% 0%;
+  -o-transform-origin: 100% 0%;
+}
+
+div.signup-button-about::after {
+  border-top: 3px solid #ff9000;
+  border-right: 3px solid #ff9000;
+  -webkit-transform-origin: 0% 100%;
+  -moz-transform-origin: 0% 100%;
+  -ms-transform-origin: 0% 100%;
+  -o-transform-origin: 0% 100%;
+}
+
+div.signup-button-about:hover::after, div.signup-button-about:hover::before {
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
 }

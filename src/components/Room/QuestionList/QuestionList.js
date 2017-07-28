@@ -1,18 +1,17 @@
 //Importing required packages
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 
 // Importing Redux Actions
 import { getQuestions, addVote, unVote } from '../../../actions/questionActions';
 
 //Importing static assets (i.e. stylesheets, images)
 import './QuestionList.css';
-
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom'
 
 /**
  * Dash
@@ -64,7 +63,7 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
     } else {
       this.props.unVote(voteInfo);
       upvote.dataset.toggle = false;
-      upvote.style.color = "rgb(48, 48, 48)";
+      upvote.style.color = "rgba(48,48,48,1)";
     }
 
   }
@@ -103,7 +102,6 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
       </div>
     )
   }
-
 }
 
 const mapStateToProps = (state) => {

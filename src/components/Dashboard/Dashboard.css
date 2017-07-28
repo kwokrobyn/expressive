@@ -1,3 +1,8 @@
+#dashboard-title {
+  margin-top: 70px;
+  margin-bottom: 20px;
+}
+
 .modal-content {
   background-color: rgba(243,245,242,1);
 }
