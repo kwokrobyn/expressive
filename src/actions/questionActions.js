@@ -19,7 +19,7 @@ export const getQuestions = (roomId) => {
       questionsRef.once("value", (innerSnapshot) => {
         console.log('About to dispatch', innerSnapshot.val());
         if (innerSnapshot.exists()) {
-          
+
           dispatch(getQuestionsAction(innerSnapshot.val()));
         } else {
           console.log('No questions in this room.');
@@ -38,7 +38,8 @@ export const addQuestion = (questionInfo) => {
       text: questionInfo.text,
       upvote: 0,
       isComplete: false,
-      poster: questionInfo.poster
+      posterName: questionInfo.posterName,
+      posterID: questionInfo.posterID
     }).then(() => {
       console.log('Question posted. ');
     }).catch((error) => {

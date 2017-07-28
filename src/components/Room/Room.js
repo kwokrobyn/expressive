@@ -42,7 +42,8 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
 
     const questionInfo = {
       text: this.state.question,
-      poster: this.props.user.uid, //poster of the question
+      posterName: this.props.user.displayName, //poster of the question
+      posterID: this.props.user.uid,
       room: this.props.room.roomId
     }
     this.props.addQuestion(questionInfo);
@@ -52,7 +53,11 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
     return (
       <div className="container-fluid">
 
+<<<<<<< HEAD
         <Navbar pageTitle={'Currently in ' + this.props.room.roomName} />
+=======
+        <Navbar pageTitle={'This is ' + this.props.room.roomName + ' !'} />
+>>>>>>> master
 
         <div className="row room-post-qn-row">
           <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">

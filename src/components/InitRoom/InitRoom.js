@@ -93,15 +93,26 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
       })
       .catch((error) => {
         console.log('Anonymous Sign In Failed: ', error.message);
-        window.location.href = '/'
+        window.location.href = '/';
       })
+    }
+
+    // remove user from room userList on close window and back button
+    window.onbeforeunload = (e) => {
+      const roomInfo = {
+        roomName: this.props.room.roomName,
+        roomId: this.props.match.params.id,
+        user: this.props.user
+      }
+      this.props.leaveRoom(roomInfo);
     }
 
 
 
-  }
+  } // end of componentDidMount
 
   componentWillUnmount() {
+    // remove user from room userList when component dismounts 
     console.log('componentwillunmount');
     console.log(this.props.user);
     const roomInfo = {
