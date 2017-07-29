@@ -54,7 +54,7 @@ class Navbar extends Component {
       <ul className="nav navbar-nav" id="navbar-list">
         <li>
           <Link to="/profile"
-                className="col-sm-2"
+                className="col-lg-1 col-md-1 col-sm-2"
                 id="navbar-first-Link">
             <button className="btn btn-success navbar-first-btn">
               {this.props.user.displayName}
@@ -63,7 +63,7 @@ class Navbar extends Component {
         </li>
         <li>
           <Link to="/profile"
-                className="col-sm-2"
+                className="col-lg-1 col-md-1 col-sm-2"
                 id="navbar-middle-Link">
             <button className="btn btn-success navbar-middle-btn">
               Join room
@@ -72,14 +72,15 @@ class Navbar extends Component {
         </li>
         <li>
           <Link to="/dashboard"
-                className="col-sm-2" id="navbar-middle-Link">
+                className="col-lg-1 col-md-1 col-sm-2"
+                id="navbar-middle-Link">
             <button className="btn btn-success navbar-middle-btn">
               Dashboard
             </button>
           </Link>
         </li>
         <li>
-          <Link to="/login" className="col-sm-2" id="navbar-last-Link">
+          <Link to="/login" className="col-lg-1 col-md-1 col-sm-2" id="navbar-last-Link">
             <button type="submit"
                     className="btn btn-default navbar-last-btn" onClick={this.signOut}>
                 Log out
@@ -135,16 +136,19 @@ class Navbar extends Component {
             {/*Three Icon Bars in mobile displays*/}
             <span className="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
           </button>
+          <h1 className="navbar-page-title">{this.props.pageTitle}</h1>
         </div>
         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <div className="row">
-            <div className="col-sm-3 col-md-4 col-lg-5 navbar-header-fix">
+            <div className="col-sm-5 col-md-6 col-lg-6 navbar-header-fix">
               <div className="navbar-header" id="navbar-header-md-lg">
                 {titledLogoElement}
               </div>
-              <div className="navbar-page-title"><p>{this.props.pageTitle}</p></div>
-            </div>
-            <div className="col-sm-9 col-md-8 col-lg-7">
+              <div className="navbar-page-title">
+                <p>{this.props.pageTitle}</p>
+              </div>{/*/.navbar-page-title*/}
+            </div> {/* /.navbar-header-fix */}
+            <div className="col-sm-7 col-md-6 col-lg-6">
               {profileElement}
             </div>
           </div>

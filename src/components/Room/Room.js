@@ -85,7 +85,7 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
     return (
       <div className="container-fluid">
 
-        <Navbar pageTitle={'This is ' + this.props.room.roomName + ' !'} />
+        <Navbar pageTitle={'Currently in ' + this.props.room.roomName} />
 
         <div className="row room-post-qn-row">
           <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -105,8 +105,9 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
                 </div>{ /* /input-group */ }
               </div>
               <div className="checkbox" id="room-post-anon-checkbox">
+                {this.state.isAnonymous ? (<input type="checkbox" onChange={this.toggleAnon} checked/>) : (<input type="checkbox" onChange={this.toggleAnon}/>)}
                 <label>
-                  {this.state.isAnonymous ? (<input type="checkbox" onChange={this.toggleAnon} checked/>) : (<input type="checkbox" onChange={this.toggleAnon}/>)} Post anonymously
+                  Post anonymously
                 </label>
               </div>{ /* /#oom-post-anon-checkbox */ }
             </form>{ /* /.post-qn-group */ }

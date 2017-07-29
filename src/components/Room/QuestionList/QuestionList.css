@@ -15,5 +15,16 @@
 /*These styles above are exclusive to tablets and desktop display sizes.*/
 
 .upvote {
-  color: rgb(48, 48, 48);
+  color: rgba(48,48,48,1);
 }
+
+.room-questionbox {
+  background-color: white;
+  margin-right: 20px;
+  padding: 40px;
+  box-shadow: 0px 5px 20px rgba(73,73,73,1);
+}
+  .room-questionbox-name {
+    font-size: 20px;
+    font-weight: 700;
+  }

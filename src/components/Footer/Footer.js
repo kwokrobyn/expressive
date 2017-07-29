@@ -22,7 +22,7 @@ import './Footer.css';
           <div id="footer-group-left">
             <img src ="../../images/logo_v1.png" id="footer-logo"/>
             <p id="footer-credits">
-              expressive 2017 by Bryan, dionnePhua, robynKwok & Woody
+              <b>expressive</b> by Bryan Lee, Dionne Phua, Robyn Kwok & Woody See
             </p>
           </div>
          </footer>
