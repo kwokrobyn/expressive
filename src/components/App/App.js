@@ -54,15 +54,30 @@ class App extends Component {
 
   render() {
     const isSignedIn = this.props.user.isSignedIn;
+    const isInRoom = this.props.room.isInRoom;
 
     return (
       <Router>
         <Switch>
-          <Route exact path="/" render= {() => (isSignedIn ? ( <Redirect to="/dashboard"/> ) : ( <Landing/> ))} />
-          <Route exact path="/signup" render= {() => (isSignedIn ? ( <Redirect to="/dashboard"/> ) : ( <Signup/> ))} />
-          <Route exact path="/login" render= {() => (isSignedIn ? ( <Redirect to="/dashboard"/> ) : ( <Login/> ))} />
-          <Route exact path="/dashboard" render= {() => (isSignedIn ? ( <Dashboard/> ) : ( <Redirect to="/login"/> ))} />
-          <Route path="/profile" render={() => (isSignedIn ? ( <Profile/> ) : ( <Redirect to="/login"/> ))} />
+          <Route exact path="/" render= {() => (
+            isInRoom ?
+              ( <Landing/> ) : (
+                isSignedIn ?
+                  ( <Redirect to="/dashboard"/> ) : ( <Landing/> )
+              )
+          )} />
+          <Route exact path="/signup" render= {() => (
+            isSignedIn ? ( <Redirect to="/dashboard"/> ) : ( <Signup/> )
+          )} />
+          <Route exact path="/login" render= {() => (
+            isSignedIn ? ( <Redirect to="/dashboard"/> ) : ( <Login/> )
+          )} />
+          <Route exact path="/dashboard" render= {() => (
+            isSignedIn ? ( <Dashboard/> ) : ( <Redirect to="/"/> )
+          )} />
+          <Route path="/profile" render={() => (
+            isSignedIn ? ( <Profile/> ) : ( <Redirect to="/"/> )
+          )} />
           <Route path="/room/:id" component={InitRoom} />
         </Switch>
       </Router>
@@ -72,7 +87,8 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
     return {
-      user: state.user
+      user: state.user,
+      room: state.room
     }
 }
 

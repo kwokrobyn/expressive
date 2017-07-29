@@ -6,9 +6,11 @@
   min-width: 110px;
 }
 
+/* Below: Page title on the Navbar - All Styles */
+
 .navbar-page-title {
   left: 13vw;
-  top: 2vh;
+  top: 1.2vh;
   display: inline-block;
   color: rgba(243,245,242,1);
   font-size: 20px;
@@ -45,6 +47,8 @@
   /* Bootstrap - Mobile */
   @media only screen and (max-width: 767px) {
   }
+
+/* Above: Page title on the Navbar - All Styles */
 
 .nav-container.container {
   width: 100%;
@@ -99,6 +103,14 @@
     position: absolute;
   }
   /* This above hides the header logo in mobile view  */
+
+  .navbar-header > h1 {
+    width: 70vw;
+    margin-left: 11vw;
+    font-size: 100%;
+    top: 0px;
+    overflow-wrap: normal;
+  }
 
   #navbar-list {
     background-color: none;
@@ -485,7 +497,7 @@
   #navbar-list {
     display: inline-block;
     left: 0;
-    margin: 0 0 0 0;
+    margin: 1.2vh 0 0 0;
     padding: 0 0 0 0;
     float: right;
   }
@@ -518,6 +530,7 @@
       text-shadow: none;
       text-decoration: none;
       margin: 0 0.1vw 0 0;
+      padding: 0 0 0 0;
     }
 
   .navbar-first-btn:before {
@@ -647,6 +660,7 @@
       text-shadow: none;
       text-decoration: none;
       margin: 0 0 0 0.1vw;
+      padding: 0 0 0 0;
     }
 
   .navbar-last-btn:before {

@@ -91,8 +91,9 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
                 </div>{ /* /input-group */ }
               </div>
               <div className="checkbox" id="room-post-anon-checkbox">
+                {this.state.isAnonymous ? (<input type="checkbox" onChange={this.toggleAnon} checked/>) : (<input type="checkbox" onChange={this.toggleAnon}/>)}
                 <label>
-                  {this.state.isAnonymous ? (<input type="checkbox" onChange={this.toggleAnon} checked/>) : (<input type="checkbox" onChange={this.toggleAnon}/>)} Post anonymously
+                  Post anonymously
                 </label>
               </div>{ /* /#oom-post-anon-checkbox */ }
             </form>{ /* /.post-qn-group */ }
