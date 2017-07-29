@@ -47,6 +47,13 @@
   }
   /* Bootstrap - Mobile */
   @media only screen and (max-width: 767px) {
+
+    .navbar-page-title {
+      left: 15vw;
+      width: 50vw;
+      position: absolute;
+    }
+
     .navbar-header {
       margin-left: 0px;
       padding-left: 10px;
