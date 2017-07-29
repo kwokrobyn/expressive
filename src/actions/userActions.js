@@ -37,6 +37,13 @@ const updateUserAction = (user) => {
   }
 }
 
+export const setAnonDisplayName = (name) => {
+  return {
+    type: 'SET_ANON_DISPLAY_NAME',
+    name
+  }
+}
+
 /*
 * DATABASE METHODS
 */

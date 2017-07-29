@@ -15,6 +15,7 @@ import Footer from '../Footer/Footer';
 import QuestionList from './QuestionList/QuestionList';
 
 import { addQuestion, getQuestions } from '../../actions/questionActions';
+import { setAnonDisplayName } from '../../actions/userActions';
 
 /**
  * Room
@@ -26,7 +27,8 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
 
     this.state = ({
       question: "",
-      isAnonymous: !this.props.user.isSignedIn
+      isAnonymous: !this.props.user.isSignedIn,
+      setName: false
     })
   }
 
@@ -44,6 +46,13 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
       })
     } else {
       console.log('this just got unchecked');
+      // user is not signed in - prompt for custom displayName
+      if (!this.props.user.isSignedIn && this.state.setName === false) {
+        document.querySelector('.name-modal-btn').click();
+        this.setState({
+          setName: true
+        })
+      }
       this.setState({
         isAnonymous: false
       })
@@ -65,6 +74,11 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
       room: this.props.room.roomId
     }
     this.props.addQuestion(questionInfo);
+  }
+
+  setDisplayName = (e) => {
+    const displayName = document.querySelector('.display-name-input').value;
+    this.props.setAnonDisplayName(displayName);
   }
 
   render() {
@@ -108,6 +122,35 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
 
         <Footer />
 
+        {/* invisible button for opening the modal */}
+        <button type="button" className="name-modal-btn" data-toggle="modal" data-target="#nameModal">Open Modal</button>
+
+        {/* modal for inputting a custom display name */}
+        {/* data static and data keyboard attributes are important - prevent modal from closing when clicking outside */}
+        <div id="nameModal" className="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+          <div className="modal-dialog">
+
+            <div className="modal-content">
+              <div className="modal-header">
+                <h4 className="modal-title">Choose a Display Name</h4>
+              </div>
+              <div className="modal-body">
+                <p>Choose a display name, or post anonymously.</p>
+                <input type="text"
+                       className="form-control display-name-input"
+                       id="roomname"/>
+                <button type="button" className="btn btn-default" data-dismiss="modal" onClick={this.setDisplayName}>Use Name</button>
+                <p>(Once you choose a display name, it cannot be changed for the rest of the session.)</p>
+              </div>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-default" data-dismiss="modal">Post Anonymously</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
       </div>
     )
   }
@@ -128,6 +171,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     getQuestions: (id) => {
       dispatch(getQuestions(id))
+    },
+    setAnonDisplayName: (name) => {
+      dispatch(setAnonDisplayName(name))
     }
   }
 }

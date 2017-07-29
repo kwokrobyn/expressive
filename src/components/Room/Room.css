@@ -57,3 +57,7 @@
 #room-responses-well {
   position: relative;
 }
+
+.name-modal-btn {
+  display: none;
+}

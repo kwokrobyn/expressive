@@ -32,6 +32,7 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
 
   componentDidMount() {
     this.props.getUserRooms(this.props.user.uid)
+    document.getElementById('myModal').showModal();
   }
 
   signOut = (e) => {

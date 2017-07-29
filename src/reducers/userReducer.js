@@ -44,6 +44,11 @@ const userReducer = (state = defaultUser, action) => {
         hasAuthError: false,
         errorMessage: ""
       }
+    case "SET_ANON_DISPLAY_NAME":
+      return {
+        ...state,
+        displayName: action.name
+      }
     default:
         return state;
   }
