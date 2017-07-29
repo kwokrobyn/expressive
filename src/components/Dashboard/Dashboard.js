@@ -74,8 +74,10 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
             {/* Submit Button */}
             <Col className="dashboard-create-btn-Col">
               <a className="dashboard-create-btn-a"
+                  id="create-new-room"
                   data-toggle="modal"
-                  data-target="#myModal">
+                  data-target="#myModal"
+                  >
                 <span className="text" id="dashboard-create-btn-text">
                   Create a new room
                   <hr id="dashboard-create-btn-text-hr"/>

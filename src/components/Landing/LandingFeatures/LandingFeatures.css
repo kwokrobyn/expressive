@@ -16,8 +16,9 @@ label.joinRmLabel.control-label {
 
 input#joinroom {
   height: 50px;
-  width: 250px;
+  width: 35vw;
   display: inline;
+  margin-bottom: 5px;
 }
 
 
