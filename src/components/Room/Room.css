@@ -1,6 +1,32 @@
 .room-post-qn-row {
-  margin: 20vh 5vw 0 5vw;
+  margin: 12vh 5vw 0 5vw;
 }
+  /* Bootstrap - Medium desktop */
+  @media (min-width: 979px) and (max-width: 1200px) {
+    .room-post-qn-row {
+      margin: 15vh 5vw 0 5vw;
+    }
+  }
+
+  /* Bootstrap - Portrait tablet to landscape and desktop */
+  @media only screen and (min-width: 768px) and (max-width: 978px) {
+    .room-post-qn-row {
+      margin: 13vh 5vw 0 5vw;
+    }
+  }
+  /* Bootstrap - Mobile */
+  @media only screen and (max-width: 767px) {
+    .room-post-qn-row {
+      margin: 15vh 5vw 0 5vw;
+    }
+  }
+
+  /* iPhone 5 */
+  @media only screen and (max-width: 320px) {
+    .room-post-qn-row {
+      margin: 20vh 5vw 0 5vw;
+    }
+  }
 
 #room-post-qn-group {
   position: relative;
