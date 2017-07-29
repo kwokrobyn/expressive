@@ -136,6 +136,7 @@ class Navbar extends Component {
             {/*Three Icon Bars in mobile displays*/}
             <span className="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
           </button>
+          <h1 className="navbar-page-title">{this.props.pageTitle}</h1>
         </div>
         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <div className="row">
@@ -143,8 +144,10 @@ class Navbar extends Component {
               <div className="navbar-header" id="navbar-header-md-lg">
                 {titledLogoElement}
               </div>
-              <div className="navbar-page-title"><p>{this.props.pageTitle}</p></div>
-            </div>
+              <div className="navbar-page-title">
+                <p>{this.props.pageTitle}</p>
+              </div>{/*/.navbar-page-title*/}
+            </div> {/* /.navbar-header-fix */}
             <div className="col-sm-7 col-md-6 col-lg-6">
               {profileElement}
             </div>

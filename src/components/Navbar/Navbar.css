@@ -6,13 +6,15 @@
   min-width: 110px;
 }
 
+/* Below: Page title on the Navbar - All Styles */
+
 .navbar-page-title {
   left: 13vw;
-  top: 2vh;
+  top: 1.2vh;
   display: inline-block;
   color: rgba(243,245,242,1);
   font-size: 20px;
-  position: absolute;
+  position: relative;
   max-width: 40vw;
 }
   .navbar-page-title > p {
@@ -37,6 +39,7 @@
 
   /* Bootstrap - Portrait tablet to landscape and desktop */
   @media only screen and (min-width: 768px) and (max-width: 978px) {
+
     .navbar-page-title > p {
       max-width: 10vw;
       display: none;
@@ -44,7 +47,15 @@
   }
   /* Bootstrap - Mobile */
   @media only screen and (max-width: 767px) {
+    .navbar-header {
+      margin-left: 0px;
+      padding-left: 10px;
+      min-width: 110px;
+      height: 80px;
+    }
   }
+
+/* Above: Page title on the Navbar - All Styles */
 
 .nav-container.container {
   width: 100%;
@@ -64,10 +75,6 @@
   background-image: -moz-gradient(to bottom,rgba(47,120,139,1) 0,rgba(8,154,136,1) 100%);
   background-image: -webkit-linear-gradient(to bottom,rgba(47,120,139,1) 0,rgba(8,154,136,1) 100%);
   background-image: linear-gradient(to bottom,rgba(47,120,139,1) 0,rgba(8,154,136,1) 100%);
-}
-
-#bs-example-navbar-collapse-1 {
-  border-bottom:
 }
 
 #bs-example-navbar-collapse-1 > .row {
@@ -100,6 +107,14 @@
   }
   /* This above hides the header logo in mobile view  */
 
+  .navbar-header > h1 {
+    width: 70vw;
+    margin-left: 11vw;
+    font-size: 100%;
+    top: 0px;
+    overflow-wrap: normal;
+  }
+
   #navbar-list {
     background-color: none;
     margin: 10px 0 10px 0;
@@ -110,6 +125,7 @@
   .navbar-inverse .navbar-toggle {
     border-color: rgba(8,154,136,1);
     border-width: 0px 0px 5px 5px;
+
   }
 
   .navbar-inverse .navbar-toggle:hover,
@@ -122,13 +138,15 @@
     height: 70px;
     width: 70px;
     top: -10px;
-    border-radius: 0em 0em 0em 3em;
-    margin-right: 0px;
+    border-radius: 0em 0em 0em 4.2em;
+    margin-right: 0vw;
+    right: 0vw;
+    position: absolute;
   }
 
   .navbar-header > button > .glyphicon-menu-hamburger {
     color: rgba(243,245,242,1);
-    font-size: 40px;
+    font-size: 30px;
     top: 0px;
     left: 5px;
   }
@@ -485,7 +503,7 @@
   #navbar-list {
     display: inline-block;
     left: 0;
-    margin: 0 0 0 0;
+    margin: 1.2vh 80px 0 0;
     padding: 0 0 0 0;
     float: right;
   }
@@ -518,6 +536,7 @@
       text-shadow: none;
       text-decoration: none;
       margin: 0 0.1vw 0 0;
+      padding: 0 0 0 0;
     }
 
   .navbar-first-btn:before {
@@ -647,6 +666,7 @@
       text-shadow: none;
       text-decoration: none;
       margin: 0 0 0 0.1vw;
+      padding: 0 0 0 0;
     }
 
   .navbar-last-btn:before {
