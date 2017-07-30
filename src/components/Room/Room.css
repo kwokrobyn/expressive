@@ -82,23 +82,6 @@
     }
   }
 
-#room-post-anon-checkbox {
-  margin: 0 auto 2vh 20px;
-}
-
-  #room-post-anon-checkbox > label {
-    text-align: left;
-    letter-spacing: normal;
-    display: inline;
-    margin: 0 0 0 0;
-    padding: 0 0 0 0;
-    font-weight: 600;
-  }
-
-  #room-post-anon-checkbox > input[type="checkbox"] {
-    display: inline;
-  }
-
 #room-responses-column {
   position: relative;
 }
@@ -266,3 +249,144 @@ Basic input element using psuedo classes
 }
 
 /* Above: Nice form */
+/* Below: Bjorn's Fluid Checkbox */
+
+#room-post-anon-checkbox {
+  margin: 0 auto 1vh 0;
+  height: 60px;
+  padding: 0 0 0 0;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  padding-left: 100px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+#room-post-anon-checkbox > span {
+  margin: 7px 0 0 0;
+  padding: 0 0 0 0;
+  text-align: left;
+  letter-spacing: normal;
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: rgba(73,73,73,1);
+}
+
+/* Bootstrap - Mobile */
+@media only screen and (min-width: 321px) and (max-width: 767px) {
+  #room-post-anon-checkbox > span {
+    margin: 7px 0 0 0;
+  }
+}
+
+/* iPhone 5 */
+@media only screen and (max-width: 320px) {
+  #room-post-anon-checkbox > span {
+    margin: 0 0 0 0;
+    position: relative;
+    top: -3px;
+  }
+}
+
+#room-post-anon-checkbox > input[type="checkbox"] {
+  display: none;
+}
+
+#room-post-anon-checkbox-toggle:before {
+  content: '';
+  position: absolute;
+  top: 16px;
+  left: 1px;
+  width: 80px;
+  height: 8px;
+  background-color: rgba(73,73,73,1);
+  border-radius: 10px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+#room-post-anon-checkbox > input:checked + #room-post-anon-checkbox-toggle:before {
+  background-color: rgba(0,233,143,1);
+}
+
+#room-post-anon-checkbox-toggle:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(243,245,242,1);
+  border-radius: 50%;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  -webkit-animation-name: pulsein;
+          animation-name: pulsein;
+  -webkit-animation-duration: .3s;
+          animation-duration: .3s;
+}
+
+#room-post-anon-checkbox > input:checked + #room-post-anon-checkbox-toggle:after {
+  background-color: rgba(0,233,143,1);
+  -webkit-transform: translateX(40px);
+          transform: translateX(40px);
+  -webkit-animation-name: pulseout;
+          animation-name: pulseout;
+  -webkit-animation-duration: .3s;
+          animation-duration: .3s;
+}
+
+@-webkit-keyframes pulsein {
+  0%, 100% {
+    top: 0px;
+    height: 40px;
+    width: 40px;
+  }
+  50% {
+    top: 6px;
+    height: 28px;
+    width: 52px;
+  }
+}
+
+@keyframes pulsein {
+  0%, 100% {
+    top: 0px;
+    height: 40px;
+    width: 40px;
+  }
+  50% {
+    top: 6px;
+    height: 28px;
+    width: 52px;
+  }
+}
+@-webkit-keyframes pulseout {
+  0%, 100% {
+    top: 0px;
+    height: 40px;
+    width: 40px;
+  }
+  50% {
+    top: 6px;
+    height: 28px;
+    width: 52px;
+  }
+}
+@keyframes pulseout {
+  0%, 100% {
+    top: 0px;
+    height: 40px;
+    width: 40px;
+  }
+  50% {
+    top: 6px;
+    height: 28px;
+    width: 52px;
+  }
+}
+/* Above: Bjorn's Fuid Checkbox */
