@@ -5,24 +5,48 @@
 #landing-greater-footer {
   width: 100%;
   max-height: 50vh;
-  background-color: rgba(47,120,139,1);
-  position: relative;
+  /*background-color: rgba(47,120,139,1);*/
+  /*position: relative;*/
+  /*background: url("/images/footerArt.png");
+  background-repeat: no-repeat;
+  background-size: contain;*/
 }
 
-#landing-mission-title {
+.landing-mission-title {
+  top: 30vw;
+}
+
+h2#landing-mission-title {
   text-align: center;
   color: white;
   font-family: 'Raleway', sans-serif;
   font-size: 1.5em;
-  margin-top: 50px;
+  /*left: 24vw;*/
+  display: flex;
+  justify-content: center;
+
+
 }
 
-#landing-mission-paragraph {
+p#landing-mission-paragraph {
   text-align: center;
   font-size: 1em;
   font-family: 'Raleway', sans-serif;
   color: white;
-  margin-bottom: 70px;
+  /*margin-top: 30vw;*/
+  /*margin-bottom: 20px;*/
+  display: inline;
+  position: absolute;
+  top: 33vw;
+}
+
+div.landing-footer-img.col-md-12 {
+  background: url('/images/footerArt.png') center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 1vw;
+  height: 100vw;
+  position: relative;
 }
 
 /* Copyright */
