@@ -6,6 +6,7 @@ import {Grid, Col, form, FormGroup, FormControl, ControlLabel, HelpBlock, Row, B
 //Importing static assets (i.e. stylesheets, images)
 import Navbar from '../Navbar/Navbar';
 import CreateRoom from './CreateRoom/CreateRoom';
+import DashList from './DashList/DashList';
 
 //Importing React Components
 import { signOut } from '../../actions/userActions';
@@ -40,33 +41,11 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
     this.props.signOut();
   }
 
-//{/* seperate to a different component and import back in Dashboard.js */}
-  roomDisplay = () => {
-    const roomArray = [];
-    Object.keys(this.props.ownedRooms).forEach((key) => {
-      roomArray.push({
-        key: key,
-        name: this.props.ownedRooms[key].name
-      })
-    })
-
-    const rooms = roomArray.map((e) => {
-      return (
-        <div className="col-md-4 col-xs-12 dashboard-roombox" key={e.key}>
-          <div className="dashboard-roombox-name"> {e.name} </div>
-          <div className="dashboard-roombox-user"> <b>Room ID:</b> {e.key} </div>
-          <Link to={"/room/" + e.key}> Join room </Link>
-        </div>
-      )
-    })
-
-    return rooms;
-  }
 
   render() {
     return (
-      <div className="container-fluid">
-        <div className="container-fluid" id="dashboard-rooms-group">
+
+        <Grid id="dashboard-rooms-group">
 
           <Navbar pageTitle="Dashboard"/>
 
@@ -91,15 +70,16 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
             </Col>{/* /.dashboard-create-btn-Col (Submit Button) */}
           </div>{ /* /#dashboard-create-btn-group */ }
 
-{/* seperate to a different component(dashlist) and import back in Dashboard.js */}
-          <div className="row dashList">
-            {this.roomDisplay()}
-          </div>
-        </div>{ /* /#dashboard-rooms-group */ }
-        <CreateRoom/>
-      </div>
+          <DashList/>
+          <CreateRoom/>
+          { /* /#dashboard-rooms-group */ }
+        </Grid>
+
+
     )
   }
+
+
   // render() {
   //
   //   return (
@@ -118,7 +98,7 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
   // }
 }
 
-{/* seperate to a different component and import back in Dashboard.js */}
+
 
 const mapStateToProps = (state) => {
   //console.log('mapStateToProps', state);
