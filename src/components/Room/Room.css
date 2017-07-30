@@ -1,17 +1,36 @@
 .room-post-qn-row {
-  margin: 12vh 5vw 0 5vw;
+  margin: 10vh 5vw 0 5vw;
 }
 
 #room-post-qn-group {
   position: relative;
   width: 100%;
 }
-  @media (min-width: 1200px) {
+
+  @media (min-width: 1920px) {
     .room-post-qn-row {
-      margin: 10vh 5vw 0 5vw;
+      margin: 110px 5vw 0 5vw;
     }
     #room-post-qn-group {
-      margin-top: 10vh;
+      margin-top: 3vh;
+    }
+  }
+
+  @media (min-width: 1280px) and (max-width: 1919px) {
+    .room-post-qn-row {
+      margin: 120px 5vw 0 5vw;
+    }
+    #room-post-qn-group {
+      margin-top: 0vh;
+    }
+  }
+
+  @media (min-width: 1200px) and (max-width: 1279px) {
+    .room-post-qn-row {
+      margin: 120px 5vw 0 5vw;
+    }
+    #room-post-qn-group {
+      margin-top: 0vh;
     }
   }
 
@@ -46,20 +65,20 @@
   /* Bootstrap - Mobile */
   @media only screen and (min-width: 321px) and (max-width: 767px) {
     .room-post-qn-row {
-      margin: 15vh 5vw 1vh 5vw;
+      margin: 18vh 5vw 1vh 5vw;
     }
     #room-post-qn-group {
-      margin-top: 5vh;
+      margin-top: 0vh;
     }
   }
 
   /* iPhone 5 */
   @media only screen and (max-width: 320px) {
     .room-post-qn-row {
-      margin: 25vh 5vw 1vh 5vw;
+      margin: 20vh 5vw 1vh 5vw;
     }
     #room-post-qn-group {
-      margin-top: 2vh;
+      margin-top: 0vh;
     }
   }
 
@@ -73,6 +92,7 @@
     display: inline;
     margin: 0 0 0 0;
     padding: 0 0 0 0;
+    font-weight: 600;
   }
 
   #room-post-anon-checkbox > input[type="checkbox"] {
@@ -109,7 +129,7 @@ Basic input element using psuedo classes
   margin: 0;
   border: none;
   width: 100%;
-  background: rgba(0, 0, 0, 0);
+  background: rgba(243,245,242,0);
   transition: padding-top 0.2s ease, margin-top 0.2s ease;
   overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
 }
@@ -125,14 +145,22 @@ Basic input element using psuedo classes
   border-top: 3px solid rgba(242,133,23,1);
   -webkit-transition: width 0.4s ease;
   transition: width 0.4s ease;
-  height: 3vh;
+  height: 4vh;
   font-size: 100%;
 }
 
 #room-post-qn-textarea-label {
   white-space: normal;
-  font-weight: 600;
+}
+
+#room-post-qn-textarea-label-span {
+  font-family: Raleway;
+  font-weight: 800;
   letter-spacing: normal;
+  font-size: 20px;
+  color: green;
+  background-color: rgba(243,245,242,1);
+  padding: 10px 10px 5px 10px;
 }
 
 #room-post-qn-textarea:focus + #room-post-qn-textarea-label {
@@ -146,12 +174,13 @@ Basic input element using psuedo classes
 
 #room-post-qn-textarea:focus {
   margin-top: 5vh;
+  background: rgba(243,245,242,1);
 }
 
 #room-post-qn-textarea:focus + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span, #room-post-qn-textarea:valid + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span {
-  top: -150px;
+  top: -125px;
   font-size: 22px;
-  color: #333;
+  color: rgba(73,73,73,1);
 }
 
 #room-post-qn-textarea:valid + #room-post-qn-textarea-label {
@@ -165,8 +194,8 @@ Basic input element using psuedo classes
 #room-post-qn-textarea + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span {
   margin: 0 auto;
   position: absolute;
-  color: #8F8F8F;
-  top: -7vh;
+  color: rgba(73,73,73,1);
+  top: -9vh;
   left: 0vw;
   z-index: -1;
   -webkit-transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
@@ -202,6 +231,38 @@ Basic input element using psuedo classes
   100% {
     opacity: 1;
   }
+}
+
+#room-post-qn-btn:active, #room-post-qn-btn {
+  border: 3px solid rgba(0,233,143,1);
+  color: rgba(73,73,73,1);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background: none;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 0.8em 0.8em;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+
+#room-post-qn-btn:hover {
+  background-color: rgba(0,233,143,1);
+  color: rgba(73,73,73,1);
+}
+
+#room-post-qn-btn:hover:active {
+  background-color: rgba(0,233,143,1);
+  color: rgba(243,245,242,1);
+}
+
+#room-post-qn-btn:focus {
+  border-color: rgba(0,255,78,1);
+  color: rgba(0,233,143,1);
+  -webkit-animation: pulse 1s;
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em rgba(255,255,255,0);
 }
 
 /* Above: Nice form */

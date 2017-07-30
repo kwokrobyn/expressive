@@ -74,6 +74,9 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
       room: this.props.room.roomId
     }
     this.props.addQuestion(questionInfo);
+    // Clear contents after submission of question
+    document.getElementById('room-post-qn-textarea').value = '';
+    /* Here is where a successful posting notification might be triggered */
   }
 
   setDisplayName = (e) => {
@@ -102,7 +105,7 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
                 </label>
               </div>{ /* /#room-post-anon-checkbox */ }
               {/* Post button */}
-              <input type="submit" id="room-post-qn-btn" value="Submit" onClick={this.submitQuestion}/>
+              <input type="submit" id="room-post-qn-btn" value={this.state.isAnonymous ? ('Post anonymously') : ('Post as ' + this.props.user.displayName)} onClick={this.submitQuestion}/>
             </form>{ /* /.post-qn-group */ }
           </div>{ /* /.col-lg-12 col-md-12 col-sm-12 col-xs-12 */ }
         </div>{ /* /.row */ }
@@ -136,7 +139,7 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
                 <p>(Once you choose a display name, it cannot be changed for the rest of the session.)</p>
               </div>
               <div className="modal-footer">
-                <button type="button" className="btn btn-default" data-dismiss="modal">Post Anonymously</button>
+                <button type="button" className="btn btn-default" data-dismiss="modal">Post anonymously</button>
               </div>
             </div>
 
