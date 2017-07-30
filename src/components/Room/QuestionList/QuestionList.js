@@ -85,7 +85,7 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
     const questions = questionArray.map((e) => {
       console.log(e.key);
       return (
-        <div className="col-md-12 col-xs-12 dashboard-roombox" key={e.key}>
+        <div className="col-md-12 col-xs-12 room-questionbox" key={e.key}>
           <div className="row">
             <div className="col-md-1">
               <i className="fa fa-chevron-circle-up upvote" aria-hidden="true" data-id={e.key} data-toggle={false} onClick={this.toggleVote}></i>

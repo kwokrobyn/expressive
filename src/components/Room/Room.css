@@ -1,5 +1,5 @@
 .room-post-qn-row {
-  margin: 10vh 5vw 0 5vw;
+  margin: 20vh 5vw 0 5vw;
 }
 
 #room-post-qn-group {
@@ -9,7 +9,7 @@
 
   @media (min-width: 1920px) {
     .room-post-qn-row {
-      margin: 110px 5vw 0 5vw;
+      margin: 120px 5vw 0 5vw;
     }
     #room-post-qn-group {
       margin-top: 3vh;
@@ -18,7 +18,7 @@
 
   @media (min-width: 1280px) and (max-width: 1919px) {
     .room-post-qn-row {
-      margin: 120px 5vw 0 5vw;
+      margin: 170px 5vw 0 5vw;
     }
     #room-post-qn-group {
       margin-top: 0vh;
@@ -36,10 +36,10 @@
 
   @media (min-width: 1024px) and (max-width: 1199px) {
     .room-post-qn-row {
-      margin: 10vh 5vw 0 5vw;
+      margin: 180px 5vw 0 5vw;
     }
     #room-post-qn-group {
-      margin-top: 5vh;
+      margin-top: 0vh;
     }
   }
 
@@ -65,7 +65,7 @@
   /* Bootstrap - Mobile */
   @media only screen and (min-width: 321px) and (max-width: 767px) {
     .room-post-qn-row {
-      margin: 18vh 5vw 1vh 5vw;
+      margin: 160px 5vw 1vh 5vw;
     }
     #room-post-qn-group {
       margin-top: 0vh;
@@ -73,7 +73,7 @@
   }
 
   /* iPhone 5 */
-  @media only screen and (max-width: 320px) {
+  @media only screen and (max-width: 360px) {
     .room-post-qn-row {
       margin: 20vh 5vw 1vh 5vw;
     }
@@ -144,6 +144,7 @@ Basic input element using psuedo classes
   color: green;
   background-color: rgba(243,245,242,1);
   padding: 10px 10px 5px 10px;
+  position: inherit;
 }
 
 #room-post-qn-textarea:focus + #room-post-qn-textarea-label {
