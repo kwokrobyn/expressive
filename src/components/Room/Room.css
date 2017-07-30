@@ -92,6 +92,7 @@
     display: inline;
     margin: 0 0 0 0;
     padding: 0 0 0 0;
+    font-weight: 600;
   }
 
   #room-post-anon-checkbox > input[type="checkbox"] {
@@ -232,36 +233,36 @@ Basic input element using psuedo classes
   }
 }
 
-#room-post-qn-btn {
-  color: var(--color);
-  -webkit-transition: 0.25s;
-  transition: 0.25s;
-
+#room-post-qn-btn:active, #room-post-qn-btn {
+  border: 3px solid rgba(0,233,143,1);
+  color: rgba(73,73,73,1);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   background: none;
-  border: 2px solid;
-  font: inherit;
   line-height: 1;
   margin: 0.5em;
-  padding: 1em 2em;
-
-  --color: rgba(0,233,143,1);
-  --hover: rgba(0,255,78,1);
+  padding: 0.8em 1.7em;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 10px 0;
 }
 
-#room-post-qn-btn:hover([disabled]), #room-post-qn-btn:focus {
-  border-color: var(--hover);
-  color: rgba(0,233,143,1);
+#room-post-qn-btn:hover {
+  background-color: rgba(0,233,143,1);
+  color: rgba(73,73,73,1);
 }
 
-#room-post-qn-btn:hover:not([disabled]),
+#room-post-qn-btn:hover:active {
+  background-color: rgba(0,233,143,1);
+  color: rgba(243,245,242,1);
+}
+
 #room-post-qn-btn:focus {
+  border-color: rgba(0,255,78,1);
+  color: rgba(0,233,143,1);
   -webkit-animation: pulse 1s;
-          animation: pulse 1s;
-  box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
-}
-
-#room-post-qn-btn:disabled {
-  --color: rgba(73,73,73,1);
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em rgba(255,255,255,0);
 }
 
 /* Above: Nice form */
