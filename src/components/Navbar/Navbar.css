@@ -9,11 +9,11 @@
 /* Below: Page title on the Navbar - All Styles */
 
 .navbar-page-title {
-  left: 13vw;
+  left: 7vw;
   top: 1.2vh;
   display: inline-block;
   color: rgba(243,245,242,1);
-  font-size: 20px;
+  font-size: 150%;
   position: relative;
   max-width: 40vw;
 }

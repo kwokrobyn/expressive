@@ -4,34 +4,34 @@
   /* Bootstrap - Medium desktop */
   @media (min-width: 979px) and (max-width: 1200px) {
     .room-post-qn-row {
-      margin: 15vh 5vw 0 5vw;
+      margin: 15vh 5vw 1vh 5vw;
     }
   }
 
   /* Bootstrap - Portrait tablet to landscape and desktop */
   @media only screen and (min-width: 768px) and (max-width: 978px) {
     .room-post-qn-row {
-      margin: 13vh 5vw 0 5vw;
+      margin: 13vh 5vw 1vh 5vw;
     }
   }
   /* Bootstrap - Mobile */
   @media only screen and (max-width: 767px) {
     .room-post-qn-row {
-      margin: 15vh 5vw 0 5vw;
+      margin: 15vh 5vw 1vh 5vw;
     }
   }
 
   /* iPhone 5 */
   @media only screen and (max-width: 320px) {
     .room-post-qn-row {
-      margin: 20vh 5vw 0 5vw;
+      margin: 25vh 5vw 1vh 5vw;
     }
   }
 
 #room-post-qn-group {
   position: relative;
-  width: 90%;
-  margin: 0 5vw 3vw 5vw;
+  width: 100%;
+  /*margin: 0 5vw 3vw 5vw;*/
 }
 
 #room-post-anon-checkbox {
@@ -61,3 +61,119 @@
 .name-modal-btn {
   display: none;
 }
+
+/* Below: Nice form */
+
+/*
+Basic input element using psuedo classes
+*/
+
+#room-post-qn-textarea:focus, #room-post-qn-btn:focus {
+  outline: 0;
+}
+/* Question */
+
+#room-post-qn-textarea {
+  font-size: 24px;
+  font-weight: 300;
+  border-radius: 2px;
+  margin: 0;
+  border: none;
+  width: 100%;
+  background: rgba(0, 0, 0, 0);
+  transition: padding-top 0.2s ease, margin-top 0.2s ease;
+  overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
+}
+/* Underline and Placeholder */
+
+#room-post-qn-textarea + #room-post-qn-textarea-label {
+  display: block;
+  position: relative;
+  white-space: nowrap;
+  padding: 0;
+  margin: 2vh 0 0 0;
+  width: 10%;
+  border-top: 1px solid red;
+  -webkit-transition: width 0.4s ease;
+  transition: width 0.4s ease;
+  height: 3vh;
+  font-size: 100%;
+}
+
+#room-post-qn-textarea-label {
+  white-space: normal;
+  font-size: 100%;
+  font-weight: 600;
+  letter-spacing: normal;
+}
+
+#room-post-qn-textarea:focus + #room-post-qn-textarea-label {
+  width: 100%;
+  font-size: 100%;
+}
+
+#room-post-qn-textarea:valid {
+  padding-top: 35px;
+}
+
+#room-post-qn-textarea:valid, #room-post-qn-textarea:focus {
+  margin-top: 35px;
+}
+
+#room-post-qn-textarea:focus + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span, #room-post-qn-textarea:valid + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span {
+  top: -150px;
+  font-size: 22px;
+  color: #333;
+}
+
+#room-post-qn-textarea:valid + #room-post-qn-textarea-label {
+  border-color: green;
+}
+
+#room-post-qn-textarea:invalid {
+  box-shadow: none;
+}
+
+#room-post-qn-textarea + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span {
+  margin: 0 auto;
+  position: absolute;
+  color: #8F8F8F;
+  top: -7vh;
+  left: 0vw;
+  z-index: -1;
+  -webkit-transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+  transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+}
+
+#room-post-qn-btn {
+  -webkit-transition: opacity 0.2s ease, background 0.2s ease;
+  transition: opacity 0.2s ease, background 0.2s ease;
+  display: block;
+  opacity: 0;
+  margin: 2vh 0 2vh 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#room-post-qn-textarea:valid ~ #room-post-qn-btn {
+  -webkit-animation: appear 1s forwards;
+  animation: appear 1s forwards;
+}
+
+#room-post-qn-textarea:invalid ~ #room-post-qn-btn {
+  display: none;
+}
+
+@-webkit-keyframes appear {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Above: Nice form */
