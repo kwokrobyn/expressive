@@ -104,7 +104,7 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
               {/* Post button */}
               <input type="submit" id="room-post-qn-btn" value="Submit" onClick={this.submitQuestion}/>
             </form>{ /* /.post-qn-group */ }
-          </div>{ /* /.col-lg-12 */ }
+          </div>{ /* /.col-lg-12 col-md-12 col-sm-12 col-xs-12 */ }
         </div>{ /* /.row */ }
 
         <div className="row room-responses-row">

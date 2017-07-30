@@ -1,10 +1,36 @@
 .room-post-qn-row {
   margin: 12vh 5vw 0 5vw;
 }
+
+#room-post-qn-group {
+  position: relative;
+  width: 100%;
+}
+  @media (min-width: 1200px) {
+    .room-post-qn-row {
+      margin: 10vh 5vw 0 5vw;
+    }
+    #room-post-qn-group {
+      margin-top: 10vh;
+    }
+  }
+
+  @media (min-width: 1024px) and (max-width: 1199px) {
+    .room-post-qn-row {
+      margin: 10vh 5vw 0 5vw;
+    }
+    #room-post-qn-group {
+      margin-top: 5vh;
+    }
+  }
+
   /* Bootstrap - Medium desktop */
-  @media (min-width: 979px) and (max-width: 1200px) {
+  @media (min-width: 979px) and (max-width: 1023px) {
     .room-post-qn-row {
       margin: 15vh 5vw 1vh 5vw;
+    }
+    #room-post-qn-group {
+      margin-top: 10vh;
     }
   }
 
@@ -13,11 +39,17 @@
     .room-post-qn-row {
       margin: 13vh 5vw 1vh 5vw;
     }
+    #room-post-qn-group {
+      margin-top: 2vh;
+    }
   }
   /* Bootstrap - Mobile */
-  @media only screen and (max-width: 767px) {
+  @media only screen and (min-width: 321px) and (max-width: 767px) {
     .room-post-qn-row {
       margin: 15vh 5vw 1vh 5vw;
+    }
+    #room-post-qn-group {
+      margin-top: 5vh;
     }
   }
 
@@ -26,16 +58,13 @@
     .room-post-qn-row {
       margin: 25vh 5vw 1vh 5vw;
     }
+    #room-post-qn-group {
+      margin-top: 2vh;
+    }
   }
 
-#room-post-qn-group {
-  position: relative;
-  width: 100%;
-  /*margin: 0 5vw 3vw 5vw;*/
-}
-
 #room-post-anon-checkbox {
-  margin: 0 auto 0 20px;
+  margin: 0 auto 2vh 20px;
 }
 
   #room-post-anon-checkbox > label {
@@ -90,10 +119,10 @@ Basic input element using psuedo classes
   display: block;
   position: relative;
   white-space: nowrap;
-  padding: 0;
-  margin: 2vh 0 0 0;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
   width: 10%;
-  border-top: 1px solid red;
+  border-top: 3px solid rgba(242,133,23,1);
   -webkit-transition: width 0.4s ease;
   transition: width 0.4s ease;
   height: 3vh;
@@ -102,22 +131,21 @@ Basic input element using psuedo classes
 
 #room-post-qn-textarea-label {
   white-space: normal;
-  font-size: 100%;
   font-weight: 600;
   letter-spacing: normal;
 }
 
 #room-post-qn-textarea:focus + #room-post-qn-textarea-label {
   width: 100%;
-  font-size: 100%;
+  border-top: 3px solid rgba(255,127,130,1);
 }
 
 #room-post-qn-textarea:valid {
-  padding-top: 35px;
+  margin-top: 5vh;
 }
 
-#room-post-qn-textarea:valid, #room-post-qn-textarea:focus {
-  margin-top: 35px;
+#room-post-qn-textarea:focus {
+  margin-top: 5vh;
 }
 
 #room-post-qn-textarea:focus + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span, #room-post-qn-textarea:valid + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span {
@@ -127,7 +155,7 @@ Basic input element using psuedo classes
 }
 
 #room-post-qn-textarea:valid + #room-post-qn-textarea-label {
-  border-color: green;
+  border-color: rgba(0,233,143,1);
 }
 
 #room-post-qn-textarea:invalid {
