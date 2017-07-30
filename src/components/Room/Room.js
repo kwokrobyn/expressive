@@ -74,6 +74,9 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
       room: this.props.room.roomId
     }
     this.props.addQuestion(questionInfo);
+    // Clear contents after submission of question
+    document.getElementById('room-post-qn-textarea').value = '';
+    /* Here is where a successful posting notification might be triggered */
   }
 
   setDisplayName = (e) => {
