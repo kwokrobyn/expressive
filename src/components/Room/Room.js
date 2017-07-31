@@ -94,8 +94,8 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
           <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <form id="room-post-qn-group">
               {/* Post a question bar */}
-              <textarea name="question" type="text" rows="2" className="room-post-qn-textarea" id="room-post-qn-textarea" required autocomplete="off" onChange={this.onChange}></textarea>
-              <label for="room-post-qn-textarea" id="room-post-qn-textarea-label">
+              <textarea name="question" type="text" rows="2" className="room-post-qn-textarea" id="room-post-qn-textarea" required autoComplete="off" onChange={this.onChange}></textarea>
+              <label htmlFor="room-post-qn-textarea" id="room-post-qn-textarea-label">
                 <span id="room-post-qn-textarea-label-span">Ask a question</span>
               </label>
               <label id="room-post-anon-checkbox">

@@ -44,6 +44,14 @@ const leaveRoomAction = () => {
   }
 }
 
+// if master signs out, ensure that master view changes to anon view
+export const toggleMaster = (toggle) => {
+  return {
+    type: 'TOGGLE_MASTER',
+    toggle
+  }
+}
+
 /*
 * DATABASE METHODS
 */
@@ -74,6 +82,7 @@ export const checkExisting = (roomString) => {
 export const getUserRooms = (id) => {
   return (dispatch) => {
     const ownedRoomsRef = db.ref("users/" + id + '/ownedRooms/');
+    // attaches a persistent event listener that is called whenever value in /ownedRooms changes
     ownedRoomsRef.on("value", (snapshot) => {
       console.log('get user rooms snapshot', snapshot.val());
 
@@ -142,9 +151,8 @@ export const joinRoom = (roomInfo) => {
         name: roomInfo.user.displayName
       }
     }).then(() => {
-
       dispatch(joinRoomAction(roomInfo));
-      console.log('user has joined room');
+      console.log('user has joined room', roomInfo);
     }).catch((error) => {
       console.log('Error while joining room: ', error.message);
     });
