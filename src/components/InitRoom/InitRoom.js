@@ -57,7 +57,8 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
             roomName: snapshot.val().name,
             roomId: this.props.match.params.id,
             user: this.props.user,
-            isMaster: snapshot.val().masterId === this.props.user.uid
+            isMaster: snapshot.val().masterId === this.props.user.uid,
+            isActive: snapshot.val().isActive
             }
           this.props.joinRoom(roomInfo);
         } else {
@@ -84,7 +85,8 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
               roomName: snapshot.val().name,
               roomId: this.props.match.params.id,
               user: this.props.user,
-              isMaster: snapshot.val().masterId === this.props.user.uid
+              isMaster: snapshot.val().masterId === this.props.user.uid,
+              isActive: snapshot.val().isActive
               }
             this.props.joinRoom(roomInfo);
           } else {

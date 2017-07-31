@@ -11,11 +11,11 @@ const roomReducer = (state = defaultRoom, action) => {
   switch (action.type) {
     case "JOIN_ROOM":
       return {
-        ...state,
         isInRoom: true,
         roomId: action.room.roomId,
         roomName: action.room.roomName,
-        isMaster: action.room.isMaster
+        isMaster: action.room.isMaster,
+        isActive: action.room.isActive
       }
 
     case "LEAVE_ROOM":
