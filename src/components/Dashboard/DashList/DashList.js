@@ -7,9 +7,7 @@ import {Grid, Col, form, FormGroup, FormControl, ControlLabel, HelpBlock, Row, B
 
 //Importing React Components
 
-import { getUserRooms } from '../../../actions/roomActions';
-
-
+import { getUserRooms, deleteRoom } from '../../../actions/roomActions';
 
 import './DashList.css';
 
@@ -41,24 +39,32 @@ export class DashList extends Component { // eslint-disable-line react/prefer-st
           <div className="dashboard-roombox-name"> {e.name} </div>
           <div className="dashboard-roombox-user"> <b>Room ID:</b> {e.key} </div>
           <Link to={"/room/" + e.key}> Join room </Link>
+          <button onClick={this.deleteRoom} data-id={e.key}>Delete room</button>
         </div>
       )
     })
-
+    console.log(roomArray);
     return rooms;
   }
 
+  deleteRoom = (e) => {
+    e.preventDefault();
+    const deleteTarget = e.target;
+    const roomInfo = {
+      user: this.props.user,
+      roomId: deleteTarget.dataset.id
+    }
+    this.props.deleteRoom(roomInfo);
+  }
+
   render() {
+    console.log(this.props.user);
     return (
-
-        <Grid id="dashList">
-          <div className="row dashList">
-            {this.roomDisplay()}
-          </div>
-
-        </Grid>
-
-
+      <Grid id="dashList">
+        <div className="row dashList">
+          {this.roomDisplay()}
+        </div>
+      </Grid>
     )
   }
 }
@@ -77,6 +83,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     getUserRooms: (id) => {
       dispatch(getUserRooms(id))
+    },
+    deleteRoom: (deleteInfo) => {
+      dispatch(deleteRoom(deleteInfo))
     }
   }
 }
