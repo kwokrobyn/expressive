@@ -14,6 +14,8 @@ import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import QuestionList from '../Room/QuestionList/QuestionList';
 
+import { toggleRoom } from '../../actions/roomActions';
+
 /**
  * Room
  */
@@ -23,27 +25,51 @@ export class MasterRoom extends Component { // eslint-disable-line react/prefer-
     super(props);
 
     this.state = ({
-
+      isActive: this.props.room.isActive
     })
+  }
+
+  toggleActive = (e) => {
+    if (e.target.checked) {
+      console.log('this just got checked');
+      const roomInfo = {
+        room: this.props.room,
+        isActive: true
+      }
+      console.log(this.props.room);
+      this.props.toggleRoom(roomInfo);
+    } else {
+      console.log('this just got unchecked');
+      const roomInfo = {
+        room: this.props.room,
+        isActive: false
+      }
+      console.log(this.props.room);
+      this.props.toggleRoom(roomInfo);
+    }
+    console.log(this.state);
   }
 
   render() {
     return (
       <div className="container-fluid">
-
         <Navbar pageTitle={'Currently in ' + this.props.room.roomName} />
-
         <div className="row master-room-header">
           <div className="col-md-8 master-room-roomName-col">
-
           </div>
           <div className="col-md-4 master-room-isActive-col">
+            <form>
+              <label id="room-active-checkbox">
+                {this.props.room.isActive ? (<input type="checkbox" onChange={this.toggleActive} checked/>) : (<input type="checkbox" onChange={this.toggleActive}/>)}
+                <div className="switcher__indicator" id="room-active-checkbox-toggle" checked={this.state.isActive}></div>
+                {this.props.room.isActive ? (<span>Room Active</span>) : (<span>Room Not Active</span>)}
+              </label>{ /* /#room-post-anon-checkbox */ }
+            </form>
           </div>
         </div>
 
         <div className="row master-room-stats">
-          <div className="col-md-offset-3 col-md-2 master-room-asked-col">
-          
+          <div className="col-md-2 master-room-asked-col">
           </div>
           <div className="col-md-2 master-room-completed-col">
           </div>
@@ -76,7 +102,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-
+    toggleRoom: (roomInfo) => {
+      dispatch(toggleRoom(roomInfo))
+    }
   }
 }
 
