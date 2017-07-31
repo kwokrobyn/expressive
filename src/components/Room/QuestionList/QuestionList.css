@@ -43,7 +43,7 @@
   }
 
   .room-questionbox-timeposted {
-    color: rgba(73,73,73,1);
+    color: rgba(73,73,73,0.7);
     margin: 0.5vh 0 0.5vh 0;
   }
 
@@ -57,13 +57,13 @@
   #room-questionbox-col-upvote i {
     font-size: 30px;
     display: inline-block;
-    margin: 0 auto 0 0.5vw;
+    margin: 0 auto;
   }
 
   .upvote-num {
     font-size: 30px;
     display: inline-block;
-    margin: 0 auto 0 25px;
+    margin: 0 auto 0 20px;
   }
 
 #room-questionbox-col-complete {
@@ -179,9 +179,8 @@ and (orientation : landscape) {
   #room-questionbox-col-upvote {
     background-image: linear-gradient(to bottom,rgba(47,120,139,1) 30%,rgba(8,154,136,1) 100%);
     padding: 1vh 1vw 1vh 1vw;
-    margin: 0 0 0.5vh 0.2vw;
-    border-radius: 0.8em 0.8em 0 0;
-    width: 100%;
+    margin: 0 0 0 0;
+    border-radius: 0.8em 0em 0.8em 0;
     height: 100%;
     overflow-x: hidden;
     overflow-y: hidden;

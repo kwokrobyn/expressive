@@ -121,7 +121,7 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
       console.log(e.key);
       return (
         <div className="row" id="room-questionbox" key={e.key}>
-          <div className="col-md-1 col-sm-1 col-xs-12" id="room-questionbox-col-upvote">
+          <div className="col-lg-1 col-md-1 col-sm-1 col-xs-12" id="room-questionbox-col-upvote">
             <i className="fa fa-arrow-up upvote" aria-hidden="true" data-id={e.key} data-toggle={false} onClick={this.toggleVote}></i>
             <div className="upvote-num">{e.upvote}</div>
           </div>
@@ -136,7 +136,7 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
               {e.timePosted}
             </div>
           </div>
-          <div className="col-md-1 col-sm-1 col-xs-12" id="room-questionbox-col-complete">
+          <div className="col-lg-1 col-md-1 col-sm-1 col-xs-12" id="room-questionbox-col-complete">
           {
             isMaster ? (
               <div className="questionbox-answer">

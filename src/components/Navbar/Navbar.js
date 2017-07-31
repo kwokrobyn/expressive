@@ -117,6 +117,15 @@ class Navbar extends Component {
           </Link>
         </li>
         <li>
+          <Link to="/profile"
+                className="col-lg-1 col-md-1 col-sm-2"
+                id="navbar-middle-Link">
+            <button className="btn btn-success navbar-middle-btn">
+              Join room
+            </button>
+          </Link>
+        </li>
+        <li>
           <Link to="/login" className="col-sm-2" id="navbar-last-Link">
             <button className="btn btn-default navbar-last-btn">
               Log in
