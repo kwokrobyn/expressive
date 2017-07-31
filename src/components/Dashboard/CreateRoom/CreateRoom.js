@@ -68,77 +68,16 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
     if (e.which === 32) {
       e.preventDefault();
     }
+  }
 
   onClick = (e) => {
     this.setState({roomname: "", roomstring: ""});
-
   }
 
   render() {
     console.log(this.props.existing);
     return (
-<<<<<<< HEAD
-      <div id="myModal" className="modal fade" role="dialog">
-        <div className="modal-dialog modal-lg">
-          {/* Modal Content Start*/}
-          <div className="modal-content">
-            <div className="modal-header">
-              <button type="button" className="close" data-dismiss="modal">×</button>
-              <h4 className="modal-title">Create A New Room</h4>
-            </div>
-            <div className="modal-body">
 
-
-              <div className="container-fluid">
-                <form>
-                  <div className="form-group">
-                    <label>Room Name:</label>
-                    <input type="text"
-                           className="form-control"
-                           id="roomname"
-                           onChange={this.onChange}
-                           value={this.state.roomname}/>
-                  </div>
-                  <div className="form-group">
-                    <label>Room String:</label>
-                    <input type="text"
-                           className="form-control"
-                           id="roomstring"
-                           onKeyPress={this.preventSpaces}
-                           onChange={this.checkExisting}
-                           value={this.state.roomstring}/>
-                    {this.props.existing ? (
-                      <h1>this room has been taken</h1>
-                    ) : (
-                      <h1>this room is available</h1>
-                    )}
-                  </div>
-                  {this.state.errMessage &&
-                    <h1>not allowed</h1>
-                  }
-                </form>
-              </div>
-
-
-            </div>
-            <div className="modal-footer">
-              {/* disabled = true by default. When input fields are not "", disable = false */}
-              <button type="submit"
-                      className="btn btn-default"
-                      id="createBtn"
-                      onClick={this.createRoom}
-                      disabled={!(this.state.roomstring && this.state.roomname && !(this.props.existing))}>
-                      Create Room</button>
-              <button type="button"
-                      className="btn btn-default"
-                      id="close"
-                      data-dismiss="modal">
-                      Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
-=======
       <div id="myModal" className="modal fade" >
 
         <Modal.Dialog dialogClassName="create-new-room">
@@ -174,8 +113,8 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
                                   className="form-control"
                                   placeholder="Type your URL here"
                                   id="roomstring"
+                                  onKeyPress={this.preventSpaces}
                                   onChange={this.checkExisting}
-                                  onKeyPress={this.preventSpaces} 
                                   value={this.state.roomstring}/>
                       </div>
                       <div className="flash-message">
@@ -268,11 +207,6 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
     </Modal.Dialog>
 
 </div>
-
-
-
-
->>>>>>> master
     );
   }
 }
