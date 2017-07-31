@@ -24,7 +24,16 @@
   padding: 40px;
   box-shadow: 0px 5px 20px rgba(73,73,73,1);
 }
-  .room-questionbox-name {
-    font-size: 20px;
-    font-weight: 700;
-  }
+
+.room-questionbox-name {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.checked {
+  color: rgba(243,150,72,1);
+}
+
+.unchecked {
+  color: rgba(48,48,48,1);
+}
