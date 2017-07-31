@@ -231,3 +231,13 @@ export const toggleRoom = (roomInfo) => {
 
   }
 }
+
+// check for room changes
+export const renderRoomActiveState = (roomId) => {
+  return (dispatch) => {
+
+    db.ref('rooms/' + roomId + '/isActive').on('value', (snapshot) => {
+      dispatch(toggleRoomAction(snapshot.val()));
+    })
+  }
+}

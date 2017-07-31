@@ -101,14 +101,16 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
 
     // add complete questions to array
     Object.keys(this.props.questions).forEach((key) => {
-      questionArray.push({
-        key: key,
-        text: this.props.questions[key].text,
-        upvote: this.props.questions[key].upvote,
-        posterName: this.props.questions[key].posterName,
-        timePosted: this.props.questions[key].timePosted,
-        isComplete: this.props.questions[key].isComplete
-      })
+      if (this.props.questions[key].isComplete) {
+        questionArray.push({
+          key: key,
+          text: this.props.questions[key].text,
+          upvote: this.props.questions[key].upvote,
+          posterName: this.props.questions[key].posterName,
+          timePosted: this.props.questions[key].timePosted,
+          isComplete: this.props.questions[key].isComplete
+        })
+      }
     })
 
     const isMaster = this.props.room.isMaster;
