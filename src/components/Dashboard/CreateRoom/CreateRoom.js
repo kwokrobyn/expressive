@@ -62,6 +62,12 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
     this.setState({roomname: value});
   }
 
+  preventSpaces = (e) => {
+    if (e.which === 32) {
+      e.preventDefault();
+    }
+  }
+
   render() {
     console.log(this.props.existing);
     return (
@@ -91,6 +97,7 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
                     <input type="text"
                            className="form-control"
                            id="roomstring"
+                           onKeyPress={this.preventSpaces}
                            onChange={this.checkExisting}
                            value={this.state.roomstring}/>
                     {this.props.existing ? (
