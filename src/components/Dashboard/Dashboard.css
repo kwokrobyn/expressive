@@ -16,12 +16,18 @@
   border: 0px;
 }
 
+
+#create-new-room {
+  display: flex;
+  justify-content: center;
+}
+
 /* Below: Create a new room button - which requires React Bootstrap package module*/
 
 .dashboard-create-btn-Col {
-  display: flex;
-  justify-content: center;
-  margin-left: 160px;
+  /*display: flex;
+  justify-content: center;*/
+  /*margin-left: 160px;*/
   margin-top: 200px;
 }
 
@@ -37,11 +43,13 @@
   justify-content: center;*/
   cursor: pointer;
   top: 50vh;
-  left: 50%;
+  /*left: 50%;*/
   color: black;
   transform: translate3d(-50%, -50%, 0);
   padding: 0.7em calc(0.7em * 1.2);
-  display: inline-block;
+  /*display: inline-block;*/
+  display: flex;
+  justify-content: center;
   border: 3px solid transparent;
   /*position: relative;*/
   text-decoration: none;
