@@ -16,6 +16,8 @@ import QuestionList from './QuestionList/QuestionList';
 
 import { addQuestion, getQuestions } from '../../actions/questionActions';
 import { setAnonDisplayName } from '../../actions/userActions';
+import { renderRoomActiveState } from '../../actions/roomActions';
+
 
 /**
  * Room
@@ -30,6 +32,10 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
       isAnonymous: !this.props.user.isSignedIn,
       setName: false
     })
+  }
+
+  componentDidMount() {
+    this.props.renderRoomActiveState(this.props.roomString);
   }
 
   onChange = (e) => {
@@ -177,6 +183,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     setAnonDisplayName: (name) => {
       dispatch(setAnonDisplayName(name))
+    },
+    renderRoomActiveState: (roomId) => {
+      dispatch(renderRoomActiveState(roomId))
     }
   }
 }
