@@ -26,6 +26,12 @@ const getUserRoomsAction = (rooms) => {
   }
 }
 
+const noRooms = () => {
+  return {
+    type: 'NO_ROOMS'
+  }
+}
+
 /*
 * JOIN & LEAVE ROOM actions
 */
@@ -78,9 +84,11 @@ export const getUserRooms = (id) => {
       console.log('get user rooms snapshot', snapshot.val());
 
       ownedRoomsRef.once("value", (innerSnapshot) => {
+        console.log(innerSnapshot.val());
         if (innerSnapshot.exists()) {
           dispatch(getUserRoomsAction(innerSnapshot.val()));
         } else {
+          dispatch(noRooms());
           console.log('No rooms owned by this user.');
         }
       })
@@ -90,7 +98,6 @@ export const getUserRooms = (id) => {
 
 // ADD ROOM TO USER
 const addRoomToUserRoomList = (roomInfo) => {
-
   const userRef = db.ref('users/' + roomInfo.master.uid + '/ownedRooms/' + roomInfo.uid);
   userRef.set({
     name: roomInfo.name
@@ -151,6 +158,7 @@ export const joinRoom = (roomInfo) => {
   }
 }
 
+//LEAVE ROOM
 export const leaveRoom = (roomInfo) => {
   return (dispatch) => {
 
@@ -162,6 +170,29 @@ export const leaveRoom = (roomInfo) => {
     })
     .catch((error) => {
       console.log('Error leaving room: ', error.message);
+    });
+  }
+}
+
+//DELETE ROOM
+export const deleteRoom = (deleteInfo) => {
+  return (dispatch) => {
+    console.log(deleteInfo);
+    const userRef = db.ref('users/' + deleteInfo.user.uid + '/ownedRooms/' + deleteInfo.roomId);
+    userRef.remove()
+    .then(() => {
+      console.log('Room deleted from userList');
+    })
+    .catch((error) => {
+      console.log('Error deleting room from userList: ', error.message);
+    });
+    const roomRef = db.ref('rooms/' + deleteInfo.roomId)
+    roomRef.remove()
+    .then(() => {
+      console.log('Room deleted from firebase');
+    })
+    .catch((error) => {
+      console.log('Error deleting room: ', error.message);
     });
   }
 }
