@@ -85,29 +85,37 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
   }
 
   render() {
+    const isActive = this.props.room.isActive;
     return (
       <div className="container-fluid">
 
         <Navbar pageTitle={'Currently in ' + this.props.room.roomName} />
 
-        <div className="row room-post-qn-row">
-          <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <form id="room-post-qn-group">
-              {/* Post a question bar */}
-              <textarea name="question" type="text" rows="2" className="room-post-qn-textarea" id="room-post-qn-textarea" required autoComplete="off" onChange={this.onChange}></textarea>
-              <label htmlFor="room-post-qn-textarea" id="room-post-qn-textarea-label">
-                <span id="room-post-qn-textarea-label-span">Ask a question</span>
-              </label>
-              <label id="room-post-anon-checkbox">
-                {this.state.isAnonymous ? (<input type="checkbox" onChange={this.toggleAnon} checked/>) : (<input type="checkbox" onChange={this.toggleAnon}/>)}
-                <div className="switcher__indicator" id="room-post-anon-checkbox-toggle"></div>
-                <span>Post anonymously</span>
-              </label>{ /* /#room-post-anon-checkbox */ }
-              {/* Post button */}
-              <input type="submit" id="room-post-qn-btn" value={this.state.isAnonymous ? ('Post as Anonymous') : ('Post as ' + this.props.user.displayName)} onClick={this.submitQuestion}/>
-            </form>{ /* /.post-qn-group */ }
-          </div>{ /* /.col-lg-12 col-md-12 col-sm-12 col-xs-12 */ }
-        </div>{ /* /.row */ }
+          <div className="row room-post-qn-row">
+          { isActive ? (
+            <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <form id="room-post-qn-group">
+                {/* Post a question bar */}
+                <textarea name="question" type="text" rows="2" className="room-post-qn-textarea" id="room-post-qn-textarea" required autoComplete="off" onChange={this.onChange}></textarea>
+                <label htmlFor="room-post-qn-textarea" id="room-post-qn-textarea-label">
+                  <span id="room-post-qn-textarea-label-span">Ask a question</span>
+                </label>
+                <label id="room-post-anon-checkbox">
+                  {this.state.isAnonymous ? (<input type="checkbox" onChange={this.toggleAnon} checked/>) : (<input type="checkbox" onChange={this.toggleAnon}/>)}
+                  <div className="switcher__indicator" id="room-post-anon-checkbox-toggle"></div>
+                  <span>Post anonymously</span>
+                </label>{ /* /#room-post-anon-checkbox */ }
+                {/* Post button */}
+                <input type="submit" id="room-post-qn-btn" value={this.state.isAnonymous ? ('Post as Anonymous') : ('Post as ' + this.props.user.displayName)} onClick={this.submitQuestion}/>
+              </form>{ /* /.post-qn-group */ }
+              { /* /.col-lg-12 col-md-12 col-sm-12 col-xs-12 */ }
+            </div>
+
+          ) : (
+            <div>Room Not Active</div>
+          )}
+          { /* /.row */ }
+          </div>
 
         <div className="row room-responses-row">
           <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="room-responses-column">
