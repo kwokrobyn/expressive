@@ -26,6 +26,12 @@ const getUserRoomsAction = (rooms) => {
   }
 }
 
+const noRooms = () => {
+  return {
+    type: 'NO_ROOMS'
+  }
+}
+
 /*
 * JOIN & LEAVE ROOM actions
 */
@@ -78,9 +84,11 @@ export const getUserRooms = (id) => {
       console.log('get user rooms snapshot', snapshot.val());
 
       ownedRoomsRef.once("value", (innerSnapshot) => {
+        console.log(innerSnapshot.val());
         if (innerSnapshot.exists()) {
           dispatch(getUserRoomsAction(innerSnapshot.val()));
         } else {
+          dispatch(noRooms());
           console.log('No rooms owned by this user.');
         }
       })
