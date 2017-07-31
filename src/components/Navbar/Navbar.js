@@ -66,7 +66,8 @@ class Navbar extends Component {
           </Link>
         </li>
         <li>
-          <Link className="col-lg-1 col-md-1 col-sm-2"
+          <Link to="" 
+                className="col-lg-1 col-md-1 col-sm-2"
                 id="navbar-middle-Link"
                 data-toggle="modal"
                 data-target="#myModal">
