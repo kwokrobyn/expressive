@@ -155,8 +155,7 @@
 /* Above: Create a new room button - which requires React Bootstrap package module*/
 
 #dashboard-rooms-group {
-  margin-left: 20px;
-  margin-right: 20px;
+  margin: 0 auto;
   margin-top: 20px;
 }
 

@@ -1,0 +1,28 @@
+/*.master-room-responses-row {
+  position: relative;
+}*/
+
+.master-room-header {
+  margin-top: 100px;
+  border: 1px solid black;
+  height: 120px;
+}
+
+.master-room-stats {
+  border: 1px solid pink;
+  height: 120px;
+}
+
+/*#master-room-responses-column {
+  position: relative;
+}*/
+
+.master-room-roomName-col {
+  height: 120px;
+  border: 1px solid green;
+}
+
+.master-room-isActive-col {
+  height: 120px;
+  border: 1px solid red;
+}

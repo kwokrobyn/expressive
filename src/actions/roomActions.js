@@ -26,6 +26,12 @@ const getUserRoomsAction = (rooms) => {
   }
 }
 
+const noRooms = () => {
+  return {
+    type: 'NO_ROOMS'
+  }
+}
+
 /*
 * JOIN & LEAVE ROOM actions
 */
@@ -41,6 +47,14 @@ const joinRoomAction = (room) => {
 const leaveRoomAction = () => {
   return {
     type: 'LEAVE_ROOM'
+  }
+}
+
+// if master signs out, ensure that master view changes to anon view
+export const toggleMaster = (toggle) => {
+  return {
+    type: 'TOGGLE_MASTER',
+    toggle
   }
 }
 
@@ -74,13 +88,16 @@ export const checkExisting = (roomString) => {
 export const getUserRooms = (id) => {
   return (dispatch) => {
     const ownedRoomsRef = db.ref("users/" + id + '/ownedRooms/');
+    // attaches a persistent event listener that is called whenever value in /ownedRooms changes
     ownedRoomsRef.on("value", (snapshot) => {
       console.log('get user rooms snapshot', snapshot.val());
 
       ownedRoomsRef.once("value", (innerSnapshot) => {
+        console.log(innerSnapshot.val());
         if (innerSnapshot.exists()) {
           dispatch(getUserRoomsAction(innerSnapshot.val()));
         } else {
+          dispatch(noRooms());
           console.log('No rooms owned by this user.');
         }
       })
@@ -90,7 +107,6 @@ export const getUserRooms = (id) => {
 
 // ADD ROOM TO USER
 const addRoomToUserRoomList = (roomInfo) => {
-
   const userRef = db.ref('users/' + roomInfo.master.uid + '/ownedRooms/' + roomInfo.uid);
   userRef.set({
     name: roomInfo.name
@@ -142,15 +158,15 @@ export const joinRoom = (roomInfo) => {
         name: roomInfo.user.displayName
       }
     }).then(() => {
-
       dispatch(joinRoomAction(roomInfo));
-      console.log('user has joined room');
+      console.log('user has joined room', roomInfo);
     }).catch((error) => {
       console.log('Error while joining room: ', error.message);
     });
   }
 }
 
+//LEAVE ROOM
 export const leaveRoom = (roomInfo) => {
   return (dispatch) => {
 
@@ -162,6 +178,29 @@ export const leaveRoom = (roomInfo) => {
     })
     .catch((error) => {
       console.log('Error leaving room: ', error.message);
+    });
+  }
+}
+
+//DELETE ROOM
+export const deleteRoom = (deleteInfo) => {
+  return (dispatch) => {
+    console.log(deleteInfo);
+    const userRef = db.ref('users/' + deleteInfo.user.uid + '/ownedRooms/' + deleteInfo.roomId);
+    userRef.remove()
+    .then(() => {
+      console.log('Room deleted from userList');
+    })
+    .catch((error) => {
+      console.log('Error deleting room from userList: ', error.message);
+    });
+    const roomRef = db.ref('rooms/' + deleteInfo.roomId)
+    roomRef.remove()
+    .then(() => {
+      console.log('Room deleted from firebase');
+    })
+    .catch((error) => {
+      console.log('Error deleting room: ', error.message);
     });
   }
 }

@@ -16,6 +16,7 @@ import firebase from '../../firebase';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import Room from '../Room/Room';
+import MasterRoom from '../MasterRoom/MasterRoom';
 
 import { isFetching } from '../../actions/fetchingActions';
 import { joinRoom, leaveRoom } from '../../actions/roomActions';
@@ -50,12 +51,13 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
           this.setState({
             roomExists: true
           })
-          console.log(snapshot.val());
+
 
           const roomInfo = {
             roomName: snapshot.val().name,
             roomId: this.props.match.params.id,
-            user: this.props.user
+            user: this.props.user,
+            isMaster: snapshot.val().masterId === this.props.user.uid
             }
           this.props.joinRoom(roomInfo);
         } else {
@@ -76,12 +78,13 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
             this.setState({
               roomExists: true
             })
-            console.log(snapshot.val());
+
 
             const roomInfo = {
               roomName: snapshot.val().name,
               roomId: this.props.match.params.id,
-              user: this.props.user
+              user: this.props.user,
+              isMaster: snapshot.val().masterId === this.props.user.uid
               }
             this.props.joinRoom(roomInfo);
           } else {
@@ -112,7 +115,7 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
   } // end of componentDidMount
 
   componentWillUnmount() {
-    // remove user from room userList when component dismounts 
+    // remove user from room userList when component dismounts
     console.log('componentwillunmount');
     console.log(this.props.user);
     const roomInfo = {
@@ -125,6 +128,7 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
 
   render() {
     const isRoom = this.state.roomExists;
+    const isMaster = this.props.room.isMaster;
     return (
     <div>
       { this.props.fetchState ? (
@@ -154,9 +158,15 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
         </div>
       ) : (
         <div>
-        { isRoom ? (
-          <Room roomString= {this.props.match.params.id}/>
-        ) : (
+        { isRoom ? ( <div>
+          {
+            isMaster ? (
+              <MasterRoom roomString= {this.props.match.params.id}/>
+            ) : (
+              <Room roomString= {this.props.match.params.id}/>
+            )
+          }
+        </div> ) : (
           <div> Your Princess Is In Another Castle. </div>
         )
 

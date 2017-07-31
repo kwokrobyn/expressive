@@ -2,6 +2,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { signOut } from '../../actions/userActions';
+import { toggleMaster } from '../../actions/roomActions';
 import {
   BrowserRouter as Router,
   Route,
@@ -25,6 +26,9 @@ class Navbar extends Component {
 
  signOut = (e) => {
    e.preventDefault();
+   if (this.props.room.isMaster) {
+     this.props.toggleMaster(false);
+   }
    this.props.signOut();
  }
 
@@ -164,7 +168,8 @@ class Navbar extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    user: state.user
+    user: state.user,
+    room: state.room
   }
 }
 
@@ -172,6 +177,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     signOut: () => {
       dispatch(signOut())
+    },
+    toggleMaster: (toggle) => {
+      dispatch(toggleMaster(toggle))
     }
   }
 }

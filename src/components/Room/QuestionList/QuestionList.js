@@ -65,7 +65,6 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
       upvote.dataset.toggle = false;
       upvote.style.color = "rgba(243,245,242,1)";
     }
-
   }
 
   // questionDisplay
