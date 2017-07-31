@@ -33,6 +33,26 @@ export class MasterRoom extends Component { // eslint-disable-line react/prefer-
 
         <Navbar pageTitle={'Currently in ' + this.props.room.roomName} />
 
+        <div className="row master-room-header">
+          <div className="col-md-8 master-room-roomName-col">
+
+          </div>
+          <div className="col-md-4 master-room-isActive-col">
+          </div>
+        </div>
+
+        <div className="row master-room-stats">
+          <div className="col-md-offset-3 col-md-2 master-room-asked-col">
+          
+          </div>
+          <div className="col-md-2 master-room-completed-col">
+          </div>
+          <div className="col-md-2 master-room-online-col">
+          </div>
+          <div className="col-md-1 col-md-offset-2 master-room-settings-col">
+          </div>
+        </div>
+
         <div className="row master-room-responses-row">
           <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="master-room-responses-column">
             <QuestionList roomString={this.props.roomString}/> { /* /#room-responses-well */ }
