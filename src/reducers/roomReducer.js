@@ -38,6 +38,11 @@ const roomReducer = (state = defaultRoom, action) => {
         ...state,
         isActive: action.isActive
       }
+    // 
+    // case "RENDER_ROOM":
+    //   return {
+    //     ...state,
+    //   }
 
     default:
         return state;
