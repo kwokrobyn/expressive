@@ -74,6 +74,9 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
       room: this.props.room.roomId
     }
     this.props.addQuestion(questionInfo);
+    // Clear contents after submission of question
+    document.getElementById('room-post-qn-textarea').value = '';
+    /* Here is where a successful posting notification might be triggered */
   }
 
   setDisplayName = (e) => {
@@ -90,28 +93,21 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
         <div className="row room-post-qn-row">
           <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <form id="room-post-qn-group">
-              <div className="form-group">
-                <div className="input-group">
-                  {/* Post a question bar */}
-                  <input type="text" className="form-control" aria-label="..." placeholder="Ask a question" onChange={this.onChange}/>
-                  {/* Post button */}
-                  <div className="input-group-btn room-post-qn-btn">
-                    <span className="input-group-btn">
-                      <button className="btn btn-default" type="button">
-                        <span className="glyphicon glyphicon-ok" aria-hidden="true" onClick={this.submitQuestion}></span>
-                      </button>
-                      </span>
-                  </div>{ /* /#room-post-qn-btn (Post button) */ }
-                </div>{ /* /input-group */ }
-              </div>
+              {/* Post a question bar */}
+              <textarea name="question" type="text" rows="2" className="room-post-qn-textarea" id="room-post-qn-textarea" required autocomplete="off" onChange={this.onChange}></textarea>
+              <label for="room-post-qn-textarea" id="room-post-qn-textarea-label">
+                <span id="room-post-qn-textarea-label-span">Ask a question</span>
+              </label>
               <div className="checkbox" id="room-post-anon-checkbox">
                 {this.state.isAnonymous ? (<input type="checkbox" onChange={this.toggleAnon} checked/>) : (<input type="checkbox" onChange={this.toggleAnon}/>)}
                 <label>
                   Post anonymously
                 </label>
-              </div>{ /* /#oom-post-anon-checkbox */ }
+              </div>{ /* /#room-post-anon-checkbox */ }
+              {/* Post button */}
+              <input type="submit" id="room-post-qn-btn" value={this.state.isAnonymous ? ('Post anonymously') : ('Post as ' + this.props.user.displayName)} onClick={this.submitQuestion}/>
             </form>{ /* /.post-qn-group */ }
-          </div>{ /* /.col-lg-12 */ }
+          </div>{ /* /.col-lg-12 col-md-12 col-sm-12 col-xs-12 */ }
         </div>{ /* /.row */ }
 
         <div className="row room-responses-row">
@@ -143,7 +139,7 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
                 <p>(Once you choose a display name, it cannot be changed for the rest of the session.)</p>
               </div>
               <div className="modal-footer">
-                <button type="button" className="btn btn-default" data-dismiss="modal">Post Anonymously</button>
+                <button type="button" className="btn btn-default" data-dismiss="modal">Post anonymously</button>
               </div>
             </div>
 
