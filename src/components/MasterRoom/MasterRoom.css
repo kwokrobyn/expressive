@@ -26,3 +26,51 @@
   height: 120px;
   border: 1px solid red;
 }
+
+#room-active-checkbox > input[type="checkbox"] {
+  display: none;
+}
+
+#room-active-checkbox-toggle:before {
+  content: '';
+  position: absolute;
+  top: 16px;
+  left: 1px;
+  width: 80px;
+  height: 8px;
+  background-color: rgba(73,73,73,1);
+  border-radius: 10px;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+#room-active-checkbox > input:checked + #room-active-checkbox-toggle:before {
+  background-color: rgba(0,233,143,1);
+}
+
+#room-active-checkbox-toggle:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(243,245,242,1);
+  border-radius: 50%;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  -webkit-animation-name: pulsein;
+          animation-name: pulsein;
+  -webkit-animation-duration: .3s;
+          animation-duration: .3s;
+}
+
+#room-active-checkbox > input:checked + #room-active-checkbox-toggle:after {
+  background-color: rgba(0,233,143,1);
+  -webkit-transform: translateX(40px);
+          transform: translateX(40px);
+  -webkit-animation-name: pulseout;
+          animation-name: pulseout;
+  -webkit-animation-duration: .3s;
+          animation-duration: .3s;
+}

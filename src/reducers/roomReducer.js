@@ -2,7 +2,8 @@ const defaultRoom = {
   isInRoom: false,
   roomId: "",
   roomName: "",
-  isMaster: false
+  isMaster: false,
+  isActive: false
 }
 
 const roomReducer = (state = defaultRoom, action) => {
@@ -10,6 +11,7 @@ const roomReducer = (state = defaultRoom, action) => {
   switch (action.type) {
     case "JOIN_ROOM":
       return {
+        ...state,
         isInRoom: true,
         roomId: action.room.roomId,
         roomName: action.room.roomName,
@@ -18,6 +20,7 @@ const roomReducer = (state = defaultRoom, action) => {
 
     case "LEAVE_ROOM":
       return {
+        ...state,
         isInRoom: false,
         roomId: "",
         roomName: "",
@@ -28,6 +31,12 @@ const roomReducer = (state = defaultRoom, action) => {
       return {
         ...state,
         isMaster: action.toggle
+      }
+
+    case "TOGGLE_ROOM":
+      return {
+        ...state,
+        isActive: action.isActive
       }
 
     default:

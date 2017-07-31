@@ -58,6 +58,13 @@ export const toggleMaster = (toggle) => {
   }
 }
 
+const toggleRoomAction = (isActive) => {
+  return {
+    type: 'TOGGLE_ROOM',
+    isActive
+  }
+}
+
 /*
 * DATABASE METHODS
 */
@@ -194,7 +201,7 @@ export const deleteRoom = (deleteInfo) => {
     .catch((error) => {
       console.log('Error deleting room from userList: ', error.message);
     });
-    const roomRef = db.ref('rooms/' + deleteInfo.roomId)
+    const roomRef = db.ref('rooms/' + deleteInfo.roomId);
     roomRef.remove()
     .then(() => {
       console.log('Room deleted from firebase');
@@ -202,5 +209,25 @@ export const deleteRoom = (deleteInfo) => {
     .catch((error) => {
       console.log('Error deleting room: ', error.message);
     });
+  }
+}
+
+//TOGGLE ROOM Active
+export const toggleRoom = (roomInfo) => {
+  return (dispatch) => {
+    console.log(roomInfo);
+    console.log(roomInfo.room.roomId);
+    const roomRef = db.ref('rooms/' + roomInfo.room.roomId);
+    roomRef.update({
+      // ADD USER TO ROOM
+      // add user to room's userList
+      isActive: roomInfo.isActive
+    }).then(() => {
+      dispatch(toggleRoomAction(roomInfo.isActive));
+      console.log('roomState toggled to ', roomInfo.isActive);
+    }).catch((error) => {
+      console.log('Error while toggling roomState: ', error.message);
+    });
+
   }
 }
