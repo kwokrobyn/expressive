@@ -127,7 +127,7 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
             <div className="room-questionbox-user">
               <b>Asked by: </b>
               {e.posterName}
-            </div>
+            </div>4cc
             <div className="room-questionbox-timeposted">
               <b>Posted: </b>
               {e.timePosted}
