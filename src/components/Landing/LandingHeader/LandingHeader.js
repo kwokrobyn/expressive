@@ -24,10 +24,23 @@ import './LandingHeader.css';
            <Col md={12} className="headerArtImg">
            </Col>
          </div>
-
-        <h1 className="header-title">Interactive Q and A</h1>
-
-
+         {/* Header Title */}
+        <Row className="interactive-header-title">
+        <div className="content">
+          <div className="content__container">
+            <p className="content__container__text">
+              Interactive
+            </p>
+            {/* Header Title content*/}
+            <ul className="content__container__list">
+              <li className="content__container__list__item">Q and A !</li>
+              <li className="content__container__list__item">People !</li>
+              <li className="content__container__list__item">Votes !</li>
+              <li className="content__container__list__item">Rooms !</li>
+            </ul>
+          </div>
+        </div>
+        </Row>
         </div>
 
      );
