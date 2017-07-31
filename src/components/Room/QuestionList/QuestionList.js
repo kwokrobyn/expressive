@@ -91,6 +91,7 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
           text: this.props.questions[key].text,
           upvote: this.props.questions[key].upvote,
           posterName: this.props.questions[key].posterName,
+          timePosted: this.props.questions[key].timePosted,
           isComplete: this.props.questions[key].isComplete
         })
       }
@@ -129,7 +130,7 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
             <div className="room-questionbox-user">
               <b>Asked by: </b>
               {e.posterName}
-            </div>4cc
+            </div>
             <div className="room-questionbox-timeposted">
               <b>Posted: </b>
               {e.timePosted}
