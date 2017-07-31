@@ -98,14 +98,13 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
               <label for="room-post-qn-textarea" id="room-post-qn-textarea-label">
                 <span id="room-post-qn-textarea-label-span">Ask a question</span>
               </label>
-              <div className="checkbox" id="room-post-anon-checkbox">
+              <label id="room-post-anon-checkbox">
                 {this.state.isAnonymous ? (<input type="checkbox" onChange={this.toggleAnon} checked/>) : (<input type="checkbox" onChange={this.toggleAnon}/>)}
-                <label>
-                  Post anonymously
-                </label>
-              </div>{ /* /#room-post-anon-checkbox */ }
+                <div className="switcher__indicator" id="room-post-anon-checkbox-toggle"></div>
+                <span>Post anonymously</span>
+              </label>{ /* /#room-post-anon-checkbox */ }
               {/* Post button */}
-              <input type="submit" id="room-post-qn-btn" value={this.state.isAnonymous ? ('Post anonymously') : ('Post as ' + this.props.user.displayName)} onClick={this.submitQuestion}/>
+              <input type="submit" id="room-post-qn-btn" value={this.state.isAnonymous ? ('Post as Anonymous') : ('Post as ' + this.props.user.displayName)} onClick={this.submitQuestion}/>
             </form>{ /* /.post-qn-group */ }
           </div>{ /* /.col-lg-12 col-md-12 col-sm-12 col-xs-12 */ }
         </div>{ /* /.row */ }
