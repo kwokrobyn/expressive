@@ -1,6 +1,6 @@
 //Importing required packages
 import React, { Component, PropTypes } from 'react';
-import {Row} from 'react-bootstrap';
+import {Row, Col} from 'react-bootstrap';
 
 //Importing static assets (i.e. stylesheets, images)
 import './Footer.css';

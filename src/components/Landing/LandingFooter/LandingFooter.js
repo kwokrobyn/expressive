@@ -39,7 +39,7 @@ import Footer from '../../Footer/Footer';
 
         {/* Copyright */}
 
-        <Row>
+
          <footer>
           <div id="landing-footer-group-left">
             <img src ="../../images/logo_v1.png" id="landing-footer-logo"/>
@@ -47,8 +47,19 @@ import Footer from '../../Footer/Footer';
               expressive 2017 by Bryan, Dionne, Robyn & Woody
             </p>
           </div>
+          <Col md={4} mdOffset={9} sm={6} smOffset={9} xs={6} xsOffset={6} className="social-icons">
+            <p className="follow-us">Follow Us On GitHub
+            <div className="social-btns">
+              <a className="btn github" href="#"><i className="fa fa-github"></i></a>
+            </div>
+
+
+            </p>
+
+
+          </Col>
          </footer>
-        </Row>
+
 
       </div>
      );
