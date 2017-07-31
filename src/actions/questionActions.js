@@ -33,9 +33,12 @@ export const addQuestion = (questionInfo) => {
   return (dispatch) => {
     const uid = uuid.v4();
     const questionRef = db.ref('rooms/' + questionInfo.room + '/questions/' + uid);
+    const timestamp = new Date();
+    // var formattedTimestamp = timestamp.getDate() + "/" + timestamp.getUTCMonth() + "/" + timestamp.getFullYear() + ", " + timestamp.getHours() + ":" + timestamp.getMinutes() + ":" + timestamp.getSeconds();
     questionRef.set({
       text: questionInfo.text,
       upvote: 0,
+      timePosted: timestamp.toString(),
       isComplete: false,
       posterName: questionInfo.posterName,
       posterID: questionInfo.posterID

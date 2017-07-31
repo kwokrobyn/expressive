@@ -101,15 +101,14 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
 
     // add complete questions to array
     Object.keys(this.props.questions).forEach((key) => {
-      if (this.props.questions[key].isComplete) {
-        questionArray.push({
-          key: key,
-          text: this.props.questions[key].text,
-          upvote: this.props.questions[key].upvote,
-          posterName: this.props.questions[key].posterName,
-          isComplete: this.props.questions[key].isComplete
-        })
-      }
+      questionArray.push({
+        key: key,
+        text: this.props.questions[key].text,
+        upvote: this.props.questions[key].upvote,
+        posterName: this.props.questions[key].posterName,
+        timePosted: this.props.questions[key].timePosted,
+        isComplete: this.props.questions[key].isComplete
+      })
     })
 
     const isMaster = this.props.room.isMaster;
@@ -125,7 +124,14 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
           </div>
           <div className="col-md-10 col-sm-10 col-xs-12" id="room-questionbox-col-content">
             <div className="room-questionbox-name"> {e.text} </div>
-            <div className="room-questionbox-user"> <b>Asked by:</b> {e.posterName} </div>
+            <div className="room-questionbox-user">
+              <b>Asked by: </b>
+              {e.posterName}
+            </div>
+            <div className="room-questionbox-timeposted">
+              <b>Posted: </b>
+              {e.timePosted}
+            </div>
           </div>
           <div className="col-md-1 col-sm-1 col-xs-12" id="room-questionbox-col-complete">
           {
