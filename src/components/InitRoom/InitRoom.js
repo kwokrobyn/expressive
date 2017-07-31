@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import {Col} from 'react-bootstrap';
 import {
   BrowserRouter as Router,
   Route,
@@ -135,28 +136,28 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
     <div>
       { this.props.fetchState ? (
         <div className="container-fluid join-room-container">
-          <div className="join-room-text col-md-12">
+          <Col md={8} className="join-room-text">
             Fetching Your Room...
-          </div>
-          <div className="join-room-animation col-md-12">
-            <div className="cssload-bell">
-              <div className="cssload-circle">
-                <div className="cssload-inner"></div>
-              </div>
-              <div className="cssload-circle">
-                <div className="cssload-inner"></div>
-              </div>
-              <div className="cssload-circle">
-                <div className="cssload-inner"></div>
-              </div>
-              <div className="cssload-circle">
-                <div className="cssload-inner"></div>
-              </div>
-              <div className="cssload-circle">
-                <div className="cssload-inner"></div>
+          </Col>
+          <Col md={8} className="join-room-animation ">
+            <div className="error404page">
+              <div className="newcharacter404">
+                <div className="chair404"></div>
+                <div className="leftshoe404"></div>
+                <div className="rightshoe404"></div>
+                <div className="legs404"></div>
+                <div className="torso404">
+                  <div className="body404"></div>
+                  <div className="leftarm404"></div>
+                  <div className="rightarm404"></div>
+                  <div className="head404">
+                    <div className="eyes404"></div>
+                  </div>
+                </div>
+                <div className="laptop404"></div>
               </div>
             </div>
-          </div>
+          </Col>
         </div>
       ) : (
         <div>
