@@ -7,7 +7,9 @@ import {Grid, Col, form, FormGroup, FormControl, ControlLabel, HelpBlock, Row, B
 
 //Importing React Components
 
-import { getUserRooms, deleteRoom } from '../../../actions/roomActions';
+import { getUserRooms } from '../../../actions/roomActions';
+
+
 
 import './DashList.css';
 
@@ -35,36 +37,37 @@ export class DashList extends Component { // eslint-disable-line react/prefer-st
 
     const rooms = roomArray.map((e) => {
       return (
-        <div className="col-md-4 col-xs-12 dashboard-roombox" key={e.key}>
+        <Col md={3} sm={4} xs={8} className="dashboard-roombox" key={e.key}>
           <div className="dashboard-roombox-name"> {e.name} </div>
           <div className="dashboard-roombox-user"> <b>Room ID:</b> {e.key} </div>
-          <Link to={"/room/" + e.key}> Join room </Link>
-          <button onClick={this.deleteRoom} data-id={e.key}>Delete room</button>
-        </div>
+          <div className="overflow-hide">
+            <div className="hole"></div>
+              <Link to={"/room/" + e.key}>
+               <div className="joinroom-link">Join room</div>
+              </Link>
+
+            </div>
+
+        </Col>
       )
     })
-    console.log(roomArray);
+
     return rooms;
   }
 
-  deleteRoom = (e) => {
-    e.preventDefault();
-    const deleteTarget = e.target;
-    const roomInfo = {
-      user: this.props.user,
-      roomId: deleteTarget.dataset.id
-    }
-    this.props.deleteRoom(roomInfo);
-  }
-
   render() {
-    console.log(this.props.user);
     return (
-      <Grid id="dashList">
-        <div className="row dashList">
-          {this.roomDisplay()}
-        </div>
-      </Grid>
+
+        <Grid id="dashList">
+          <Row className="dashList">
+            <Col className="dashList-display">
+              {this.roomDisplay()}
+            </Col>
+          </Row>
+
+        </Grid>
+
+
     )
   }
 }
@@ -83,9 +86,6 @@ const mapDispatchToProps = (dispatch) => {
   return {
     getUserRooms: (id) => {
       dispatch(getUserRooms(id))
-    },
-    deleteRoom: (deleteInfo) => {
-      dispatch(deleteRoom(deleteInfo))
     }
   }
 }

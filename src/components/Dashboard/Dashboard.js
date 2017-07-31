@@ -50,7 +50,7 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
 
           <div className="row" id="dashboard-create-btn-group">
             {/* Submit Button */}
-            <Col className="dashboard-create-btn-Col">
+            <Col md={3} mdOffset={6} sm={6} smOffset={5} xs={8} xsOffset={5} className="dashboard-create-btn-Col">
               <a className="dashboard-create-btn-a"
                   id="create-new-room"
                   data-toggle="modal"
