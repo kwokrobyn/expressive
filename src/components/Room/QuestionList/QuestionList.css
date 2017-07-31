@@ -4,31 +4,194 @@
   min-height: 57.5vh;
 };
 
-/*These styles below are exclusive to tablets and desktop display sizes.*/
-@media only screen and (min-width: 768px) {
+.upvote {
+  color: rgba(243,245,242,1);
+}
+
+#room-questionbox {
+  background-color: white;
+  padding: 0 0 0 0;
+  margin: 1vh 0 1vh 0;
+  border-radius: 0.8em 0.8em 0em 0em;
+  box-shadow: 0px 3px 20px rgba(73,73,73,0.2);
+  height: 100%;
+  position: relative;
+}
+
+#room-question-col-content {
+  border-radius: 0.8em;
+  margin: 0vh 0 1vh 0;
+  padding: 5vh 1vw 0vh 1vw;
+  background-color: none;
+  height: 100%;
+}
+
+  .room-questionbox-name {
+    font-size: 30px;
+    line-height: normal;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+  }
+
+  .room-questionbox-user {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    color: rgba(73,73,73,1);
+    font-style: italic;
+  }
+
+#room-questionbox-col-upvote {
+  background-color: rgba(47,120,139,1);
+  color: rgba(243,245,242,1);
+  padding: 1vh 1vw 1vh 1vw;
+  margin: 0 0 0 0;
+  border-radius: 0.8em 0 0 0em;
+}
+  #room-questionbox-col-upvote i {
+    font-size: 30px;
+    display: inline-block;
+    margin: 0 auto;
+  }
+
+  .upvote-num {
+    font-size: 30px;
+    display: inline-block;
+    margin: 0 auto 0 25px;
+  }
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+  and (min-device-width : 320px)
+  and (max-device-width : 480px) {
+
+  #room-questionbox-col-upvote {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.8em 0.8em 0 0;
+    color: rgba(243,245,242,1);
+    padding: 1vh 3vw 1vh 2vw;
+    margin: 0 0 0 0;
+    font-size: 15px;
+  }
+
+  .room-questionbox-name {
+    font-size: 50px;
+  }
+
+  .upvote-num {
+    color: rgba(243,245,242,1);
+    display: inline-block;
+    margin: 0 0 0 10px;
+    padding: 0 0 0 0;
+  }
+
+  #room-questionbox-col-upvote > i {
+    font-size: 20px;
+  }
+
+  .room-questionbox-name {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (min-width : 321px) {
+
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px) {
+
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
   #room-responses-well {
     display: flex;
     flex-direction: column;
     min-height: 40vh;
   };
-};
-/*These styles above are exclusive to tablets and desktop display sizes.*/
-
-.upvote {
-  color: rgba(48,48,48,1);
 }
 
-.room-questionbox {
-  background-color: white;
-  margin-right: 20px;
-  padding: 40px;
-  box-shadow: 0px 5px 20px rgba(73,73,73,1);
+/* iPads (landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+
+  #room-responses-well {
+    display: flex;
+    flex-direction: column;
+    min-height: 40vh;
+  };
+
+  #room-questionbox-col-content {
+    border-radius: 0.8em;
+    margin: 1vh 0 1vh 0;
+    padding: 1vh 1vw 1vh 1vw;
+    box-shadow: 0px 0px 5px rgba(73,73,73,0.2);
+    background-color: none;
+    /*background-image: -moz-gradient(to bottom,rgba(243,245,242,1) 0%, white 100%);
+    background-image: -webkit-gradient(to bottom,rgba(243,245,242,1) 0%, white 100%);
+    background-image: linear-gradient(to bottom,rgba(243,245,242,1) 0%, white 100%);*/
+    /*background-image: linear-gradient(to bottom,rgba(47,120,139,1) 30%,rgba(8,154,136,1) 100%);*/
+  }
+
+  #room-questionbox-col-upvote {
+    background-image: linear-gradient(to bottom,rgba(47,120,139,1) 30%,rgba(8,154,136,1) 100%);
+    padding: 1vh 1vw 1vh 1vw;
+    margin: 0 0 0.5vh 0.2vw;
+    border-radius: 0.8em 0.8em 0 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    overflow: hidden;
+  }
+
 }
 
-.room-questionbox-name {
-  font-size: 20px;
-  font-weight: 700;
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+  #room-responses-well {
+    display: flex;
+    flex-direction: column;
+    min-height: 40vh;
+  };
+  #room-questionbox-col-upvote {
+    padding: 0 0 0 10px;
+  }
+    #room-questionbox-col-upvote i {
+      margin: 0 0 0 8px;
+      padding: 0 0 0 0;
+      font-size: 27px;
+    }
+    .upvote-num {
+      margin: 0 0 0 12px;
+    }
+
+  .room-questionbox-name {
+    font-size: 20px;
+    margin: 5px 0 5px 0;
+    padding: 0 0 0 0;
+  }
+
+  .room-questionbox-user {
+    font-size: 20px;
+    margin: 5px 0 5px 0;
+    padding: 0 0 0 0;
+  }
 }
+
 
 .checked {
   color: rgba(243,150,72,1);
@@ -36,4 +199,102 @@
 
 .unchecked {
   color: rgba(48,48,48,1);
+}
+
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width : 1224px) {
+  #room-responses-well {
+    display: flex;
+    flex-direction: column;
+    min-height: 40vh;
+  };
+}
+
+/* Large screens ----------- */
+@media only screen
+and (min-width : 1824px) {
+  #room-responses-well {
+    display: flex;
+    flex-direction: column;
+    min-height: 40vh;
+  };
+}
+
+/* iPhone 6 landscape */
+@media only screen and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+
+
+}
+
+/* iPhone 6 portrait */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+
+
+}
+
+/* iPhone 6 Plus landscape */
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 3) {
+
+
+
+}
+
+/* iPhone 6 Plus portrait */
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 3) {
+
+
+
+}
+
+/* iPhone 6 and 6 Plus */
+@media only screen
+  and (max-device-width: 640px),
+  only screen and (max-device-width: 667px),
+  only screen and (max-width: 480px) {
+
+  #room-questionbox-col-upvote {
+    padding: 0 0 0 10px;
+  }
+    #room-questionbox-col-upvote i {
+      margin: 0 0 0 0;
+      padding: 0 0 10px 0;
+      font-size: 27px;
+    }
+    .upvote-num {
+      margin: 0 0 0 30px;
+    }
+
+  .room-questionbox-name {
+    font-size: 20px;
+    margin: 5px 0 5px 0;
+    padding: 0 0 0 0;
+  }
+
+  .room-questionbox-user {
+    font-size: 15px;
+    margin: 5px 0 5px 0;
+    padding: 0 0 0 0;
+  }
+
+
+
+
 }

@@ -57,7 +57,7 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
     } else {
       this.props.unVote(voteInfo);
       upvote.dataset.toggle = false;
-      upvote.style.color = "rgba(48,48,48,1)";
+      upvote.style.color = "rgba(243,245,242,1)";
     }
   }
 
@@ -118,40 +118,38 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
       const isComplete = e.isComplete;
       console.log(e.key);
       return (
-        <div className="col-md-12 col-xs-12 room-questionbox" key={e.key}>
-          <div className="row">
-            <div className="col-md-1">
-              <i className="fa fa-chevron-circle-up upvote" aria-hidden="true" data-id={e.key} data-toggle={false} onClick={this.toggleVote}></i>
-              <div className="upvote-num">{e.upvote}</div>
-            </div>
-            <div className="col-md-10">
-              <div className="room-questionbox-name"> {e.text} </div>
-              <div className="room-questionbox-user"> <b>Asked by:</b> {e.posterName} </div>
-            </div>
-            <div className="col-md-1">
-            {
-              isMaster ? (
-                <div className="questionbox-answer">
-                { isComplete ? (
-                  <i className="fa fa-check fa-2x checked" aria-hidden="true" data-id={e.key} data-toggle={true} onClick={this.markAsComplete}></i>
-                ) : (
-                  <i className="fa fa-check fa-2x unchecked" aria-hidden="true" data-id={e.key} data-toggle={false} onClick={this.markAsComplete}></i>
-                ) }
-                </div>
+        <div className="row" id="room-questionbox" key={e.key}>
+          <div className="col-md-1 col-sm-1 col-xs-12" id="room-questionbox-col-upvote">
+            <i className="fa fa-arrow-up upvote" aria-hidden="true" data-id={e.key} data-toggle={false} onClick={this.toggleVote}></i>
+            <div className="upvote-num">{e.upvote}</div>
+          </div>
+          <div className="col-md-10 col-sm-10 col-xs-12" id="room-questionbox-col-content">
+            <div className="room-questionbox-name"> {e.text} </div>
+            <div className="room-questionbox-user"> <b>Asked by:</b> {e.posterName} </div>
+          </div>
+          <div className="col-md-1 col-sm-1 col-xs-12" id="room-questionbox-col-complete">
+          {
+            isMaster ? (
+              <div className="questionbox-answer">
+              { isComplete ? (
+                <i className="fa fa-check fa-2x checked" aria-hidden="true" data-id={e.key} data-toggle={true} onClick={this.markAsComplete}></i>
               ) : (
-                <div className="questionbox-answer">
-                { isComplete ? (
-                  <i className="fa fa-check fa-2x checked" aria-hidden="true"></i>
-                ) : (
-                  <i className="fa fa-check fa-2x unchecked" aria-hidden="true"></i>
-                ) }
-                </div>
-              )
-            }
-            </div>
+                <i className="fa fa-check fa-2x unchecked" aria-hidden="true" data-id={e.key} data-toggle={false} onClick={this.markAsComplete}></i>
+              ) }
+              </div>
+            ) : (
+              <div className="questionbox-answer">
+              { isComplete ? (
+                <i className="fa fa-check fa-2x checked" aria-hidden="true"></i>
+              ) : (
+                <i className="fa fa-check fa-2x unchecked" aria-hidden="true"></i>
+              ) }
+              </div>
+            )
+          }
           </div>
         </div>
-      )
+      );
     })
     return questions;
   }

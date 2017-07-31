@@ -52,8 +52,9 @@ div.landing-footer-img.col-md-12 {
 /* Copyright */
 
 footer {
+  top: -100px;
   width: 100%;
-  height: 50px;
+  height: 20px;
   background-color: rgba(8,154,136,1);
   position: relative;
 }
@@ -61,7 +62,7 @@ footer {
   #landing-footer-group-left {
     height: 30px;
     margin-left: 10vw;
-    margin-bottom: 15px;
+    /*margin-bottom: 15px;*/
     position: relative;
   }
 
@@ -78,4 +79,105 @@ footer {
     margin-left: 1vw;
     padding-top: 20px;
     display: inline-block;
+  }
+
+
+p.follow-us {
+  /*margin-left: 50vw;*/
+  /*margin-right: 15px;*/
+  color: white;
+  margin-top: 1vw;
+}
+
+.social-icons {
+  margin-top: 18px;
+}
+
+
+  /*
+  * social icons
+  */
+
+  .social-btns .btn,
+  .social-btns .btn:before,
+  .social-btns .btn .fa {
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+    -webkit-transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+            transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
+  }
+  .social-btns .btn:before {
+    top: 90%;
+    left: -110%;
+  }
+  .social-btns .btn .fa {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+
+  .social-btns .btn.github:before {
+    background-color: black;
+  }
+  .social-btns .btn.github .fa {
+    color: black;
+
+  }
+  .social-btns .btn:focus:before,
+  .social-btns .btn:hover:before {
+    top: -10%;
+    left: -10%;
+  }
+  .social-btns .btn:focus .fa,
+  .social-btns .btn:hover .fa {
+    color: #fff;
+    -webkit-transform: scale(.7);
+            transform: scale(.7);
+  }
+  .social-btns {
+    height: 3vw;
+    width: 3vw;
+    /*margin: auto;*/
+    margin-left: 150px;
+    font-size: 0;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    bottom: 0vw;
+    left: 0;
+    right: 0;
+    /*padding-left: 90vw;*/
+  }
+  .social-btns .btn {
+    display: inline-block;
+    background-color: #fff;
+    width: 6vw;
+    height: 6vw;
+    line-height: 20px;
+    margin: 0 1vw;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 28%;
+    box-shadow: 0 5px 15px -5px rgba(0,0,0,0.1);
+    opacity: 0.99;
+  }
+  .social-btns .btn:before {
+    content: '';
+    width: 120%;
+    height: 120%;
+    position: absolute;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  .social-btns .btn .fa {
+    font-size: 5vw;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    /*padding-bottom: 2vw;*/
+  }
+
+  a.btn.github {
+    bottom: 2vw;
+
   }
