@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom'
 
 // Importing Redux Actions
-import { getQuestions, addVote, unVote } from '../../../actions/questionActions';
+import { getQuestions, addVote, unVote, markComplete, markIncomplete } from '../../../actions/questionActions';
 
 //Importing static assets (i.e. stylesheets, images)
 import './QuestionList.css';
@@ -27,33 +27,27 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
     console.log('this.props.roomString: ', this.props.roomString);
   }
 
-  // upvote = (id) => {
-  //   // e.preventDefault();
-  //   const voteInfo = {
-  //     question: id,
-  //     user: this.props.user.id,
-  //     room: this.props.room.roomId
-  //   }
-  //   this.props.addVote(voteInfo);
-  // }
-
   // https://stackoverflow.com/questions/8837454/sort-array-of-objects-by-single-key-with-date-value
-  sortByKey = (array, key) => {
+  sortByKey = (array, key, rev) => {
     return array.sort((a, b) => {
       const x = a[key];
       const y = b[key];
-      return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+      if (rev) {
+        return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+      } else {
+        return ((x > y) ? -1 : ((x < y) ? 1 : 0));
+      }
+
     });
   }
 
   toggleVote = (e) => {
     const upvote = e.target;
-    console.log(upvote.dataset.toggle);
     const voteInfo = {
       question: upvote.dataset.id,
       room: this.props.room.roomId
     }
-    if (upvote.dataset.toggle == 'false') { // for some reason, this false needs to be a string (2004)
+    if (upvote.dataset.toggle == 'false') {
       upvote.dataset.toggle = true;
       upvote.style.color = "rgba(243,150,72,1)";
       console.log('question: ', upvote.dataset.id);
@@ -67,21 +61,61 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
     }
   }
 
+  markAsComplete = (e) => {
+    const complete = e.target;
+    const completeInfo = {
+      question: complete.dataset.id,
+      room: this.props.room.roomId
+    }
+
+    if (complete.dataset.toggle == 'false') {
+      complete.dataset.toggle = true;
+      complete.style.color = "rgba(243,150,72,1)";
+      this.props.markComplete(completeInfo);
+    } else {
+      complete.dataset.toggle = false;
+      complete.style.color = "rgba(48,48,48,1)";
+      this.props.markIncomplete(completeInfo);
+    }
+
+  }
+
   // questionDisplay
   questionDisplay = () => {
     var questionArray = [];
+    // add incompleted questions to array
     Object.keys(this.props.questions).forEach((key) => {
-      questionArray.push({
-        key: key,
-        text: this.props.questions[key].text,
-        upvote: this.props.questions[key].upvote,
-        posterName: this.props.questions[key].posterName
-      })
+      if (!this.props.questions[key].isComplete) {
+        questionArray.push({
+          key: key,
+          text: this.props.questions[key].text,
+          upvote: this.props.questions[key].upvote,
+          posterName: this.props.questions[key].posterName,
+          isComplete: this.props.questions[key].isComplete
+        })
+      }
+    });
+
+    // sort array based on upvotes
+    questionArray = this.sortByKey(questionArray, 'upvote', false);
+
+    // add complete questions to array
+    Object.keys(this.props.questions).forEach((key) => {
+      if (this.props.questions[key].isComplete) {
+        questionArray.push({
+          key: key,
+          text: this.props.questions[key].text,
+          upvote: this.props.questions[key].upvote,
+          posterName: this.props.questions[key].posterName,
+          isComplete: this.props.questions[key].isComplete
+        })
+      }
     })
 
-    questionArray = this.sortByKey(questionArray, 'upvote');
+    const isMaster = this.props.room.isMaster;
 
     const questions = questionArray.map((e) => {
+      const isComplete = e.isComplete;
       console.log(e.key);
       return (
         <div className="row" id="room-questionbox" key={e.key}>
@@ -89,9 +123,30 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
             <i className="fa fa-arrow-up upvote" aria-hidden="true" data-id={e.key} data-toggle={false} onClick={this.toggleVote}></i>
             <div className="upvote-num">{e.upvote}</div>
           </div>
-          <div className="col-md-11 col-sm-11 col-xs-12" id="room-questionbox-col-content">
+          <div className="col-md-10 col-sm-10 col-xs-12" id="room-questionbox-col-content">
             <div className="room-questionbox-name"> {e.text} </div>
             <div className="room-questionbox-user"> <b>Asked by:</b> {e.posterName} </div>
+          </div>
+          <div className="col-md-1 col-sm-1 col-xs-12" id="room-questionbox-col-complete">
+          {
+            isMaster ? (
+              <div className="questionbox-answer">
+              { isComplete ? (
+                <i className="fa fa-check fa-2x checked" aria-hidden="true" data-id={e.key} data-toggle={true} onClick={this.markAsComplete}></i>
+              ) : (
+                <i className="fa fa-check fa-2x unchecked" aria-hidden="true" data-id={e.key} data-toggle={false} onClick={this.markAsComplete}></i>
+              ) }
+              </div>
+            ) : (
+              <div className="questionbox-answer">
+              { isComplete ? (
+                <i className="fa fa-check fa-2x checked" aria-hidden="true"></i>
+              ) : (
+                <i className="fa fa-check fa-2x unchecked" aria-hidden="true"></i>
+              ) }
+              </div>
+            )
+          }
           </div>
         </div>
       );
@@ -128,6 +183,12 @@ const mapDispatchToProps = (dispatch) => {
     },
     unVote: (voteInfo) => {
       dispatch(unVote(voteInfo));
+    },
+    markComplete: (completeInfo) => {
+      dispatch(markComplete(completeInfo));
+    },
+    markIncomplete: (completeInfo) => {
+      dispatch(markIncomplete(completeInfo));
     }
   }
 }

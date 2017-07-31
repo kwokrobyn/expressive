@@ -19,7 +19,6 @@ export const getQuestions = (roomId) => {
       questionsRef.once("value", (innerSnapshot) => {
         console.log('About to dispatch', innerSnapshot.val());
         if (innerSnapshot.exists()) {
-
           dispatch(getQuestionsAction(innerSnapshot.val()));
         } else {
           console.log('No questions in this room.');
@@ -81,5 +80,26 @@ export const unVote = (voteInfo) => {
 
     })
 
+  }
+}
+
+export const markComplete = (completeInfo) => {
+  return (dispatch) => {
+    const questionRef =  db.ref('rooms/' + completeInfo.room + '/questions/' + completeInfo.question);
+
+    questionRef.update({
+      isComplete: true
+    })
+
+  }
+}
+
+export const markIncomplete = (completeInfo) => {
+  return (dispatch) => {
+    const questionRef =  db.ref('rooms/' + completeInfo.room + '/questions/' + completeInfo.question);
+
+    questionRef.update({
+      isComplete: false
+    })
   }
 }

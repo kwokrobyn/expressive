@@ -192,6 +192,15 @@ and (orientation : portrait) {
   }
 }
 
+
+.checked {
+  color: rgba(243,150,72,1);
+}
+
+.unchecked {
+  color: rgba(48,48,48,1);
+}
+
 /* Desktops and laptops ----------- */
 @media only screen
 and (min-width : 1224px) {
@@ -284,6 +293,7 @@ and (min-width : 1824px) {
     margin: 5px 0 5px 0;
     padding: 0 0 0 0;
   }
+
 
 
 
