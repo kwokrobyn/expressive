@@ -7,11 +7,14 @@ div.url-row, div.landingfeatures-join-rm {
 }
 
 div.url-row {
-  margin-top: 50px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center center;
 }
 
 label.joinRmLabel.control-label {
   margin-bottom: 20px;
+
 }
 
 input#joinroom {
@@ -98,7 +101,7 @@ div.joinroom-button:hover::after, div.joinroom-button:hover::before {
 
 
 /*
-* about
+* How to Use
 */
 
 
@@ -111,7 +114,7 @@ h1#how-title {
   text-align: center;
   /*font: 300% 'Raleway', sans-serif, monospace;*/
   font: 250% 'Raleway', sans-serif;
-  margin-top: 10vw;
+  margin-top: 7vw;
   margin-bottom: 6vw;
   margin-left: 6vw;
   color: #494949;
