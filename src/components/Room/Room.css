@@ -121,7 +121,7 @@ and (min-width : 321px) {
     font-size: 22px;
   }
   .room-post-qn-row {
-    margin: 25vh 5vw 0 5vw;
+    margin: 20vh 5vw 0 5vw;
   }
 
   #room-post-qn-textarea-label-span {
@@ -156,7 +156,23 @@ and (max-width : 320px) {
 @media only screen
 and (min-device-width : 768px)
 and (max-device-width : 1024px) {
-/* Styles */
+  #room-post-qn-textarea-label > #room-post-qn-textarea-label-span {
+    margin: 0 0 4vh 0;
+    padding: 0 0 0 0;
+  }
+
+  #room-post-qn-textarea:focus + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span,
+  #room-post-qn-textarea:valid + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span {
+    top: -145px;
+    font-size: 30px;
+  }
+  .room-post-qn-row {
+    margin: 15vh 5vw 0 5vw;
+  }
+
+  #room-post-qn-textarea-label-span {
+    margin: 0 0 40px 0;
+  }
 }
 
 /* iPads (landscape) ----------- */
@@ -164,7 +180,23 @@ and (max-device-width : 1024px) {
 and (min-device-width : 768px)
 and (max-device-width : 1024px)
 and (orientation : landscape) {
-/* Styles */
+  #room-post-qn-textarea-label > #room-post-qn-textarea-label-span {
+    margin: 0 0 4vh 0;
+    padding: 0 0 0 0;
+  }
+
+  #room-post-qn-textarea:focus + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span,
+  #room-post-qn-textarea:valid + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span {
+    top: -145px;
+    font-size: 30px;
+  }
+  .room-post-qn-row {
+    margin: 20vh 5vw 0 5vw;
+  }
+
+  #room-post-qn-textarea-label-span {
+    margin: 0 0 40px 0;
+  }
 }
 
 /* iPads (portrait) ----------- */
@@ -178,7 +210,23 @@ and (orientation : portrait) {
 /* Desktops and laptops ----------- */
 @media only screen
 and (min-width : 1224px) {
-/* Styles */
+  #room-post-qn-textarea-label > #room-post-qn-textarea-label-span {
+    margin: 0 0 4vh 0;
+    padding: 0 0 0 0;
+  }
+
+  #room-post-qn-textarea:focus + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span,
+  #room-post-qn-textarea:valid + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span {
+    top: -145px;
+    font-size: 30px;
+  }
+  .room-post-qn-row {
+    margin: 20vh 5vw 0 5vw;
+  }
+
+  #room-post-qn-textarea-label-span {
+    margin: 0 0 40px 0;
+  }
 }
 
 /* Large screens ----------- */

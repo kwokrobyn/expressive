@@ -48,7 +48,24 @@ class LandingAbout extends Component {
             <Col md={6} xs={6} className="featureFrame02">
               <div className="aboutText">
                 <p>
-                  test commit, without rebase consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  Our belief is that there is a fundamental problem with conventional question-and-answers (Q & A) sessions in forums.
+                  <br/><br/>
+                  The participants of conventional Q & A sessions are observed to be made up of three segments:
+                  <br/>
+                  1) Enquirers asking genuinely stimulating questions that foster the spirit of the discussion;
+                  <br/>
+                  2) Enquirers asking "bad" questions that are either self-serving or off-topic;
+                  <br/>
+                  3) The passive listeners who genuinely do not have questions or have genuine questions but suppress their opinions because they are taciturn or afraid of social backlash.
+                  <br/><br/>
+                  Our web service seeks to address this observed dysfunction in the respective two ways:
+                  <br/>
+                  1) A vote system for posed questions so the audience and moderators of the forum can assess the merits of the questions so they can be answered in a popular order given the scarcity of time;
+                  <br/>
+                  2) Reserved or vulnerable enquirers can pose their questions anonymously;
+                  <br/>
+                  <br/><br/>
+                  <b>Read more about the problems of Q & A sessions:</b> Wedell-Wedellsborg, T. (2014, November 05). 4 Ways to Fix the Q&A Session. <i>Harvard Business Review</i>. Retrieved July 31, 2017, from https://hbr.org/2014/08/four-ways-to-fix-the-qa-session
                 </p>
               </div>
             </Col>
