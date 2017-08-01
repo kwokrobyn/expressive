@@ -75,11 +75,14 @@ export class MasterRoom extends Component { // eslint-disable-line react/prefer-
       <div className="container-fluid">
         <Navbar pageTitle={'Currently in ' + this.props.room.roomName} />
         <div className="row master-room-header">
-          <div className="col-md-8 master-room-roomName-col">
+          <div className="col-md-6 master-room-roomName-col">
             <input id="update-room-name" defaultValue={this.props.room.roomName}></input>
             <button onClick={this.updateRoomName}>Edit Room Name</button>
           </div>
-          <div className="col-md-4 master-room-isActive-col">
+          <div className="col-md-3 master-room-createPoll-col">
+            <button type="button" className="poll-modal-btn" data-toggle="modal" data-target="#create-poll-modal">Create New Poll</button>
+          </div>
+          <div className="col-md-3 master-room-isActive-col">
             <label id="room-active-checkbox">
               {this.props.room.isActive ? (<input type="checkbox" onChange={this.toggleActive} checked/>) : (<input type="checkbox" onChange={this.toggleActive}/>)}
               <div className="switcher__indicator" id="room-active-checkbox-toggle" checked={this.state.isActive}></div>
@@ -101,7 +104,7 @@ export class MasterRoom extends Component { // eslint-disable-line react/prefer-
             <div className="stat-display">{this.props.stats.onlineCount}</div>
             Users Online
           </div>
-          <div className="col-md-1 col-md-offset-2 master-room-poll-col">
+          <div className="col-md-2 col-md-offset-1 master-room-poll-col">
             <button type="button" className="poll-modal-btn" data-toggle="modal" data-target="#create-poll-modal">Create New Poll</button>
           </div>
         </div>

@@ -34,7 +34,7 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
 
     this.state = {
       roomExists: true,
-      isMaster: false
+      authComplete: false
     }
 
   }
@@ -50,7 +50,7 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
         if (snapshot.exists()) {
           this.setState({
             roomExists: true,
-            isMaster: snapshot.val().masterId === this.props.user.uid
+            authComplete: true
           })
 
 
@@ -62,7 +62,6 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
             isActive: snapshot.val().isActive
             }
           this.props.joinRoom(roomInfo);
-          this.props.isFetching(false);
         } else {
           this.setState({
             roomExists: false
@@ -78,7 +77,8 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
         .then((snapshot) => {
           if (snapshot.exists()) {
             this.setState({
-              roomExists: true
+              roomExists: true,
+              authComplete: true
             })
 
 
@@ -90,7 +90,6 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
               isActive: snapshot.val().isActive
               }
             this.props.joinRoom(roomInfo);
-            this.props.isFetching(false);
           } else {
             this.setState({
               roomExists: false
@@ -130,9 +129,15 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
     this.props.leaveRoom(roomInfo);
   }
 
+  componentDidUpdate() {
+    if (this.props.room.isInRoom && this.state.authComplete) {
+      this.props.isFetching(false);
+    }
+  }
+
   render() {
     const isRoom = this.state.roomExists;
-    const isMaster = this.state.isMaster;
+    const isMaster = this.props.room.isMaster;
     return (
     <Grid fluid>
       { this.props.fetchState ? (
