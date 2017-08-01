@@ -56,8 +56,8 @@ export class CreatePoll extends Component { // eslint-disable-line react/prefer-
     const roomId = this.props.room.roomId;
     const pollInfo = {
       question: question,
-      option1: opt1,
-      option2: opt2,
+      option1: {text: opt1, count: 0},
+      option2: {text: opt2, count: 0},
       roomId: roomId
     }
     this.props.createPoll(pollInfo);

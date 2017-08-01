@@ -9,6 +9,12 @@ const createPollAction = (pollInfo) => {
   }
 }
 
+export const clearPollAction = () => {
+  return {
+    type: "CLEAR_POLL"
+  }
+}
+
 // options
 // { 1:
 //       text: "orange"
@@ -25,8 +31,8 @@ export const createPoll = (pollInfo) => {
     pollRef.set({
       isActive: true,
       question: pollInfo.question,
-      option1: {text: pollInfo.option1, count: 0},
-      option2: {text: pollInfo.option2, count: 0}
+      option1: pollInfo.option1,
+      option2: pollInfo.option2
     }).then(() => {
       dispatch(createPollAction(pollInfo));
 
@@ -36,4 +42,65 @@ export const createPoll = (pollInfo) => {
 
   }
 
+}
+
+export const getPoll = (roomId) => {
+  return (dispatch) => {
+
+    const pollRef = db.ref('rooms/' + roomId + '/poll');
+    pollRef.on("value", (snapshot) => {
+      pollRef.once("value", (innerSnapshot) => {
+        // there is currently a poll
+        if (innerSnapshot.val().isActive === true) {
+          // dispatch to get poll
+          const pollInfo = {
+            question: innerSnapshot.val().question,
+            option1: innerSnapshot.val().option1,
+            option2: innerSnapshot.val().option2
+          }
+          dispatch(createPollAction(pollInfo));
+        } else {
+          // dispatch to clear poll
+          dispatch(clearPollAction());
+        }
+      })
+    })
+  }
+}
+
+export const addPollVote = (roomId, option) => {
+  return (dispatch) => {
+    const pollRef = db.ref('rooms/' + roomId + '/poll');
+    if (option === 1) {
+
+      pollRef.child('option1').once('value', (snapshot) => {
+        var pollNum = snapshot.val().count;
+        pollNum += 1;
+        pollRef.child('option1').update({
+            count: pollNum
+          })
+      })
+
+    } else {
+
+      pollRef.child('option2').once('value', (snapshot) => {
+        var pollNum = snapshot.val().count;
+        pollNum += 1;
+        pollRef.child('option2').update({
+            count: pollNum
+          })
+      })
+    }
+  }
+}
+
+export const endPoll = (roomId) => {
+  return (dispatch) => {
+    const pollRef = db.ref('rooms/' + roomId + '/poll');
+    pollRef.update({
+      isActive: false
+    }).then(() => {
+      dispatch(clearPollAction());
+    })
+  }
 }

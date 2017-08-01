@@ -147,6 +147,9 @@ export const createRoom = (roomInfo) => {
         [roomInfo.master.uid]: {
           name: roomInfo.master.displayName
         }
+      },
+      poll: {
+        isActive: false
       }
     }).then(() => {
       console.log('Room created');
