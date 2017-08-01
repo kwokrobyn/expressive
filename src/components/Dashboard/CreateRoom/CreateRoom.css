@@ -254,7 +254,7 @@ input#roomstring::-webkit-input-placeholder, input#roomname::-webkit-input-place
 }
 
 
-input#roomstring, input#roomname {
+input#roomstring, input#roomname, input.poll-input {
   margin: 20px 6px;
   /*width: 200vw;*/
   display: block;
