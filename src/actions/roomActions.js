@@ -65,6 +65,13 @@ const toggleRoomAction = (isActive) => {
   }
 }
 
+const updateRoomNameAction = (roomName) => {
+  return {
+    type: 'UPDATE_ROOM_NAME',
+    roomName
+  }
+}
+
 /*
 * DATABASE METHODS
 */
@@ -235,9 +242,25 @@ export const toggleRoom = (roomInfo) => {
 // check for room changes
 export const renderRoomActiveState = (roomId) => {
   return (dispatch) => {
-
     db.ref('rooms/' + roomId + '/isActive').on('value', (snapshot) => {
       dispatch(toggleRoomAction(snapshot.val()));
+    })
+  }
+}
+
+// UPDATE ROOM NAME
+export const updateRoomName = (roomInfo) => {
+  return (dispatch) => {
+    db.ref('users/' + roomInfo.user.uid + '/ownedRooms/' + roomInfo.roomId).update({
+      name: roomInfo.updatedName
+    })
+    db.ref('rooms/' + roomInfo.roomId).update({
+      name: roomInfo.updatedName
+    }).then(() => {
+      dispatch(updateRoomNameAction(roomInfo.updatedName));
+      console.log('room name updated to ', roomInfo.updatedName);
+    }).catch((error) => {
+      console.log('Error while updating roomname: ', error.message);
     })
   }
 }

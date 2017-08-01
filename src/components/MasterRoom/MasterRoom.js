@@ -14,7 +14,7 @@ import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import QuestionList from '../Room/QuestionList/QuestionList';
 
-import { toggleRoom } from '../../actions/roomActions';
+import { toggleRoom, updateRoomName } from '../../actions/roomActions';
 
 /**
  * Room
@@ -50,12 +50,28 @@ export class MasterRoom extends Component { // eslint-disable-line react/prefer-
     console.log(this.state);
   }
 
+  updateRoomName = (e) => {
+    const updatedRN = document.getElementById('update-room-name').value;
+    const roomId = this.props.room.roomId;
+    const user = this.props.user;
+    const roomInfo = {
+      updatedName: updatedRN,
+      roomId: roomId,
+      user: user
+    }
+    console.log(user);
+    console.log('sending this updated roomname ', roomInfo);
+    this.props.updateRoomName(roomInfo);
+  }
+
   render() {
     return (
       <div className="container-fluid">
         <Navbar pageTitle={'Currently in ' + this.props.room.roomName} />
         <div className="row master-room-header">
           <div className="col-md-8 master-room-roomName-col">
+            <input id="update-room-name" defaultValue={this.props.room.roomName}></input>
+            <button onClick={this.updateRoomName}>Edit Room Name</button>
           </div>
           <div className="col-md-4 master-room-isActive-col">
             <form>
@@ -104,6 +120,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     toggleRoom: (roomInfo) => {
       dispatch(toggleRoom(roomInfo))
+    },
+    updateRoomName: (roomInfo) => {
+      dispatch(updateRoomName(roomInfo))
     }
   }
 }
