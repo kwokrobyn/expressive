@@ -57,7 +57,7 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
     } else {
       this.props.unVote(voteInfo);
       upvote.dataset.toggle = false;
-      upvote.style.color = "rgba(243,245,242,1)";
+      upvote.style.color = "white";
     }
   }
 
@@ -74,7 +74,7 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
       this.props.markComplete(completeInfo);
     } else {
       complete.dataset.toggle = false;
-      complete.style.color = "rgba(48,48,48,1)";
+      complete.style.color = "white";
       this.props.markIncomplete(completeInfo);
     }
 
