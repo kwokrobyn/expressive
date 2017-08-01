@@ -165,7 +165,12 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
             )
           }
         </div> ) : (
-          <div> Your Princess Is In Another Castle. </div>
+          <div className="errorpage">
+          <Navbar />
+            <h2 className="error-text">Your Princess Is In Another Castle.</h2>
+            <div className="errorpage-img"></div>
+
+          </div>
         )
 
         }
