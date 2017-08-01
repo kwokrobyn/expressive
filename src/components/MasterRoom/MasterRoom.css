@@ -112,3 +112,22 @@
   padding-top: 30px;
   padding-right: 50px;
 }
+
+.poll-modal-btn {
+  border: 3px solid rgba(0,233,143,1);
+  color: rgba(73,73,73,1);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background: none;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 0.8em 0.8em;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 22px 0 10px 0;
+}
+
+.poll-modal-btn:hover {
+  background-color: rgba(0,233,143,1);
+  color: rgba(73,73,73,1);
+}

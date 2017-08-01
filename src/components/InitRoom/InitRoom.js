@@ -33,12 +33,12 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
     this.props.isFetching(true);
 
     this.state = {
-      roomExists: true
+      roomExists: true,
+      authComplete: false
     }
 
   }
 
-  // this.props.match.params.id
   componentDidMount() {
 
     if (this.props.user.isSignedIn) {
@@ -47,10 +47,10 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
       const roomRef = db.ref("rooms/" + this.props.match.params.id);
       roomRef.once("value")
       .then((snapshot) => {
-        this.props.isFetching(false);
         if (snapshot.exists()) {
           this.setState({
-            roomExists: true
+            roomExists: true,
+            authComplete: true
           })
 
 
@@ -75,10 +75,10 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
         const roomRef = db.ref("rooms/" + this.props.match.params.id);
         roomRef.once("value")
         .then((snapshot) => {
-          this.props.isFetching(false);
           if (snapshot.exists()) {
             this.setState({
-              roomExists: true
+              roomExists: true,
+              authComplete: true
             })
 
 
@@ -127,6 +127,12 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
       user: this.props.user
     }
     this.props.leaveRoom(roomInfo);
+  }
+
+  componentDidUpdate() {
+    if (this.props.room.isInRoom && this.state.authComplete) {
+      this.props.isFetching(false);
+    }
   }
 
   render() {
