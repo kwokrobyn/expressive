@@ -20,33 +20,10 @@ export class CreatePoll extends Component { // eslint-disable-line react/prefer-
 
   constructor(props){
     super(props);
-
-    this.state = ({
-      options: []
-    })
-
-  }
-
-  renderOptions = () => {
-    return this.state.options.map((option) => {
-
-      return (
-        <li><input type="text" className="form-control poll-input poll-option" key={option}/></li>
-      )
-    })
-
   }
 
   componentDidMount() {
 
-  }
-
-  addNewOption = () => {
-    const lastCount = this.state.options[this.state.options.length -1];
-    //push(lastCount + 1)
-    this.setState({
-      options: [...this.state.options, lastCount+1]
-    })
   }
 
   createPoll = () => {
@@ -84,7 +61,6 @@ export class CreatePoll extends Component { // eslint-disable-line react/prefer-
                       className="form-control poll-input poll-option" id="option2"/>
             </div>
             <div className="modal-footer">
-              <button type="button" className="btn btn-default" onClick={this.addNewOption}>Add New Option</button>
               <button type="button" className="btn btn-default" data-dismiss="modal" onClick={this.createPoll}>Create Poll</button>
             </div>
           </div>
