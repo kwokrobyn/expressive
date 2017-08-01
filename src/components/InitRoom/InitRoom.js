@@ -135,28 +135,22 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
     return (
     <div>
       { this.props.fetchState ? (
-        <div className="container-fluid join-room-container">
+        <div className="join-room-container">
           <Col md={8} className="join-room-text">
             Fetching Your Room...
           </Col>
           <Col md={8} className="join-room-animation ">
-            <div className="error404page">
-              <div className="newcharacter404">
-                <div className="chair404"></div>
-                <div className="leftshoe404"></div>
-                <div className="rightshoe404"></div>
-                <div className="legs404"></div>
-                <div className="torso404">
-                  <div className="body404"></div>
-                  <div className="leftarm404"></div>
-                  <div className="rightarm404"></div>
-                  <div className="head404">
-                    <div className="eyes404"></div>
-                  </div>
-                </div>
-                <div className="laptop404"></div>
-              </div>
-            </div>
+          <div className="bookshelf_wrapper">
+            <ul className="books_list">
+              <li className="book_item first"></li>
+              <li className="book_item second"></li>
+              <li className="book_item third"></li>
+              <li className="book_item fourth"></li>
+              <li className="book_item fifth"></li>
+              <li className="book_item sixth"></li>
+            </ul>
+            <div className="shelf"></div>
+          </div>
           </Col>
         </div>
       ) : (

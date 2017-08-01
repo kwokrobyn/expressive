@@ -1,3 +1,8 @@
+#dashboard-rooms-group {
+  margin: 0;
+}
+
+
 #dashboard-title {
   margin-top: 70px;
   margin-bottom: 20px;
@@ -25,10 +30,11 @@
 /* Below: Create a new room button - which requires React Bootstrap package module*/
 
 .dashboard-create-btn-Col {
-  /*display: flex;
-  justify-content: center;*/
+  display: flex;
+  justify-content: center;
   /*margin-left: 160px;*/
   margin-top: 200px;
+
 }
 
 #dashboard-create-btn-group:hover > .dashboard-create-btn-Col > .dashboard-create-btn-a {
@@ -39,8 +45,6 @@
 .dashboard-create-btn-a {
   /*position: fixed;*/
   margin-bottom: 0px;
-  /*display: flex;
-  justify-content: center;*/
   cursor: pointer;
   top: 50vh;
   /*left: 50%;*/
@@ -48,8 +52,8 @@
   transform: translate3d(-50%, -50%, 0);
   padding: 0.7em calc(0.7em * 1.2);
   /*display: inline-block;*/
-  display: flex;
-  justify-content: center;
+  /*display: flex;
+  justify-content: center;*/
   border: 3px solid transparent;
   /*position: relative;*/
   text-decoration: none;
@@ -159,30 +163,3 @@
   transition: transform 0.5s cubic-bezier(0, 0.53, 0.29, 1) 0.56s;
   transform-origin: left;
 }
-
-/* Above: Create a new room button - which requires React Bootstrap package module*/
-
-#dashboard-rooms-group {
-  margin: 0 auto;
-  margin-top: 20px;
-}
-
-.dashList {
-  margin-top: 50px;
-}
-
-.dashboard-roombox {
-  background-color: white;
-  margin-right: 20px;
-  padding: 40px;
-  box-shadow: 0px 5px 20px grey;
-}
-  .dashboard-roombox-name {
-    font-size: 20px;
-    font-weight: 700;
-  }
-
-
-/*
-* Modal number 6
-*/
