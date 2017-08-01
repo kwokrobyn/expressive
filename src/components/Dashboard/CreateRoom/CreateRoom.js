@@ -193,7 +193,7 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
         </Modal.Body>
 
         <Modal.Footer>
-          <button id="close"
+          <button id="cclose"
                   onClick={this.onClick}
                   data-dismiss="modal">
                   Close

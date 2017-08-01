@@ -33,12 +33,12 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
     this.props.isFetching(true);
 
     this.state = {
-      roomExists: true
+      roomExists: true,
+      isMaster: false
     }
 
   }
 
-  // this.props.match.params.id
   componentDidMount() {
 
     if (this.props.user.isSignedIn) {
@@ -47,10 +47,10 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
       const roomRef = db.ref("rooms/" + this.props.match.params.id);
       roomRef.once("value")
       .then((snapshot) => {
-        this.props.isFetching(false);
         if (snapshot.exists()) {
           this.setState({
-            roomExists: true
+            roomExists: true,
+            isMaster: snapshot.val().masterId === this.props.user.uid
           })
 
 
@@ -62,6 +62,7 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
             isActive: snapshot.val().isActive
             }
           this.props.joinRoom(roomInfo);
+          this.props.isFetching(false);
         } else {
           this.setState({
             roomExists: false
@@ -75,7 +76,6 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
         const roomRef = db.ref("rooms/" + this.props.match.params.id);
         roomRef.once("value")
         .then((snapshot) => {
-          this.props.isFetching(false);
           if (snapshot.exists()) {
             this.setState({
               roomExists: true
@@ -90,6 +90,7 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
               isActive: snapshot.val().isActive
               }
             this.props.joinRoom(roomInfo);
+            this.props.isFetching(false);
           } else {
             this.setState({
               roomExists: false
@@ -131,7 +132,7 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
 
   render() {
     const isRoom = this.state.roomExists;
-    const isMaster = this.props.room.isMaster;
+    const isMaster = this.state.isMaster;
     return (
     <Grid fluid>
       { this.props.fetchState ? (
