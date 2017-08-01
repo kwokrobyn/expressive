@@ -74,19 +74,18 @@ export class JoinRoom extends Component { // eslint-disable-line react/prefer-st
   }
 
   render() {
-    console.log(this.props.existing);
     return (
 
-      <div id="navbar-join-room-modal" className="modal fade" >
+      <div id="navbarJoinRoomModal" className="modal fade" tabindex="-1" role="dialog">
 
-        <Modal.Dialog dialogClassName="create-new-room">
+        <Modal.Dialog dialogClassName="create-new-room modal-dialog">
 
           <Modal.Header>
             <Button className="close"
                     onClick={this.onClick}
                     data-dismiss="modal">X
             </Button>
-            <Modal.Title>Create A New Room</Modal.Title>
+            <Modal.Title>Join room</Modal.Title>
           </Modal.Header>
 
           <Modal.Body>
@@ -173,18 +172,18 @@ export class JoinRoom extends Component { // eslint-disable-line react/prefer-st
           </Modal.Body>
 
           <Modal.Footer>
+            <Button
+                    id="createBtn"
+                    onClick={this.createRoom}
+                    disabled={(this.state.roomstring && this.state.roomname && !(this.props.existing))}>
+                    Join
+            </Button>
             <button id="close"
                     onClick={this.onClick}
                     data-dismiss="modal">
                     Close
             </button>
-            <Button
-              id="createBtn"
-              onClick={this.createRoom}
-              disabled={!(this.state.roomstring && this.state.roomname && !(this.props.existing))}>
-              Save
-            </Button>
-        </Modal.Footer>
+          </Modal.Footer>
       </Modal.Dialog>
     </div>
     );

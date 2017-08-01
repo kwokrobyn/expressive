@@ -77,12 +77,12 @@ class Navbar extends Component {
           </Link>
         </li>
         <li>
-          <Link to=""
+          <Link to="#navbarJoinRoomModal"
                 className="col-lg-1 col-md-1 col-sm-2"
-                id="navbar-middle-Link"
-                data-toggle="modal"
-                data-target="#navbar-join-room-modal">
-            <button className="btn btn-success navbar-middle-btn">
+                id="navbar-middle-Link">
+            <button className="btn btn-success navbar-middle-btn"
+                    data-toggle="modal"
+                    data-target="#navbarJoinRoomModal">
               Join room
             </button>
           </Link>
@@ -130,10 +130,12 @@ class Navbar extends Component {
           </Link>
         </li>
         <li>
-          <Link to=""
+          <Link to="#navbarJoinRoomModa"
                 className="col-lg-1 col-md-1 col-sm-2"
                 id="navbar-middle-Link">
-            <button className="btn btn-success navbar-middle-btn">
+            <button className="btn btn-success navbar-middle-btn"
+                    data-toggle="modal"
+                    data-target="#navbarJoinRoomModal">
               Join room
             </button>
           </Link>
