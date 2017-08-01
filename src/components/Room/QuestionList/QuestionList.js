@@ -10,6 +10,9 @@ import {
 // Importing Redux Actions
 import { getQuestions, addVote, unVote, markComplete, markIncomplete } from '../../../actions/questionActions';
 
+// Import Child Components
+import Poll from '../../Poll/Poll';
+
 //Importing static assets (i.e. stylesheets, images)
 import './QuestionList.css';
 
@@ -166,6 +169,7 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
   render() {
     return (
       <div className="well" id="room-responses-well">
+        <Poll roomString={this.props.roomString}/>
         { this.questionDisplay() }
       </div>
     )
