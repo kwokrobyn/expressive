@@ -46,13 +46,13 @@ import Footer from '../../Footer/Footer';
             </p>
           </div>
           <Col md={4} mdOffset={9} sm={6} smOffset={9} xs={6} xsOffset={6} className="social-icons">
-            <p className="follow-us">Fork us on GitHub
+            <p className="follow-us">Fork us on GitHub</p>
             <div className="social-btns">
               <a className="btn github" href="#"><i className="fa fa-github"></i></a>
             </div>
 
 
-            </p>
+
 
 
           </Col>

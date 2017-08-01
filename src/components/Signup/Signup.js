@@ -63,36 +63,23 @@ class Signup extends Component {
             <h1 className="signUpTitle">Sign Up</h1>
           </Row>
 
-        {/* Name */}
-    {/* <Row>
-         <Col sm={8} smOffset={2} xs={10} xsOffset={1} className="username">
-          <form role="form">
-                    <div className="form-group float-label-control">
-                        <label for="">Username</label>
-                        <input type="email" className="form-control" placeholder="Username" id="name-signup"/>
-                    </div>
-          </form>
-         </Col>
-        </Row> */}
-
-
         <Row>
           <form>
            {/* Name */}
             <label htmlFor="">
             {/*<div className="label-text">Name</div> */}
-              <input type="email" placeholder="Name" id="name-signup"/>
+              <input type="email" maxLength="16" placeholder="Name" id="name-signup"/>
             </label>
            {/* Email */}
             <label htmlFor="">
             {/*  <div className="label-text">Email</div> */}
-              <input type="email" placeholder="email" id="email-signup"/>
+              <input type="email" maxLength="16" placeholder="email" id="email-signup"/>
             </label>
 
             {/* Password */}
             <label htmlFor="">
               {/* <div className="label-text">Password</div> */}
-              <input type="password" placeholder="Password" id="pwd-signup"/>
+              <input type="password" maxLength="16" placeholder="Password" id="pwd-signup"/>
             </label>
 
 
