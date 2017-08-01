@@ -76,7 +76,7 @@ export class JoinRoom extends Component { // eslint-disable-line react/prefer-st
   render() {
     return (
 
-      <div id="navbarJoinRoomModal" className="modal fade" tabindex="-1" role="dialog">
+      <div id="navbarJoinRoomModal" className="modal fade" tabIndex="-1" role="dialog">
 
         <Modal.Dialog dialogClassName="create-new-room modal-dialog">
 
