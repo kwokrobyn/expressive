@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Modal , Button } from 'react-bootstrap';
-import { checkExisting , createRoom } from '../../../actions/roomActions';
+import { checkExisting } from '../../../actions/roomActions';
 
 import "./JoinRoom.css";
 
@@ -22,25 +22,26 @@ export class JoinRoom extends Component { // eslint-disable-line react/prefer-st
 
   }
 
-  createRoom = (e) => {
+  goToRoom = (e) => {
     e.preventDefault();
     const name = this.state.roomname;
+    console.log(this.state.roomstring);
     const id = this.state.roomstring
     // unique string checker to input here
-    if (!this.props.existing) {
+    if (this.props.existing) {
       // pass room info to actions for firebase call. current user object is passed.
       const roomInfo = {
         name: name,
         uid: id,
         master: this.props.user,
         }
-      // this sets the state of the 2 input fields to "" after room is created.
+      // this sets the state of the 2 input fields to "" after joining room.
       this.setState({roomname: "", roomstring: ""});
 
       // shady shit
       document.getElementById('close').click();
       this.setState({errMessage: false,});
-      this.props.createRoom(roomInfo);
+      window.location.href = "./room/" + id;
     } else {
       this.setState({errMessage: true});
       console.log("false here");
@@ -93,7 +94,7 @@ export class JoinRoom extends Component { // eslint-disable-line react/prefer-st
               <div className="float-label-control">
                 <label htmlFor="">Room URL:</label>
                 <div className="roomurl-label-text">Room URL:</div>
-                <input type="text"
+                <input  type="text"
                         className="form-control"
                         placeholder="Type the room URL here, e.g. room"
                         id="roomstring"
@@ -104,9 +105,9 @@ export class JoinRoom extends Component { // eslint-disable-line react/prefer-st
               </div>
                 <div className="flash-message">
                 {/* flash message */}
-                {!this.props.existing ? (
+                {!(this.state.roomstring && this.state.roomname && (this.props.existing)) ? (
                   <div>
-                    <h4 className="errormsg" data-content="This room does not exist and is not active">This room does not exist and is not active</h4>
+                    <h4 className="errormsg">Room does not exist</h4>
                     <svg version="1.1"
                          xmlns="http://www.w3.org/2000/svg"
                          viewBox="-10 -10 160.2 160.2">
@@ -141,7 +142,7 @@ export class JoinRoom extends Component { // eslint-disable-line react/prefer-st
                   </div>
                 ) : (
                   <div>
-                    <h4 className="successmsg">This room exists and is active</h4>
+                    <h4 className="successmsg">Room exists</h4>
                     <svg version="1.1"
                          xmlns="http://www.w3.org/2000/svg"
                          viewBox="-10 -10 160.2 160.2">
@@ -174,8 +175,8 @@ export class JoinRoom extends Component { // eslint-disable-line react/prefer-st
           <Modal.Footer>
             <button
                     id="createBtn"
-                    href={"/room/" + this.state.joinroom}
-                    disabled={!(this.state.roomstring && this.state.roomname && !(this.props.existing))}>
+                    onClick={this.goToRoom}
+                    disabled={!(this.state.roomstring && this.state.roomname && (this.props.existing))}>
                     Join
             </button>
             <button id="close"

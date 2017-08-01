@@ -78,6 +78,9 @@ class App extends Component {
           <Route path="/profile" render={() => (
             isSignedIn ? ( <Profile/> ) : ( <Redirect to="/"/> )
           )} />
+          <Route exact path="/room" render= {() => (
+            ( <Redirect to="/"/> )
+          )} />
           <Route path="/room/:id" component={InitRoom} />
         </Switch>
       </Router>
