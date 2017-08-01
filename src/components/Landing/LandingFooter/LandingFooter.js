@@ -30,7 +30,8 @@ import Footer from '../../Footer/Footer';
           </Col>
            <div className="landing-footer-img">
            <div id="landing-mission-title">Our Mission</div>
-           <p id="landing-mission-paragraph">To create a free-of-charge live event audience response and engagement management system to facilitate education and information in forums such as talks, conferences, seminars and classrooms. </p></div>
+             <p id="landing-mission-paragraph">To create a free-of-charge live event audience response and engagement management system to facilitate education and information in forums such as talks, conferences, seminars and classrooms. </p>
+           </div>
 
             {/*<Image src="../images/footerArt.png"/>*/}
 
