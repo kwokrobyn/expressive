@@ -31,8 +31,8 @@ export const createPoll = (pollInfo) => {
     pollRef.set({
       isActive: true,
       question: pollInfo.question,
-      option1: {text: pollInfo.option1, count: 0},
-      option2: {text: pollInfo.option2, count: 0}
+      option1: pollInfo.option1,
+      option2: pollInfo.option2
     }).then(() => {
       dispatch(createPollAction(pollInfo));
 
@@ -91,5 +91,16 @@ export const addPollVote = (roomId, option) => {
           })
       })
     }
+  }
+}
+
+export const endPoll = (roomId) => {
+  return (dispatch) => {
+    const pollRef = db.ref('rooms/' + roomId + '/poll');
+    pollRef.update({
+      isActive: false
+    }).then(() => {
+      dispatch(clearPollAction());
+    })
   }
 }

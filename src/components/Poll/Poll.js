@@ -7,7 +7,7 @@ import {
   Link
 } from 'react-router-dom'
 
-import { getPoll, clearPollAction, addPollVote } from '../../actions/pollActions';
+import { getPoll, clearPollAction, addPollVote, endPoll } from '../../actions/pollActions';
 
 
 //Importing static assets (i.e. stylesheets, images)
@@ -42,11 +42,16 @@ export class Poll extends Component { // eslint-disable-line react/prefer-statel
     })
   }
 
+  endPoll = () => {
+    this.props.endPoll(this.props.roomString);
+  }
+
 
   render() {
 
     const pollActive = this.props.poll.isActive;
     const userEntered = this.state.userEntered;
+    const isMaster = this.props.room.isMaster;
 
     return (
       <div className="row" id="room-questionbox">
@@ -54,7 +59,20 @@ export class Poll extends Component { // eslint-disable-line react/prefer-statel
           pollActive ? (
             <div> {
               userEntered ? (
-                <div>Poll Results: Option 1 - {this.props.poll.option1.count}, Option 2 - {this.props.poll.option2.count}</div>
+                <div> {
+                  isMaster ? (
+                    <div>
+                      <div>Poll Results: Option 1 - {this.props.poll.option1.count}, Option 2 - {this.props.poll.option2.count}</div>
+                      <button type="button" className="btn" onClick={this.endPoll}>End Poll</button>
+                    </div>
+                  ) : (
+                    <div>
+                      <div>Poll Results: Option 1 - {this.props.poll.option1.count}, Option 2 - {this.props.poll.option2.count}</div>
+                      <button type="button" className="btn">Close</button>
+                    </div>
+                  )
+                }
+                </div>
               ) : (
                 <div>
                   <div>Poll Question: {this.props.poll.question}</div>
@@ -98,6 +116,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     addPollVote: (roomId, option) => {
       dispatch(addPollVote(roomId, option));
+    },
+    endPoll: (roomId) => {
+      dispatch(endPoll(roomId));
     }
 
   }
