@@ -1,16 +1,18 @@
 .join-room-container {
-  height: 25%;
+  height: 100%;
   display: flex;
   justify-content: center;
+  background-color: #089a88;
 }
 
 .join-room-text {
   text-align: center;
-  font-size: 50px;
+  font-size: 2em;
   margin-top: 100px;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
   display: block;
-
+  font-family: "Raleway", sans-serif;
+  color: white;
 }
 
 /*
