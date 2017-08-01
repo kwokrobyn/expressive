@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { checkExisting } from '../../../actions/roomActions';
-import {Modal, Button} from 'react-bootstrap';
-import { createRoom } from '../../../actions/roomActions';
+import { Modal , Button } from 'react-bootstrap';
+import { checkExisting , createRoom } from '../../../actions/roomActions';
 
 import "./CreateRoom.css";
 
@@ -78,14 +77,15 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
     console.log(this.props.existing);
     return (
 
-      <div id="myModal" className="modal fade" >
+      <div id="navbarCreateRoomModal" className="modal fade" >
 
         <Modal.Dialog dialogClassName="create-new-room">
 
           <Modal.Header>
             <Button className="close"
                     onClick={this.onClick}
-                    data-dismiss="modal">×
+                    data-dismiss="modal">
+              <span aria-hidden="true">&times;</span>
             </Button>
             <Modal.Title>Create A New Room</Modal.Title>
           </Modal.Header>

@@ -7,7 +7,7 @@ import {
   BrowserRouter as Router,
   Route,
   Link
-} from 'react-router-dom'
+} from 'react-router-dom';
 
 //Importing static assets (i.e. stylesheets, images)
 import './Navbar.css';
@@ -15,6 +15,7 @@ import squareLogo from './logo_v1.png';
 import titledLogo from './logo_v1.png';
 
 //Importing React Components
+import JoinRoom from './JoinRoom/JoinRoom';
 
 /**
  * Navbar
@@ -22,7 +23,17 @@ import titledLogo from './logo_v1.png';
 class Navbar extends Component {
  constructor(props) {
    super(props);
+   this.state = {
+       value: '',
+       joinroom: ""
+   };
  };
+
+ onChange = (e) => {
+   let value = e.target.value;
+   this.setState({joinroom: value});
+   console.log(this.state.joinroom);
+ }
 
  signOut = (e) => {
    e.preventDefault();
@@ -66,12 +77,12 @@ class Navbar extends Component {
           </Link>
         </li>
         <li>
-          <Link to="" 
+          <Link to="/"
                 className="col-lg-1 col-md-1 col-sm-2"
-                id="navbar-middle-Link"
-                data-toggle="modal"
-                data-target="#myModal">
-            <button className="btn btn-success navbar-middle-btn">
+                id="navbar-middle-Link">
+            <button className="btn btn-success navbar-middle-btn"
+                    data-toggle="modal"
+                    data-target="#navbarJoinRoomModal">
               Join room
             </button>
           </Link>
@@ -119,10 +130,12 @@ class Navbar extends Component {
           </Link>
         </li>
         <li>
-          <Link to=""
+          <Link to="#"
                 className="col-lg-1 col-md-1 col-sm-2"
                 id="navbar-middle-Link">
-            <button className="btn btn-success navbar-middle-btn">
+            <button className="btn btn-success navbar-middle-btn"
+                    data-toggle="modal"
+                    data-target="#navbarJoinRoomModal">
               Join room
             </button>
           </Link>
@@ -169,6 +182,7 @@ class Navbar extends Component {
           </div>
           <div className="row">
             {/* Notification bar - if any */}
+            <JoinRoom />
           </div>{/* /row */}
         </div>{/* /bs-example-navbar-collapse-1 */}
       </div>{/* container */}
