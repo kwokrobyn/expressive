@@ -15,20 +15,23 @@ export const getStats = (roomId) => {
     const roomRef = db.ref('rooms/' + roomId);
     roomRef.on('value', (snapshot) => {
       roomRef.once('value', (innerSnapshot) => {
+        if (innerSnapshot.val().questions !== undefined) {
+          const statInfo = {
+            questionCount: Object.keys(innerSnapshot.val().questions).length,
+            completeCount: Object.entries(innerSnapshot.val().questions)
+                              .filter((e) => {
+                                return e[1].isComplete === true
+                              })
+                              .length,
+            onlineCount: Object.keys(innerSnapshot.val().userList).length
+          }
 
-        const statInfo = {
-          questionCount: Object.keys(innerSnapshot.val().questions).length,
-          completeCount: Object.entries(innerSnapshot.val().questions)
-                            .filter((e) => {
-                              return e[1].isComplete === true
-                            })
-                            .length,
-          onlineCount: Object.keys(innerSnapshot.val().userList).length
+          console.log('stat', statInfo);
+
+          dispatch(updateStats(statInfo));
         }
 
-        console.log('stat', statInfo);
 
-        dispatch(updateStats(statInfo));
 
       })
     })
