@@ -77,7 +77,6 @@
     font-size: 30px;
     display: inline-block;
     margin: 0 auto;
-    color: rgba(243,245,242,1);
   }
 
 /* Smartphones (portrait and landscape) ----------- */
@@ -230,7 +229,7 @@ and (orientation : portrait) {
 }
 
 .unchecked {
-  color: rgba(48,48,48,1);
+  color: white;
 }
 
 /* Desktops and laptops ----------- */

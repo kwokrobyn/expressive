@@ -5,12 +5,12 @@
 .master-room-header {
   margin-top: 100px;
   border: 1px solid black;
-  height: 120px;
+  min-height: 120px;
 }
 
 .master-room-stats {
   border: 1px solid pink;
-  height: 120px;
+  min-height: 120px;
 }
 
 /*#master-room-responses-column {
