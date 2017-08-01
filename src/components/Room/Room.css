@@ -7,96 +7,6 @@
   width: 100%;
 }
 
-  @media (min-width: 1920px) {
-    .room-post-qn-row {
-      margin: 120px 5vw 0 5vw;
-    }
-    #room-post-qn-group {
-      margin-top: 3vh;
-    }
-    #room-post-qn-textarea:focus + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span,
-    #room-post-qn-textarea:valid + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span {
-      top: -165px;
-      font-size: 22px;
-    }
-  }
-
-  @media (min-width: 1280px) and (max-width: 1919px) {
-    .room-post-qn-row {
-      margin: 170px 5vw 0 5vw;
-    }
-    #room-post-qn-group {
-      margin-top: 0vh;
-    }
-    #room-post-qn-textarea:focus + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span,
-    #room-post-qn-textarea:valid + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span {
-      top: -165px;
-      font-size: 22px;
-    }
-  }
-
-  @media (min-width: 1200px) and (max-width: 1279px) {
-    .room-post-qn-row {
-      margin: 120px 5vw 0 5vw;
-    }
-    #room-post-qn-group {
-      margin-top: 0vh;
-    }
-    #room-post-qn-textarea:focus + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span,
-    #room-post-qn-textarea:valid + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span {
-      top: -165px;
-      font-size: 22px;
-    }
-  }
-
-  @media (min-width: 1024px) and (max-width: 1199px) {
-    .room-post-qn-row {
-      margin: 180px 5vw 0 5vw;
-    }
-    #room-post-qn-group {
-      margin-top: 0vh;
-    }
-  }
-
-  /* Bootstrap - Medium desktop */
-  @media (min-width: 979px) and (max-width: 1023px) {
-    .room-post-qn-row {
-      margin: 15vh 5vw 1vh 5vw;
-    }
-    #room-post-qn-group {
-      margin-top: 10vh;
-    }
-  }
-
-  /* Bootstrap - Portrait tablet to landscape and desktop */
-  @media only screen and (min-width: 768px) and (max-width: 978px) {
-    .room-post-qn-row {
-      margin: 13vh 5vw 1vh 5vw;
-    }
-    #room-post-qn-group {
-      margin-top: 2vh;
-    }
-  }
-  /* Bootstrap - Mobile */
-  @media only screen and (min-width: 321px) and (max-width: 767px) {
-    .room-post-qn-row {
-      margin: 160px 5vw 1vh 5vw;
-    }
-    #room-post-qn-group {
-      margin-top: 0vh;
-    }
-  }
-
-  /* iPhone 5 */
-  @media only screen and (max-width: 360px) {
-    .room-post-qn-row {
-      margin: 20vh 5vw 1vh 5vw;
-    }
-    #room-post-qn-group {
-      margin-top: 0vh;
-    }
-  }
-
 #room-responses-column {
   position: relative;
 }
@@ -112,16 +22,14 @@
 
 /* Below: Nice form */
 
-/*
-Basic input element using psuedo classes
-*/
-
 #room-post-qn-textarea:focus, #room-post-qn-btn:focus {
   outline: 0;
 }
+
 /* Question */
 
 #room-post-qn-textarea {
+  resize: none;
   font-size: 24px;
   font-weight: 500;
   border-radius: 2px;
@@ -133,12 +41,12 @@ Basic input element using psuedo classes
   transition: padding-top 0.2s ease, margin-top 0.2s ease;
   overflow-x: hidden; /* Hack to make "rows" attribute apply in Firefox. */
 }
+
 /* Underline and Placeholder */
 
 #room-post-qn-textarea + #room-post-qn-textarea-label {
   display: block;
   position: relative;
-  white-space: nowrap;
   padding: 0 0 0 0;
   margin: 0 0 0 0;
   width: 10%;
@@ -147,6 +55,7 @@ Basic input element using psuedo classes
   transition: width 0.4s ease;
   height: 4vh;
   font-size: 100%;
+  white-space: nowrap;
 }
 
 #room-post-qn-textarea-label {
@@ -169,20 +78,244 @@ Basic input element using psuedo classes
 }
 
 #room-post-qn-textarea:valid {
-  margin-top: 5vh;
+  margin-top: 0vh;
 }
 
 #room-post-qn-textarea:focus {
-  margin-top: 5vh;
+  margin-top: 0vh;
   background: rgba(243,245,242,1);
 }
 
 #room-post-qn-textarea:focus + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span,
 #room-post-qn-textarea:valid + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span {
-  top: -125px;
+  top: -155px;
   font-size: 22px;
   color: rgba(73,73,73,1);
 }
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+  #room-post-qn-textarea:focus + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span,
+  #room-post-qn-textarea:valid + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span {
+    top: -155px;
+    font-size: 22px;
+  }
+  .room-post-qn-row {
+    margin: 25vh 5vw 0 5vw;
+  }
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (min-width : 321px) {
+  #room-post-qn-textarea-label > #room-post-qn-textarea-label-span {
+    margin: 0 0 4vh 0;
+    padding: 0 0 0 0;
+  }
+
+  #room-post-qn-textarea:focus + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span,
+  #room-post-qn-textarea:valid + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span {
+    top: -115px;
+    font-size: 22px;
+  }
+  .room-post-qn-row {
+    margin: 20vh 5vw 0 5vw;
+  }
+
+  #room-post-qn-textarea-label-span {
+    margin: 0 0 40px 0;
+  }
+
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px) {
+  #room-post-qn-textarea-label > #room-post-qn-textarea-label-span {
+    margin: 0 0 4vh 0;
+    padding: 0 0 0 0;
+  }
+
+  #room-post-qn-textarea:focus + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span,
+  #room-post-qn-textarea:valid + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span {
+    top: -115px;
+    font-size: 22px;
+  }
+  .room-post-qn-row {
+    margin: 20vh 5vw 0 5vw;
+  }
+
+  #room-post-qn-textarea-label-span {
+    margin: 0 0 40px 0;
+  }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+  #room-post-qn-textarea-label > #room-post-qn-textarea-label-span {
+    margin: 0 0 4vh 0;
+    padding: 0 0 0 0;
+  }
+
+  #room-post-qn-textarea:focus + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span,
+  #room-post-qn-textarea:valid + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span {
+    top: -145px;
+    font-size: 30px;
+  }
+  .room-post-qn-row {
+    margin: 15vh 5vw 0 5vw;
+  }
+
+  #room-post-qn-textarea-label-span {
+    margin: 0 0 40px 0;
+  }
+}
+
+/* iPads (landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+  #room-post-qn-textarea-label > #room-post-qn-textarea-label-span {
+    margin: 0 0 4vh 0;
+    padding: 0 0 0 0;
+  }
+
+  #room-post-qn-textarea:focus + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span,
+  #room-post-qn-textarea:valid + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span {
+    top: -145px;
+    font-size: 30px;
+  }
+  .room-post-qn-row {
+    margin: 20vh 5vw 0 5vw;
+  }
+
+  #room-post-qn-textarea-label-span {
+    margin: 0 0 40px 0;
+  }
+}
+
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+/* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width : 1224px) {
+  #room-post-qn-textarea-label > #room-post-qn-textarea-label-span {
+    margin: 0 0 4vh 0;
+    padding: 0 0 0 0;
+  }
+
+  #room-post-qn-textarea:focus + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span,
+  #room-post-qn-textarea:valid + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span {
+    top: -145px;
+    font-size: 30px;
+  }
+  .room-post-qn-row {
+    margin: 20vh 5vw 0 5vw;
+  }
+
+  #room-post-qn-textarea-label-span {
+    margin: 0 0 40px 0;
+  }
+}
+
+/* Large screens ----------- */
+@media only screen
+and (min-width : 1824px) {
+/* Styles */
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+/* Styles */
+}
+/* iPhone 6 landscape */
+@media only screen and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 2)
+{
+  #room-post-qn-textarea-label > #room-post-qn-textarea-label-span {
+    margin: 0 0 4vh 0;
+    padding: 0 0 0 0;
+  }
+
+  #room-post-qn-textarea:focus + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span,
+  #room-post-qn-textarea:valid + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span {
+    top: -115px;
+    font-size: 22px;
+  }
+  .room-post-qn-row {
+    margin: 35vh 5vw 0 5vw;
+  }
+
+  #room-post-qn-textarea-label-span {
+    margin: 0 0 40px 0;
+  }
+}
+
+/* iPhone 6 portrait */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2)
+{
+
+}
+
+/* iPhone 6 Plus landscape */
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 3)
+{
+  #room-post-qn-textarea-label > #room-post-qn-textarea-label-span {
+    margin: 0 0 4vh 0;
+    padding: 0 0 0 0;
+  }
+
+  #room-post-qn-textarea:focus + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span,
+  #room-post-qn-textarea:valid + #room-post-qn-textarea-label > #room-post-qn-textarea-label-span {
+    top: -115px;
+    font-size: 22px;
+  }
+  .room-post-qn-row {
+    margin: 30vh 5vw 0 5vw;
+  }
+
+  #room-post-qn-textarea-label-span {
+    margin: 0 0 40px 0;
+  }
+}
+
+/* iPhone 6 Plus portrait */
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 3)
+{ }
+
+/* iPhone 6 and 6 Plus */
+@media only screen
+  and (max-device-width: 640px),
+  only screen and (max-device-width: 667px),
+  only screen and (max-width: 480px)
+{ }
 
 #room-post-qn-textarea:valid + #room-post-qn-textarea-label {
   border-color: rgba(0,233,143,1);

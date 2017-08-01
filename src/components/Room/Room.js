@@ -19,6 +19,7 @@ import { setAnonDisplayName } from '../../actions/userActions';
 import { renderRoomActiveState } from '../../actions/roomActions';
 
 
+
 /**
  * Room
  */
@@ -128,8 +129,6 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
             <QuestionList roomString={this.props.roomString}/> { /* /#room-responses-well */ }
           </div> { /* /#room-responses-column */ }
         </div> {/* /.room-responses-row */}
-
-        <Footer />
 
         {/* invisible button for opening the modal */}
         <button type="button" className="name-modal-btn" data-toggle="modal" data-target="#nameModal">Open Modal</button>

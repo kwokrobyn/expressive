@@ -9,6 +9,7 @@ import ownedRoomsReducer from '../reducers/ownedRoomsReducer';
 import fetchingReducer from '../reducers/fetchingReducer';
 import roomReducer from '../reducers/roomReducer';
 import questionReducer from '../reducers/questionReducer';
+import statReducer from '../reducers/statReducer';
 
 export let initStore = () => {
 
@@ -19,7 +20,8 @@ export let initStore = () => {
     ownedRooms: ownedRoomsReducer,
     isFetching: fetchingReducer,
     room: roomReducer,
-    questions: questionReducer
+    questions: questionReducer,
+    stats: statReducer
   });
 
   // Create the store with all the reducers and allow for chrome redux dev tools to run and read reducers

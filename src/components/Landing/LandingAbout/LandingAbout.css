@@ -27,7 +27,8 @@ div.aboutImg {
 }
 
 div.aboutText p {
-  text-align: center;
+  text-align: left;
+  text-align: justify;
   font-family: 'Raleway', sans-serif;
   color: #878383;
   margin-top: 30px;
