@@ -28,6 +28,51 @@ div.headerArt {
 *  Heading Title
 */
 
+/* for lg  */
+@media (min-width: 1200px) {
+  .content {
+    font-size: 2.3em;
+  }
+  .content__container {
+    height: 3vw;
+  }
+}
+
+/* for md  */
+@media (min-width: 993px) and (max-width: 1200px) {
+  .content {
+    font-size: 2.3em;
+  }
+  .content__container {
+    height: 3vw;
+  }
+}
+
+/* for sm  */
+@media (min-width: 768px) and (max-width: 992px) {
+  .content  {
+    font-size: 2em;
+
+  }
+  .content__container {
+    height: 5vw;
+  }
+}
+
+/* for xs  */
+@media (max-width: 768px) { 
+.content  {
+  font-size: 1.5em;
+  height: 20vw;
+}
+.content__container {
+  height: 15vw;
+}
+/*.content__container__list{
+  width: 40vw;
+  padding-left: 90px;
+}*/
+}
 
 .interactive-header-title {
    height: 100px;
@@ -46,14 +91,14 @@ div.headerArt {
   height: 10vw;
   overflow: hidden;
   font-family: 'Raleway', sans-serif;
-  font-size: 2.3em;
+  /*font-size: 2.3em;*/
   line-height: 40px;
   /*color: #ecf0f1;*/
 }
 .content__container {
   font-weight: 600;
   overflow: hidden;
-  height: 3vw;
+  /*height: 3vw;*/
   padding: 0 100px;
   margin-bottom: 5vw;
 }
