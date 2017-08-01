@@ -10,6 +10,7 @@ import fetchingReducer from '../reducers/fetchingReducer';
 import roomReducer from '../reducers/roomReducer';
 import questionReducer from '../reducers/questionReducer';
 import statReducer from '../reducers/statReducer';
+import pollReducer from '../reducers/pollReducer';
 
 export let initStore = () => {
 
@@ -21,7 +22,8 @@ export let initStore = () => {
     isFetching: fetchingReducer,
     room: roomReducer,
     questions: questionReducer,
-    stats: statReducer
+    stats: statReducer,
+    poll: pollReducer
   });
 
   // Create the store with all the reducers and allow for chrome redux dev tools to run and read reducers

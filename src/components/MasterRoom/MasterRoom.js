@@ -13,6 +13,7 @@ import './MasterRoom.css';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import QuestionList from '../Room/QuestionList/QuestionList';
+import CreatePoll from './CreatePoll/CreatePoll';
 
 import { toggleRoom, updateRoomName } from '../../actions/roomActions';
 import { getStats } from '../../actions/statActions';
@@ -113,26 +114,7 @@ export class MasterRoom extends Component { // eslint-disable-line react/prefer-
 
         <Footer />
 
-        <div id="create-poll-modal" className="modal fade" role="dialog">
-          <div className="modal-dialog">
-
-            <div className="modal-content">
-              <div className="modal-header">
-                <h4 className="modal-title">Create a New Poll</h4>
-              </div>
-              <div className="modal-body">
-                <p>What's Your Question? </p>
-                <input type="text"
-                       className="form-control poll-input poll-question" />
-                <p>Options: </p>
-              </div>
-              <div className="modal-footer">
-                <button type="button" className="btn btn-default" data-dismiss="modal">Create Poll</button>
-              </div>
-            </div>
-
-          </div>
-        </div>
+        <CreatePoll/>
 
       </div>
     )
