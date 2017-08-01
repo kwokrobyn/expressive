@@ -12,9 +12,12 @@ const pollReducer = (state = defaultPoll, action) => {
       return {
         isActive: true,
         question: action.pollInfo.question,
-        option1: {text: action.pollInfo.option1, count: 0},
-        option2: {text: action.pollInfo.option2, count: 0}
+        option1: action.pollInfo.option1,
+        option2: action.pollInfo.option2
       }
+
+    case "CLEAR_POLL":
+      return defaultPoll
 
     default:
         return state;
