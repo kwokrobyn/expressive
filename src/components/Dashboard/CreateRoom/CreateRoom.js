@@ -38,7 +38,7 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
       this.setState({roomname: "", roomstring: ""});
 
       // shady shit
-      document.getElementById('close').click();
+      document.getElementById('create-room-footer-close').click();
       this.setState({errMessage: false,});
       this.props.createRoom(roomInfo);
     } else {
@@ -77,7 +77,7 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
     console.log(this.props.existing);
     return (
 
-      <div id="navbarCreateRoomModal" className="modal fade" >
+      <div id="navbar-create-room-modal" className="modal fade" >
 
         <Modal.Dialog dialogClassName="create-new-room">
 
@@ -193,13 +193,13 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
         </Modal.Body>
 
         <Modal.Footer>
-          <button id="close"
+          <button id="create-room-footer-close"
                   onClick={this.onClick}
                   data-dismiss="modal">
                   Close
           </button>
           <Button
-                  id="createBtn"
+                  id="create-room-footer-submit"
                   onClick={this.createRoom}
                   disabled={!(this.state.roomstring && this.state.roomname && !(this.props.existing))}>
                   Save

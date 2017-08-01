@@ -14,32 +14,32 @@ h4.modal-title {
 * Buttons
 */
 
-#close:hover,
-#close:focus {
+#join-room-footer-close:hover,
+#join-room-footer-close:focus {
   box-shadow: inset -3.5em 0 0 0 var(--hover), inset 3.5em 0 0 0 var(--hover);
 }
 
-#close {
+#join-room-footer-close {
   --color: #ff7f82;
   --hover: #ffdc7f;
 }
 
-button#close, button#createBtn{
+button#join-room-footer-close, button#join-room-footer-submit{
   color: var(--color);
   -webkit-transition: 0.25s;
   transition: 0.25s;
 }
-button#close:hover, button#close:focus {
+button#join-room-footer-close:hover, button#join-room-footer-close:focus {
   border-color: var(--hover);
   color: #fff;
 }
 
-button#createBtn:hover([disabled]), button#createBtn:focus {
+button#join-room-footer-submit:hover([disabled]), button#join-room-footer-submit:focus {
   border-color: var(--hover);
   color: #00b939;
 }
 
-button#close, button#createBtn{
+button#join-room-footer-close, button#join-room-footer-submit{
   background: none;
   border: 2px solid;
   font: inherit;
@@ -48,8 +48,8 @@ button#close, button#createBtn{
   padding: 1em 2em;
 }
 
-#createBtn:hover:not([disabled]),
-#createBtn:focus {
+#join-room-footer-submit:hover:not([disabled]),
+#join-room-footer-submit:focus {
   -webkit-animation: pulse 1s;
           animation: pulse 1s;
   box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
@@ -67,12 +67,12 @@ button#close, button#createBtn{
   }
 }
 
-#createBtn {
+#join-room-footer-submit {
   --color: #00e98f;
   --hover: #00ff4e;
 }
 
-#createBtn:disabled {
+#join-room-footer-submit:disabled {
   --color: #5b5b5b;
 }
 

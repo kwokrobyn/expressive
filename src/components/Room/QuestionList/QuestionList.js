@@ -50,14 +50,14 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
       question: upvote.dataset.id,
       room: this.props.room.roomId
     }
-    if (upvote.dataset.toggle == 'false') {
+    if (upvote.dataset.toggle == 'false' && this.props.room.isActive == true) {
       upvote.dataset.toggle = true;
       upvote.style.color = "rgba(243,150,72,1)";
       console.log('question: ', upvote.dataset.id);
       console.log('room:', this.props.room.roomId);
 
       this.props.addVote(voteInfo);
-    } else {
+    } else if (this.props.room.isActive == true) {
       this.props.unVote(voteInfo);
       upvote.dataset.toggle = false;
       upvote.style.color = "white";
