@@ -98,11 +98,12 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
                           <div className="roomname-label-text">Room Name:</div>
                           <input type="text"
                                  required=''
-                                  className="form-control"
-                                  placeholder="Type your room name here"
-                                  id="roomname"
-                                  onChange={this.onChange}
-                                  value={this.state.roomname}/>
+                                 className="form-control"
+                                 placeholder="Type your room name here. Maximum 16 characters."
+                                 maxLength="16"
+                                 id="roomname"
+                                 onChange={this.onChange}
+                                 value={this.state.roomname}/>
 
                       </div>
 
@@ -111,7 +112,8 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
                           <div className="roomurl-label-text">Room URL:</div>
                           <input type="text"
                                   className="form-control"
-                                  placeholder="Type your URL here"
+                                  placeholder="Type your URL here. Maximum 16 characters."
+                                  maxLength="16"
                                   id="roomstring"
                                   onKeyPress={this.preventSpaces}
                                   onChange={this.checkExisting}
