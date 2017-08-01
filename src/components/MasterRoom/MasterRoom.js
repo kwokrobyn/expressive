@@ -15,6 +15,7 @@ import Footer from '../Footer/Footer';
 import QuestionList from '../Room/QuestionList/QuestionList';
 
 import { toggleRoom } from '../../actions/roomActions';
+import { getStats } from '../../actions/statActions';
 
 /**
  * Room
@@ -27,6 +28,10 @@ export class MasterRoom extends Component { // eslint-disable-line react/prefer-
     this.state = ({
       isActive: this.props.room.isActive
     })
+  }
+
+  componentDidMount() {
+    this.props.getStats(this.props.roomString);
   }
 
   toggleActive = (e) => {
@@ -69,11 +74,17 @@ export class MasterRoom extends Component { // eslint-disable-line react/prefer-
         </div>
 
         <div className="row master-room-stats">
-          <div className="col-md-2 master-room-asked-col">
+          <div className="col-md-offset-3 col-md-2 master-room-asked-col">
+            Total Questions:
+            <div className="stat-display">{this.props.stats.questionCount}</div>
           </div>
           <div className="col-md-2 master-room-completed-col">
+            Completed:
+            <div className="stat-display">{this.props.stats.completeCount}</div>
           </div>
           <div className="col-md-2 master-room-online-col">
+            Users Online:
+            <div className="stat-display">{this.props.stats.onlineCount}</div>
           </div>
           <div className="col-md-1 col-md-offset-2 master-room-settings-col">
           </div>
@@ -96,7 +107,8 @@ const mapStateToProps = (state) => {
   return {
     user: state.user,
     room: state.room,
-    question: state.questions
+    question: state.questions,
+    stats: state.stats
   }
 }
 
@@ -104,6 +116,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     toggleRoom: (roomInfo) => {
       dispatch(toggleRoom(roomInfo))
+    },
+    getStats: (roomId) => {
+      dispatch(getStats(roomId))
     }
   }
 }

@@ -74,3 +74,8 @@
   -webkit-animation-duration: .3s;
           animation-duration: .3s;
 }
+
+.stat-display {
+  font-size: 60px;
+  text-align: center;
+}
