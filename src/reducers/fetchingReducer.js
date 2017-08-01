@@ -4,7 +4,7 @@ const fetchingReducer = (state = false, action) => {
     case "FETCH":
 
         return action.isFetching
-
+        // return true
         break;
 
     default:

@@ -7,7 +7,7 @@ import {Grid, Col, form, FormGroup, FormControl, ControlLabel, HelpBlock, Row, B
 
 //Importing React Components
 
-import { getUserRooms } from '../../../actions/roomActions';
+import { getUserRooms, deleteRoom } from '../../../actions/roomActions';
 
 
 
@@ -26,6 +26,17 @@ export class DashList extends Component { // eslint-disable-line react/prefer-st
     super(props);
   }
 
+  deleteRoom = (e) => {
+    e.preventDefault();
+    const deleteTarget = e.target;
+    const roomInfo = {
+      user: this.props.user,
+      roomId: deleteTarget.dataset.id
+    }
+    this.props.deleteRoom(roomInfo);
+  }
+
+
   roomDisplay = () => {
     const roomArray = [];
     Object.keys(this.props.ownedRooms).forEach((key) => {
@@ -42,12 +53,11 @@ export class DashList extends Component { // eslint-disable-line react/prefer-st
           <div className="dashboard-roombox-user"> <b>Room ID:</b> {e.key} </div>
           <div className="overflow-hide">
             <div className="hole"></div>
-              <Link to={"/room/" + e.key}>
-               <div className="joinroom-link">Join room</div>
-              </Link>
-
-            </div>
-
+            <Link to={"/room/" + e.key}>
+              <div className="joinroom-link">Join room</div>
+            </Link>
+          </div>
+          <button onClick={this.deleteRoom} data-id={e.key}>Delete room</button>
         </Col>
       )
     })
@@ -57,17 +67,13 @@ export class DashList extends Component { // eslint-disable-line react/prefer-st
 
   render() {
     return (
-
-        <Grid fluid id="dashList">
-          <Row className="dashList-row">
-            <Col md={12} sm={12} xs={12} className="dashList-display">
-              {this.roomDisplay()}
-            </Col>
-          </Row>
-
-        </Grid>
-
-
+      <Grid fluid id="dashList">
+        <Row className="dashList-row">
+          <Col md={12} sm={12} xs={12} className="dashList-display">
+            {this.roomDisplay()}
+          </Col>
+        </Row>
+      </Grid>
     )
   }
 }
@@ -86,6 +92,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     getUserRooms: (id) => {
       dispatch(getUserRooms(id))
+    },
+    deleteRoom: (deleteInfo) => {
+      dispatch(deleteRoom(deleteInfo))
     }
   }
 }
