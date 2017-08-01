@@ -1,7 +1,7 @@
 const defaultStats = {
   questionCount: 0,
   completeCount: 0,
-  onlineCount: 0
+  onlineCount: 1
 }
 
 const statReducer = (state = defaultStats, action) => {
