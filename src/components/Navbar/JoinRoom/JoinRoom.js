@@ -41,7 +41,7 @@ export class JoinRoom extends Component { // eslint-disable-line react/prefer-st
       // shady shit
       document.getElementById('close').click();
       this.setState({errMessage: false,});
-      window.location.href = "./room/" + id;
+      window.location.href = "/room/" + id;
     } else {
       this.setState({errMessage: true});
       console.log("false here");
