@@ -321,3 +321,61 @@
             transform: translateX(0px) rotateZ(-90deg);
   }
 }
+
+/*
+* error page
+*/
+
+h2.error-text {
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+  /*margin: 8vw 0 5vw 0;*/
+}
+
+div.errorpage-img {
+  background: url('/images/errorpage.png') center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  /*height: 30vw;*/
+}
+
+/* for lg  */
+@media (min-width: 1200px) {
+  div.errorpage-img  {
+    height: 30vw;
+  }
+  h2.error-text {
+    margin: 8vw 0 5vw 0;
+  }
+}
+
+/* for md  */
+@media (min-width: 993px) and (max-width: 1200px) {
+  div.errorpage-img  {
+    height: 30vw;
+  }
+  h2.error-text {
+    margin: 12vw 0 5vw 0;
+  }
+}
+
+/* for sm  */
+@media (min-width: 768px) and (max-width: 992px) {
+  div.errorpage-img  {
+    height: 40vw;
+  }
+  h2.error-text {
+    margin: 15vw 0 5vw 0;
+  }
+}
+
+/* for xs  */
+@media (max-width: 768px) {
+  div.errorpage-img {
+    height: 50vw;
+  }
+  h2.error-text {
+    font-size: 1.5em;
+    margin: 30vw 0 1vw 0;
+  }
+}
