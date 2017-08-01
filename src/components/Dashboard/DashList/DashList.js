@@ -37,7 +37,7 @@ export class DashList extends Component { // eslint-disable-line react/prefer-st
 
     const rooms = roomArray.map((e) => {
       return (
-        <Col md={3} sm={4} xs={8} className="dashboard-roombox" key={e.key}>
+        <Col md={3} sm={5} xs={12} className="dashboard-roombox" key={e.key}>
           <div className="dashboard-roombox-name"> {e.name} </div>
           <div className="dashboard-roombox-user"> <b>Room ID:</b> {e.key} </div>
           <div className="overflow-hide">
@@ -58,9 +58,9 @@ export class DashList extends Component { // eslint-disable-line react/prefer-st
   render() {
     return (
 
-        <Grid id="dashList">
-          <Row className="dashList">
-            <Col className="dashList-display">
+        <Grid fluid id="dashList">
+          <Row className="dashList-row">
+            <Col md={12} sm={12} xs={12} className="dashList-display">
               {this.roomDisplay()}
             </Col>
           </Row>
