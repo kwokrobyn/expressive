@@ -63,7 +63,7 @@ class App extends Component {
             isInRoom ?
               ( <Landing/> ) : (
                 isSignedIn ?
-                  ( <Redirect to="/dashboard"/> ) : ( <Landing/> )
+                  ( <Landing/> ) : ( <Landing/> )
               )
           )} />
           <Route exact path="/signup" render= {() => (
@@ -77,6 +77,9 @@ class App extends Component {
           )} />
           <Route path="/profile" render={() => (
             isSignedIn ? ( <Profile/> ) : ( <Redirect to="/"/> )
+          )} />
+          <Route exact path="/room" render= {() => (
+            ( <Redirect to="/"/> )
           )} />
           <Route path="/room/:id" component={InitRoom} />
         </Switch>

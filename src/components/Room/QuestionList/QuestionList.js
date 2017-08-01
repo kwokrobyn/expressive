@@ -73,11 +73,11 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
 
     if (complete.dataset.toggle == 'false') {
       complete.dataset.toggle = true;
-      complete.style.color = "rgba(243,150,72,1)";
+      complete.style.color = "rgba(243,150,72,1)"; // completed style
       this.props.markComplete(completeInfo);
     } else {
       complete.dataset.toggle = false;
-      complete.style.color = "white";
+      complete.style.color = "rgba(243,245,242,1)"; // incomplete style
       this.props.markIncomplete(completeInfo);
     }
 
@@ -144,17 +144,27 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
             isMaster ? (
               <div className="questionbox-answer">
               { isComplete ? (
-                <i className="fa fa-check fa-2x checked" aria-hidden="true" data-id={e.key} data-toggle={true} onClick={this.markAsComplete}></i>
+                <div>
+                  <i className="fa fa-check fa-2x checked" aria-hidden="true" data-id={e.key} data-toggle={true} onClick={this.markAsComplete}></i>
+                  <span className="room-questionbox-col-complete-span">Closed</span>
+                </div>
               ) : (
-                <i className="fa fa-check fa-2x unchecked" aria-hidden="true" data-id={e.key} data-toggle={false} onClick={this.markAsComplete}></i>
+                <div>
+                  <i className="fa fa-check fa-2x unchecked" aria-hidden="true" data-id={e.key} data-toggle={false} onClick={this.markAsComplete}></i>
+                  <span className="room-questionbox-col-complete-span">Open</span>
+                </div>
               ) }
               </div>
             ) : (
               <div className="questionbox-answer">
               { isComplete ? (
-                <i className="fa fa-check fa-2x checked" aria-hidden="true"></i>
+                <div>
+                  <i className="fa fa-check fa-2x checked" aria-hidden="true"></i>
+                  <span id="room-questionbox-col-complete-span">Answered</span>
+                </div>
               ) : (
-                <i className="fa fa-check fa-2x unchecked" aria-hidden="true"></i>
+                <div className="room-questionbox-col-complete-empty">
+                </div>
               ) }
               </div>
             )

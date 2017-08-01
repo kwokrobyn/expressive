@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { checkExisting } from '../../../actions/roomActions';
-import {Modal, Button} from 'react-bootstrap';
-import { createRoom } from '../../../actions/roomActions';
+import { Modal , Button } from 'react-bootstrap';
+import { checkExisting , createRoom } from '../../../actions/roomActions';
 
 import "./CreateRoom.css";
 
@@ -78,14 +77,15 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
     console.log(this.props.existing);
     return (
 
-      <div id="myModal" className="modal fade" >
+      <div id="navbarCreateRoomModal" className="modal fade" >
 
         <Modal.Dialog dialogClassName="create-new-room">
 
           <Modal.Header>
             <Button className="close"
                     onClick={this.onClick}
-                    data-dismiss="modal">×
+                    data-dismiss="modal">
+              <span aria-hidden="true">&times;</span>
             </Button>
             <Modal.Title>Create A New Room</Modal.Title>
           </Modal.Header>
@@ -98,11 +98,12 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
                           <div className="roomname-label-text">Room Name:</div>
                           <input type="text"
                                  required=''
-                                  className="form-control"
-                                  placeholder="Type your room name here"
-                                  id="roomname"
-                                  onChange={this.onChange}
-                                  value={this.state.roomname}/>
+                                 className="form-control"
+                                 placeholder="Type your room name here. Maximum 16 characters."
+                                 maxLength="16"
+                                 id="roomname"
+                                 onChange={this.onChange}
+                                 value={this.state.roomname}/>
 
                       </div>
 
@@ -111,7 +112,8 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
                           <div className="roomurl-label-text">Room URL:</div>
                           <input type="text"
                                   className="form-control"
-                                  placeholder="Type your URL here"
+                                  placeholder="Type your URL here. Maximum 16 characters."
+                                  maxLength="16"
                                   id="roomstring"
                                   onKeyPress={this.preventSpaces}
                                   onChange={this.checkExisting}

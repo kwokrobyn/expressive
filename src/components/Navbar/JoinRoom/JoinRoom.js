@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Modal , Button } from 'react-bootstrap';
 import { checkExisting } from '../../../actions/roomActions';
-import {Modal, Button} from 'react-bootstrap';
-import { createRoom } from '../../../actions/roomActions';
 
 import "./JoinRoom.css";
 
@@ -23,25 +22,26 @@ export class JoinRoom extends Component { // eslint-disable-line react/prefer-st
 
   }
 
-  createRoom = (e) => {
+  goToRoom = (e) => {
     e.preventDefault();
     const name = this.state.roomname;
+    console.log(this.state.roomstring);
     const id = this.state.roomstring
     // unique string checker to input here
-    if (!this.props.existing) {
+    if (this.props.existing) {
       // pass room info to actions for firebase call. current user object is passed.
       const roomInfo = {
         name: name,
         uid: id,
         master: this.props.user,
         }
-      // this sets the state of the 2 input fields to "" after room is created.
+      // this sets the state of the 2 input fields to "" after joining room.
       this.setState({roomname: "", roomstring: ""});
 
       // shady shit
       document.getElementById('close').click();
       this.setState({errMessage: false,});
-      this.props.createRoom(roomInfo);
+      window.location.href = "/room/" + id;
     } else {
       this.setState({errMessage: true});
       console.log("false here");
@@ -49,17 +49,16 @@ export class JoinRoom extends Component { // eslint-disable-line react/prefer-st
     }
   }
 
-  checkExisting = (e) => {
+  onChange = (e) => {
+    /*checkExisting event listener below*/
     e.preventDefault();
-    let value = e.target.value;
-    this.setState({roomstring: value});
+    let checkExistingValue = e.target.value;
+    this.setState({roomstring: checkExistingValue});
     // const roomString = document.getElementById('roomstring').value;
-    const roomString = value;
+    const roomString = checkExistingValue;
     console.log(roomString);
     this.props.checkExisting(roomString);
-  }
-
-  onChange = (e) => {
+    /*checkExisting event listener above*/
     let value = e.target.value;
     this.setState({roomname: value});
   }
@@ -75,138 +74,119 @@ export class JoinRoom extends Component { // eslint-disable-line react/prefer-st
   }
 
   render() {
-    console.log(this.props.existing);
     return (
 
-      <div id="myModal" className="modal fade" >
+      <div id="navbarJoinRoomModal" className="modal fade" tabindex="-1" role="dialog">
 
-        <Modal.Dialog dialogClassName="create-new-room">
+        <Modal.Dialog dialogClassName="create-new-room modal-dialog">
 
           <Modal.Header>
             <Button className="close"
                     onClick={this.onClick}
-                    data-dismiss="modal">×
+                    data-dismiss="modal">X
             </Button>
-            <Modal.Title>Create A New Room</Modal.Title>
+            <Modal.Title>Join room</Modal.Title>
           </Modal.Header>
 
-        <Modal.Body>
+          <Modal.Body>
 
             <form>
-                      <div className="float-label-control">
-                          <label className="roomname-modal-label">Room Name:</label>
-                          <div className="roomname-label-text">Room Name:</div>
-                          <input type="text"
-                                 required=''
-                                  className="form-control"
-                                  placeholder="Type your room name here"
-                                  id="roomname"
-                                  onChange={this.onChange}
-                                  value={this.state.roomname}/>
-
-                      </div>
-
-                      <div className="float-label-control">
-                          <label htmlFor="">Room URL:</label>
-                          <div className="roomurl-label-text">Room URL:</div>
-                          <input type="text"
-                                  className="form-control"
-                                  placeholder="Type your URL here"
-                                  id="roomstring"
-                                  onKeyPress={this.preventSpaces}
-                                  onChange={this.checkExisting}
-                                  value={this.state.roomstring}/>
-                      </div>
-                      <div className="flash-message">
-                      {/* flash message */}
-                      {this.props.existing ? (
-                        <div>
-                        <h4 className="errormsg" data-content="This room has been taken">This room has been taken</h4>
-                        <svg version="1.1"
-                             xmlns="http://www.w3.org/2000/svg"
-                             viewBox="-10 -10 160.2 160.2">
-                          <circle className="path circle"
-                                  fill="none"
-                                  stroke="#D06079"
-                                  stroke-width={6}
-                                  stroke-miterlimit={10}
-                                  cx="65.1"
-                                  cy="65.1"
-                                  r="62.1"/>
-                         <line className="path line"
-                               fill="none"
-                               stroke="#D06079"
-                               stroke-width={6}
-                               stroke-linecap="round"
-                               stroke-miterlimit={10}
-                               x1="34.4" y1="37.9"
-                               x2="95.8"
-                               y2="92.3"/>
-                         <line className="path line"
-                               fill="none"
-                               stroke="#D06079"
-                               stroke-width={6}
-                               stroke-linecap="round"
-                               stroke-miterlimit={10}
-                               x1="95.8"
-                               y1={38}
-                               x2="34.4"
-                               y2="92.2"/>
-
-                        </svg>
-
-                        </div>
-                      ) : (
-                        <div>
-                        <h4 className="successmsg">This room is available</h4>
-                        <svg version="1.1"
-                             xmlns="http://www.w3.org/2000/svg"
-                             viewBox="-10 -10 160.2 160.2">
-                          <circle className="path circle"
-                                  fill="none"
-                                  stroke="#73AF55"
-                                  stroke-width={6}
-                                  stroke-miterlimit={10}
-                                  cx="65.1"
-                                  cy="65.1"
-                                  r="62.1"/>
-                          <polyline className="path check"
-                                    fill="none"
-                                    stroke="#73AF55"
-                                    stroke-width={50}
-                                    stroke-linecap="round"
-                                    stroke-miterlimit={10}
-                                    points="100.2,40.2 51.5,88.8 29.8,67.5 "/>
-                        </svg>
-
-                        </div>
-                      )}
-
-                    {this.state.errMessage &&
-                      <h1>not allowed</h1>
-                    }
-                    </div>
+              <div className="float-label-control">
+                <label htmlFor="">Room URL:</label>
+                <div className="roomurl-label-text">Room URL:</div>
+                <input  type="text"
+                        className="form-control"
+                        placeholder="Type the room URL here, e.g. room"
+                        id="roomstring"
+                        onChange={this.onChange}
+                        value ={this.state.joinroom}
+                        onKeyPress={this.preventSpaces}
+                        value={this.state.roomstring}/>
+              </div>
+                <div className="flash-message">
+                {/* flash message */}
+                {!(this.state.roomstring && this.state.roomname && (this.props.existing)) ? (
+                  <div>
+                    <h4 className="errormsg">Room does not exist</h4>
+                    <svg version="1.1"
+                         xmlns="http://www.w3.org/2000/svg"
+                         viewBox="-10 -10 160.2 160.2">
+                      <circle className="path circle"
+                              fill="none"
+                              stroke="#D06079"
+                              stroke-width={6}
+                              stroke-miterlimit={10}
+                              cx="65.1"
+                              cy="65.1"
+                              r="62.1"/>
+                     <line className="path line"
+                           fill="none"
+                           stroke="#D06079"
+                           stroke-width={6}
+                           stroke-linecap="round"
+                           stroke-miterlimit={10}
+                           x1="34.4" y1="37.9"
+                           x2="95.8"
+                           y2="92.3"/>
+                     <line className="path line"
+                           fill="none"
+                           stroke="#D06079"
+                           stroke-width={6}
+                           stroke-linecap="round"
+                           stroke-miterlimit={10}
+                           x1="95.8"
+                           y1={38}
+                           x2="34.4"
+                           y2="92.2"/>
+                    </svg>
+                  </div>
+                ) : (
+                  <div>
+                    <h4 className="successmsg">Room exists</h4>
+                    <svg version="1.1"
+                         xmlns="http://www.w3.org/2000/svg"
+                         viewBox="-10 -10 160.2 160.2">
+                      <circle className="path circle"
+                              fill="none"
+                              stroke="#73AF55"
+                              stroke-width={6}
+                              stroke-miterlimit={10}
+                              cx="65.1"
+                              cy="65.1"
+                              r="62.1"/>
+                      <polyline className="path check"
+                                fill="none"
+                                stroke="#73AF55"
+                                stroke-width={50}
+                                stroke-linecap="round"
+                                stroke-miterlimit={10}
+                                points="100.2,40.2 51.5,88.8 29.8,67.5 "/>
+                    </svg>
+                  </div>
+                )}
+                {this.state.errMessage &&
+                  <h1>not allowed</h1>
+                }
+                </div>
             </form>
 
-        </Modal.Body>
+          </Modal.Body>
 
-        <Modal.Footer>
-          <button id="close"
-                  onClick={this.onClick}
-                  data-dismiss="modal">
-                  Close
-          </button>
-          <Button
-                  id="createBtn"
-                  onClick={this.createRoom}
-                  disabled={!(this.state.roomstring && this.state.roomname && !(this.props.existing))}>
-                  Save
-          </Button>
-      </Modal.Footer>
-
-    </Modal.Dialog>
-
-</div>
+          <Modal.Footer>
+            <button
+                    id="createBtn"
+                    onClick={this.goToRoom}
+                    disabled={!(this.state.roomstring && this.state.roomname && (this.props.existing))}>
+                    Join
+            </button>
+            <button id="close"
+                    onClick={this.onClick}
+                    data-dismiss="modal">
+                    Close
+            </button>
+          </Modal.Footer>
+      </Modal.Dialog>
+    </div>
     );
   }
 }
@@ -223,10 +203,6 @@ const mapDispatchToProps = (dispatch) => {
     checkExisting: (roomString) => {
       dispatch(checkExisting(roomString))
     },
-
-    createRoom: (roomInfo) => {
-      dispatch(createRoom(roomInfo))
-    }
   }
 }
 
