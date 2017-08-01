@@ -54,7 +54,7 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
               <a className="dashboard-create-btn-a"
                   id="create-new-room"
                   data-toggle="modal"
-                  data-target="#navbarCreateRoomModal"
+                  data-target="#navbar-create-room-modal"
                   >
                 <span className="text" id="dashboard-create-btn-text">
                   Create a new room

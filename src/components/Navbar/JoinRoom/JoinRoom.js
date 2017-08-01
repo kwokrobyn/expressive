@@ -39,7 +39,7 @@ export class JoinRoom extends Component { // eslint-disable-line react/prefer-st
       this.setState({roomname: "", roomstring: ""});
 
       // shady shit
-      document.getElementById('close').click();
+      document.getElementById('join-room-footer-close').click();
       this.setState({errMessage: false,});
       window.location.href = "/room/" + id;
     } else {
@@ -76,7 +76,7 @@ export class JoinRoom extends Component { // eslint-disable-line react/prefer-st
   render() {
     return (
 
-      <div id="navbarJoinRoomModal" className="modal fade" tabIndex="-1" role="dialog">
+      <div id="navbar-join-room-modal" className="modal fade" tabIndex="-1" role="dialog">
 
         <Modal.Dialog dialogClassName="create-new-room modal-dialog">
 
@@ -174,12 +174,12 @@ export class JoinRoom extends Component { // eslint-disable-line react/prefer-st
 
           <Modal.Footer>
             <button
-                    id="createBtn"
+                    id="join-room-footer-submit"
                     onClick={this.goToRoom}
                     disabled={!(this.state.roomstring && this.state.roomname && (this.props.existing))}>
                     Join
             </button>
-            <button id="close"
+            <button id="join-room-footer-close"
                     onClick={this.onClick}
                     data-dismiss="modal">
                     Close
