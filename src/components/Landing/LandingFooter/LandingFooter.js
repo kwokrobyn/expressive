@@ -21,18 +21,19 @@ import Footer from '../../Footer/Footer';
        <div id="landing-greater-footer">
 
       {/* Mission Statement */}
-        <Row>
 
-           <Col md={12} className="landing-footer-img">
+
+
+
+          <Col md={8} mdOffset={2} sm={8} smOffset={2} xs={8} xsOffset={2}>
+
+          </Col>
+           <div className="landing-footer-img">
+           <div id="landing-mission-title">Our Mission</div>
+           <p id="landing-mission-paragraph">To create a free-of-charge live event audience response and engagement management system to facilitate education and information in forums such as talks, conferences, seminars and classrooms. </p></div>
+
             {/*<Image src="../images/footerArt.png"/>*/}
-            <Col md={4} mdOffset={4} sm={4} smOffset={3} xs={6} xsOffset={3} className="landing-mission-title">
-            <h2 id="landing-mission-title">Our Mission</h2>
-            </Col>
-              <Col md={8} mdOffset={2} sm={8} smOffset={2} xs={8} xsOffset={2}>
-                 <p id="landing-mission-paragraph">To create a free-of-charge live event audience response and engagement management system to facilitate education and information in forums such as talks, conferences, seminars and classrooms. </p>
-              </Col>
-           </Col>
-        </Row>
+
 
 
         {/* Copyright */}
@@ -50,10 +51,6 @@ import Footer from '../../Footer/Footer';
             <div className="social-btns">
               <a className="btn github" href="#"><i className="fa fa-github"></i></a>
             </div>
-
-
-
-
 
           </Col>
          </footer>
