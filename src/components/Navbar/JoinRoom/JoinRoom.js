@@ -48,17 +48,16 @@ export class JoinRoom extends Component { // eslint-disable-line react/prefer-st
     }
   }
 
-  checkExisting = (e) => {
+  onChange = (e) => {
+    /*checkExisting event listener below*/
     e.preventDefault();
-    let value = e.target.value;
-    this.setState({roomstring: value});
+    let checkExistingValue = e.target.value;
+    this.setState({roomstring: checkExistingValue});
     // const roomString = document.getElementById('roomstring').value;
-    const roomString = value;
+    const roomString = checkExistingValue;
     console.log(roomString);
     this.props.checkExisting(roomString);
-  }
-
-  onChange = (e) => {
+    /*checkExisting event listener above*/
     let value = e.target.value;
     this.setState({roomname: value});
   }
@@ -96,17 +95,18 @@ export class JoinRoom extends Component { // eslint-disable-line react/prefer-st
                 <div className="roomurl-label-text">Room URL:</div>
                 <input type="text"
                         className="form-control"
-                        placeholder="Type your URL here"
+                        placeholder="Type the room URL here, e.g. room"
                         id="roomstring"
+                        onChange={this.onChange}
+                        value ={this.state.joinroom}
                         onKeyPress={this.preventSpaces}
-                        onChange={this.checkExisting}
                         value={this.state.roomstring}/>
               </div>
                 <div className="flash-message">
                 {/* flash message */}
-                {this.props.existing ? (
+                {!this.props.existing ? (
                   <div>
-                    <h4 className="errormsg" data-content="This room has been taken">This room has been taken</h4>
+                    <h4 className="errormsg" data-content="This room does not exist and is not active">This room does not exist and is not active</h4>
                     <svg version="1.1"
                          xmlns="http://www.w3.org/2000/svg"
                          viewBox="-10 -10 160.2 160.2">
@@ -141,7 +141,7 @@ export class JoinRoom extends Component { // eslint-disable-line react/prefer-st
                   </div>
                 ) : (
                   <div>
-                    <h4 className="successmsg">This room is available</h4>
+                    <h4 className="successmsg">This room exists and is active</h4>
                     <svg version="1.1"
                          xmlns="http://www.w3.org/2000/svg"
                          viewBox="-10 -10 160.2 160.2">
@@ -172,12 +172,12 @@ export class JoinRoom extends Component { // eslint-disable-line react/prefer-st
           </Modal.Body>
 
           <Modal.Footer>
-            <Button
+            <button
                     id="createBtn"
-                    onClick={this.createRoom}
-                    disabled={(this.state.roomstring && this.state.roomname && !(this.props.existing))}>
+                    href={"/room/" + this.state.joinroom}
+                    disabled={!(this.state.roomstring && this.state.roomname && !(this.props.existing))}>
                     Join
-            </Button>
+            </button>
             <button id="close"
                     onClick={this.onClick}
                     data-dismiss="modal">

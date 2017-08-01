@@ -63,7 +63,7 @@ class App extends Component {
             isInRoom ?
               ( <Landing/> ) : (
                 isSignedIn ?
-                  ( <Redirect to="/dashboard"/> ) : ( <Landing/> )
+                  ( <Landing/> ) : ( <Landing/> )
               )
           )} />
           <Route exact path="/signup" render= {() => (
