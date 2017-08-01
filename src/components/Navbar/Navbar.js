@@ -82,7 +82,7 @@ class Navbar extends Component {
                 id="navbar-middle-Link">
             <button className="btn btn-success navbar-middle-btn"
                     data-toggle="modal"
-                    data-target="#navbarJoinRoomModal">
+                    data-target="#navbar-join-room-modal">
               Join room
             </button>
           </Link>
@@ -135,7 +135,7 @@ class Navbar extends Component {
                 id="navbar-middle-Link">
             <button className="btn btn-success navbar-middle-btn"
                     data-toggle="modal"
-                    data-target="#navbarJoinRoomModal">
+                    data-target="#navbar-join-room-modal">
               Join room
             </button>
           </Link>
