@@ -51,17 +51,19 @@ export const getPoll = (roomId) => {
     pollRef.on("value", (snapshot) => {
       pollRef.once("value", (innerSnapshot) => {
         // there is currently a poll
-        if (innerSnapshot.val().isActive === true) {
-          // dispatch to get poll
-          const pollInfo = {
-            question: innerSnapshot.val().question,
-            option1: innerSnapshot.val().option1,
-            option2: innerSnapshot.val().option2
+        if (innerSnapshot.exists()) {
+          if (innerSnapshot.val().isActive === true) {
+            // dispatch to get poll
+            const pollInfo = {
+              question: innerSnapshot.val().question,
+              option1: innerSnapshot.val().option1,
+              option2: innerSnapshot.val().option2
+            }
+            dispatch(createPollAction(pollInfo));
+          } else {
+            // dispatch to clear poll
+            dispatch(clearPollAction());
           }
-          dispatch(createPollAction(pollInfo));
-        } else {
-          // dispatch to clear poll
-          dispatch(clearPollAction());
         }
       })
     })
