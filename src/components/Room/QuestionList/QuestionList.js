@@ -157,7 +157,7 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
               { isComplete ? (
                 <div>
                   <i className="fa fa-check fa-2x checked" aria-hidden="true"></i>
-                  <span className="room-questionbox-col-complete-span">Answered</span>
+                  <span id="room-questionbox-col-complete-span">Answered</span>
                 </div>
               ) : (
                 <div className="room-questionbox-col-complete-empty">

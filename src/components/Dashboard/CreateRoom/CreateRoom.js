@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { checkExisting } from '../../../actions/roomActions';
-import {Modal, Button} from 'react-bootstrap';
-import { createRoom } from '../../../actions/roomActions';
+import { Modal , Button } from 'react-bootstrap';
+import { checkExisting , createRoom } from '../../../actions/roomActions';
 
 import "./CreateRoom.css";
 
