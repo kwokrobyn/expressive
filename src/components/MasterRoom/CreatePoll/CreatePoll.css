@@ -1,0 +1,11 @@
+.poll-option {
+  display: inline-block;
+}
+
+.poll-options li {
+  list-style: none;
+}
+
+.poll-options {
+  padding-left: 0;
+}
