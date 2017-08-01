@@ -54,7 +54,7 @@ p#landing-mission-paragraph {
     top: 30vw;
   }
   footer {
-    bottom: 15vw;
+    bottom: 10vw;
   }
   .social-icons  {
     bottom: 1vw;
@@ -72,7 +72,7 @@ p#landing-mission-paragraph {
     left: 45vw;
   }
   footer {
-    bottom: 15vw;
+    bottom: 8vw;
   }
   .social-icons  {
     bottom: 1vw;
@@ -89,7 +89,7 @@ p#landing-mission-paragraph {
     top: 30vw;
   }
   footer {
-    bottom: 15vw;
+    bottom: 10vw;
   }
   .social-icons  {
       bottom: -2vw;
@@ -112,7 +112,7 @@ p#landing-mission-paragraph {
     top: 33vw;
   }
   footer {
-    bottom: -1vw;
+    bottom: -7vw;
   }
   .social-icons  {
     bottom: 7vw;
@@ -125,7 +125,7 @@ div.landing-footer-img {
   background: url('/images/footerArt.png') center center;
   background-repeat: no-repeat;
   background-size: contain;
-  top: -10vw;
+  top: -3vw;
   height: 50vw;
   position: relative;
 }

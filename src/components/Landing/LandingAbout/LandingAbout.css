@@ -2,21 +2,87 @@
 * about
 */
 
-@import 'https://csshake.surge.sh/csshake-hard.min.css';
 
-h1#about-title {
-  text-align: center;
-  font: 250% 'Raleway', sans-serif, monospace;
-  margin-top: 10vw;
-  /*margin-left: 10vw;*/
-  color: #494949;
+.about-card {
+  left: 20vw;
+  width: 350px;
+  padding: 5px;
+  background: #f3f5f2 ;
+  margin: 10vw auto 5vw;
   display: flex;
   justify-content: center;
+  transition: .3s ease;
+  /*box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);*/
 }
+.about-card:hover {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.8);
+  transform: translateY(-10px) scale(1.02);
+}
+.about-card:hover .about-title {
+  background-position: -100% 0;
+}
+
+.about-title {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, #09f3d6 50%);
+  background-size: 200%;
+  background-position: 0 0;
+  /*display: inline;*/
+  transition: .5s ease-in-out;
+  font-family: "Raleway", sans-serif;
+  display: flex;
+  justify-content: center;
+  color: #494949;
+  /*text-transform: uppercase;*/
+}
+
+/* for lg  */
+@media (min-width: 1200px) {
+  .about-title {
+    font-size: 2em;
+  }
+  .about-card {
+    width: 350px;
+  }
+}
+
+/* for md  */
+@media (min-width: 993px) and (max-width: 1200px) {
+  .about-title {
+    font-size: 2em;
+  }
+  .about-card {
+    width: 300px;
+  }
+}
+
+/* for sm  */
+@media (min-width: 768px) and (max-width: 992px) {
+  .about-title {
+    font-size: 2em;
+  }
+  .about-card {
+    width: 300px;
+  }
+}
+
+/* for xs  */
+@media (max-width: 768px) {
+.about-title {
+  font-size: 2em;
+}
+.about-card {
+  width: 300px;
+}
+}
+
 
 /*
 * About content
 */
+.about-section-box {
+  padding: 20px 40px;
+}
+
 div.aboutImg {
   background-color: rgba(243,150,72,1);
   text-align: center;
