@@ -29,9 +29,7 @@ import Footer from '../../Footer/Footer';
             <h2 id="landing-mission-title">Our Mission</h2>
             </Col>
               <Col md={8} mdOffset={2} sm={8} smOffset={2} xs={8} xsOffset={2}>
-
-
-                 <p id="landing-mission-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                 <p id="landing-mission-paragraph">To create a free-of-charge live event audience response and engagement management system to facilitate education and information in forums such as talks, conferences, seminars and classrooms. </p>
               </Col>
            </Col>
         </Row>
@@ -44,11 +42,11 @@ import Footer from '../../Footer/Footer';
           <div id="landing-footer-group-left">
             <img src ="../../images/logo_v1.png" id="landing-footer-logo"/>
             <p id="landing-footer-credits">
-              expressive 2017 by Bryan, Dionne, Robyn & Woody
+              <b>expressive</b> is a Q & A management web service created by Robyn Kwok, Bryan Lee, Dionne Phua & Woody See
             </p>
           </div>
           <Col md={4} mdOffset={9} sm={6} smOffset={9} xs={6} xsOffset={6} className="social-icons">
-            <p className="follow-us">Follow Us On GitHub
+            <p className="follow-us">Fork us on GitHub
             <div className="social-btns">
               <a className="btn github" href="#"><i className="fa fa-github"></i></a>
             </div>

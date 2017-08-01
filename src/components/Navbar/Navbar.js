@@ -66,9 +66,11 @@ class Navbar extends Component {
           </Link>
         </li>
         <li>
-          <Link to="/profile"
+          <Link to="" 
                 className="col-lg-1 col-md-1 col-sm-2"
-                id="navbar-middle-Link">
+                id="navbar-middle-Link"
+                data-toggle="modal"
+                data-target="#myModal">
             <button className="btn btn-success navbar-middle-btn">
               Join room
             </button>
@@ -113,6 +115,15 @@ class Navbar extends Component {
           <Link to="/signup" className="col-sm-2" id="navbar-first-Link">
             <button className="btn btn-success navbar-first-btn">
             Sign up
+            </button>
+          </Link>
+        </li>
+        <li>
+          <Link to=""
+                className="col-lg-1 col-md-1 col-sm-2"
+                id="navbar-middle-Link">
+            <button className="btn btn-success navbar-middle-btn">
+              Join room
             </button>
           </Link>
         </li>

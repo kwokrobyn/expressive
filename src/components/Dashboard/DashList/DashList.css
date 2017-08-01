@@ -17,6 +17,7 @@ div.dashList.row {
 
 
 .dashboard-roombox {
+  width: 20vw;
   border-radius: 10px;
   color: #878383;
   margin: 8px;
