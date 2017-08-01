@@ -80,6 +80,10 @@
     color: rgba(243,245,242,1);
   }
 
+  .room-questionbox-col-complete-empty {
+    height: 5vh;
+  }
+
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen
   and (min-device-width : 320px)
