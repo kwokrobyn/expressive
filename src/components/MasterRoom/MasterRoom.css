@@ -4,13 +4,13 @@
 
 .master-room-header {
   margin-top: 100px;
-  border: 1px solid black;
   min-height: 120px;
 }
 
 .master-room-stats {
-  border: 1px solid pink;
   min-height: 120px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 /*#master-room-responses-column {
@@ -19,12 +19,24 @@
 
 .master-room-roomName-col {
   height: 120px;
-  border: 1px solid green;
 }
 
 .master-room-isActive-col {
   height: 120px;
-  border: 1px solid red;
+}
+
+#room-active-checkbox {
+  margin: 0 auto 1vh 0;
+  height: 60px;
+  padding: 0 0 0 0;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  padding-left: 100px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 #room-active-checkbox > input[type="checkbox"] {
@@ -75,7 +87,28 @@
           animation-duration: .3s;
 }
 
+#room-active-checkbox > span {
+  margin: 7px 0 0 0;
+  padding: 0 0 0 0;
+  text-align: left;
+  letter-spacing: normal;
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: rgba(73,73,73,1);
+}
+
 .stat-display {
   font-size: 60px;
+  font-family: 'Comfortaa', cursive;
+}
+
+.master-room-asked-col, .master-room-complete-col, .master-room-online-col {
   text-align: center;
+}
+
+.master-room-isActive-col {
+  text-align: right;
+  padding-top: 30px;
+  padding-right: 50px;
 }

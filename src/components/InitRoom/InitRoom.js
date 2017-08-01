@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import {Col} from 'react-bootstrap';
 import {
   BrowserRouter as Router,
   Route,
@@ -134,29 +135,23 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
     return (
     <div>
       { this.props.fetchState ? (
-        <div className="container-fluid join-room-container">
-          <div className="join-room-text col-md-12">
+        <div className="join-room-container">
+          <Col md={8} className="join-room-text">
             Fetching Your Room...
+          </Col>
+          <Col md={8} className="join-room-animation ">
+          <div className="bookshelf_wrapper">
+            <ul className="books_list">
+              <li className="book_item first"></li>
+              <li className="book_item second"></li>
+              <li className="book_item third"></li>
+              <li className="book_item fourth"></li>
+              <li className="book_item fifth"></li>
+              <li className="book_item sixth"></li>
+            </ul>
+            <div className="shelf"></div>
           </div>
-          <div className="join-room-animation col-md-12">
-            <div className="cssload-bell">
-              <div className="cssload-circle">
-                <div className="cssload-inner"></div>
-              </div>
-              <div className="cssload-circle">
-                <div className="cssload-inner"></div>
-              </div>
-              <div className="cssload-circle">
-                <div className="cssload-inner"></div>
-              </div>
-              <div className="cssload-circle">
-                <div className="cssload-inner"></div>
-              </div>
-              <div className="cssload-circle">
-                <div className="cssload-inner"></div>
-              </div>
-            </div>
-          </div>
+          </Col>
         </div>
       ) : (
         <div>

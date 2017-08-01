@@ -14,7 +14,7 @@ import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import QuestionList from '../Room/QuestionList/QuestionList';
 
-import { toggleRoom } from '../../actions/roomActions';
+import { toggleRoom, updateRoomName } from '../../actions/roomActions';
 import { getStats } from '../../actions/statActions';
 
 /**
@@ -55,36 +55,50 @@ export class MasterRoom extends Component { // eslint-disable-line react/prefer-
     console.log(this.state);
   }
 
+  updateRoomName = (e) => {
+    const updatedRN = document.getElementById('update-room-name').value;
+    const roomId = this.props.room.roomId;
+    const user = this.props.user;
+    const roomInfo = {
+      updatedName: updatedRN,
+      roomId: roomId,
+      user: user
+    }
+    console.log(user);
+    console.log('sending this updated roomname ', roomInfo);
+    this.props.updateRoomName(roomInfo);
+  }
+
   render() {
     return (
       <div className="container-fluid">
         <Navbar pageTitle={'Currently in ' + this.props.room.roomName} />
         <div className="row master-room-header">
           <div className="col-md-8 master-room-roomName-col">
+            <input id="update-room-name" defaultValue={this.props.room.roomName}></input>
+            <button onClick={this.updateRoomName}>Edit Room Name</button>
           </div>
           <div className="col-md-4 master-room-isActive-col">
-            <form>
-              <label id="room-active-checkbox">
-                {this.props.room.isActive ? (<input type="checkbox" onChange={this.toggleActive} checked/>) : (<input type="checkbox" onChange={this.toggleActive}/>)}
-                <div className="switcher__indicator" id="room-active-checkbox-toggle" checked={this.state.isActive}></div>
-                {this.props.room.isActive ? (<span>Room Active</span>) : (<span>Room Not Active</span>)}
-              </label>{ /* /#room-post-anon-checkbox */ }
-            </form>
+            <label id="room-active-checkbox">
+              {this.props.room.isActive ? (<input type="checkbox" onChange={this.toggleActive} checked/>) : (<input type="checkbox" onChange={this.toggleActive}/>)}
+              <div className="switcher__indicator" id="room-active-checkbox-toggle" checked={this.state.isActive}></div>
+              {this.props.room.isActive ? (<span>Room Active</span>) : (<span>Room Not Active</span>)}
+            </label>{ /* /#room-post-anon-checkbox */ }
           </div>
         </div>
 
         <div className="row master-room-stats">
           <div className="col-md-offset-3 col-md-2 master-room-asked-col">
-            Total Questions:
             <div className="stat-display">{this.props.stats.questionCount}</div>
+            Total Questions
           </div>
-          <div className="col-md-2 master-room-completed-col">
-            Completed:
+          <div className="col-md-2 master-room-complete-col">
             <div className="stat-display">{this.props.stats.completeCount}</div>
+            Answered Questions
           </div>
           <div className="col-md-2 master-room-online-col">
-            Users Online:
             <div className="stat-display">{this.props.stats.onlineCount}</div>
+            Users Online
           </div>
           <div className="col-md-1 col-md-offset-2 master-room-settings-col">
           </div>
@@ -116,6 +130,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     toggleRoom: (roomInfo) => {
       dispatch(toggleRoom(roomInfo))
+    },
+    updateRoomName: (roomInfo) => {
+      dispatch(updateRoomName(roomInfo))
     },
     getStats: (roomId) => {
       dispatch(getStats(roomId))

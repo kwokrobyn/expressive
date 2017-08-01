@@ -1,26 +1,65 @@
 #dashList {
   display: flex;
   justify-content: center;
-
+  margin: 0;
 }
 
-div.dashList.row {
+div.dashList-row {
   display: flex;
   justify-content: center;
-  margin-left: 10vw;
+  width: 100vw;
 }
+
+
+/* for lg  */
+@media (min-width: 1200px) {
+  div.dashList-row  {
+    margin-left: 12vw;
+  }
+}
+
+/* for md  */
+@media (min-width: 993px) and (max-width: 1200px) {
+  div.dashList-row  {
+    margin-left: 12vw;
+  }
+}
+
+/* for sm  */
+@media (min-width: 768px) and (max-width: 992px) {
+  div.dashList-row  {
+    margin-left: 10vw;
+
+  }
+}
+
+/* for xs  */
+@media (max-width: 768px) {
+  div.dashList-row  {
+    margin: 0 0 0 0;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.dashboard-roombox-user {
+  padding-left: 25px;
+}
+
 
 .dashboard-roombox-name {
-
-  padding-bottom:5px;
+  padding-top: 15px;
+  padding-left: 25px;
+  padding-bottom: 5px;
+  font-size: 1.5em;
+  font-weight: 600;
 }
 
-
 .dashboard-roombox {
-  width: 20vw;
   border-radius: 10px;
   color: #878383;
-  margin: 8px;
+  margin: 1vw;
+  padding: 0;
   border: 3px solid #089a88;
   box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.4);
   transition: all ease-in-out 1000ms;
