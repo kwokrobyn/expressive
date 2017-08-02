@@ -64,6 +64,44 @@
   }
 }
 
+/* Poll Results */
+.poll-results {
+
+}
+
+.option1-result-div, .option2-result-div {
+  height: 50%;
+
+}
+
+.option1-result-text, .option2-result-text {
+  font-size: 20px;
+}
+
+.option-bar {
+  height: 50px;
+
+}
+
+.color-bar {
+  height: 100%;
+  width: 50%;
+}
+
+.color-bar-1 {
+  background-color: rgb(0, 233, 143);
+}
+
+.color-bar-2 {
+  background-color: rgb(243, 150, 72);
+}
+
+.count-1, .count-2 {
+  text-align: right;
+  margin-right: -30px;
+  font-size: 36px;
+}
+
 /* Question & Options Box
  ------------------------------------------------------------- */
 .room-pollbox-polltitle-question, .room-pollbox-polltitle-options {
