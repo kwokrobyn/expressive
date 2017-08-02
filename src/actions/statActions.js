@@ -15,6 +15,7 @@ export const getStats = (roomId) => {
     const roomRef = db.ref('rooms/' + roomId);
     roomRef.on('value', (snapshot) => {
       roomRef.once('value', (innerSnapshot) => {
+        //if there are questions update everything
         if (innerSnapshot.val().questions !== undefined) {
           const statInfo = {
             questionCount: Object.keys(innerSnapshot.val().questions).length,
@@ -27,7 +28,14 @@ export const getStats = (roomId) => {
           }
 
           console.log('stat', statInfo);
-
+          dispatch(updateStats(statInfo));
+        } else {
+          const statInfo = {
+            questionCount: 0,
+            completeCount: 0,
+            onlineCount: Object.keys(innerSnapshot.val().userList).length
+          }
+          console.log('stat', statInfo);
           dispatch(updateStats(statInfo));
         }
 
