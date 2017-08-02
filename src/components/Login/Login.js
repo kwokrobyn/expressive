@@ -66,15 +66,13 @@ class Login extends Component {
   render() {
     return (
 
-        <div>
+        <div className="row">
 
-          <div className="div-to-signup">
             <Link to="/signup" className="col-sm-2" id="loginsignup-first-Link">
-              <button className="btn btn-success loginsignup-first-btn">
+              <button className="btn btn-default loginsignup-first-btn">
               Sign up
               </button>
             </Link>
-          </div>
 
           <div>
             <Row>

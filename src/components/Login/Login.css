@@ -11,7 +11,7 @@
   color: rgba(243,150,72,1);
   text-shadow: none;
   text-decoration: none;
-  max-width: 15vw;
+  max-width: 30vw;
   margin: 20px;
   float: right;
   /* cool button insert*/
@@ -30,6 +30,8 @@
     margin: 0 0.1vw 0 0;
     padding: 0 0 0 0;
     box-shadow: none;
+    float: right;
+    height: 30px;
   }
 
 .loginsignup-first-btn:before {
