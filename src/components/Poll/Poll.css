@@ -90,6 +90,7 @@
   display: inline-block;
   padding-right: 20px;
   font-size: 25px;
+  font-weight: 400;
   line-height: 58px;
   letter-spacing: 1.2px;
   cursor: pointer;
@@ -193,7 +194,7 @@ and (orientation : landscape) {
 
   #room-pollbox-question-polltitle {
     padding: 0vh 0vw 0vh 2vw;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 30px;
     background-color: rgba(47,120,139,1);
     color: rgba(243,245,242,1);
@@ -203,7 +204,7 @@ and (orientation : landscape) {
 
   #room-pollbox-question-text {
     padding: 0vh 0vw 0vw 2vw;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 1px;
     font-size: 30px;
   }
@@ -235,7 +236,7 @@ and (orientation : portrait) {
 
   #room-pollbox-question-polltitle {
     padding: 0vh 0vw 0vh 2vw;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 30px;
     background-color: rgba(47,120,139,1);
     color: rgba(243,245,242,1);
@@ -245,7 +246,7 @@ and (orientation : portrait) {
 
   #room-pollbox-question-text {
     padding: 0vh 0vw 0vw 2vw;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 1px;
     font-size: 30px;
   }
@@ -275,7 +276,7 @@ and (max-width : 1224px) {
 
   #room-pollbox-question-polltitle {
     padding: 0vh 0vw 0vh 2vw;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 30px;
     background-color: rgba(47,120,139,1);
     color: rgba(243,245,242,1);
@@ -285,7 +286,7 @@ and (max-width : 1224px) {
 
   #room-pollbox-question-text {
     padding: 0vh 0vw 0vw 2vw;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 1px;
     font-size: 30px;
   }
@@ -315,7 +316,7 @@ and (min-width : 1224px) {
 
   #room-pollbox-question-polltitle {
     padding: 0vh 0vw 0vh 1vw;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 30px;
     background-color: rgba(47,120,139,1);
     color: rgba(243,245,242,1);
@@ -325,7 +326,7 @@ and (min-width : 1224px) {
 
   #room-pollbox-question-text {
     padding: 0vh 0vw 0vw 1vw;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 1px;
     font-size: 30px;
   }
@@ -355,7 +356,7 @@ and (min-width : 1824px) {
 
   #room-pollbox-question-polltitle {
     padding: 0vh 0vw 0vh 1vw;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 30px;
     background-color: rgba(47,120,139,1);
     color: rgba(243,245,242,1);
@@ -365,7 +366,7 @@ and (min-width : 1824px) {
 
   #room-pollbox-question-text {
     padding: 0vh 0vw 0vw 1vw;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 1px;
     font-size: 25px;
   }
@@ -403,7 +404,7 @@ and (min-width : 1824px) {
 
   #room-pollbox-question-polltitle {
     padding: 0vh 0vw 0vh 2vw;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 30px;
     background-color: rgba(47,120,139,1);
     color: rgba(243,245,242,1);
@@ -413,7 +414,7 @@ and (min-width : 1824px) {
 
   #room-pollbox-question-text {
     padding: 1vh 1vw 1vw 3vw;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 1px;
     font-size: 30px;
   }
@@ -447,7 +448,7 @@ and (min-width : 1824px) {
 
   #room-pollbox-question-polltitle {
     padding: 0vh 0vw 0vh 2vw;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 30px;
     background-color: rgba(47,120,139,1);
     color: rgba(243,245,242,1);
@@ -457,7 +458,7 @@ and (min-width : 1824px) {
 
   #room-pollbox-question-text {
     padding: 1vh 1vw 1vw 3vw;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 1px;
     font-size: 30px;
   }
@@ -491,7 +492,7 @@ and (min-width : 1824px) {
 
   #room-pollbox-question-polltitle {
     padding: 0vh 0vw 0vh 2vw;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 30px;
     background-color: rgba(47,120,139,1);
     color: rgba(243,245,242,1);
@@ -501,7 +502,7 @@ and (min-width : 1824px) {
 
   #room-pollbox-question-text {
     padding: 1vh 1vw 1vw 3vw;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 1px;
     font-size: 30px;
   }
@@ -535,7 +536,7 @@ and (min-width : 1824px) {
 
   #room-pollbox-question-polltitle {
     padding: 0vh 0vw 0vh 2vw;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 30px;
     background-color: rgba(47,120,139,1);
     color: rgba(243,245,242,1);
@@ -545,7 +546,7 @@ and (min-width : 1824px) {
 
   #room-pollbox-question-text {
     padding: 1vh 1vw 1vw 3vw;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 1px;
     font-size: 30px;
   }
