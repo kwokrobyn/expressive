@@ -1,9 +1,283 @@
-#room-questionbox {
-  background-color: white;
-  padding: 0 0 0 0;
-  margin: 1vh 0 1vh 0;
-  border-radius: 0.8em 0.8em 0.8em 0.8em;
-  box-shadow: 0px 3px 20px rgba(73,73,73,0.2);
-  height: 100%;
-  position: relative;
+/* Below: radio button */
+
+/* ------------------------------------------------------------- */
+/* popInCards: Global animation css for the cards in the poll box, the poll box & question box
+ ------------------------------------------------------------- */
+@-webkit-keyframes popInCards {
+  0%, 20%, 40%, 60%, 80%, 100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+  }
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+  }
+  80% {
+    -webkit-transform: scale3d(0.97, 0.97, 0.97);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+  }
 }
+@keyframes cardEnter {
+  0%, 20%, 40%, 60%, 80%, 100% {
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+  40% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+  80% {
+    -webkit-transform: scale3d(0.97, 0.97, 0.97);
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+/* Question & Options Box
+ ------------------------------------------------------------- */
+.room-pollbox-polltitle-question, .room-pollbox-polltitle-options {
+  -webkit-animation: popInCards 0.75s ease-in-out 0.5s;
+  animation: popInCards 0.75s ease-in-out 0.5s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  margin: 1vh 1vw 1vw 1vh;
+  padding: 10px 10px 10px 10px;
+  border-radius: 0.4em 0.4em 0.4em 0.4em;
+  background-color: rgba(243,245,242,1);
+  box-shadow: 0px 3px 20px rgba(73,73,73,0.2);
+  opacity: 0;
+}
+
+/* Individual Controls
+ ------------------------------------------------------------- */
+.room-pollbox-radio-label {
+  display: inline-block;
+  padding-right: 20px;
+  font-size: 20px;
+  line-height: 42px;
+  letter-spacing: 1.2px;
+  cursor: pointer;
+}
+.room-pollbox-radio-label:hover .room-pollbox-radio-inner {
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  opacity: 1;
+}
+.room-pollbox-radio-label input {
+  height: 1px;
+  width: 1px;
+  opacity: 0;
+}
+.room-pollbox-radio-label input:checked + .room-pollbox-radio-outer .room-pollbox-radio-inner {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+}
+.room-pollbox-radio-label input:checked + .room-pollbox-radio-outer {
+  border: 5px solid rgba(243,150,72,1);
+}
+.room-pollbox-radio-label input:focus + .room-pollbox-radio-outer .room-pollbox-radio-inner {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+  background-color: rgba(243,150,72,1);
+}
+.room-pollbox-radio-label .room-pollbox-radio-outer {
+  height: 40px;
+  width: 40px;
+  display: block;
+  float: left;
+  margin: 10px 9px 10px 10px;
+  border: 5px solid rgba(47,120,139,1);
+  border-radius: 50%;
+  background-color: rgba(243,245,242,1);
+}
+.room-pollbox-radio-label .room-pollbox-radio-inner {
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  height: 37px;
+  width: 37px;
+  top: -3px;
+  left: -3px;
+  position: relative;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  display: block;
+  border-radius: 50%;
+  background-color: rgba(243,150,72,1);
+  opacity: 0;
+}
+
+/* Above: radio button */
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+/* Styles */
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (min-width : 321px) {
+/* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px) {
+/* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+/* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+/* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+/* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width : 1224px) {
+}
+
+/* Large screens ----------- */
+@media only screen
+and (min-width : 1824px) {
+  #room-pollbox {
+    -webkit-animation: popInCards 0.75s ease-in-out 0.5s;
+    animation: popInCards 0.75s ease-in-out 0.5s;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    padding: 0 0 0 0;
+    margin: 1vh 0 1vh 0;
+    background-color: rgba(243,245,242,1);
+    border-radius: 0.8em 0.8em 0.8em 0.8em;
+    box-shadow: 0px 3px 20px rgba(73,73,73,0.2);
+    height: 100%;
+    position: relative;
+  }
+
+  #room-pollbox-question-polltitle {
+    padding: 0vh 0vw 0vh 1vw;
+    font-weight: 600;
+    font-size: 30px;
+    background-color: rgba(47,120,139,1);
+    color: rgba(243,245,242,1);
+    letter-spacing: 5px;
+    border-radius: 0.3em 0.3em 0 0;
+  }
+
+  #room-pollbox-question-text {
+    padding: 0vh 0vw 0vw 1vw;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 30px;
+  }
+
+  #room-pollbox-options {
+    margin: 0vh 0vw 0vh 1vw;
+    padding: 0vh 0vw 0vh 0vw;
+  }
+
+  .room-pollbox-radio-label {
+  }
+
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+/* Styles */
+}
+/* iPhone 6 landscape */
+@media only screen and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 2)
+{ }
+
+/* iPhone 6 portrait */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2)
+{ }
+
+/* iPhone 6 Plus landscape */
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 3)
+{ }
+
+/* iPhone 6 Plus portrait */
+@media only screen
+  and (min-device-width: 414px)
+  and (max-device-width: 736px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 3)
+{ }
+
+/* iPhone 6 and 6 Plus */
+@media only screen
+  and (max-device-width: 640px),
+  only screen and (max-device-width: 667px),
+  only screen and (max-width: 480px)
+{ }
+
+/* Apple Watch */
+@media
+  (max-device-width: 42mm)
+  and (min-device-width: 38mm)
+{ }

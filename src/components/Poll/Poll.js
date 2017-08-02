@@ -54,7 +54,7 @@ export class Poll extends Component { // eslint-disable-line react/prefer-statel
     const isMaster = this.props.room.isMaster;
 
     return (
-      <div className="row" id="room-questionbox">
+      <div className="row" id="room-pollbox">
         {
           pollActive ? (
             <div> {
@@ -74,11 +74,33 @@ export class Poll extends Component { // eslint-disable-line react/prefer-statel
                 }
                 </div>
               ) : (
-                <div>
-                  <h2>Poll</h2>
-                  <div>{this.props.poll.question}</div>
-                  <label className="radio-inline"><input type="radio" className="option1-radio" name="optradio" onClick={this.submitPoll}/>{this.props.poll.option1.text}</label>
-                  <label className="radio-inline"><input type="radio" className="option2-radio" name="optradio" onClick={this.submitPoll}/>{this.props.poll.option2.text}</label>
+                <div className="row">
+
+                  <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 room-pollbox-question">
+                    <div id="room-pollbox-question-polltitle">Poll</div>
+                    <div id="room-pollbox-question-text">{this.props.poll.question}</div>
+                  </div>
+
+                  <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="room-pollbox-options">
+
+                    <label className="room-pollbox-radio-label">
+                      <input className="room-pollbox-radio" id="room-pollbox-radio-1" type="radio" name="optradio" onClick={this.submitPoll}/>
+                      <span className="room-pollbox-radio-outer">
+                        <span className="room-pollbox-radio-inner"></span>
+                      </span>
+                      {this.props.poll.option1.text}
+                    </label>
+
+                    <label className="room-pollbox-radio-label">
+                      <input className="room-pollbox-radio" id="room-pollbox-radio-2" type="radio" name="optradio"  onClick={this.submitPoll}/>
+                      <span className="room-pollbox-radio-outer">
+                        <span className="room-pollbox-radio-inner"></span>
+                      </span>
+                      {this.props.poll.option2.text}
+                    </label>
+
+                  </div>{/* / .room-pollbox-polltitle-options */}
+
                 </div>
               )
             }
