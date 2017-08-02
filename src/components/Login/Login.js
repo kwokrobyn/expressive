@@ -65,8 +65,7 @@ class Login extends Component {
 
   render() {
     return (
-
-        <div className="row">
+      <Grid fluid>
 
             <Link to="/signup" className="col-sm-2" id="loginsignup-first-Link">
               <button className="btn btn-default loginsignup-first-btn">
@@ -74,7 +73,7 @@ class Login extends Component {
               </button>
             </Link>
 
-          <div>
+
             <Row>
               <div className="logInTitle">
                 <a href="/dashboard" className="signup-img">
@@ -82,12 +81,10 @@ class Login extends Component {
                 </a>
                 <h1>Log in to your <b>expressive</b> account</h1>
               </div>
-
             </Row>
 
           <Row>
             <form>
-
              {/* Email */}
               <label  className="login-label" htmlFor="">
                 {/* <div className="label-text">Email</div> */}
@@ -103,27 +100,67 @@ class Login extends Component {
           </Row>
 
           {/* Submit Button */}
-          <Row>
-            <Col className="loginSubmit">
-            <a className="submitLogIn" onClick={this.localSignIn}>
-              <span className="text">Log in to Dashboard</span>
-              <span className="line -right"></span>
-              <span className="line -top"></span>
-              <span className="line -left"></span>
-              <span className="line -bottom"></span>
-            </a>
-            </Col>
-          </Row>
+
+            <div className="loginSubmit">
+              <a className="submitLogIn" onClick={this.localSignIn}>
+                <span className="text">Log in to Dashboard</span>
+                <span className="line -right"></span>
+                <span className="line -top"></span>
+                <span className="line -left"></span>
+                <span className="line -bottom"></span>
+              </a>
+            </div>
+
 
           {/* Error Message */}
-          <Row>
-            {this.props.user.hasAuthError &&
-              <div>
-                <div className="error-message">{this.props.user.errorMessage}<Button className="delete-room" onClick={this.dismissError}></Button></div>
-              </div>
-            }
-          </Row>
+            <Row>
 
+            {this.props.user.hasAuthError &&
+
+              <Col md={4} className="login-error-message ">
+              <h4 className="error-message"           data-content="{this.props.user.errorMessage}">{this.props.user.errorMessage}</h4>
+              <svg version="1.1"
+                   className="login-error-message"
+                   xmlns="http://www.w3.org/2000/svg"
+                   viewBox="-10 -10 160.2 160.2"
+                   onClick={this.dismissError}>
+                <circle className="path circle"
+                        fill="none"
+                        stroke="#D06079"
+                        strokeWidth={6}
+                        strokeMiterlimit={10}
+                        cx="65.1"
+                        cy="65.1"
+                        r="62.1"/>
+               <line className="path line"
+                     fill="none"
+                     stroke="#D06079"
+                     strokeWidth={6}
+                     strokeLinecap="round"
+                     strokeMiterlimit={10}
+                     x1="34.4" y1="37.9"
+                     x2="95.8"
+                     y2="92.3"/>
+               <line className="path line"
+                     fill="none"
+                     stroke="#D06079"
+                     strokeWidth={6}
+                     strokeLinecap="round"
+                     strokeMiterlimit={10}
+                     x1="95.8"
+                     y1={38}
+                     x2="34.4"
+                     y2="92.2"/>
+
+              </svg>
+
+              </Col>
+
+            }
+            </Row>
+            {/*<div>
+               <div className="error-message">{this.props.user.errorMessage}<Button className="delete-room" onClick={this.dismissError}></Button></div>
+             </div>  */}
             {/* Social Sign In */}
             <Row className="socialLogin">
               <div className="social-text">or log in using your Facebook or Google account information:</div>
@@ -145,9 +182,9 @@ class Login extends Component {
                </div>
              </Row>
 
-          </div>
-        </div>
 
+
+        </Grid>
     );
   }
 }
