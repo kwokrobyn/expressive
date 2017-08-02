@@ -75,9 +75,12 @@ export class MasterRoom extends Component { // eslint-disable-line react/prefer-
       <div className="container-fluid">
         <Navbar pageTitle={'Currently in ' + this.props.room.roomName} />
         <div className="row master-room-header">
-          <div className="col-md-9 master-room-roomName-col">
+          <div className="col-md-7 master-room-roomName-col">
             <input id="update-room-name" defaultValue={this.props.room.roomName}></input>
-            <button onClick={this.updateRoomName}>Edit Room Name</button>
+            <button className="update-room-name-btn" onClick={this.updateRoomName}>Edit Room Name</button>
+          </div>
+          <div className="col-md-2">
+            <button type="button" className="poll-modal-btn" data-toggle="modal" data-target="#create-poll-modal">Create New Poll</button>
           </div>
           <div className="col-md-3 master-room-isActive-col">
             <label id="room-active-checkbox">
@@ -102,7 +105,7 @@ export class MasterRoom extends Component { // eslint-disable-line react/prefer-
             Users Online
           </div>
           <div className="col-md-2 col-md-offset-1 master-room-poll-col">
-            <button type="button" className="poll-modal-btn" data-toggle="modal" data-target="#create-poll-modal">Create New Poll</button>
+
           </div>
         </div>
 
