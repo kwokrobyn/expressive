@@ -14,6 +14,8 @@ import LandingFeatures from './LandingFeatures/LandingFeatures';
 import LandingAbout from './LandingAbout/LandingAbout';
 import LandingFooter from './LandingFooter/LandingFooter';
 
+import firebase from 'firebase';
+
 /**
  * Landing
  */
@@ -21,6 +23,21 @@ export class Landing extends Component {
 
   constructor(props){
     super(props)
+  }
+
+  componentDidMount() {
+
+    if (this.props.user.isSignedIn) {
+
+    } else {
+      firebase.auth().signInAnonymously().then(() => {
+
+      })
+      .catch((error) => {
+        console.log('Anonymous Sign In Failed: ', error.message);
+        window.location.href = '/';
+      })
+    }
   }
 
   render() {
@@ -48,9 +65,11 @@ export class Landing extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return {
-
-    }
+  return {
+    user: state.user,
+    fetchState: state.isFetching,
+    room: state.room
+  }
 }
 
 const mapDispatchToProps = (dispatch) => {
