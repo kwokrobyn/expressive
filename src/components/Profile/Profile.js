@@ -1,6 +1,7 @@
 //Importing required packages
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
+import { Grid, Col, Button, Row } from 'react-bootstrap';
 import { deleteUser, updateUser } from '../../actions/userActions';
 
 //Importing static assets (i.e. stylesheets, images)
@@ -59,10 +60,11 @@ class Profile extends Component {
     console.log(this.props.user);
 
     return (
-      <div className="container-fluid">
+      <Grid fluid>
         <Navbar pageTitle="Profile Settings"/>
 
-        <form id="profile-form">
+      {/*  <form id="profile-form">
+
           <div className="form-group">
             <label>New name</label>
             <input  type="email"
@@ -83,18 +85,81 @@ class Profile extends Component {
                     className="form-control"
                     id="form-newpassword"
                     placeholder="Update password here"/>
+          </div> */}
+
+          <div className="update-profile">
+          <Col md={12} className="update-profile_form">
+          <h2>Profile settings</h2>
+          </Col>
+
+
+           <Col md={12} className="update-profile_form">
+            <span className="input input--update">
+					       <input className="input__field input__field--update"
+                        type="text"
+                        id="form-displayName"
+                        maxLength={16}
+                        defaultValue={this.props.user.displayName}/>
+  					<label className="input__label input__label--update" htmlFor="form-displayName">
+  						<span className="input__label-content input__label-content--update">Update First Name Here</span>
+  					</label>
+  				</span>
+          </Col>
+
+          <Col md={12} className="update-profile_form">
+  				<span className="input input--update">
+  					<input className="input__field input__field--update"
+                   type="email"
+                   id="form-email"
+                   maxLength={16}
+                   defaultValue={this.props.user.email}/>
+  					<label className="input__label input__label--update" htmlFor="form-email">
+  						<span className="input__label-content input__label-content--update">Update email here</span>
+  					</label>
+  				</span>
+          </Col>
+
+          <Col md={12} className="update-profile_form">
+  				<span className="input input--update">
+  					<input className="input__field input__field--update"
+                   type="password"
+                   maxLength={16}
+                   id="form-newpassword" />
+  					<label className="input__label input__label--update" htmlFor="form-newpassword">
+  						<span className="input__label-content input__label-content--update">Update password here</span>
+  					</label>
+  				</span>
+          </Col>
           </div>
-            <button type="submit"
-                    className="btn btn-default" onClick={this.updateUser}>
+
+          <div className="update-buttons">
+
+            <a href="#" type="submit" className="a-btn-removeuser" onClick={this.deleteUser}>
+  						<span className="a-btn-text-removeuser">Remove User</span>
+  						<span className="a-btn-slide-text-removeuser">Confirm?</span>
+  						<span className="a-btn-icon-right-removeuser"><span></span></span>
+  					</a>
+
+            <a href="#" type="submit" className="a-btn-updateuser" onClick={this.updateUser}>
+  						<span className="a-btn-text-updateuser">Update User</span>
+  						<span className="a-btn-slide-text-updateuser">Confirm?</span>
+  						<span className="a-btn-icon-right-updateuser"><span></span></span>
+  					</a>
+
+            {/*<Button type="submit"
+                    className="btn btn-default"
+                    onClick={this.updateUser}>
               Update user
-            </button>
-            <button type="submit"
+            </Button>*/}
+
+            {/*<Button type="submit"
                     className="btn btn-danger"
                     onClick={this.deleteUser}>
               Delete user
-            </button>
-        </form>
-      </div>
+            </Button> */}
+          </div>
+        {/*</form>*/}
+      </Grid>
     );
   }
 }
