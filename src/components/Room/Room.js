@@ -45,20 +45,21 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
     this.setState({question: value});
   }
 
+  // fires on toggle 'post anonymous' switch
   toggleAnon = (e) => {
+    // if checked
     if (e.target.checked) {
-      console.log('this just got checked');
+
       this.setState({
         isAnonymous: true
       })
+      // if unchecked
     } else {
-      console.log('this just got unchecked');
+
       // user is not signed in - prompt for custom displayName
       if (!this.props.user.isSignedIn && this.state.setName === false) {
         document.querySelector('.name-modal-btn').click();
-        this.setState({
-          setName: true
-        })
+
       }
       this.setState({
         isAnonymous: false
@@ -89,6 +90,15 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
   setDisplayName = (e) => {
     const displayName = document.querySelector('.display-name-input').value;
     this.props.setAnonDisplayName(displayName);
+    this.setState({
+      setName: true
+    })
+  }
+
+  revertAnon = () => {
+    this.setState({
+      isAnonymous: true
+    })
   }
 
   render() {
@@ -151,7 +161,7 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
                 <p>(Once you choose a display name, it cannot be changed for the rest of the session.)</p>
               </div>
               <div className="modal-footer">
-                <button type="button" className="btn btn-default" data-dismiss="modal">Post anonymously</button>
+                <button type="button" className="btn btn-default" data-dismiss="modal" onClick={this.revertAnon}>Post anonymously</button>
               </div>
             </div>
 
