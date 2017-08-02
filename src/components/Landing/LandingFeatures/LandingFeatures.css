@@ -104,12 +104,6 @@ div.joinroom-button:hover::after, div.joinroom-button:hover::before {
 * How to Use
 */
 
-
-@import 'https://csshake.surge.sh/csshake-hard.min.css';
-@import "https://fonts.googleapis.com/css?family=Rock+Salt";
-
-
-
 h1#how-title {
   text-align: center;
   /*font: 300% 'Work-Sans', sans-serif, monospace;*/
@@ -122,6 +116,93 @@ h1#how-title {
   justify-content: center;
 }
 
+/*
+* about
+*/
+
+
+.how-card {
+  left: 20vw;
+  width: 350px;
+  padding: 5px;
+  background: #f3f5f2 ;
+  margin: 10vw auto 5vw;
+  display: flex;
+  justify-content: center;
+  transition: .3s ease;
+  /*box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);*/
+}
+.how-card:hover {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.8);
+  transform: translateY(-10px) scale(1.02);
+}
+.how-card:hover .how-title {
+  background-position: -100% 0;
+}
+
+.how-title {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, #09f3d6 50%);
+  background-size: 200%;
+  background-position: 0 0;
+  /*display: inline;*/
+  transition: .5s ease-in-out;
+  font-family: "Raleway", sans-serif;
+  display: flex;
+  justify-content: center;
+  color: #494949;
+  /*text-transform: uppercase;*/
+}
+
+/* for lg  */
+@media (min-width: 1200px) {
+  .how-title {
+    font-size: 2em;
+  }
+  .how-card {
+    width: 350px;
+  }
+}
+
+/* for md  */
+@media (min-width: 993px) and (max-width: 1200px) {
+  .how-title {
+    font-size: 2em;
+  }
+  .how-card {
+    width: 300px;
+  }
+}
+
+/* for sm  */
+@media (min-width: 768px) and (max-width: 992px) {
+  .how-title {
+    font-size: 2em;
+  }
+  .how-card {
+    width: 300px;
+  }
+}
+
+/* for xs  */
+@media (max-width: 768px) {
+.how-title {
+  font-size: 2em;
+}
+.how-card {
+  width: 300px;
+}
+}
+
+
+/*
+*  featurettes
+*/
+
+.featurettes {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 40px;
+}
 
 div.featureFrame01.col-md-4.col-xs-4{
   padding-left: 0px;

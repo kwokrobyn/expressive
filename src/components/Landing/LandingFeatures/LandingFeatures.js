@@ -33,11 +33,11 @@ class LandingFeatures extends Component {
 
   render() {
     return (
-      <Grid>
+      <Grid fluid>
 
       {/* Join Room Url */}
        <Row className="url-row">
-          <Col md={8} sm={8} smOffset={2} xs={10}  className="landingfeatures-join-rm">
+          <div className="landingfeatures-join-rm">
            <FormGroup>
              <ControlLabel className="joinRmLabel">Join A Room</ControlLabel>
              <FormControl
@@ -53,19 +53,23 @@ class LandingFeatures extends Component {
                 <div className="joinroom-button">Join Room</div>
               </Link>
            </FormGroup>
-           </Col>
+           </div>
         </Row>
 
         {/* How to Use Title */}
-        <Row>
-          <Col md={9} mdOffset={2} sm={10} smOffset={1} xs={9} xsOffset={1}>
-            <h1 className="shake shake-hard shake-constant--hover" id="how-title">How to use</h1>
-          </Col>
-        </Row>
+
+
+          <div className="how-card">
+            <h1 className="how-title">
+            How to use
+            </h1>
+          </div>
+
+
 
         {/* Featurettes */}
         <Row>
-          <Col md={10} mdOffset={2} sm={10} smOffset={2} xs={10} xsOffset={1} className="featurettes">
+          <div className="featurettes">
           {/* make xs stack on top of each other when scaling responsively */}
             <Col md={4} xs={12} className="featureFrame01">
               <div className="features01">About</div>
@@ -76,7 +80,7 @@ class LandingFeatures extends Component {
             <Col md={4} xs={12} className="featureFrame03">
               <div className="features03">Hello</div>
             </Col>
-          </Col>
+          </div>
         </Row>
 
       </Grid>

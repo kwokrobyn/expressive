@@ -29,23 +29,24 @@ class LandingAbout extends Component {
 
   render() {
     return (
-      <Grid className="landing-about">
+      <Grid fluid className="landing-about">
         {/* About Title */}
-        <Row>
-          <Col md={9} mdOffset={2} sm={8} smOffset={3}>
-            <h1 className="shake shake-hard shake-constant--hover" id="about-title">About</h1>
-          </Col>
-        </Row>
+
+            <div className="about-card">
+              <h1 className="about-title">
+              About
+              </h1>
+            </div>
 
         {/* About section */}
         <Row>
-          <Col md={10} mdOffset={2} sm={10} smOffset={2} xs={10} xsOffset={1}>
+          <div className="about-section-box">
 
             <Col md={6} xs={6} className="aboutSect">
               <div className="aboutImg">About</div>
             </Col>
 
-            <Col md={6} xs={6} className="featureFrame02">
+            <Col md={6} xs={6} className="aboutText-box">
               <div className="aboutText">
                 <p>
                   Our belief is that there is a fundamental problem with conventional question-and-answers (Q & A) sessions in forums.
@@ -70,7 +71,7 @@ class LandingAbout extends Component {
               </div>
             </Col>
 
-          </Col>
+          </div>
 
         </Row>
 
