@@ -23,6 +23,7 @@ import Dashboard from '../Dashboard/Dashboard';
 import Room from '../Room/Room';
 import InitRoom from '../InitRoom/InitRoom';
 import Profile from '../Profile/Profile';
+import Navbar from '../Navbar/Navbar';
 
 // Import Actions
 import { signInSuccess } from '../../actions/userActions';
@@ -82,11 +83,22 @@ class App extends Component {
             ( <Redirect to="/"/> )
           )} />
           <Route path="/room/:id" component={InitRoom} />
+          <Route component={NoMatch}/>
         </Switch>
       </Router>
     );
   }
 }
+
+// No Match Component for deadlinks
+const NoMatch = ({ location }) => (
+  <div className="errorpage">
+  <Navbar />
+    <h2 className="error-text">404: Your Princess Is In Another Castle.</h2>
+    <h3 className="nomatch-text">No match for <code>{location.pathname}</code></h3>
+    <div className="errorpage-img"></div>
+  </div>
+)
 
 const mapStateToProps = (state) => {
     return {
