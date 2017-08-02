@@ -75,7 +75,8 @@ export class Poll extends Component { // eslint-disable-line react/prefer-statel
                 </div>
               ) : (
                 <div>
-                  <div>Poll Question: {this.props.poll.question}</div>
+                  <h2>Poll</h2>
+                  <div>{this.props.poll.question}</div>
                   <label className="radio-inline"><input type="radio" className="option1-radio" name="optradio" onClick={this.submitPoll}/>{this.props.poll.option1.text}</label>
                   <label className="radio-inline"><input type="radio" className="option2-radio" name="optradio" onClick={this.submitPoll}/>{this.props.poll.option2.text}</label>
                 </div>
