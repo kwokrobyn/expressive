@@ -66,15 +66,13 @@ class Signup extends Component {
 
   render() {
     return (
-      <div>
+      <div className="row">
 
-      <div className="div-to-login">
         <Link to="/login" className="col-sm-2" id="loginsignup-first-Link">
           <button className="btn btn-default loginsignup-first-btn">
             Log in
           </button>
         </Link>
-      </div>
 
 
         <div>
@@ -83,8 +81,8 @@ class Signup extends Component {
             <a href="/dashboard" className="signup-img">
               <img src={squareLogo}/>
             </a>
-              <div><h1>Sign up for your free expressive account</h1></div>
-              <div><p>Use expressive and all of its features for free, forever!</p></div>
+              <div><h1>Sign up for your free <b>expressive</b> account</h1></div>
+              <div><p>Use <b>expressive</b> and all of its features for free, forever!</p></div>
             </div>
           </Row>
 
@@ -141,7 +139,7 @@ class Signup extends Component {
 
           {/* Social Sign In */}
           <Row className="socialSignUp">
-            <div className="social-text">Or, sign up with your facebook or google account</div>
+            <div className="social-text">or log in using your Facebook or Google account information:</div>
             <div className="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 sicon">
             {/* Facebook */}
               <Col md={6} sm={6} xs={4} className="text-center">
