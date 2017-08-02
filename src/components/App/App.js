@@ -24,6 +24,7 @@ import Room from '../Room/Room';
 import InitRoom from '../InitRoom/InitRoom';
 import Profile from '../Profile/Profile';
 import Navbar from '../Navbar/Navbar';
+import Princess from '../Princess/Princess';
 
 // Import Actions
 import { signInSuccess } from '../../actions/userActions';
@@ -79,26 +80,13 @@ class App extends Component {
           <Route path="/profile" render={() => (
             isSignedIn ? ( <Profile/> ) : ( <Redirect to="/"/> )
           )} />
-          <Route exact path="/room" render= {() => (
-            ( <Redirect to="/"/> )
-          )} />
           <Route path="/room/:id" component={InitRoom} />
-          <Route component={NoMatch}/>
+          <Route component={Princess}/>
         </Switch>
       </Router>
     );
   }
 }
-
-// No Match Component for deadlinks
-const NoMatch = ({ location }) => (
-  <div className="errorpage">
-  <Navbar />
-    <h2 className="error-text"><b>404</b>: Your Princess Is In Another Castle.</h2>
-    <h3 className="nomatch-text">No match for <code>{location.pathname}</code></h3>
-    <div className="errorpage-img"></div>
-  </div>
-)
 
 const mapStateToProps = (state) => {
     return {
