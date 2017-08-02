@@ -112,8 +112,8 @@ div.joinroom-button:hover::after, div.joinroom-button:hover::before {
 
 h1#how-title {
   text-align: center;
-  /*font: 300% 'Raleway', sans-serif, monospace;*/
-  font: 250% 'Raleway', sans-serif;
+  /*font: 300% 'Work-Sans', sans-serif, monospace;*/
+  font: 250% 'Work-Sans', sans-serif;
   margin-top: 7vw;
   margin-bottom: 6vw;
   margin-left: 6vw;
@@ -136,7 +136,7 @@ div.featureFrame03.col-md-4.col-xs-4{
 div.features01 {
   background-color: rgba(243,150,72,1);
   text-align: center;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Work-Sans', sans-serif;
   color: white;
   height: 15vw;
   margin-top: 30px;
@@ -160,7 +160,7 @@ div.features01:hover {
 div.features02 {
   background-color: gray;
   text-align: center;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Work-Sans', sans-serif;
   color: rgba(243,245,242,1);
   height: 15vw;
   margin-top: 30px;
@@ -183,7 +183,7 @@ div.features02:hover {
 div.features03 {
   background-color: rgba(243,150,72,1);
   text-align: center;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Work-Sans', sans-serif;
   color: rgba(243,245,242,1);
   height: 15vw;
   margin-top: 30px;

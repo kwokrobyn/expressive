@@ -3,7 +3,7 @@ h1.logInTitle {
   margin-bottom: 30px;
   display: flex;
   justify-content: center;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Work-Sans', sans-serif;
   color: #494949;
 }
 
@@ -41,12 +41,12 @@ a.submitLogIn {
   /*position: relative;*/
   font-size: 1.5em;
   letter-spacing: 0.07em;
-  font-family: "Raleway", sans-serif;
+  font-family: "Work-Sans", sans-serif;
   text-decoration: none;
 }
 
 a.submitLogIn .text {
-  font-family: "Raleway", sans-serif;
+  font-family: "Work-Sans", sans-serif;
   transform: translate3d(0, 0.7em, 0);
   display: block;
   transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1) 0.4s;
@@ -254,7 +254,7 @@ a.submitLogIn:active .line.-bottom {
 
 label {
   display: block;
-  font-family: "Raleway", sans-serif;
+  font-family: "Work-Sans", sans-serif;
   letter-spacing: 4px;
   padding-top: 30px;
   text-align: center;
@@ -263,7 +263,7 @@ label {
 label .label-text {
   color: #9B9B9B;
   cursor: text;
-  font-family: "Raleway", sans-serif;
+  font-family: "Work-Sans", sans-serif;
   font-size: 12px;
   padding-top: 15px;
   line-height: 20px;
@@ -281,7 +281,7 @@ label input {
   border-bottom: 2px solid #686868;
   color: #686868;
   font-size: 18px;
-  font-family: "Raleway", sans-serif;
+  font-family: "Work-Sans", sans-serif;
   font-weight: 500;
   letter-spacing: 1px;
   outline: 0;

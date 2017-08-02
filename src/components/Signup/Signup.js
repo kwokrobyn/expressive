@@ -3,6 +3,11 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { localSignUp, socialSignIn } from '../../actions/userActions';
 import {Grid, Col, form, FormGroup, FormControl, ControlLabel, HelpBlock, Row, Button} from 'react-bootstrap';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
 
 //Importing static assets (i.e. stylesheets, images)
 import './Signup.css';
@@ -12,6 +17,8 @@ import Navbar from '../Navbar/Navbar';
 
 // Import Firebase
 import firebase from '../../firebase';
+
+import squareLogo from '../Navbar/logo_v1.png';
 
 class Signup extends Component {
   constructor(props) {
@@ -55,31 +62,44 @@ class Signup extends Component {
   render() {
     return (
       <div>
-        <Navbar pageTitle="Sign Up"/>
+
+      <div className="div-to-login">
+        <Link to="/login" className="col-sm-2" id="navbar-last-Link">
+          <button className="btn btn-default navbar-last-btn link-to-login">
+            Log in
+          </button>
+        </Link>
+      </div>
 
 
-        <form>
+        <div>
           <Row>
-            <h1 className="signUpTitle">Sign Up</h1>
+            <div className="signUpTitle">
+            <a href="/dashboard" className="signup-img">
+              <img src={squareLogo}/>
+            </a>
+              <div><h1>Sign up for your free expressive account</h1></div>
+              <div><p>Use expressive and all of its features for free, forever!</p></div>
+            </div>
           </Row>
 
         <Row>
           <form>
            {/* Name */}
-            <label htmlFor="">
+            <label className="signup-label firstsignup-label" htmlFor="">
             {/*<div className="label-text">Name</div> */}
-              <input type="email" maxLength="16" placeholder="Name" id="name-signup"/>
+              <input type="email" maxLength="16" placeholder="Full name" id="name-signup"/>
             </label>
            {/* Email */}
-            <label htmlFor="">
+            <label className="signup-label" htmlFor="">
             {/*  <div className="label-text">Email</div> */}
-              <input type="email" maxLength="16" placeholder="email" id="email-signup"/>
+              <input type="email" maxLength="16" placeholder="Your email" id="email-signup"/>
             </label>
 
             {/* Password */}
-            <label htmlFor="">
+            <label className="signup-label" htmlFor="">
               {/* <div className="label-text">Password</div> */}
-              <input type="password" maxLength="16" placeholder="Password" id="pwd-signup"/>
+              <input type="password" maxLength="16" placeholder="Set a password" id="pwd-signup"/>
             </label>
 
 
@@ -92,7 +112,7 @@ class Signup extends Component {
           <Row>
             <Col className="submitSignUp">
             <a className="submitButton" onClick={this.localSignUp} type="submit">
-              <span className="text">Sign Up?</span>
+              <span className="text">Create Account</span>
               <span className="line -right"></span>
               <span className="line -top"></span>
               <span className="line -left"></span>
@@ -103,7 +123,8 @@ class Signup extends Component {
 
           {/* Social Sign In */}
           <Row className="socialSignUp">
-            <div className="sicon">
+            <div className="social-text">Or, sign up with your facebook or google account</div>
+            <div className="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 sicon">
             {/* Facebook */}
               <Col md={6} sm={6} xs={4} className="text-center">
     				      <div className="icon-circle" >
@@ -121,7 +142,7 @@ class Signup extends Component {
              </div>
            </Row>
 
-        </form>
+        </div>
       </div>
 
 

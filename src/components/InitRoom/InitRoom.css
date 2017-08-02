@@ -11,7 +11,7 @@
   margin-top: 100px;
   margin-bottom: 100px;
   display: block;
-  font-family: "Raleway", sans-serif;
+  font-family: "Work-Sans", sans-serif;
   color: white;
 }
 
@@ -327,7 +327,7 @@
 */
 
 h2.error-text {
-  font-family: "Raleway", sans-serif;
+  font-family: "Work-Sans", sans-serif;
   text-align: center;
   /*margin: 8vw 0 5vw 0;*/
 }

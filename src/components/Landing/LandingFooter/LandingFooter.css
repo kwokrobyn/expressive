@@ -19,7 +19,7 @@
 h2#landing-mission-title {
   text-align: center;
   color: white;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Work-Sans', sans-serif;
   font-size: 1.5em;
   /*left: 24vw;*/
   display: flex;
@@ -31,7 +31,7 @@ h2#landing-mission-title {
 p#landing-mission-paragraph {
   text-align: center;
   font-size: 1em;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Work-Sans', sans-serif;
   color: white;
   /*margin-top: 30vw;*/
   /*margin-bottom: 20px;*/

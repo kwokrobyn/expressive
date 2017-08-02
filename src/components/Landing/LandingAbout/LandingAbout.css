@@ -6,7 +6,7 @@
 
 h1#about-title {
   text-align: center;
-  font: 250% 'Raleway', sans-serif, monospace;
+  font: 250% 'Work-Sans', sans-serif, monospace;
   margin-top: 10vw;
   /*margin-left: 10vw;*/
   color: #494949;
@@ -20,7 +20,7 @@ h1#about-title {
 div.aboutImg {
   background-color: rgba(243,150,72,1);
   text-align: center;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Work-Sans', sans-serif;
   color: white;
   height: 25vw;
   margin-top: 30px;
@@ -29,7 +29,7 @@ div.aboutImg {
 div.aboutText p {
   text-align: left;
   text-align: justify;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Work-Sans', sans-serif;
   color: #878383;
   margin-top: 30px;
   font-size: 1em;
@@ -53,7 +53,7 @@ h2.signup-title {
   justify-content: center;
   text-align: center;
   color: #494949;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Work-Sans', sans-serif;
   font-size: 1.2em;
 }
 
