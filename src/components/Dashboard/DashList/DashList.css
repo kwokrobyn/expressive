@@ -57,24 +57,30 @@ div.dashList-row {
 
 .dashboard-roombox {
   border-radius: 10px;
-  color: #878383;
+  color: rgba(243,245,242,1);
   margin: 1vw;
-  padding: 0;
-  border: 3px solid #089a88;
+  padding: 0 0 0 0;
+  background-color: white;
+  background-image: linear-gradient(135deg, rgba(8,154,136,1), rgba(47,120,139,1));
   box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.4);
   transition: all ease-in-out 1000ms;
   -webkit-transition: top 1000ms ease-in-out;
   -moz-transition: top 1000ms ease-in-out;
   -o-transition: top 1000ms ease-in-out;
+  -webkit-animation: popInCards 0.5s ease-in-out 0.25s;
+  animation: popInCards 0.5s ease-in-out 0.25s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
 }
 
 .dashboard-roombox:hover {
   cursor: pointer;
   top: -10px;
-  box-shadow: 0px 30px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 17px 10px rgba(0, 0, 0, 0.4);
   transform: translate(0, -8);
-  border: 3px solid #FFF;
-  background-color: #fd7822;
+  -webkit-transform: translate(0, -8);
+  border: 0px;
+  background-image: linear-gradient(135deg, rgba(243,150,72,1), rgba(242,101,34,1));
   color: white;
 }
 
@@ -147,38 +153,70 @@ div.dashList-row {
 /*
 *  Delete Room Button
 */
-    .delete-room{
-      border-radius: 50%;
-      margin-right: 5px;
-      margin-top:5px;
+
+    .delete-room-outer {
+      position: relative;
+      width: 50px;
+      cursor: pointer;
+      margin-top: 15px;
+      margin-right: 10px;
     }
 
-		.delete-room:after{
-			content: "✖";
-			/*left: 24px;
-			top: 15px;*/
-		}
+    .delete-room-inner {
+      position: relative;
+      width: inherit;
+      text-align: center;
+    }
 
-		.delete-room:hover{
-			background-image: -webkit-linear-gradient(top, #fff, #f4f1ee);
-			background-image: linear-gradient(top, #fff, #f4f1ee);
-			color:#0088cc;
-		}
+    .delete-room-inner > label {
+      font-size: .7em;
+      line-height: 2em;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: white;
+      transition: all .3s ease-in;
+      opacity: 0;
+      cursor: pointer;
+    }
 
-		.delete-room:hover:after{
-			color:#eb2f2f;
-			text-shadow:0px 0px 6px #eb2f2f;
-		}
+    .delete-room-inner:before, .delete-room-inner:after {
+      position: absolute;
+      content: '';
+      height: 3px;
+      width: inherit;
+      background: #FFC107;
+      left: 0;
+      transition: all .3s ease-in;
+    }
 
+    .delete-room-inner:before {
+      top: 50%;
+      transform: rotate(45deg);
+    }
 
+    .delete-room-inner:after {
+      bottom: 50%;
+      transform: rotate(-45deg);
+    }
 
-		.delete-room:active{
-			background-image: -webkit-linear-gradient(top, #efedec, #f7f4f4);
-			background-image: linear-gradient(top, #efedec, #f7f4f4);
-			box-shadow: 0 3px 5px 0 rgba(0,0,0,.4), inset 0px -3px 1px 1px rgba(204,198,197,.5);
-		}
+    .delete-room-outer:hover .delete-room-inner-label,
+    .delete-room:hover .delete-room-inner-label {
+      opacity: 1;
+    }
 
-		.delete-room:active:after{
-			color:#dbd2d2;
-			text-shadow: 0px -1px 1px #bdb5b4, 0px 1px 1px white;
-		}
+    .delete-room-outer:hover .delete-room-inner:before,
+    .delete-room:hover .delete-room-inner:before,
+    .delete-room:hover .delete-room-inner:after,
+    .delete-room-outer:hover .delete-room-inner:after {
+      transform: rotate(0);
+    }
+
+    .delete-room-outer:hover .delete-room-inner:before,
+    .delete-room:hover .delete-room-inner:before {
+      top: 0;
+    }
+
+    .delete-room-outer:hover .delete-room-inner:after,
+    .delete-room:hover .delete-room-inner:after {
+      bottom: 0;
+    }

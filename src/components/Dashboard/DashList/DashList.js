@@ -1,7 +1,7 @@
 //Importing required packages
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {Grid, Col, form, FormGroup, FormControl, ControlLabel, HelpBlock, Row, Button} from 'react-bootstrap';
+import {Grid, Col, form, FormGroup, FormControl, ControlLabel, HelpBlock, Row} from 'react-bootstrap';
 
 //Importing static assets (i.e. stylesheets, images)
 
@@ -26,6 +26,7 @@ export class DashList extends Component { // eslint-disable-line react/prefer-st
   }
 
   deleteRoom = (e) => {
+    console.log('delted');
     e.preventDefault();
     const deleteTarget = e.target;
     const roomInfo = {
@@ -45,10 +46,23 @@ export class DashList extends Component { // eslint-disable-line react/prefer-st
       })
     })
 
+    {/*const deleteRoomButton = (
+        <div className="delete-room-outer pull-right">
+          <div className="delete-room-inner" onClick={this.deleteRoom} >
+            <label className="delete-room-inner-label">Delete</label>
+          </div>
+        </div>
+    ) */}
+
     const rooms = roomArray.map((e) => {
       return (
         <Col md={3} sm={5} xs={12} className="dashboard-roombox" key={e.key}>
-          <Button onClick={this.deleteRoom} data-id={e.key} className="delete-room pull-right"></Button>
+          <div className="delete-room-outer pull-right">
+            <div className="delete-room-inner">
+              <label onClick={this.deleteRoom} data-id={e.key} className="delete-room-inner-label">Delete</label>
+            </div>
+          </div>
+
           <div className="dashboard-roombox-name"> {e.name} </div>
           <div className="dashboard-roombox-user"> <b>Room ID:</b> {e.key} </div>
           <div className="overflow-hide">
