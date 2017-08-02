@@ -88,6 +88,7 @@ class Profile extends Component {
           </div> */}
 
           <div className="update-profile">
+
           <Col md={12} className="update-profile_form">
           <h2>Profile settings</h2>
           </Col>
@@ -132,32 +133,21 @@ class Profile extends Component {
           </Col>
           </div>
 
-          <div className="update-buttons">
+          <Col md={4} className="update-buttons">
 
-            <a href="#" type="submit" className="a-btn-removeuser" onClick={this.deleteUser}>
-  						<span className="a-btn-text-removeuser">Remove User</span>
-  						<span className="a-btn-slide-text-removeuser">Confirm?</span>
-  						<span className="a-btn-icon-right-removeuser"><span></span></span>
-  					</a>
 
-            <a href="#" type="submit" className="a-btn-updateuser" onClick={this.updateUser}>
-  						<span className="a-btn-text-updateuser">Update User</span>
-  						<span className="a-btn-slide-text-updateuser">Confirm?</span>
-  						<span className="a-btn-icon-right-updateuser"><span></span></span>
-  					</a>
-
-            {/*<Button type="submit"
-                    className="btn btn-default"
+            <button type="submit"
+                    className="update-user pull-left"
                     onClick={this.updateUser}>
-              Update user
-            </Button>*/}
+              Update User
+            </button>
 
-            {/*<Button type="submit"
-                    className="btn btn-danger"
+            <button type="submit"
+                    className="remove-user pull-right"
                     onClick={this.deleteUser}>
-              Delete user
-            </Button> */}
-          </div>
+              Delete User
+            </button>
+          </Col>
         {/*</form>*/}
       </Grid>
     );

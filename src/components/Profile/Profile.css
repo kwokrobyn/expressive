@@ -1,7 +1,8 @@
 .update-buttons{
-  /*display: flex;
+  display: flex;
   justify-content: center;*/
   margin-top: 10vw;
+ margin-left: 33vw;
 }
 
 .update-profile {
@@ -175,265 +176,67 @@ label.input__label.input__label--update {
 
 
 /*
-*  Remove button
-*/
-
-.a-btn-removeuser{
-    background:#df4a4a;
-    background:-webkit-gradient(linear,left top,left bottom,color-stop(#80a9da,0),color-stop(#6f97c5,1));
-    background:-webkit-linear-gradient(top, #df4a4a 0%, #c13939 100%);
-    background:-moz-linear-gradient(top, #df4a4a 0%, #c13939 100%);
-    background:-o-linear-gradient(top, #df4a4a 0%, #c13939 100%);
-    background:linear-gradient(top, #df4a4a 0%, #c13939 100%);
-    filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#df4a4a', endColorstr='#c13939',GradientType=0 );
-    padding-left:20px;
-    padding-right:80px;
-    height:38px;
-    display:inline-block;
-    position:relative;
-    border:1px solid #c13939;
-    -webkit-box-shadow:0px 1px 1px rgba(255,255,255,0.8) inset, 1px 1px 3px rgba(0,0,0,0.2), 0px 0px 0px 4px rgba(188,188,188,0.5);
-    -moz-box-shadow:0px 1px 1px rgba(255,255,255,0.8) inset, 1px 1px 3px rgba(0,0,0,0.2), 0px 0px 0px 4px rgba(188,188,188,0.5);
-    box-shadow:0px 1px 1px rgba(255,255,255,0.8) inset, 1px 1px 3px rgba(0,0,0,0.2), 0px 0px 0px 4px rgba(188,188,188,0.5);
-    -webkit-border-radius:20px;
-    -moz-border-radius:20px;
-    border-radius:20px;
-    float:left;
-    clear:both;
-    margin:10px 20px;
-    text-decoration: none;
-    overflow:hidden;
-    -webkit-transition:all 0.3s linear;
-    -moz-transition:all 0.3s linear;
-    -o-transition:all 0.3s linear;
-    transition:all 0.3s linear;
-    left: 2vw;
-}
-.a-btn-text-removeuser{
-    padding-top:5px;
-    display:block;
-    font-size:18px;
-    white-space:nowrap;
-    text-shadow:0px 1px 1px rgba(255,255,255,0.3);
-    text-decoration: none;
-    color:#ffffff;
-    -webkit-transition:all 0.2s linear;
-    -moz-transition:all 0.2s linear;
-    -o-transition:all 0.2s linear;
-    transition:all 0.2s linear;
-}
-.a-btn-slide-text-removeuser{
-    position:absolute;
-    height:100%;
-    top:0px;
-    right:52px;
-    width:0px;
-    background:#63707e;
-    text-shadow:0px -1px 1px #363f49;
-    color:#fff;
-    font-size:18px;
-    white-space:nowrap;
-    text-transform:uppercase;
-    text-align:left;
-    text-indent:10px;
-    text-decoration: none;
-    overflow:hidden;
-    line-height:38px;
-    -webkit-box-shadow:-1px 0px 1px rgba(255,255,255,0.4), 1px 1px 2px rgba(0,0,0,0.2) inset;
-    -moz-box-shadow:-1px 0px 1px rgba(255,255,255,0.4), 1px 1px 2px rgba(0,0,0,0.2) inset;
-    box-shadow:-1px 0px 1px rgba(255,255,255,0.4), 1px 1px 2px rgba(0,0,0,0.2) inset;
-    -webkit-transition:width 0.3s linear;
-    -moz-transition:width 0.3s linear;
-    -o-transition:width 0.3s linear;
-    transition:width 0.3s linear;
-}
-.a-btn-icon-right-removeuser{
-    position:absolute;
-    text-decoration: none;
-    right:0px;
-    top:0px;
-    height:100%;
-    width:52px;
-    border-left:1px solid #c13939;
-    -webkit-box-shadow:1px 0px 1px rgba(255,255,255,0.4) inset;
-    -moz-box-shadow:1px 0px 1px rgba(255,255,255,0.4) inset;
-    box-shadow:1px 0px 1px rgba(255,255,255,0.4) inset;
-}
-.a-btn-icon-right-removeuser span{
-   text-decoration: none;
-    width:38px;
-    height:38px;
-    opacity:0.7;
-    position:absolute;
-    left:50%;
-    top:50%;
-    margin:-20px 0px 0px -20px;
-    background:transparent url("/images/arrow_right.png") no-repeat 50% 55%;
-    -webkit-transition:all 0.3s linear;
-    -moz-transition:all 0.3s linear;
-    -o-transition:all 0.3s linear;
-    transition:all 0.3s linear;
-}
-.a-btn-removeuser:hover{
-    text-decoration: none;
-    padding-right:180px;
-    -webkit-box-shadow:0px 1px 1px rgba(255,255,255,0.8) inset, 1px 1px 3px rgba(0,0,0,0.2);
-    -moz-box-shadow:0px 1px 1px rgba(255,255,255,0.8) inset, 1px 1px 3px rgba(0,0,0,0.2);
-    box-shadow:0px 1px 1px rgba(255,255,255,0.8) inset, 1px 1px 3px rgba(0,0,0,0.2);
-}
-.a-btn-removeuser:hover .a-btn-text-removeuser{
-    text-shadow:0px 1px 1px #5d81ab;
-    text-decoration: none;
-    color:#fff;
-}
-.a-btn-removeuser:hover .a-btn-slide-text-removeuser{
-    width:100px;
-    text-decoration: none;
-}
-.a-btn-removeuser:hover .a-btn-icon-right-removeuser span{
-    opacity:1;
-    text-decoration: none;
-}
-.a-btn-removeuser:active{
-    text-decoration: none;
-    position:relative;
-    top:1px;
-    background:#e23030;
-    -webkit-box-shadow:1px 1px 2px rgba(0,0,0,0.4) inset;
-    -moz-box-shadow:1px 1px 2px rgba(0,0,0,0.4) inset;
-    box-shadow:1px 1px 2px rgba(0,0,0,0.4) inset;
-    border-color:#df4a4a;
-}
-
-
-/*
 *  Update button
 */
 
-.a-btn-updateuser{
-    background:#00ff72;
-    background:-webkit-gradient(linear,left top,left bottom,color-stop(#00ff72,0),color-stop(#39c173,1));
-    background:-webkit-linear-gradient(top, #00ff72 0%, #39c173 100%);
-    background:-moz-linear-gradient(top, #00ff72 0%, #39c173 100%);
-    background:-o-linear-gradient(top, #00ff72 0%, #39c173 100%);
-    background:linear-gradient(top, #00ff72 0%, #39c173 100%);
-    filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ff72', endColorstr='#c13939',GradientType=0 );
-    padding-left:20px;
-    padding-right:80px;
-    height:38px;
-    display:inline-block;
-    position:relative;
-    border:1px solid #39c173;
-    -webkit-box-shadow:0px 1px 1px rgba(255,255,255,0.8) inset, 1px 1px 3px rgba(0,0,0,0.2), 0px 0px 0px 4px rgba(188,188,188,0.5);
-    -moz-box-shadow:0px 1px 1px rgba(255,255,255,0.8) inset, 1px 1px 3px rgba(0,0,0,0.2), 0px 0px 0px 4px rgba(188,188,188,0.5);
-    box-shadow:0px 1px 1px rgba(255,255,255,0.8) inset, 1px 1px 3px rgba(0,0,0,0.2), 0px 0px 0px 4px rgba(188,188,188,0.5);
-    -webkit-border-radius:20px;
-    -moz-border-radius:20px;
-    border-radius:20px;
-    float:left;
-    clear:both;
-    margin:10px 20px;
-    text-decoration: none;
-    overflow:hidden;
-    -webkit-transition:all 0.3s linear;
-    -moz-transition:all 0.3s linear;
-    -o-transition:all 0.3s linear;
-    transition:all 0.3s linear;
-    left: 55vw;
-    top: -4vw;
+.update-user{
+  /*position: relative;*/
+  vertical-align: center;
+  margin: 30px;
+  /*width: 100%;*/
+  height: 60px;
+  padding: 20px 20px;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  background: #62b1d0;
+  border: 0;
+  border-bottom: 3px solid #9FE8EF;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -3px #9FE8EF;
+  box-shadow: inset 0 -3px #9FE8EF;
 }
-.a-btn-text-updateuser{
-    padding-top:5px;
-    display:block;
-    font-size:18px;
-    white-space:nowrap;
-    text-shadow:0px 1px 1px rgba(255,255,255,0.3);
-    text-decoration: none;
-    color:#ffffff;
-    -webkit-transition:all 0.2s linear;
-    -moz-transition:all 0.2s linear;
-    -o-transition:all 0.2s linear;
-    transition:all 0.2s linear;
+.update-user:active {
+  top: 2px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
-.a-btn-slide-text-updateuser{
-    position:absolute;
-    height:100%;
-    top:0px;
-    right:52px;
-    width:0px;
-    background:#63707e;
-    text-shadow:0px -1px 1px #363f49;
-    color:#fff;
-    font-size:18px;
-    white-space:nowrap;
-    text-transform:uppercase;
-    text-align:left;
-    text-indent:10px;
-    text-decoration: none;
-    overflow:hidden;
-    line-height:38px;
-    -webkit-box-shadow:-1px 0px 1px rgba(255,255,255,0.4), 1px 1px 2px rgba(0,0,0,0.2) inset;
-    -moz-box-shadow:-1px 0px 1px rgba(255,255,255,0.4), 1px 1px 2px rgba(0,0,0,0.2) inset;
-    box-shadow:-1px 0px 1px rgba(255,255,255,0.4), 1px 1px 2px rgba(0,0,0,0.2) inset;
-    -webkit-transition:width 0.3s linear;
-    -moz-transition:width 0.3s linear;
-    -o-transition:width 0.3s linear;
-    transition:width 0.3s linear;
+.update-user:hover {
+  background: #45E1E8;
 }
-.a-btn-icon-right-updateuser{
-    position:absolute;
-    text-decoration: none;
-    right:0px;
-    top:0px;
-    height:100%;
-    width:52px;
-    border-left:1px solid #39c173;
-    -webkit-box-shadow:1px 0px 1px rgba(255,255,255,0.4) inset;
-    -moz-box-shadow:1px 0px 1px rgba(255,255,255,0.4) inset;
-    box-shadow:1px 0px 1px rgba(255,255,255,0.4) inset;
+
+
+
+/*
+*  Remove button
+*/
+
+.remove-user{
+  /*position: relative;*/
+  vertical-align: center;
+  margin: 30px;
+  /*width: 100%;*/
+  height: 60px;
+  padding: 20px 20px;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  background: #d06262;
+  border: 0;
+  border-bottom: 3px solid #ef9f9f;
+  cursor: pointer;
+  -webkit-box-shadow: inset 0 -3px #ef9f9f;
+  box-shadow: inset 0 -3px #ef9f9f;
 }
-.a-btn-icon-right-updateuser span{
-   text-decoration: none;
-    width:38px;
-    height:38px;
-    opacity:0.7;
-    position:absolute;
-    left:50%;
-    top:50%;
-    margin:-20px 0px 0px -20px;
-    background:transparent url("/images/arrow_right.png") no-repeat 50% 55%;
-    -webkit-transition:all 0.3s linear;
-    -moz-transition:all 0.3s linear;
-    -o-transition:all 0.3s linear;
-    transition:all 0.3s linear;
+.remove-user:active {
+  top: 2px;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
-.a-btn-updateuser:hover{
-    text-decoration: none;
-    padding-right:180px;
-    -webkit-box-shadow:0px 1px 1px rgba(255,255,255,0.8) inset, 1px 1px 3px rgba(0,0,0,0.2);
-    -moz-box-shadow:0px 1px 1px rgba(255,255,255,0.8) inset, 1px 1px 3px rgba(0,0,0,0.2);
-    box-shadow:0px 1px 1px rgba(255,255,255,0.8) inset, 1px 1px 3px rgba(0,0,0,0.2);
-}
-.a-btn-updateuser:hover .a-btn-text-updateuser{
-    text-shadow:0px 1px 1px #5dab66;
-    text-decoration: none;
-    color:#fff;
-}
-.a-btn-updateuser:hover .a-btn-slide-text-updateuser{
-    width:100px;
-    text-decoration: none;
-}
-.a-btn-updateuser:hover .a-btn-icon-right-updateuser span{
-    opacity:1;
-    text-decoration: none;
-}
-.a-btn-updateuser:active{
-    text-decoration: none;
-    position:relative;
-    top:1px;
-    background:#e23030;
-    -webkit-box-shadow:1px 1px 2px rgba(0,0,0,0.4) inset;
-    -moz-box-shadow:1px 1px 2px rgba(0,0,0,0.4) inset;
-    box-shadow:1px 1px 2px rgba(0,0,0,0.4) inset;
-    border-color:#00ff72;
+.remove-user:hover {
+  background: #ff1d1d;
 }
