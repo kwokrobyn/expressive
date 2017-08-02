@@ -18,6 +18,7 @@ import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import Room from '../Room/Room';
 import MasterRoom from '../MasterRoom/MasterRoom';
+import Princess from '../Princess/Princess';
 
 import { isFetching } from '../../actions/fetchingActions';
 import { joinRoom, leaveRoom } from '../../actions/roomActions';
@@ -175,12 +176,7 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
             )
           }
         </div> ) : (
-          <div className="errorpage">
-          <Navbar />
-            <h2 className="error-text">Your Princess Is In Another Castle.</h2>
-            <div className="errorpage-img"></div>
-
-          </div>
+          <Princess />
         )
 
         }
