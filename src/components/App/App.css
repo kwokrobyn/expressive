@@ -2,3 +2,14 @@
   font-family: 'Work Sans', sans-serif;
   font-weight: 500;
 }
+
+div.errorpage-img {
+  background: url('/images/errorpage.png') center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  /*height: 30vw;*/
+}
+
+.nomatch-text {
+  margin-left: 30%;
+}
