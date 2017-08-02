@@ -29,6 +29,12 @@ export const getQuestions = (roomId) => {
   }
 }
 
+export const endGetQuestions = (roomId) => {
+  return (dispatch) => {
+    db.ref("rooms/" + roomId + '/questions').off('value');
+  }
+}
+
 export const addQuestion = (questionInfo) => {
   return (dispatch) => {
     const uid = uuid.v4();

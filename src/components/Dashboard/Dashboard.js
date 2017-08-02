@@ -10,7 +10,7 @@ import DashList from './DashList/DashList';
 
 //Importing React Components
 import { signOut } from '../../actions/userActions';
-import { getUserRooms } from '../../actions/roomActions';
+import { getUserRooms, endGetUserRooms } from '../../actions/roomActions';
 
 
 
@@ -38,6 +38,10 @@ export class Dashboard extends Component { // eslint-disable-line react/prefer-s
   signOut = (e) => {
     e.preventDefault();
     this.props.signOut();
+  }
+
+  componentWillUnmount() {
+    this.props.endGetUserRooms(this.props.user.uid);
   }
 
 
@@ -116,6 +120,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     getUserRooms: (id) => {
       dispatch(getUserRooms(id))
+    },
+    endGetUserRooms: (id) => {
+      dispatch(endGetUserRooms(id))
     }
   }
 }
