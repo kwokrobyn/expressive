@@ -9,3 +9,42 @@
 .poll-options {
   padding-left: 0;
 }
+
+.create-poll-title {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.create-poll-option-label {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+#create-poll-footer-submit{
+  color: #00b939;
+  -webkit-animation: pulse 1s;
+          animation: pulse 1s;
+  box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  background: none;
+  box-shadow: none;
+  border: 2px solid #00b939;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+}
+
+#create-poll-footer-submit:hover,
+#create-poll-footer-submit:focus {
+  border-color: solid 2px #00b939;
+  color: white;
+  background-color: #00b939;
+}
+
+#create-poll-footer-submit:hover:active {
+  border: solid 2px rgba(47,120,139,1);
+  color: white;
+  background-color: rgba(47,120,139,1);
+}
