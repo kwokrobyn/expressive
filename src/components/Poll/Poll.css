@@ -84,8 +84,8 @@
 .room-pollbox-radio-label {
   display: inline-block;
   padding-right: 20px;
-  font-size: 20px;
-  line-height: 42px;
+  font-size: 25px;
+  line-height: 58px;
   letter-spacing: 1.2px;
   cursor: pointer;
 }
@@ -157,7 +157,7 @@ and (min-width : 321px) {
 /* Smartphones (portrait) ----------- */
 @media only screen
 and (max-width : 320px) {
-/* Styles */
+  /* Styles */
 }
 
 /* iPads (portrait and landscape) ----------- */
@@ -172,7 +172,41 @@ and (max-device-width : 1024px) {
 and (min-device-width : 768px)
 and (max-device-width : 1024px)
 and (orientation : landscape) {
-/* Styles */
+  #room-pollbox {
+    -webkit-animation: popInCards 0.75s ease-in-out 0.5s;
+    animation: popInCards 0.75s ease-in-out 0.5s;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    padding: 0 0 0 0;
+    margin: 1vh 0 1vh 0;
+    background-color: rgba(243,245,242,1);
+    border-radius: 0.8em 0.8em 0.8em 0.8em;
+    box-shadow: 0px 3px 20px rgba(73,73,73,0.2);
+    height: 100%;
+    position: relative;
+  }
+
+  #room-pollbox-question-polltitle {
+    padding: 0vh 0vw 0vh 2vw;
+    font-weight: 700;
+    font-size: 30px;
+    background-color: rgba(47,120,139,1);
+    color: rgba(243,245,242,1);
+    letter-spacing: 5px;
+    border-radius: 0.3em 0.3em 0 0;
+  }
+
+  #room-pollbox-question-text {
+    padding: 0vh 0vw 0vw 2vw;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 30px;
+  }
+
+  #room-pollbox-options {
+    margin: 0vh 0vw 0vh 2vw;
+    padding: 0vh 0vw 0vh 0vw;
+  }
 }
 
 /* iPads (portrait) ----------- */
@@ -180,12 +214,81 @@ and (orientation : landscape) {
 and (min-device-width : 768px)
 and (max-device-width : 1024px)
 and (orientation : portrait) {
-/* Styles */
+  #room-pollbox {
+    -webkit-animation: popInCards 0.75s ease-in-out 0.5s;
+    animation: popInCards 0.75s ease-in-out 0.5s;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    padding: 0 0 0 0;
+    margin: 1vh 0 1vh 0;
+    background-color: rgba(243,245,242,1);
+    border-radius: 0.8em 0.8em 0.8em 0.8em;
+    box-shadow: 0px 3px 20px rgba(73,73,73,0.2);
+    height: 100%;
+    position: relative;
+  }
+
+  #room-pollbox-question-polltitle {
+    padding: 0vh 0vw 0vh 2vw;
+    font-weight: 700;
+    font-size: 30px;
+    background-color: rgba(47,120,139,1);
+    color: rgba(243,245,242,1);
+    letter-spacing: 5px;
+    border-radius: 0.3em 0.3em 0 0;
+  }
+
+  #room-pollbox-question-text {
+    padding: 0vh 0vw 0vw 2vw;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 30px;
+  }
+
+  #room-pollbox-options {
+    margin: 0vh 0vw 0vh 2vw;
+    padding: 0vh 0vw 0vh 0vw;
+  }
 }
 
 /* Desktops and laptops ----------- */
 @media only screen
 and (min-width : 1224px) {
+  #room-pollbox {
+    -webkit-animation: popInCards 0.75s ease-in-out 0.5s;
+    animation: popInCards 0.75s ease-in-out 0.5s;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    padding: 0 0 0 0;
+    margin: 1vh 0 1vh 0;
+    background-color: rgba(243,245,242,1);
+    border-radius: 0.8em 0.8em 0.8em 0.8em;
+    box-shadow: 0px 3px 20px rgba(73,73,73,0.2);
+    height: 100%;
+    position: relative;
+  }
+
+  #room-pollbox-question-polltitle {
+    padding: 0vh 0vw 0vh 1vw;
+    font-weight: 700;
+    font-size: 30px;
+    background-color: rgba(47,120,139,1);
+    color: rgba(243,245,242,1);
+    letter-spacing: 5px;
+    border-radius: 0.3em 0.3em 0 0;
+  }
+
+  #room-pollbox-question-text {
+    padding: 0vh 0vw 0vw 1vw;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 30px;
+  }
+
+  #room-pollbox-options {
+    margin: 0vh 0vw 0vh 1vw;
+    padding: 0vh 0vw 0vh 0vw;
+  }
 }
 
 /* Large screens ----------- */
@@ -207,7 +310,7 @@ and (min-width : 1824px) {
 
   #room-pollbox-question-polltitle {
     padding: 0vh 0vw 0vh 1vw;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 30px;
     background-color: rgba(47,120,139,1);
     color: rgba(243,245,242,1);
@@ -227,23 +330,94 @@ and (min-width : 1824px) {
     padding: 0vh 0vw 0vh 0vw;
   }
 
-  .room-pollbox-radio-label {
-  }
-
 }
 
-/* iPhone 4 ----------- */
+/* iPhone 4 & 5 ----------- */
 @media
 only screen and (-webkit-min-device-pixel-ratio : 1.5),
 only screen and (min-device-pixel-ratio : 1.5) {
-/* Styles */
+  #room-pollbox {
+    -webkit-animation: popInCards 0.75s ease-in-out 0.5s;
+    animation: popInCards 0.75s ease-in-out 0.5s;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    padding: 0 0 0 0;
+    margin: 1vh 0 1vh 0;
+    background-color: rgba(243,245,242,1);
+    border-radius: 0.8em 0.8em 0.8em 0.8em;
+    box-shadow: 0px 3px 20px rgba(73,73,73,0.2);
+    height: 100%;
+    position: relative;
+  }
+
+  #room-pollbox-question-polltitle {
+    padding: 0vh 0vw 0vh 2vw;
+    font-weight: 700;
+    font-size: 30px;
+    background-color: rgba(47,120,139,1);
+    color: rgba(243,245,242,1);
+    letter-spacing: 1px;
+    border-radius: 0.3em 0.3em 0 0;
+  }
+
+  #room-pollbox-question-text {
+    padding: 1vh 1vw 1vw 3vw;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 20px;
+  }
+
+  #room-pollbox-options {
+    margin: 0vh 0vw 0vh 4vw;
+    padding: 0vh 0vw 0vh 0vw;
+  }
+
+  .room-pollbox-radio-label {
+    font-size: 15px;
+  }
 }
 /* iPhone 6 landscape */
 @media only screen and (min-device-width: 375px)
   and (max-device-width: 667px)
   and (orientation: landscape)
   and (-webkit-min-device-pixel-ratio: 2)
-{ }
+{
+  #room-pollbox {
+    -webkit-animation: popInCards 0.75s ease-in-out 0.5s;
+    animation: popInCards 0.75s ease-in-out 0.5s;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    padding: 0 0 0 0;
+    margin: 1vh 0 1vh 0;
+    background-color: rgba(243,245,242,1);
+    border-radius: 0.8em 0.8em 0.8em 0.8em;
+    box-shadow: 0px 3px 20px rgba(73,73,73,0.2);
+    height: 100%;
+    position: relative;
+  }
+
+  #room-pollbox-question-polltitle {
+    padding: 0vh 0vw 0vh 2vw;
+    font-weight: 700;
+    font-size: 30px;
+    background-color: rgba(47,120,139,1);
+    color: rgba(243,245,242,1);
+    letter-spacing: 5px;
+    border-radius: 0.3em 0.3em 0 0;
+  }
+
+  #room-pollbox-question-text {
+    padding: 1vh 1vw 1vw 3vw;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 30px;
+  }
+
+  #room-pollbox-options {
+    margin: 0vh 0vw 0vh 4vw;
+    padding: 0vh 0vw 0vh 0vw;
+  }
+}
 
 /* iPhone 6 portrait */
 @media only screen
@@ -251,7 +425,43 @@ only screen and (min-device-pixel-ratio : 1.5) {
   and (max-device-width: 667px)
   and (orientation: portrait)
   and (-webkit-min-device-pixel-ratio: 2)
-{ }
+{
+  #room-pollbox {
+    -webkit-animation: popInCards 0.75s ease-in-out 0.5s;
+    animation: popInCards 0.75s ease-in-out 0.5s;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    padding: 0 0 0 0;
+    margin: 1vh 0 1vh 0;
+    background-color: rgba(243,245,242,1);
+    border-radius: 0.8em 0.8em 0.8em 0.8em;
+    box-shadow: 0px 3px 20px rgba(73,73,73,0.2);
+    height: 100%;
+    position: relative;
+  }
+
+  #room-pollbox-question-polltitle {
+    padding: 0vh 0vw 0vh 2vw;
+    font-weight: 700;
+    font-size: 30px;
+    background-color: rgba(47,120,139,1);
+    color: rgba(243,245,242,1);
+    letter-spacing: 5px;
+    border-radius: 0.3em 0.3em 0 0;
+  }
+
+  #room-pollbox-question-text {
+    padding: 1vh 1vw 1vw 3vw;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 30px;
+  }
+
+  #room-pollbox-options {
+    margin: 0vh 0vw 0vh 4vw;
+    padding: 0vh 0vw 0vh 0vw;
+  }
+}
 
 /* iPhone 6 Plus landscape */
 @media only screen
@@ -259,7 +469,43 @@ only screen and (min-device-pixel-ratio : 1.5) {
   and (max-device-width: 736px)
   and (orientation: landscape)
   and (-webkit-min-device-pixel-ratio: 3)
-{ }
+{
+  #room-pollbox {
+    -webkit-animation: popInCards 0.75s ease-in-out 0.5s;
+    animation: popInCards 0.75s ease-in-out 0.5s;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    padding: 0 0 0 0;
+    margin: 1vh 0 1vh 0;
+    background-color: rgba(243,245,242,1);
+    border-radius: 0.8em 0.8em 0.8em 0.8em;
+    box-shadow: 0px 3px 20px rgba(73,73,73,0.2);
+    height: 100%;
+    position: relative;
+  }
+
+  #room-pollbox-question-polltitle {
+    padding: 0vh 0vw 0vh 2vw;
+    font-weight: 700;
+    font-size: 30px;
+    background-color: rgba(47,120,139,1);
+    color: rgba(243,245,242,1);
+    letter-spacing: 5px;
+    border-radius: 0.3em 0.3em 0 0;
+  }
+
+  #room-pollbox-question-text {
+    padding: 1vh 1vw 1vw 3vw;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 30px;
+  }
+
+  #room-pollbox-options {
+    margin: 0vh 0vw 0vh 4vw;
+    padding: 0vh 0vw 0vh 0vw;
+  }
+}
 
 /* iPhone 6 Plus portrait */
 @media only screen
@@ -267,17 +513,47 @@ only screen and (min-device-pixel-ratio : 1.5) {
   and (max-device-width: 736px)
   and (orientation: portrait)
   and (-webkit-min-device-pixel-ratio: 3)
-{ }
+{
+  #room-pollbox {
+    -webkit-animation: popInCards 0.75s ease-in-out 0.5s;
+    animation: popInCards 0.75s ease-in-out 0.5s;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    padding: 0 0 0 0;
+    margin: 1vh 0 1vh 0;
+    background-color: rgba(243,245,242,1);
+    border-radius: 0.8em 0.8em 0.8em 0.8em;
+    box-shadow: 0px 3px 20px rgba(73,73,73,0.2);
+    height: 100%;
+    position: relative;
+  }
+
+  #room-pollbox-question-polltitle {
+    padding: 0vh 0vw 0vh 2vw;
+    font-weight: 700;
+    font-size: 30px;
+    background-color: rgba(47,120,139,1);
+    color: rgba(243,245,242,1);
+    letter-spacing: 5px;
+    border-radius: 0.3em 0.3em 0 0;
+  }
+
+  #room-pollbox-question-text {
+    padding: 1vh 1vw 1vw 3vw;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 30px;
+  }
+
+  #room-pollbox-options {
+    margin: 0vh 0vw 0vh 4vw;
+    padding: 0vh 0vw 0vh 0vw;
+  }
+}
 
 /* iPhone 6 and 6 Plus */
 @media only screen
   and (max-device-width: 640px),
   only screen and (max-device-width: 667px),
   only screen and (max-width: 480px)
-{ }
-
-/* Apple Watch */
-@media
-  (max-device-width: 42mm)
-  and (min-device-width: 38mm)
 { }
