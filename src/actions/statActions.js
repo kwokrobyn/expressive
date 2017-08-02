@@ -29,7 +29,7 @@ export const getStats = (roomId) => {
 
           console.log('stat', statInfo);
           dispatch(updateStats(statInfo));
-        } else if (true) {
+        } else {
           const statInfo = {
             questionCount: 0,
             completeCount: 0,
