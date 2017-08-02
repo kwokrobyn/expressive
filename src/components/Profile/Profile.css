@@ -1,3 +1,432 @@
-#profile-form {
-  margin: 15vh 5vw 0 5vw;
+.update-buttons{
+  display: flex;
+  justify-content: center;*/
+  margin-top: 10vw;
+ margin-left: 33vw;
+}
+
+.update-profile {
+  margin-top: 5vw;
+  /*display: flex;
+  justify-content: center;*/
+  padding: 20px;
+}
+
+
+/*
+* input field
+*/
+
+div.update-profile_form.col-md-12 {
+  display: flex;
+  justify-content: center;
+}
+
+div.update-profile_form.col-md-12 > h2 {
+  color: #878383;
+  letter-spacing: 2px;
+  font-size: 20px;
+}
+
+.input {
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	margin: 10vw;
+  /*width: 700px;*/
+	max-width: 700px;
+	width: calc(100% - 2em);
+	vertical-align: top;
+}
+
+.input__field {
+	position: relative;
+	display: block;
+	float: right;
+	padding: 0.8em;
+	width: 60%;
+	border: none;
+	border-radius: 0;
+	background: #f0f0f0;
+	color: #aaa;
+	font-weight: 400;
+	font-family: "Raleway", sans-serif;
+	-webkit-appearance: none;
+}
+
+span.input.input--update {
+  display: block;
+  width: 700px;
+	max-width: 700px;
+  padding: 20px;
+}
+
+input#form-displayName.input__field.input__field--update {
+  top: 30px;
+}
+
+input#form-email.input__field.input__field--update {
+  top: 30px;
+}
+
+input#form-newpassword.input__field.input__field--update {
+  top: 30px;
+}
+
+label.input__label.input__label--update {
+  height: 75px;
+}
+
+.input__field:focus {
+	outline: none;
+}
+
+.input__label {
+	display: inline-block;
+	float: right;
+	padding: 0 1em;
+	width: 40%;
+	color: #6a7989;
+	font-weight: bold;
+	font-size: 70.25%;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.input__label-content {
+	position: relative;
+	display: block;
+	padding: 1.6em 0;
+	width: 100%;
+}
+
+
+/* Individual styles */
+
+/* update */
+
+.input--update {
+	margin: 4em 1em 1em;
+}
+
+.input__field--update {
+	padding: 0.4em 0.25em;
+	width: 100%;
+	background: transparent;
+	color: #AFB5BB;
+	font-size: 1.55em;
+}
+
+.input__label--update {
+	position: absolute;
+	width: 100%;
+	text-align: left;
+	pointer-events: none;
+}
+
+.input__label-content--update {
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+.input__label--update::before,
+.input__label--update::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 4px;
+	background: #6a7989;
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+.input__label--update::before {
+	top: 0;
+}
+
+.input__label--update::after {
+	bottom: 0;
+}
+
+.input__field--update:focus + .input__label--update .input__label-content--update,
+.input--filled .input__label-content--update {
+	-webkit-transform: translate3d(0, -90%, 0);
+	transform: translate3d(0, -90%, 0);
+}
+
+.input__field--update:focus + .input__label--update::before,
+.input--filled .input__label--update::before {
+	-webkit-transform: translate3d(0, -0.5em, 0);
+	transform: translate3d(0, -0.5em, 0);
+}
+
+.input__field--update:focus + .input__label--update::after,
+.input--filled .input__label--update::after {
+	-webkit-transform: translate3d(0, 0.5em, 0);
+	transform: translate3d(0, 0.5em, 0);
+}
+
+
+/*
+*  Update button
+*/
+
+div.update-user {
+  display: flex;
+  justify-content: center;
+  padding-left: 130px;
+  padding-top: 65px;
+}
+
+a.update-user-button {
+  /*position: fixed;*/
+  margin-bottom: 0px;
+  /*display: flex;
+  justify-content: center;*/
+  cursor: pointer;
+  top: 50vh;
+  left: 50%;
+  color: black;
+  transform: translate3d(-50%, -50%, 0);
+  padding: 0.7em calc(0.7em * 1.2);
+  display: inline-block;
+  border: 3px solid transparent;
+  /*position: relative;*/
+  font-size: 1.5em;
+  letter-spacing: 0.07em;
+  font-family: "Raleway", sans-serif;
+  text-decoration: none;
+}
+
+a.update-user-button .update-user-text {
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  transform: translate3d(0, 0.7em, 0);
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1) 0.4s;
+}
+
+a.update-user-button:after {
+  position: absolute;
+  content: '';
+  bottom: -3px;
+  left: calc(0.7em * 1.2);
+  right: calc(0.7em * 1.2);
+  height: 3px;
+  background: #22f262;
+  z-index: -1;
+  transition: transform 0.8s cubic-bezier(1, 0, 0.37, 1) 0.2s, right 0.2s cubic-bezier(0.04, 0.48, 0, 1) 0.6s, left 0.4s cubic-bezier(0.04, 0.48, 0, 1) 0.6s;
+  transform-origin: left;
+}
+
+.update-user-line {
+  position: absolute;
+  background: #22f262;
+}
+.update-user-line.-right, .update-user-line.-left {
+  width: 3px;
+  bottom: -3px;
+  top: -3px;
+  transform: scale3d(1, 0, 1);
+}
+.update-user-line.-top, .update-user-line.-bottom {
+  height: 3px;
+  left: -3px;
+  right: -3px;
+  transform: scale3d(0, 1, 1);
+}
+.update-user-line.-right {
+  right: -3px;
+  transition: transform 0.1s cubic-bezier(1, 0, 0.65, 1.01) 0.23s;
+  transform-origin: top;
+}
+.update-user-line.-top {
+  top: -3px;
+  transition: transform 0.08s linear 0.43s;
+  transform-origin: left;
+}
+.update-user-line.-left {
+  left: -3px;
+  transition: transform 0.08s linear 0.51s;
+  transform-origin: bottom;
+}
+.update-user-line.-bottom {
+  bottom: -3px;
+  transition: transform 0.3s cubic-bezier(1, 0, 0.65, 1.01);
+  transform-origin: right;
+}
+
+a.update-user-button:hover .update-user-text,
+a.update-user-button:active .update-user-text {
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1) 0.4s;
+}
+a.update-user-button:hover:after,
+a.update-user-button:active:after {
+  transform: scale3d(0, 1, 1);
+  right: -3px;
+  left: -3px;
+  transform-origin: right;
+  transition: transform 0.2s cubic-bezier(1, 0, 0.65, 1.01) 0.17s, right 0.2s cubic-bezier(1, 0, 0.65, 1.01), left 0s 0.3s;
+}
+a.update-user-button:hover .update-user-line,
+a.update-user-button:active .update-user-line {
+  transform: scale3d(1, 1, 1);
+}
+a.update-user-button:hover .update-user-line.-right,
+a.update-user-button:active .update-user-line.-right {
+  transition: transform 0.1s cubic-bezier(1, 0, 0.65, 1.01) 0.2s;
+  transform-origin: bottom;
+}
+a.update-user-button:hover .update-user-line.-top,
+a.update-user-button:active .update-user-line.-top {
+  transition: transform 0.08s linear 0.4s;
+  transform-origin: right;
+}
+a.update-user-button:hover .update-user-line.-left,
+a.update-user-button:active .line.-left {
+  transition: transform 0.08s linear 0.48s;
+  transform-origin: top;
+}
+a.update-user-button:hover .update-user-line.-bottom,
+a.update-user-button:active .update-user-line.-bottom {
+  transition: transform 0.5s cubic-bezier(0, 0.53, 0.29, 1) 0.56s;
+  transform-origin: left;
+}
+
+
+
+/*
+*  Remove button
+*/
+
+div.remove-user {
+  display: flex;
+  justify-content: center;
+  padding-left: 130px;
+  padding-top: 65px;
+}
+
+a.remove-user-button {
+  /*position: fixed;*/
+  margin-bottom: 0px;
+  /*display: flex;
+  justify-content: center;*/
+  cursor: pointer;
+  top: 50vh;
+  left: 50%;
+  color: black;
+  transform: translate3d(-50%, -50%, 0);
+  padding: 0.7em calc(0.7em * 1.2);
+  display: inline-block;
+  border: 3px solid transparent;
+  /*position: relative;*/
+  font-size: 1.5em;
+  letter-spacing: 0.07em;
+  font-family: "Raleway", sans-serif;
+  text-decoration: none;
+}
+
+a.remove-user-button .remove-user-text {
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  transform: translate3d(0, 0.7em, 0);
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1) 0.4s;
+}
+
+a.remove-user-button:after {
+  position: absolute;
+  content: '';
+  bottom: -3px;
+  left: calc(0.7em * 1.2);
+  right: calc(0.7em * 1.2);
+  height: 3px;
+  background: #f22222;
+  z-index: -1;
+  transition: transform 0.8s cubic-bezier(1, 0, 0.37, 1) 0.2s, right 0.2s cubic-bezier(0.04, 0.48, 0, 1) 0.6s, left 0.4s cubic-bezier(0.04, 0.48, 0, 1) 0.6s;
+  transform-origin: left;
+}
+
+.remove-user-line {
+  position: absolute;
+  background: #f22222;
+}
+.remove-user-line.-right, .remove-user-line.-left {
+  width: 3px;
+  bottom: -3px;
+  top: -3px;
+  transform: scale3d(1, 0, 1);
+}
+.remove-user-line.-top, .remove-user-line.-bottom {
+  height: 3px;
+  left: -3px;
+  right: -3px;
+  transform: scale3d(0, 1, 1);
+}
+.remove-user-line.-right {
+  right: -3px;
+  transition: transform 0.1s cubic-bezier(1, 0, 0.65, 1.01) 0.23s;
+  transform-origin: top;
+}
+.remove-user-line.-top {
+  top: -3px;
+  transition: transform 0.08s linear 0.43s;
+  transform-origin: left;
+}
+.remove-user-line.-left {
+  left: -3px;
+  transition: transform 0.08s linear 0.51s;
+  transform-origin: bottom;
+}
+.remove-user-line.-bottom {
+  bottom: -3px;
+  transition: transform 0.3s cubic-bezier(1, 0, 0.65, 1.01);
+  transform-origin: right;
+}
+
+a.remove-user-button:hover .remove-user-text,
+a.remove-user-button:active .remove-user-text {
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1) 0.4s;
+}
+a.remove-user-button:hover:after,
+a.remove-user-button:active:after {
+  transform: scale3d(0, 1, 1);
+  right: -3px;
+  left: -3px;
+  transform-origin: right;
+  transition: transform 0.2s cubic-bezier(1, 0, 0.65, 1.01) 0.17s, right 0.2s cubic-bezier(1, 0, 0.65, 1.01), left 0s 0.3s;
+}
+a.remove-user-button:hover .remove-user-line,
+a.remove-user-button:active .remove-user-line {
+  transform: scale3d(1, 1, 1);
+}
+a.remove-user-button:hover .remove-user-line.-right,
+a.remove-user-button:active .remove-user-line.-right {
+  transition: transform 0.1s cubic-bezier(1, 0, 0.65, 1.01) 0.2s;
+  transform-origin: bottom;
+}
+a.remove-user-button:hover .remove-user-line.-top,
+a.remove-user-button:active .remove-user-line.-top {
+  transition: transform 0.08s linear 0.4s;
+  transform-origin: right;
+}
+a.remove-user-button:hover .remove-user-line.-left,
+a.remove-user-button:active .remove-user-line.-left {
+  transition: transform 0.08s linear 0.48s;
+  transform-origin: top;
+}
+a.remove-user-button:hover .remove-user-line.-bottom,
+a.remove-user-button:active .remove-user-line.-bottom {
+  transition: transform 0.5s cubic-bezier(0, 0.53, 0.29, 1) 0.56s;
+  transform-origin: left;
 }
