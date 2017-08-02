@@ -16,7 +16,7 @@ import QuestionList from '../Room/QuestionList/QuestionList';
 import CreatePoll from './CreatePoll/CreatePoll';
 
 import { toggleRoom, updateRoomName } from '../../actions/roomActions';
-import { getStats } from '../../actions/statActions';
+import { getStats, endStats } from '../../actions/statActions';
 
 /**
  * Room
@@ -68,6 +68,10 @@ export class MasterRoom extends Component { // eslint-disable-line react/prefer-
     console.log(user);
     console.log('sending this updated roomname ', roomInfo);
     this.props.updateRoomName(roomInfo);
+  }
+
+  componentWillUnmount() {
+    this.props.endStats(this.props.roomString);
   }
 
   render() {
@@ -143,6 +147,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     getStats: (roomId) => {
       dispatch(getStats(roomId))
+    },
+    endStats: (roomId) => {
+      dispatch(endStats(roomId))
     }
   }
 }

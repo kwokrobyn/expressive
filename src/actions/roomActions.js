@@ -119,6 +119,13 @@ export const getUserRooms = (id) => {
   }
 }
 
+// END GET USER ROOMS
+export const endGetUserRooms = (id) => {
+  return (dispatch) => {
+    db.ref("users/" + id + '/ownedRooms').off('value');
+  }
+}
+
 // ADD ROOM TO USER
 const addRoomToUserRoomList = (roomInfo) => {
   const userRef = db.ref('users/' + roomInfo.master.uid + '/ownedRooms/' + roomInfo.uid);

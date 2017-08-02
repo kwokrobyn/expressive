@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom'
 
 // Importing Redux Actions
-import { getQuestions, addVote, unVote, markComplete, markIncomplete } from '../../../actions/questionActions';
+import { getQuestions, endGetQuestions, addVote, unVote, markComplete, markIncomplete } from '../../../actions/questionActions';
 
 // Import Child Components
 import Poll from '../../Poll/Poll';
@@ -185,6 +185,10 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
     )
   }
 
+  componentWillUnmount() {
+    this.props.endGetQuestions(this.props.roomString);
+  }
+
 }
 
 const mapStateToProps = (state) => {
@@ -212,6 +216,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     markIncomplete: (completeInfo) => {
       dispatch(markIncomplete(completeInfo));
+    },
+    endGetQuestions: (roomId) => {
+      dispatch(endGetQuestions(roomId));
     }
   }
 }
