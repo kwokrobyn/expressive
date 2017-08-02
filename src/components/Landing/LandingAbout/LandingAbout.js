@@ -42,11 +42,11 @@ class LandingAbout extends Component {
         <Row>
           <div className="about-section-box">
 
-            <Col md={6} xs={6} className="aboutSect">
+            <Col md={6} xs={12} className="aboutSect">
               <div className="aboutImg">About</div>
             </Col>
 
-            <Col md={6} xs={6} className="aboutText-box">
+            <Col md={6} xs={12} className="aboutText-box">
               <div className="aboutText">
                 <p>
                   Our belief is that there is a fundamental problem with conventional question-and-answers (Q & A) sessions in forums.
