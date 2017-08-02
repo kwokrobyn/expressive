@@ -181,11 +181,11 @@ class Navbar extends Component {
               {profileElement}
             </div>
           </div>
-          <div className="row">
-            {/* Notification bar - if any */}
-            <JoinRoom />
-          </div>{/* /row */}
         </div>{/* /bs-example-navbar-collapse-1 */}
+        <div className="row">
+          {/* Notification bar - if any */}
+          <JoinRoom />
+        </div>{/* /row */}
       </div>{/* container */}
     </nav>
   )

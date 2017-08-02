@@ -54,8 +54,8 @@ export class Poll extends Component { // eslint-disable-line react/prefer-statel
 
   calculatePercentage = () => {
     const totalCount = this.props.poll.option1.count +  this.props.poll.option2.count;
-    const option1Percentage = Math.round(this.props.poll.option1.count/totalCount * 100);
-    const option2Percentage = Math.round(this.props.poll.option2.count/totalCount * 100);
+    const option1Percentage = Math.round(this.props.poll.option1.count/totalCount * 80);
+    const option2Percentage = Math.round(this.props.poll.option2.count/totalCount * 80);
 
     document.querySelector('.color-bar-1').style.width = option1Percentage.toString() + '%';
     document.querySelector('.color-bar-2').style.width = option2Percentage.toString() + '%';
@@ -82,7 +82,7 @@ export class Poll extends Component { // eslint-disable-line react/prefer-statel
                         <div id="room-pollbox-question-polltitle">Results:</div>
                         <div id="room-pollbox-question-text">{this.props.poll.question}</div>
                       </div>
-
+                      
                       <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 poll-results">
                         <div className="option1-result-div">
                           <div className="option1-result-text">{this.props.poll.option1.text}</div>
