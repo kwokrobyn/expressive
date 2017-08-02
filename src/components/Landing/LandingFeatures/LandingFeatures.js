@@ -68,20 +68,85 @@ class LandingFeatures extends Component {
 
 
         {/* Featurettes */}
-        <Row>
-          <div className="featurettes">
-          {/* make xs stack on top of each other when scaling responsively */}
-            <Col md={4} xs={12} className="featureFrame01">
-              <div className="features01">About</div>
-            </Col>
-            <Col md={4} xs={12} className="featureFrame02">
-              <div className="features02">Feature</div>
-            </Col>
-            <Col md={4} xs={12} className="featureFrame03">
-              <div className="features03">Hello</div>
-            </Col>
+
+        <Row id="featurette">
+
+        {/* <!-- Start Button 1 --> */}
+          <div className="featurette-btns">
+            <div className="featurette-btns-inner">
+              <div className="featurette-btns-top">
+
+                <i className="fa fa-question-circle"></i>
+
+                <h4>Post Real-Time Questions</h4>
+              </div>
+              {/* <!-- End ButtonTop --> */}
+              <div className="featurette-btns-bottom">
+
+                <i className="fa fa-question-circle-o"></i>
+
+                <h4>No More Class Interruptions</h4>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus.</p>
+
+
+              </div>
+
+            </div>
+
           </div>
+
+          {/* <!-- Start Button 2 --> */}
+          <div className="featurette-btns">
+            <div className="featurette-btns-inner">
+              <div className="featurette-btns-top">
+
+                <i className="fa fa-thumbs-up"></i>
+
+                <h4>Get Real-time Votes</h4>
+              </div>
+              {/* <!-- End ButtonTop --> */}
+              <div className="featurette-btns-bottom">
+
+                <i className="fa fa-thumbs-o-up"></i>
+
+                <h4>Want to Get Heard?</h4>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus.</p>
+
+
+              </div>
+
+            </div>
+
+          </div>
+
+          {/* <!-- Start Button 3 --> */}
+          <div className="featurette-btns">
+            <div className="featurette-btns-inner">
+              <div className="featurette-btns-top">
+
+                <i className="fa fa-user-secret"></i>
+
+                <h4>Post Questions Anonymously</h4>
+              </div>
+              {/* <!-- End ButtonTop --> */}
+              <div className="featurette-btns-bottom">
+
+                <i className="fa fa-user-secret"></i>
+
+                <h4>Too Shy?</h4>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus.</p>
+
+              </div>
+
+            </div>
+
+          </div>
+
         </Row>
+
 
       </Grid>
 
