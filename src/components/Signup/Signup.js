@@ -1,7 +1,7 @@
 //Importing required packages
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { localSignUp, socialSignIn } from '../../actions/userActions';
+import { localSignUp, socialSignIn, dismissAuthError } from '../../actions/userActions';
 import {Grid, Col, form, FormGroup, FormControl, ControlLabel, HelpBlock, Row, Button} from 'react-bootstrap';
 import {
   BrowserRouter as Router,
@@ -59,6 +59,11 @@ class Signup extends Component {
     }
   }
 
+  dismissError = (e) => {
+    e.preventDefault();
+    this.props.dismissAuthError();
+  }
+
   render() {
     return (
       <div>
@@ -88,18 +93,24 @@ class Signup extends Component {
            {/* Name */}
             <label className="signup-label firstsignup-label" htmlFor="">
             {/*<div className="label-text">Name</div> */}
-              <input type="email" maxLength="16" placeholder="Full name" id="name-signup"/>
+
+              <input type="email" maxLength="20" placeholder="Full name" id="name-signup"/>
+
             </label>
            {/* Email */}
             <label className="signup-label" htmlFor="">
             {/*  <div className="label-text">Email</div> */}
-              <input type="email" maxLength="16" placeholder="Your email" id="email-signup"/>
+
+              <input type="email" maxLength="30" placeholder="Your email" id="email-signup"/>
+
             </label>
 
             {/* Password */}
             <label className="signup-label" htmlFor="">
               {/* <div className="label-text">Password</div> */}
-              <input type="password" maxLength="16" placeholder="Set a password" id="pwd-signup"/>
+
+              <input type="password" maxLength="30" placeholder="Set a password" id="pwd-signup"/>
+
             </label>
 
           </form>
@@ -117,6 +128,15 @@ class Signup extends Component {
               <span className="line -bottom"></span>
             </a>
             </Col>
+          </Row>
+
+          {/* Error Message */}
+          <Row>
+            {this.props.user.hasAuthError &&
+              <div>
+                <div className="error-message">{this.props.user.errorMessage}<Button className="delete-room" onClick={this.dismissError}></Button></div>
+              </div>
+            }
           </Row>
 
           {/* Social Sign In */}
@@ -161,6 +181,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     socialSignIn: (platform) => {
       dispatch(socialSignIn(platform))
+    },
+    dismissAuthError: () => {
+      dispatch(dismissAuthError())
     }
   }
 }

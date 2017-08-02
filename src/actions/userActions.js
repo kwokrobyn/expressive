@@ -44,6 +44,13 @@ export const setAnonDisplayName = (name) => {
   }
 }
 
+export const dismissAuthErrorAction = () => {
+  return {
+    type: 'DISMISS_AUTH_ERROR'
+  }
+}
+
+
 /*
 * DATABASE METHODS
 */
@@ -256,5 +263,14 @@ export const updateUser = (user) => {
       });
     })
     dispatch(updateUserAction(user));
+  }
+}
+
+/*
+* DISMISS AUTH ERROR
+*/
+export const dismissAuthError = (user) => {
+  return (dispatch) => {
+    dispatch(dismissAuthErrorAction());
   }
 }

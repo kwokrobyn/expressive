@@ -6,6 +6,11 @@
   color: #494949;
 }
 
+.error-message {
+  color: red;
+  margin-left: 25%;
+}
+
 .socialLogin{
   margin-top: 20px;
   text-align: center;

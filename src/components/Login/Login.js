@@ -1,7 +1,7 @@
 //Importing required packages
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { localSignIn, socialSignIn } from '../../actions/userActions';
+import { localSignIn, socialSignIn, dismissAuthError } from '../../actions/userActions';
 import {Grid, Col, form, FormGroup, FormControl, ControlLabel, HelpBlock, Row, Button} from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
 import {
@@ -46,15 +46,21 @@ class Login extends Component {
                   password: password
     };
     this.props.localSignIn(user);
+    if (this.props.user.hasAuthError) {
+    }
   }
 
   socialSignIn = (e) => {
-
     if (e.target.id === "facebook") {
       this.props.socialSignIn('facebook');
     } else if (e.target.id === "google") {
       this.props.socialSignIn('google');
     }
+  }
+
+  dismissError = (e) => {
+    e.preventDefault();
+    this.props.dismissAuthError();
   }
 
   render() {
@@ -111,6 +117,14 @@ class Login extends Component {
             </Col>
           </Row>
 
+          {/* Error Message */}
+          <Row>
+            {this.props.user.hasAuthError &&
+              <div>
+                <div className="error-message">{this.props.user.errorMessage}<Button className="delete-room" onClick={this.dismissError}></Button></div>
+              </div>
+            }
+          </Row>
 
             {/* Social Sign In */}
             <Row className="socialLogin">
@@ -148,12 +162,14 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-
     localSignIn: (user) => {
       dispatch(localSignIn(user))
     },
     socialSignIn: (platform) => {
       dispatch(socialSignIn(platform))
+    },
+    dismissAuthError: () => {
+      dispatch(dismissAuthError())
     }
   }
 }
