@@ -102,8 +102,6 @@ class Signup extends Component {
               <input type="password" maxLength="16" placeholder="Set a password" id="pwd-signup"/>
             </label>
 
-
-
           </form>
         </Row>
 

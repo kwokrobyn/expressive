@@ -41,6 +41,7 @@ class Navbar extends Component {
      this.props.toggleMaster(false);
    }
    this.props.signOut();
+   window.location = "/";
  }
 
  render() {
