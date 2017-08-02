@@ -70,12 +70,13 @@
 }
 
 .option1-result-div, .option2-result-div {
+  margin: 10px 0 10px 0;
   height: 50%;
-
 }
 
 .option1-result-text, .option2-result-text {
   font-size: 20px;
+  font-weight: 700;
 }
 
 .option-bar {
@@ -89,11 +90,11 @@
 }
 
 .color-bar-1 {
-  background-color: rgb(0, 233, 143);
+  background-color: rgba(0,233,143,1);
 }
 
 .color-bar-2 {
-  background-color: rgb(243, 150, 72);
+  background-color: rgba(243,150,72,1);
 }
 
 .count-1, .count-2 {
@@ -122,6 +123,20 @@
   padding: 0 0 0 0;
 }
 
+.room-pollbox-question > button {
+  margin: 0 0 3vh 2vw;
+  box-shadow: none;
+}
+
+.room-pollbox-question > button:hover, .room-pollbox-question > button:active, .room-pollbox-question > button:focus {
+  background-color: rgba(0,233,143,1);
+  color: rgba(73,73,73,1);
+}
+
+.room-pollbox-question > button:hover:active {
+  background-color: rgba(243,150,72,1);
+  color: rgba(73,73,73,1);
+}
 /* Individual Controls
  ------------------------------------------------------------- */
 .room-pollbox-radio-label {
@@ -236,14 +251,15 @@ and (orientation : landscape) {
     font-size: 30px;
     background-color: rgba(47,120,139,1);
     color: rgba(243,245,242,1);
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     border-radius: 0.3em 0.3em 0 0;
   }
 
   #room-pollbox-question-text {
     padding: 0vh 0vw 0vw 2vw;
     font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
+    line-height: 1;
     font-size: 30px;
   }
 
@@ -285,7 +301,7 @@ and (orientation : portrait) {
   #room-pollbox-question-text {
     padding: 0vh 0vw 0vw 2vw;
     font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     font-size: 30px;
   }
 
@@ -318,14 +334,14 @@ and (max-width : 1224px) {
     font-size: 30px;
     background-color: rgba(47,120,139,1);
     color: rgba(243,245,242,1);
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     border-radius: 0.3em 0.3em 0 0;
   }
 
   #room-pollbox-question-text {
     padding: 0vh 0vw 0vw 2vw;
     font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     font-size: 30px;
   }
 
@@ -358,14 +374,14 @@ and (min-width : 1224px) {
     font-size: 30px;
     background-color: rgba(47,120,139,1);
     color: rgba(243,245,242,1);
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     border-radius: 0.3em 0.3em 0 0;
   }
 
   #room-pollbox-question-text {
     padding: 0vh 0vw 0vw 1vw;
     font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     font-size: 30px;
   }
 
@@ -398,14 +414,14 @@ and (min-width : 1824px) {
     font-size: 30px;
     background-color: rgba(47,120,139,1);
     color: rgba(243,245,242,1);
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     border-radius: 0.3em 0.3em 0 0;
   }
 
   #room-pollbox-question-text {
     padding: 0vh 0vw 0vw 1vw;
     font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     font-size: 25px;
   }
 
@@ -446,14 +462,14 @@ and (min-width : 1824px) {
     font-size: 30px;
     background-color: rgba(47,120,139,1);
     color: rgba(243,245,242,1);
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     border-radius: 0.3em 0.3em 0 0;
   }
 
   #room-pollbox-question-text {
     padding: 1vh 1vw 1vw 3vw;
     font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     font-size: 30px;
   }
 
@@ -490,14 +506,14 @@ and (min-width : 1824px) {
     font-size: 30px;
     background-color: rgba(47,120,139,1);
     color: rgba(243,245,242,1);
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     border-radius: 0.3em 0.3em 0 0;
   }
 
   #room-pollbox-question-text {
     padding: 1vh 1vw 1vw 3vw;
     font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     font-size: 30px;
   }
 
@@ -534,14 +550,14 @@ and (min-width : 1824px) {
     font-size: 30px;
     background-color: rgba(47,120,139,1);
     color: rgba(243,245,242,1);
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     border-radius: 0.3em 0.3em 0 0;
   }
 
   #room-pollbox-question-text {
     padding: 1vh 1vw 1vw 3vw;
     font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     font-size: 30px;
   }
 
@@ -578,14 +594,14 @@ and (min-width : 1824px) {
     font-size: 30px;
     background-color: rgba(47,120,139,1);
     color: rgba(243,245,242,1);
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     border-radius: 0.3em 0.3em 0 0;
   }
 
   #room-pollbox-question-text {
     padding: 1vh 1vw 1vw 3vw;
     font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     font-size: 30px;
   }
 

@@ -141,12 +141,17 @@
     border-radius: 0 0 0.8em 0.8em;
   }
 
+  #room-questionbox-col-complete-span {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
 }
 
 /* Smartphones (landscape) ----------- */
 @media only screen
 and (min-width : 321px) {
-
 }
 
 /* Smartphones (portrait) ----------- */
