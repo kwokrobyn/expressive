@@ -32,7 +32,7 @@ export class Poll extends Component { // eslint-disable-line react/prefer-statel
   }
 
   componentDidUpdate() {
-    if (this.state.userEntered) {
+    if (this.state.userEntered && this.props.poll.isActive) {
       this.calculatePercentage();
     }
   }
