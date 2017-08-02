@@ -4,9 +4,15 @@ import { connect } from 'react-redux';
 import { localSignIn, socialSignIn, dismissAuthError } from '../../actions/userActions';
 import {Grid, Col, form, FormGroup, FormControl, ControlLabel, HelpBlock, Row, Button} from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
 
 //Importing static assets (i.e. stylesheets, images)
 import './Login.css';
+import squareLogo from '../Navbar/logo_v1.png';
 
 //Importing React Components
 import Navbar from '../Navbar/Navbar';
@@ -61,26 +67,39 @@ class Login extends Component {
     return (
 
         <div>
-          <Navbar pageTitle="Log In"/>
+
+          <div className="div-to-signup">
+            <Link to="/signup" className="col-sm-2" id="navbar-first-Link">
+              <button className="btn btn-success navbar-first-btn link-to-signup">
+              Sign up
+              </button>
+            </Link>
+          </div>
 
           <div>
             <Row>
-              <h1 className="logInTitle">Log In</h1>
+              <div className="logInTitle">
+                <a href="/dashboard" className="signup-img">
+                  <img src={squareLogo}/>
+                </a>
+                <h1>Log in to your expressive account</h1>
+              </div>
+
             </Row>
 
           <Row>
             <form>
 
              {/* Email */}
-              <label htmlFor="">
+              <label  className="login-label" htmlFor="">
                 {/* <div className="label-text">Email</div> */}
-                <input type="email" placeholder="@email" id="email-signin"/>
+                <input type="email" placeholder="Your email" id="email-signin"/>
               </label>
 
               {/* Password */}
-              <label htmlFor="">
+              <label  className="login-label" htmlFor="">
                 {/*<div className="label-text">Password</div>*/}
-                <input type="password" placeholder="Password" id="pwd-signin"/>
+                <input type="password" placeholder="Your password" id="pwd-signin"/>
               </label>
               </form>
           </Row>
@@ -89,7 +108,7 @@ class Login extends Component {
           <Row>
             <Col className="loginSubmit">
             <a className="submitLogIn" onClick={this.localSignIn}>
-              <span className="text">Log In?</span>
+              <span className="text">Log in to Dashboard</span>
               <span className="line -right"></span>
               <span className="line -top"></span>
               <span className="line -left"></span>
@@ -109,7 +128,8 @@ class Login extends Component {
 
             {/* Social Sign In */}
             <Row className="socialLogin">
-              <div className="sicon">
+              <div className="social-text">Or, log in with your facebook or google account</div>
+              <div className="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 sicon">
               {/* Facebook */}
                 <Col md={6} sm={6} xs={4} className="text-center">
       				      <div className="icon-circle">

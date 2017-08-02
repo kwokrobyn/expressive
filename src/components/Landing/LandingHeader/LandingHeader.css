@@ -90,8 +90,8 @@ div.headerArt {
           transform: translate(-50%, -50%);
   height: 10vw;
   overflow: hidden;
-  font-family: 'Raleway', sans-serif;
-  /*font-size: 2.3em;*/
+
+  font-family: 'Work-Sans', sans-serif;
   line-height: 40px;
   /*color: #ecf0f1;*/
 }
