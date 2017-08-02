@@ -58,7 +58,7 @@ class Signup extends Component {
         <Navbar pageTitle="Sign Up"/>
 
 
-        <form>
+        <div>
           <Row>
             <h1 className="signUpTitle">Sign Up</h1>
           </Row>
@@ -81,8 +81,6 @@ class Signup extends Component {
               {/* <div className="label-text">Password</div> */}
               <input type="password" maxLength="16" placeholder="Password" id="pwd-signup"/>
             </label>
-
-
 
           </form>
         </Row>
@@ -121,7 +119,7 @@ class Signup extends Component {
              </div>
            </Row>
 
-        </form>
+        </div>
       </div>
 
 

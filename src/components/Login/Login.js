@@ -57,7 +57,7 @@ class Login extends Component {
         <div>
           <Navbar pageTitle="Log In"/>
 
-          <form>
+          <div>
             <Row>
               <h1 className="logInTitle">Log In</h1>
             </Row>
@@ -113,7 +113,7 @@ class Login extends Component {
                </div>
              </Row>
 
-          </form>
+          </div>
         </div>
 
     );
