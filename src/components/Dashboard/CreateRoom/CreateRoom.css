@@ -248,7 +248,7 @@ h4.errormsg:after {
 */
 
 input#roomstring::-webkit-input-placeholder, input#roomname::-webkit-input-placeholder button {
-  font-family: 'Work-Sans', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
