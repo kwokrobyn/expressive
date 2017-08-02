@@ -3,6 +3,7 @@ footer {
   height: 15vh;
   background-color: rgba(8,154,136,1);
   position: relative;
+  bottom: 0;
 }
 
   #footer-group-left {
