@@ -57,24 +57,30 @@ div.dashList-row {
 
 .dashboard-roombox {
   border-radius: 10px;
-  color: #878383;
+  color: rgba(243,245,242,1);
   margin: 1vw;
-  padding: 0;
-  border: 3px solid #089a88;
+  padding: 0 0 0 0;
+  background-color: white;
+  background-image: linear-gradient(135deg, rgba(8,154,136,1), rgba(47,120,139,1));
   box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.4);
   transition: all ease-in-out 1000ms;
   -webkit-transition: top 1000ms ease-in-out;
   -moz-transition: top 1000ms ease-in-out;
   -o-transition: top 1000ms ease-in-out;
+  -webkit-animation: popInCards 0.5s ease-in-out 0.25s;
+  animation: popInCards 0.5s ease-in-out 0.25s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
 }
 
 .dashboard-roombox:hover {
   cursor: pointer;
   top: -10px;
-  box-shadow: 0px 30px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 17px 10px rgba(0, 0, 0, 0.4);
   transform: translate(0, -8);
-  border: 3px solid #FFF;
-  background-color: #fd7822;
+  -webkit-transform: translate(0, -8);
+  border: 0px;
+  background-image: linear-gradient(135deg, rgba(243,150,72,1), rgba(242,101,34,1));
   color: white;
 }
 
