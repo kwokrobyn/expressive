@@ -114,7 +114,7 @@
 .loginSubmit {
   padding-top: 45px;
   text-align: center;
-  margin-left: 255px;
+  /*margin-left: 255px;*/
 
 }
 
@@ -415,6 +415,9 @@ label input:valid + .label-text {
   div.login-error-message {
     left: 400px;
   }
+  .submitLogIn {
+    margin-left: 20vw;
+  }
 }
 
 /* for md  */
@@ -422,7 +425,9 @@ label input:valid + .label-text {
   div.login-error-message {
     left: 300px;
   }
-
+  .submitLogIn {
+    margin-left: 30vw;
+  }
 }
 
 /* for sm  */
@@ -431,6 +436,9 @@ label input:valid + .label-text {
     left: 100px;
     width: 70vw;
   }
+  .submitLogIn {
+    margin-left: 37vw;
+  }
 }
 
 /* for xs  */
@@ -438,6 +446,9 @@ label input:valid + .label-text {
   div.login-error-message {
     left: 20px;
     width: 70vw;
+  }
+  .submitLogIn {
+    margin-left: 45vw;
   }
 }
 
