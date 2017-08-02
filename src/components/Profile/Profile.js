@@ -135,18 +135,38 @@ class Profile extends Component {
 
           <Col md={4} className="update-buttons">
 
+          <div className="update-user">
+          <a className="update-user-button" onClick={this.updateUser} type="submit">
+            <span className="update-user-text">Update Profile?</span>
+            <span className="update-user-line -right"></span>
+            <span className="update-user-line -top"></span>
+            <span className="update-user-line -left"></span>
+            <span className="update-user-line -bottom"></span>
+          </a>
+          </div>
 
-            <button type="submit"
+          <div className="remove-user">
+          <a className="remove-user-button" onClick={this.deleteUser} type="submit">
+            <span className="remove-user-text">Delete Profile?</span>
+            <span className="remove-user-line -right"></span>
+            <span className="remove-user-line -top"></span>
+            <span className="remove-user-line -left"></span>
+            <span className="remove-user-line -bottom"></span>
+          </a>
+          </div>
+
+
+            {/*<button type="submit"
                     className="update-user pull-left"
                     onClick={this.updateUser}>
               Update User
-            </button>
+            </button>*/}
 
-            <button type="submit"
+            {/*<button type="submit"
                     className="remove-user pull-right"
                     onClick={this.deleteUser}>
               Delete User
-            </button>
+            </button>*/}
           </Col>
         {/*</form>*/}
       </Grid>
