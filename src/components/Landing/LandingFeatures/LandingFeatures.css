@@ -117,7 +117,7 @@ h1#how-title {
 }
 
 /*
-* about
+* How To Use Title
 */
 
 
@@ -138,10 +138,11 @@ h1#how-title {
 }
 .how-card:hover .how-title {
   background-position: -100% 0;
+  color: white;
 }
 
 .how-title {
-  background: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, #09f3d6 50%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, #ff9600 50%);
   background-size: 200%;
   background-position: 0 0;
   /*display: inline;*/
