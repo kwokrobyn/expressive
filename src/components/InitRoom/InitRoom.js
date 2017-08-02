@@ -133,6 +133,10 @@ export class InitRoom extends Component { // eslint-disable-line react/prefer-st
     if (this.props.room.isInRoom && this.state.authComplete) {
       this.props.isFetching(false);
     }
+
+    if (!this.state.roomExists) {
+      this.props.isFetching(false);
+    }
   }
 
   render() {

@@ -60,11 +60,11 @@
   text-align: center;
   font-size: 1.5em;
   letter-spacing: 0.07em;
-  font-family: "Work-Sans", sans-serif;
+  font-family: "Work Sans", sans-serif;
 }
 
   #dashboard-create-btn-text {
-    font-family: "Work-Sans", sans-serif;
+    font-family: "Work Sans", sans-serif;
     font-weight: 700;
     color: rgba(47,120,139,1);
     transform: translate3d(0, 0.7em, 0);
