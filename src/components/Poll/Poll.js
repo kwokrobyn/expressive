@@ -32,7 +32,7 @@ export class Poll extends Component { // eslint-disable-line react/prefer-statel
   }
 
   submitPoll = (e) => {
-    if (e.target.className === "option1-radio") {
+    if (e.target.id === "room-pollbox-radio-1") {
       this.props.addPollVote(this.props.roomString, 1);
     } else {
       this.props.addPollVote(this.props.roomString, 2);
@@ -66,6 +66,16 @@ export class Poll extends Component { // eslint-disable-line react/prefer-statel
                         <div id="room-pollbox-question-polltitle">Results:</div>
                         <div id="room-pollbox-question-text">{this.props.poll.question}</div>
                       </div>
+                      <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 poll-results">
+                        <div className="option1-result-div">
+                          <div className="option1-result-text">{this.props.poll.option1.text}</div>
+                          <div className="option1-bar option-bar"></div>
+                        </div>
+                        <div className="option2-result-div">
+                          <div className="option2-result-text">{this.props.poll.option2.text}</div>
+                          <div className="option2-bar option-bar"></div>
+                        </div>
+                      </div>
                       <div>{this.props.poll.option1.text} - {this.props.poll.option1.count} votes, {this.props.poll.option2.text} - {this.props.poll.option2.count} votes</div>
                       <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 room-pollbox-results">
                         <button type="button" className="btn" onClick={this.endPoll}>End Poll</button>
@@ -76,6 +86,16 @@ export class Poll extends Component { // eslint-disable-line react/prefer-statel
                       <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 room-pollbox-question">
                         <div id="room-pollbox-question-polltitle">Results:</div>
                         <div id="room-pollbox-question-text">{this.props.poll.question}</div>
+                      </div>
+                      <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 poll-results">
+                        <div className="option1-result-div">
+                          <div className="option1-result-text">{this.props.poll.option1.text}</div>
+                          <div className="option1-bar option-bar"></div>
+                        </div>
+                        <div className="option2-result-div">
+                          <div className="option2-result-text">{this.props.poll.option2.text}</div>
+                          <div className="option2-bar option-bar"></div>
+                        </div>
                       </div>
                       <div>{this.props.poll.option1.text} - {this.props.poll.option1.count} votes, {this.props.poll.option2.text} - {this.props.poll.option2.count} votes</div>
                       <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 room-pollbox-question">

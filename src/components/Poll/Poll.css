@@ -64,6 +64,25 @@
   }
 }
 
+/* Poll Results */
+.poll-results {
+  border: 1px solid black;
+}
+
+.option1-result-div, .option2-result-div {
+  height: 50%;
+  border: 1px solid red;
+}
+
+.option1-result-text, .option2-result-text {
+  font-size: 20px;
+}
+
+.option-bar {
+  height: 50px;
+  border: 1px solid black;
+}
+
 /* Question & Options Box
  ------------------------------------------------------------- */
 .room-pollbox-polltitle-question, .room-pollbox-polltitle-options {
