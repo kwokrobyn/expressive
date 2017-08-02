@@ -78,7 +78,7 @@ class Navbar extends Component {
           </Link>
         </li>
         <li>
-          <Link to="/"
+          <Link to="#"
                 className="col-lg-1 col-md-1 col-sm-2"
                 id="navbar-middle-Link">
             <button className="btn btn-success navbar-middle-btn"
