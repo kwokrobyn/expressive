@@ -79,12 +79,18 @@
   opacity: 0;
 }
 
+.room-pollbox-question {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+
 /* Individual Controls
  ------------------------------------------------------------- */
 .room-pollbox-radio-label {
   display: inline-block;
   padding-right: 20px;
   font-size: 25px;
+  font-weight: 400;
   line-height: 58px;
   letter-spacing: 1.2px;
   cursor: pointer;
@@ -188,17 +194,17 @@ and (orientation : landscape) {
 
   #room-pollbox-question-polltitle {
     padding: 0vh 0vw 0vh 2vw;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 30px;
     background-color: rgba(47,120,139,1);
     color: rgba(243,245,242,1);
-    letter-spacing: 5px;
+    letter-spacing: 1px;
     border-radius: 0.3em 0.3em 0 0;
   }
 
   #room-pollbox-question-text {
     padding: 0vh 0vw 0vw 2vw;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: 1px;
     font-size: 30px;
   }
@@ -230,7 +236,7 @@ and (orientation : portrait) {
 
   #room-pollbox-question-polltitle {
     padding: 0vh 0vw 0vh 2vw;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 30px;
     background-color: rgba(47,120,139,1);
     color: rgba(243,245,242,1);
@@ -240,7 +246,47 @@ and (orientation : portrait) {
 
   #room-pollbox-question-text {
     padding: 0vh 0vw 0vw 2vw;
-    font-weight: 700;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 30px;
+  }
+
+  #room-pollbox-options {
+    margin: 0vh 0vw 0vh 2vw;
+    padding: 0vh 0vw 0vh 0vw;
+  }
+}
+
+/* Small laptops ----------- */
+@media only screen
+and (max-width : 1224px) {
+  #room-pollbox {
+    -webkit-animation: popInCards 0.75s ease-in-out 0.5s;
+    animation: popInCards 0.75s ease-in-out 0.5s;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    padding: 0 0 0 0;
+    margin: 1vh 0 1vh 0;
+    background-color: rgba(243,245,242,1);
+    border-radius: 0.8em 0.8em 0.8em 0.8em;
+    box-shadow: 0px 3px 20px rgba(73,73,73,0.2);
+    height: 100%;
+    position: relative;
+  }
+
+  #room-pollbox-question-polltitle {
+    padding: 0vh 0vw 0vh 2vw;
+    font-weight: 500;
+    font-size: 30px;
+    background-color: rgba(47,120,139,1);
+    color: rgba(243,245,242,1);
+    letter-spacing: 1px;
+    border-radius: 0.3em 0.3em 0 0;
+  }
+
+  #room-pollbox-question-text {
+    padding: 0vh 0vw 0vw 2vw;
+    font-weight: 500;
     letter-spacing: 1px;
     font-size: 30px;
   }
@@ -270,17 +316,17 @@ and (min-width : 1224px) {
 
   #room-pollbox-question-polltitle {
     padding: 0vh 0vw 0vh 1vw;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 30px;
     background-color: rgba(47,120,139,1);
     color: rgba(243,245,242,1);
-    letter-spacing: 5px;
+    letter-spacing: 1px;
     border-radius: 0.3em 0.3em 0 0;
   }
 
   #room-pollbox-question-text {
     padding: 0vh 0vw 0vw 1vw;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: 1px;
     font-size: 30px;
   }
@@ -310,19 +356,19 @@ and (min-width : 1824px) {
 
   #room-pollbox-question-polltitle {
     padding: 0vh 0vw 0vh 1vw;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 30px;
     background-color: rgba(47,120,139,1);
     color: rgba(243,245,242,1);
-    letter-spacing: 5px;
+    letter-spacing: 1px;
     border-radius: 0.3em 0.3em 0 0;
   }
 
   #room-pollbox-question-text {
     padding: 0vh 0vw 0vw 1vw;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: 1px;
-    font-size: 30px;
+    font-size: 25px;
   }
 
   #room-pollbox-options {
@@ -331,59 +377,11 @@ and (min-width : 1824px) {
   }
 
   .room-pollbox-radio-label {
-    font-size: 35px;
+    font-size: 20px;
   }
 
 }
 
-/* iPhone 4 & 5 ----------- */
-@media
-only screen and (-webkit-min-device-pixel-ratio : 1.5),
-only screen and (min-device-pixel-ratio : 1.5) {
-  #room-pollbox {
-    -webkit-animation: popInCards 0.75s ease-in-out 0.5s;
-    animation: popInCards 0.75s ease-in-out 0.5s;
-    -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
-    padding: 0 0 0 0;
-    margin: 1vh 0 1vh 0;
-    background-color: rgba(243,245,242,1);
-    border-radius: 0.8em 0.8em 0.8em 0.8em;
-    box-shadow: 0px 3px 20px rgba(73,73,73,0.2);
-    height: 100%;
-    position: relative;
-  }
-
-  #room-pollbox-question-polltitle {
-    padding: 0vh 0vw 0vh 2vw;
-    font-weight: 700;
-    font-size: 30px;
-    background-color: rgba(47,120,139,1);
-    color: rgba(243,245,242,1);
-    letter-spacing: 1px;
-    border-radius: 0.3em 0.3em 0 0;
-  }
-
-  #room-pollbox-question-text {
-    padding: 1vh 1vw 1vw 3vw;
-    font-weight: 700;
-    letter-spacing: 1px;
-    font-size: 20px;
-  }
-
-  #room-pollbox-options {
-    margin: 0vh 0vw 0vh 4vw;
-    padding: 0vh 0vw 0vh 0vw;
-  }
-
-  .room-pollbox-radio-label {
-    font-size: 15px;
-  }
-
-  .room-pollbox-radio-label {
-    font-size: 20px;
-  }
-}
 /* iPhone 6 landscape */
 @media only screen and (min-device-width: 375px)
   and (max-device-width: 667px)
@@ -406,17 +404,17 @@ only screen and (min-device-pixel-ratio : 1.5) {
 
   #room-pollbox-question-polltitle {
     padding: 0vh 0vw 0vh 2vw;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 30px;
     background-color: rgba(47,120,139,1);
     color: rgba(243,245,242,1);
-    letter-spacing: 5px;
+    letter-spacing: 1px;
     border-radius: 0.3em 0.3em 0 0;
   }
 
   #room-pollbox-question-text {
     padding: 1vh 1vw 1vw 3vw;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: 1px;
     font-size: 30px;
   }
@@ -450,17 +448,17 @@ only screen and (min-device-pixel-ratio : 1.5) {
 
   #room-pollbox-question-polltitle {
     padding: 0vh 0vw 0vh 2vw;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 30px;
     background-color: rgba(47,120,139,1);
     color: rgba(243,245,242,1);
-    letter-spacing: 5px;
+    letter-spacing: 1px;
     border-radius: 0.3em 0.3em 0 0;
   }
 
   #room-pollbox-question-text {
     padding: 1vh 1vw 1vw 3vw;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: 1px;
     font-size: 30px;
   }
@@ -494,17 +492,17 @@ only screen and (min-device-pixel-ratio : 1.5) {
 
   #room-pollbox-question-polltitle {
     padding: 0vh 0vw 0vh 2vw;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 30px;
     background-color: rgba(47,120,139,1);
     color: rgba(243,245,242,1);
-    letter-spacing: 5px;
+    letter-spacing: 1px;
     border-radius: 0.3em 0.3em 0 0;
   }
 
   #room-pollbox-question-text {
     padding: 1vh 1vw 1vw 3vw;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: 1px;
     font-size: 30px;
   }
@@ -538,17 +536,17 @@ only screen and (min-device-pixel-ratio : 1.5) {
 
   #room-pollbox-question-polltitle {
     padding: 0vh 0vw 0vh 2vw;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 30px;
     background-color: rgba(47,120,139,1);
     color: rgba(243,245,242,1);
-    letter-spacing: 5px;
+    letter-spacing: 1px;
     border-radius: 0.3em 0.3em 0 0;
   }
 
   #room-pollbox-question-text {
     padding: 1vh 1vw 1vw 3vw;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: 1px;
     font-size: 30px;
   }
