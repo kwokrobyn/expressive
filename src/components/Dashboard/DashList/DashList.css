@@ -147,38 +147,70 @@ div.dashList-row {
 /*
 *  Delete Room Button
 */
-    .delete-room{
-      border-radius: 50%;
-      margin-right: 5px;
-      margin-top:5px;
+
+    .delete-room-outer {
+      position: relative;
+      width: 50px;
+      cursor: pointer;
+      margin-top: 15px;
+      margin-right: 10px;
     }
 
-		.delete-room:after{
-			content: "✖";
-			/*left: 24px;
-			top: 15px;*/
-		}
+    .delete-room-inner {
+      position: relative;
+      width: inherit;
+      text-align: center;
+    }
 
-		.delete-room:hover{
-			background-image: -webkit-linear-gradient(top, #fff, #f4f1ee);
-			background-image: linear-gradient(top, #fff, #f4f1ee);
-			color:#0088cc;
-		}
+    .delete-room-inner > label {
+      font-size: .7em;
+      line-height: 2em;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: white;
+      transition: all .3s ease-in;
+      opacity: 0;
+      cursor: pointer;
+    }
 
-		.delete-room:hover:after{
-			color:#eb2f2f;
-			text-shadow:0px 0px 6px #eb2f2f;
-		}
+    .delete-room-inner:before, .delete-room-inner:after {
+      position: absolute;
+      content: '';
+      height: 3px;
+      width: inherit;
+      background: #FFC107;
+      left: 0;
+      transition: all .3s ease-in;
+    }
 
+    .delete-room-inner:before {
+      top: 50%;
+      transform: rotate(45deg);
+    }
 
+    .delete-room-inner:after {
+      bottom: 50%;
+      transform: rotate(-45deg);
+    }
 
-		.delete-room:active{
-			background-image: -webkit-linear-gradient(top, #efedec, #f7f4f4);
-			background-image: linear-gradient(top, #efedec, #f7f4f4);
-			box-shadow: 0 3px 5px 0 rgba(0,0,0,.4), inset 0px -3px 1px 1px rgba(204,198,197,.5);
-		}
+    .delete-room-outer:hover .delete-room-inner-label,
+    .delete-room:hover .delete-room-inner-label {
+      opacity: 1;
+    }
 
-		.delete-room:active:after{
-			color:#dbd2d2;
-			text-shadow: 0px -1px 1px #bdb5b4, 0px 1px 1px white;
-		}
+    .delete-room-outer:hover .delete-room-inner:before,
+    .delete-room:hover .delete-room-inner:before,
+    .delete-room:hover .delete-room-inner:after,
+    .delete-room-outer:hover .delete-room-inner:after {
+      transform: rotate(0);
+    }
+
+    .delete-room-outer:hover .delete-room-inner:before,
+    .delete-room:hover .delete-room-inner:before {
+      top: 0;
+    }
+
+    .delete-room-outer:hover .delete-room-inner:after,
+    .delete-room:hover .delete-room-inner:after {
+      bottom: 0;
+    }
