@@ -1,28 +1,36 @@
-h1.logInTitle {
-  margin-top: 100px;
-  margin-bottom: 30px;
-  display: flex;
-  justify-content: center;
-  font-family: 'Work-Sans', sans-serif;
+.logInTitle {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: 'Work Sans', sans-serif;
   color: #494949;
 }
 
 .socialLogin{
   margin-top: 20px;
-  display: flex;
-  justify-content: center;
+  text-align: center;
 }
 
+.div-to-signup {
+  float: right;
+  height: 30px;
+}
+
+.link-to-signup {
+  color: black;
+  margin: 20px;
+  float: right;
+  border: 4px solid orange;
+}
 
 /*
 *  Login Button
 */
 
-div.loginSubmit {
-  display: flex;
-  justify-content: center;
-  padding-left: 110px;
-  padding-top: 65px;
+.loginSubmit {
+  padding-top: 45px;
+  text-align: center;
+  margin-left: 255px;
 }
 
 a.submitLogIn {
@@ -252,7 +260,7 @@ a.submitLogIn:active .line.-bottom {
 * Input fields
 */
 
-label {
+label.login-label {
   display: block;
   font-family: "Work-Sans", sans-serif;
   letter-spacing: 4px;
