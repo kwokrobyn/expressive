@@ -171,7 +171,7 @@ div.dashList-row {
     .delete-room-inner > label {
       font-size: .7em;
       line-height: 2em;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: white;
       transition: all .3s ease-in;
@@ -182,7 +182,7 @@ div.dashList-row {
     .delete-room-inner:before, .delete-room-inner:after {
       position: absolute;
       content: '';
-      height: 3px;
+      height: 1px;
       width: inherit;
       background: #FFC107;
       left: 0;
