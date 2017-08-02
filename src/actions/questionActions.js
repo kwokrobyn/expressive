@@ -10,6 +10,12 @@ const getQuestionsAction = (questions) => {
   }
 }
 
+const clearQuestions = () => {
+  return {
+    type: 'CLEAR_QUESTIONS'
+  }
+}
+
 export const getQuestions = (roomId) => {
   return (dispatch) => {
     console.log('getQuestions method.');
@@ -32,6 +38,7 @@ export const getQuestions = (roomId) => {
 export const endGetQuestions = (roomId) => {
   return (dispatch) => {
     db.ref("rooms/" + roomId + '/questions').off('value');
+    dispatch(clearQuestions());
   }
 }
 

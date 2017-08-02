@@ -20,6 +20,13 @@
   display: none;
 }
 
+.room-not-active {
+  margin-top: -40px;
+  text-align: center;
+  padding-bottom: 30px;
+  font-size: 60px;
+}
+
 /* Below: Nice form */
 
 #room-post-qn-textarea:focus, #room-post-qn-btn:focus {
