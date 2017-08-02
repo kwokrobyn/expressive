@@ -106,7 +106,17 @@ const removeFromDatabase = (user) => {
       // user does not exist in db
       console.log("no such user found");
     } else {
+
       // if user exists in db, delete the user
+      if (snapshot.val().ownedRooms !== undefined) {
+        console.log('you are here: ', snapshot.val());
+        const roomArray = Object.keys(snapshot.val().ownedRooms);
+        const roomRef = db.ref('rooms/');
+        roomArray.forEach((e) => {
+          roomRef.child(e).remove();
+        })
+      }
+
       userRef.remove();
     }
   });
