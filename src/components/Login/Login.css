@@ -12,7 +12,7 @@
   text-shadow: none;
   text-decoration: none;
   max-width: 30vw;
-  margin: 20px;
+  margin: 20px 10vw 0 0;
   float: right;
   /* cool button insert*/
   overflow: hidden; /* Needed for to cover the cool sliding box effect */
@@ -120,12 +120,10 @@
 
 a.submitLogIn {
   /*position: fixed;*/
-  margin-bottom: 0px;
   /*display: flex;
   justify-content: center;*/
   cursor: pointer;
-  top: 50vh;
-  left: 50%;
+  left: 20vw;
   color: black;
   transform: translate3d(-50%, -50%, 0);
   padding: 0.7em calc(0.7em * 1.2);

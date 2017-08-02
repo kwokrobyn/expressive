@@ -66,27 +66,30 @@ class Login extends Component {
   render() {
     return (
       <Grid fluid>
-
+        <Row>
+          <Col lg={12} md={12} sm={12} xs={12}>
             <Link to="/signup" className="col-sm-2" id="loginsignup-first-Link">
               <button className="btn btn-default loginsignup-first-btn">
               Sign up
               </button>
             </Link>
+          </Col>
+        </Row>
 
+        <Row>
+          <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 logInTitle">
+            <a href="/dashboard" className="signup-img">
+              <img src={squareLogo}/>
+            </a>
+            <h1>Log in to your <b>expressive</b> account</h1>
+          </div>
+        </Row>
 
-            <Row>
-              <div className="logInTitle">
-                <a href="/dashboard" className="signup-img">
-                  <img src={squareLogo}/>
-                </a>
-                <h1>Log in to your <b>expressive</b> account</h1>
-              </div>
-            </Row>
-
-          <Row>
+        <Row>
+          <Col lg={12} md={12} sm={12} xs={12}>
             <form>
              {/* Email */}
-              <label  className="login-label" htmlFor="">
+              <label className="login-label" htmlFor="">
                 {/* <div className="label-text">Email</div> */}
                 <input type="email" placeholder="Your email" id="email-signin"/>
               </label>
@@ -96,42 +99,43 @@ class Login extends Component {
                 {/*<div className="label-text">Password</div>*/}
                 <input type="password" placeholder="Your password" id="pwd-signin"/>
               </label>
-              </form>
-          </Row>
+            </form>
+          </Col>
+        </Row>
 
           {/* Submit Button */}
-
-            <div className="loginSubmit">
-              <a className="submitLogIn" onClick={this.localSignIn}>
-                <span className="text">Log in to Dashboard</span>
-                <span className="line -right"></span>
-                <span className="line -top"></span>
-                <span className="line -left"></span>
-                <span className="line -bottom"></span>
-              </a>
-            </div>
-
+        <Row>
+          <Col lg={12} md={12} sm={12} xs={12} className="loginSubmit">
+            <a className="submitLogIn" onClick={this.localSignIn}>
+              <span className="text">Log in to Dashboard</span>
+              <span className="line -right"></span>
+              <span className="line -top"></span>
+              <span className="line -left"></span>
+              <span className="line -bottom"></span>
+            </a>
+          </Col>
+        </Row>
 
           {/* Error Message */}
-            <Row>
+          <Row>
 
-            {this.props.user.hasAuthError &&
+          {this.props.user.hasAuthError &&
 
-              <Col md={4} className="login-error-message ">
+            <Col lg={12} md={12} sm={12} xs={12} className="login-error-message ">
               <h4 className="error-message"           data-content="{this.props.user.errorMessage}">{this.props.user.errorMessage}</h4>
               <svg version="1.1"
                    className="login-error-message"
                    xmlns="http://www.w3.org/2000/svg"
                    viewBox="-10 -10 160.2 160.2"
                    onClick={this.dismissError}>
-                <circle className="path circle"
-                        fill="none"
-                        stroke="#D06079"
-                        strokeWidth={6}
-                        strokeMiterlimit={10}
-                        cx="65.1"
-                        cy="65.1"
-                        r="62.1"/>
+              <circle className="path circle"
+                      fill="none"
+                      stroke="#D06079"
+                      strokeWidth={6}
+                      strokeMiterlimit={10}
+                      cx="65.1"
+                      cy="65.1"
+                      r="62.1"/>
                <line className="path line"
                      fill="none"
                      stroke="#D06079"
@@ -151,13 +155,10 @@ class Login extends Component {
                      y1={38}
                      x2="34.4"
                      y2="92.2"/>
-
               </svg>
-
-              </Col>
-
-            }
-            </Row>
+            </Col>
+          }
+          </Row>
             {/*<div>
                <div className="error-message">{this.props.user.errorMessage}<Button className="delete-room" onClick={this.dismissError}></Button></div>
              </div>  */}
