@@ -6,7 +6,6 @@ import {Grid, Col, form, FormGroup, FormControl, ControlLabel, HelpBlock, Row} f
 //Importing static assets (i.e. stylesheets, images)
 
 //Importing React Components
-
 import { getUserRooms, deleteRoom } from '../../../actions/roomActions';
 
 
