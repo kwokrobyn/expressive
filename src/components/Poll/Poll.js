@@ -61,13 +61,21 @@ export class Poll extends Component { // eslint-disable-line react/prefer-statel
               userEntered ? (
                 <div> {
                   isMaster ? (
-                    <div>
-                      <div>Poll Results: Option 1 - {this.props.poll.option1.count}, Option 2 - {this.props.poll.option2.count}</div>
+                    <div className="row">
+                      <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 room-pollbox-question">
+                        <div id="room-pollbox-question-polltitle">Results: {this.props.poll.question}</div>
+                        <div id="room-pollbox-question-text">{this.props.poll.question}</div>
+                      </div>
+                      <div>{this.props.poll.option1.text} - {this.props.poll.option1.count} votes, {this.props.poll.option2.text} - {this.props.poll.option2.count} votes</div>
                       <button type="button" className="btn" onClick={this.endPoll}>End Poll</button>
                     </div>
                   ) : (
                     <div>
-                      <div>Poll Results: Option 1 - {this.props.poll.option1.count}, Option 2 - {this.props.poll.option2.count}</div>
+                      <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 room-pollbox-question">
+                        <div id="room-pollbox-question-polltitle">Results: {this.props.poll.question}</div>
+                        <div id="room-pollbox-question-text">{this.props.poll.question}</div>
+                      </div>
+                      <div>{this.props.poll.option1.text} - {this.props.poll.option1.count} votes, {this.props.poll.option2.text} - {this.props.poll.option2.count} votes</div>
                       <button type="button" className="btn">Close</button>
                     </div>
                   )

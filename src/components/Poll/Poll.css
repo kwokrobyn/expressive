@@ -330,6 +330,10 @@ and (min-width : 1824px) {
     padding: 0vh 0vw 0vh 0vw;
   }
 
+  .room-pollbox-radio-label {
+    font-size: 35px;
+  }
+
 }
 
 /* iPhone 4 & 5 ----------- */
@@ -374,6 +378,10 @@ only screen and (min-device-pixel-ratio : 1.5) {
 
   .room-pollbox-radio-label {
     font-size: 15px;
+  }
+
+  .room-pollbox-radio-label {
+    font-size: 20px;
   }
 }
 /* iPhone 6 landscape */
