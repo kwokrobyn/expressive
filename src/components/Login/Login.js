@@ -69,8 +69,8 @@ class Login extends Component {
         <div>
 
           <div className="div-to-signup">
-            <Link to="/signup" className="col-sm-2" id="navbar-first-Link">
-              <button className="btn btn-success navbar-first-btn link-to-signup">
+            <Link to="/signup" className="col-sm-2" id="loginsignup-first-Link">
+              <button className="btn btn-success loginsignup-first-btn">
               Sign up
               </button>
             </Link>

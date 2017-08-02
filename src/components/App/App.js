@@ -94,7 +94,7 @@ class App extends Component {
 const NoMatch = ({ location }) => (
   <div className="errorpage">
   <Navbar />
-    <h2 className="error-text">404: Your Princess Is In Another Castle.</h2>
+    <h2 className="error-text"><b>404</b>: Your Princess Is In Another Castle.</h2>
     <h3 className="nomatch-text">No match for <code>{location.pathname}</code></h3>
     <div className="errorpage-img"></div>
   </div>

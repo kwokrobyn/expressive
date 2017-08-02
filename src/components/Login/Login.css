@@ -1,3 +1,87 @@
+/*These styles below are for the first button*/
+.loginsignup-first-btn, .loginsignup-first-btn:active, .loginsignup-first-btn:focus, .loginsignup-first-btn:active:focus {
+  vertical-align: top;
+  border: 5px solid rgba(243,150,72,1);
+  border-radius: 2em 2em 2em 2em;
+  position: relative;
+  height: 40px;
+  box-shadow: none;
+  background-color: rgba(8,154,136,0);
+  background-image: none;
+  color: rgba(243,150,72,1);
+  text-shadow: none;
+  text-decoration: none;
+  max-width: 15vw;
+  margin: 20px;
+  float: right;
+  /* cool button insert*/
+  overflow: hidden; /* Needed for to cover the cool sliding box effect */
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+  z-index: 5;
+  transition: all .4s ease;
+  position: relative;
+}
+  #loginsignup-first-Link {
+    color: rgba(243,245,242,1);
+    text-shadow: none;
+    text-decoration: none;
+    margin: 0 0.1vw 0 0;
+    padding: 0 0 0 0;
+    box-shadow: none;
+  }
+
+.loginsignup-first-btn:before {
+  display: block;
+  z-index: -1; /* <== Needed for the cool button chop not to cover the button text */
+  left: 0; /* <== Needed for the cool button hover effect */
+  top: 0; /* <== Needed for the cool button hover effect */
+  content: ''; /* <== Needed for the cool button hover effect */
+  position: absolute; /* <== Needed for the cool button hover effect */
+  width: 200%;
+  height: 200%;
+  /*background-color: rgba(243,150,72,1);*/
+  background-image: -moz-gradient(to bottom,rgba(242,101,34,1) 0,rgba(243,150,72,1) 100%);
+  background-image: -webkit-linear-gradient(to bottom,rgba(242,101,34,1) 0,rgba(243,150,72,1) 100%);
+  background-image: linear-gradient(to bottom,rgba(242,101,34,1) 0,rgba(243,150,72,1) 100%); /* <== The colour of the cool button chop down effect */
+  -webkit-transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+  transform: rotate3d(0, 0, 1, -45deg) translate3d(0, -3em, 0);
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+  -webkit-transition: -webkit-transform .3s, opacity .3s, background-color .3s;
+  transition: transform .3s, opacity .3s, background-color .3s
+}
+
+.loginsignup-first-btn:hover {
+  border: 5px solid rgba(243,150,72,1);
+  background-color: rgba(243,245,242,1);/* The background of the button before the chop comes into view */
+  box-shadow: none;
+  color: rgba(243,245,242,1);
+}
+
+.loginsignup-first-btn:hover:before {
+  opacity: 1;
+  -webkit-transform: rotate3d(0, 0, 1, 0deg);
+  transform: rotate3d(0, 0, 1, 0deg);
+  -webkit-transition-timing-function: cubic-bezier(.2, 1, .3, 1);
+  transition-timing-function: cubic-bezier(.2, 1, .3, 1)
+}
+
+.navbar-first-btn:hover:active {
+  border: 5px solid rgba(243,150,72,1);
+  box-shadow: none;
+  color: rgba(243,245,242,1);
+  box-shadow: none;
+  background-image: -moz-gradient(to bottom,rgba(242,101,34,1) 0,rgba(243,150,72,1) 100%);
+  background-image: -webkit-linear-gradient(to bottom,rgba(242,101,34,1) 0,rgba(243,150,72,1) 100%);
+  background-image: linear-gradient(to bottom,rgba(242,101,34,1) 0,rgba(243,150,72,1) 100%); /* <== The colour of the cool button chop down effect */
+}
+
+/*These styles above are for the log-in/sign-up button*/
+
+
+
 .logInTitle {
   margin-top: 50px;
   margin-bottom: 20px;
@@ -19,13 +103,6 @@
 .div-to-signup {
   float: right;
   height: 30px;
-}
-
-.link-to-signup {
-  color: black;
-  margin: 20px;
-  float: right;
-  border: 4px solid orange;
 }
 
 /*
@@ -72,7 +149,7 @@ a.submitLogIn:after {
   left: calc(0.7em * 1.2);
   right: calc(0.7em * 1.2);
   height: 3px;
-  background: #f26522;
+  background: rgba(242,101,34,1);
   z-index: -1;
   transition: transform 0.8s cubic-bezier(1, 0, 0.37, 1) 0.2s, right 0.2s cubic-bezier(0.04, 0.48, 0, 1) 0.6s, left 0.4s cubic-bezier(0.04, 0.48, 0, 1) 0.6s;
   transform-origin: left;
@@ -80,7 +157,7 @@ a.submitLogIn:after {
 
 .line {
   position: absolute;
-  background: #f26522;
+  background: rgba(242,101,34,1);
 }
 .line.-right, .line.-left {
   width: 3px;
@@ -159,12 +236,12 @@ a.submitLogIn:active .line.-bottom {
 
 .icon-circle .fa{
     font-size           : 25px;
-    color               : #e84700;
+    color               : rgba(242,101,34,1);
     margin              : 0 auto;
     height              : 80px;
     width               : 80px;
     border-radius       : 50%;
-    border              :2px solid #e84700;
+    border              :2px solid rgba(242,101,34,1);
     line-height         : 80px;
     cursor              : pointer;
     -webkit-transition  : all  ease-in-out 0.35s;
@@ -176,9 +253,9 @@ a.submitLogIn:active .line.-bottom {
 
 .icon-circle  .fa:hover{
 
-    background-color        : #e84700;
+    background-color        : rgba(242,101,34,1);
     color                   : #fff;
-    border                  : 1px solid #e84711;
+    border                  : 1px solid rgba(242,101,34,1);
     -moz-box-shadow         : inset 0px 0px 0px 5px #ffffff;
     -o-box-shadow           : inset 0px 0px 0px 5px #ffffff;
     -ms-box-shadow          : inset 0px 0px 0px 5px #ffffff;
@@ -201,12 +278,12 @@ a.submitLogIn:active .line.-bottom {
 
  .icon-circle .fa{
     font-size           : 15px;
-    color               : #e84700;
+    color               : rgba(242,101,34,1);
     margin              : 0 auto;
     height              : 40px;
     width               : 40px;
     border-radius       : 50%;
-    border              :2px solid #e84700;
+    border              :2px solid rgba(242,101,34,1);
     line-height         : 40px;
     cursor              : pointer;
     -webkit-transition  : all  ease-in-out 0.35s;
@@ -217,9 +294,9 @@ a.submitLogIn:active .line.-bottom {
 }
 
 .icon-circle  .fa:hover{
-    background-color        : #e84700;
+    background-color        : rgba(242,101,34,1);
     color                   : #fff;
-    border                  : 1px solid #e84711;
+    border                  : 1px solid rgba(242,101,34,1);
     -moz-box-shadow         : inset 0px 0px 0px 5px #ffffff;
     -o-box-shadow           : inset 0px 0px 0px 5px #ffffff;
     -ms-box-shadow          : inset 0px 0px 0px 5px #ffffff;
