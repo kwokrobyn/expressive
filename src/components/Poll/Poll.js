@@ -82,6 +82,7 @@ export class Poll extends Component { // eslint-disable-line react/prefer-statel
                         <div id="room-pollbox-question-polltitle">Results:</div>
                         <div id="room-pollbox-question-text">{this.props.poll.question}</div>
                       </div>
+
                       <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 poll-results">
                         <div className="option1-result-div">
                           <div className="option1-result-text">{this.props.poll.option1.text}</div>
@@ -92,6 +93,7 @@ export class Poll extends Component { // eslint-disable-line react/prefer-statel
                           <div className="option2-bar option-bar"><div className="color-bar color-bar-2"><div className='count-2'>{this.props.poll.option2.count}</div></div></div>
                         </div>
                       </div>
+
                       <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 room-pollbox-results">
                         <button type="button" className="btn" onClick={this.endPoll}>End Poll</button>
                       </div>
@@ -102,6 +104,7 @@ export class Poll extends Component { // eslint-disable-line react/prefer-statel
                         <div id="room-pollbox-question-polltitle">Results:</div>
                         <div id="room-pollbox-question-text">{this.props.poll.question}</div>
                       </div>
+
                       <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 poll-results">
                         <div className="option1-result-div">
                           <div className="option1-result-text">{this.props.poll.option1.text}</div>
@@ -112,6 +115,7 @@ export class Poll extends Component { // eslint-disable-line react/prefer-statel
                           <div className="option2-bar option-bar"><div className="color-bar color-bar-2"><div className='count-2'>{this.props.poll.option2.count}</div></div></div>
                         </div>
                       </div>
+
                       <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 room-pollbox-question">
                         <button type="button" className="btn">Close</button>
                       </div>
