@@ -169,7 +169,7 @@ class Navbar extends Component {
         </div>
         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <div className="row">
-            <div className="col-sm-5 col-md-6 col-lg-6 navbar-header-fix">
+            <div className="col-sm-3 col-md-4 col-lg-6 navbar-header-fix">
               <div className="navbar-header" id="navbar-header-md-lg">
                 {titledLogoElement}
               </div>
@@ -177,7 +177,7 @@ class Navbar extends Component {
                 <p>{this.props.pageTitle}</p>
               </div>{/*/.navbar-page-title*/}
             </div> {/* /.navbar-header-fix */}
-            <div className="col-sm-7 col-md-6 col-lg-6">
+            <div className="col-sm-9 col-md-8 col-lg-6">
               {profileElement}
             </div>
           </div>
