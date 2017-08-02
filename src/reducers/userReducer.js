@@ -49,6 +49,12 @@ const userReducer = (state = defaultUser, action) => {
         ...state,
         displayName: action.name
       }
+    case "DISMISS_AUTH_ERROR":
+      return {
+        ...state,
+        hasAuthError: false,
+        errorMessage: ""
+      }
     default:
         return state;
   }
