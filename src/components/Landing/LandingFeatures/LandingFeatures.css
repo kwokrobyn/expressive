@@ -235,7 +235,8 @@ h4.feature-title {
 
 .featurette-btns .featurette-btns-top h4:before,
 .featurette-btns-inner,
-.featurette-btns-inner:hover .featurette-btns-inner:active .featurette-btns-bottom {
+.featurette-btns-inner:hover .featurette-btns-bottom,
+.featurette-btns-inner:active .featurette-btns-bottom {
   background-color: #ff9600;
 }
 
@@ -320,13 +321,14 @@ h4.feature-title {
 }
 
 /* Hover Styles */
-.featurette-btns .featurette-btns-inner:hover .featurette-btns-inner:active .featurette-btns-bottom {
+.featurette-btns .featurette-btns-inner:hover .featurette-btns-bottom {
   bottom: 0;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
 }
 
-.featurette-btns .featurette-btns-inner:hover .featurette-btns-inner:active .featurette-btns-top {
+.featurette-btns .featurette-btns-inner:hover .featurette-btns-top,
+.featurette-btns .featurette-btns-inner:active .featurette-btns-top {
   top: -200px;
   -webkit-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
