@@ -1,12 +1,8 @@
 //Importing required packages
-import React, { Component, PropTypes } from 'react';
-import {Grid, Col, form, FormGroup, FormControl, ControlLabel, HelpBlock, Row, Button} from 'react-bootstrap';
-import { connect } from 'react-redux';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom'
+import React, { Component } from 'react';
+import {Grid, Col, Row} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
 //Importing static assets (i.e. stylesheets, images)
 import './LandingAbout.css';
 
@@ -17,16 +13,6 @@ import './LandingAbout.css';
  */
 
 class LandingAbout extends Component {
-  constructor(props) {
-    super(props);
-
-  }
-
-  // onClick = (e) => {
-  //  this.props.Signup(this.props.history);
-  // }
-
-
   render() {
     return (
       <Grid fluid className="landing-about">

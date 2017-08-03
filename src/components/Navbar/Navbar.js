@@ -1,13 +1,9 @@
 //Importing required packages
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { signOut } from '../../actions/userActions';
 import { toggleMaster } from '../../actions/roomActions';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 //Importing static assets (i.e. stylesheets, images)
 import './Navbar.css';
@@ -55,13 +51,13 @@ class Navbar extends Component {
 
     squareLogoElement = (
       <a href="/dashboard" className="navbar-brand">
-        <img src={squareLogo}/>
+        <img src={squareLogo} alt="squareLogo"/>
       </a>
     )
 
     titledLogoElement = (
       <a href="/dashboard" className="navbar-brand">
-        <img src={titledLogo}/>
+        <img src={titledLogo} alt="titledLogo"/>
       </a>
     )
 
@@ -111,13 +107,13 @@ class Navbar extends Component {
 
     squareLogoElement = (
       <a href="/" className="navbar-brand">
-        <img src={squareLogo}/>
+        <img src={squareLogo} alt="squareLogo"/>
       </a>
     )
 
     titledLogoElement = (
       <a href="/" className="navbar-brand">
-        <img src={titledLogo}/>
+        <img src={titledLogo} alt="titledLogo"/>
       </a>
     )
 
@@ -154,7 +150,7 @@ class Navbar extends Component {
 
   return (
 
-    <nav className="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav className="navbar navbar-inverse navbar-fixed-top">
       <div className="container nav-container">
         <div className="navbar-header">
           {squareLogoElement}

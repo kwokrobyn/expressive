@@ -1,11 +1,9 @@
 //Importing required packages
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { localSignUp, socialSignIn, dismissAuthError } from '../../actions/userActions';
-import {Grid, Col, form, FormGroup, FormControl, ControlLabel, HelpBlock, Row, Button} from 'react-bootstrap';
+import {Col, form, Row, Button} from 'react-bootstrap';
 import {
-  BrowserRouter as Router,
-  Route,
   Link
 } from 'react-router-dom';
 
@@ -13,7 +11,6 @@ import {
 import './Signup.css';
 
 //Importing React Components
-import Navbar from '../Navbar/Navbar';
 
 // Import Firebase
 import firebase from '../../firebase';
@@ -21,10 +18,6 @@ import firebase from '../../firebase';
 import squareLogo from '../Navbar/logo_v1.png';
 
 class Signup extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
@@ -79,7 +72,7 @@ class Signup extends Component {
           <Row>
             <div className="signUpTitle">
             <a href="/dashboard" className="signup-img">
-              <img src={squareLogo}/>
+              <img src={squareLogo} alt="squareLogo"/>
             </a>
               <div><h1>Sign up for your free <b>expressive</b> account</h1></div>
               <div><p>Use <b>expressive</b> and all of its features for free, forever!</p></div>
