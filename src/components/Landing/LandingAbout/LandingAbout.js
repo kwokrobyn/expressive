@@ -1,7 +1,13 @@
 //Importing required packages
-import React, { Component } from 'react';
-import {Grid, Col, Row} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+
+import React, { Component, PropTypes } from 'react';
+import {Grid, Col, form, FormGroup, FormControl, ControlLabel, HelpBlock, Row, Button, Carousel} from 'react-bootstrap';
+import { connect } from 'react-redux';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 
 //Importing static assets (i.e. stylesheets, images)
 import './LandingAbout.css';
@@ -28,8 +34,31 @@ class LandingAbout extends Component {
         <Row>
           <div className="about-section-box">
 
+
             <Col md={6} xs={12} className="aboutSect">
-              <div className="aboutImg"></div>
+            <Carousel>
+                <Carousel.Item>
+                  <img width={900} height={600} alt="900x600" src="../images/landingAbout.png"/>
+                  <Carousel.Caption>
+                    <h4 className="slide-title">Control Questions From Your Phone</h4>
+
+                  </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img width={900} height={600} alt="900x600" src="../images/landingAbout02.png"/>
+                  <Carousel.Caption>
+                    <h4 className="slide-title">Set Polling For More Interactivity</h4>
+
+                  </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img width={900} height={600} alt="900x600" src="../images/landingAbout03.png"/>
+                  <Carousel.Caption>
+                    <h4 className="slide-title">Access Your Room History</h4>
+
+                  </Carousel.Caption>
+                </Carousel.Item>
+              </Carousel>
             </Col>
 
             <Col md={6} xs={12} className="aboutText-box">

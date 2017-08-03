@@ -8,16 +8,15 @@
   padding: 5px;
   background: #f3f5f2 ;
   margin: 10vw auto 5vw;
-
   display: flex;
   justify-content: center;
   transition: .3s ease;
   /*box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);*/
 }
-.about-card:hover {
+/*.about-card:hover {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.8);
   transform: translateY(-10px) scale(1.02);
-}
+}*/
 .about-card:hover .about-title {
   background-position: -100% 0;
   color: white;
@@ -84,25 +83,26 @@
   padding: 20px 40px;
 }
 
-div.aboutImg {
+/*div.aboutImg {
   background: url("/images/landingAbout.png");
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 20px;
   border: 5px solid #ff9600;
   text-align: center;
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
   color: white;
   height: 25vw;
   margin-top: 30px;
-}
+}*/
 
 div.aboutText p {
   text-align: left;
   text-align: justify;
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
   color: #878383;
-  margin-top: 30px;
+  /*margin-top: 30px;*/
   font-size: 1em;
   height: 25vw;
   display: inline-block;
@@ -125,6 +125,7 @@ h2.signup-title {
   text-align: center;
   color: #494949;
   font-family: 'Work Sans', sans-serif;
+  font-weight: 700;
   font-size: 1.2em;
 }
 
@@ -202,4 +203,23 @@ div.signup-button-about:hover::after, div.signup-button-about:hover::before {
   -moz-transform: scale(1);
   -ms-transform: scale(1);
   -o-transform: scale(1);
+}
+
+/*
+* Image carousel
+*/
+
+div.carousel-caption {
+  background-color: rgba(0,0,0,0.7);
+  padding-top: 0px;
+  padding-bottom: 15px;
+
+}
+
+h4.slide-title {
+  height: 40px;
+  font-family: "Raleway", sans-serif;
+  font-size: 1em;
+  display: block;
+  padding-top: 15px;
 }
