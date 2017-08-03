@@ -1,7 +1,13 @@
 //Importing required packages
-import React, { Component } from 'react';
-import {Grid, Col, Row} from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+
+import React, { Component, PropTypes } from 'react';
+import {Grid, Col, form, FormGroup, FormControl, ControlLabel, HelpBlock, Row, Button, Carousel} from 'react-bootstrap';
+import { connect } from 'react-redux';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 
 //Importing static assets (i.e. stylesheets, images)
 import './LandingAbout.css';
@@ -28,52 +34,31 @@ class LandingAbout extends Component {
         <Row>
           <div className="about-section-box">
 
-            <Col md={6} xs={12} className="aboutSect">
-              <div className="aboutImg"></div>
-            </Col>
 
-            <Col md={6} xs={12}>
-            <div id="myCarousel" className="carousel slide" data-ride="carousel">
-     {/* Indicators */}
-     <ol className="carousel-indicators">
-       <li data-target="#myCarousel" data-slide-to={0} className="active" />
-       <li data-target="#myCarousel" data-slide-to={1} />
-       <li data-target="#myCarousel" data-slide-to={2} />
-     </ol>
-     {/* Wrapper for slides */}
-     <div className="carousel-inner">
-       <div className="item active">
-         <img src="la.jpg" alt="Chania" />
-         <div className="carousel-caption">
-           <h3>Los Angeles</h3>
-           <p>LA is always so much fun!</p>
-         </div>
-       </div>
-       <div className="item">
-         <img src="chicago.jpg" alt="Chicago" />
-         <div className="carousel-caption">
-           <h3>Chicago</h3>
-           <p>Thank you, Chicago!</p>
-         </div>
-       </div>
-       <div className="item">
-         <img src="ny.jpg" alt="New York" />
-         <div className="carousel-caption">
-           <h3>New York</h3>
-           <p>We love the Big Apple!</p>
-         </div>
-       </div>
-     </div>
-     {/* Left and right controls */}
-     <a className="left carousel-control" href="#myCarousel" data-slide="prev">
-       <span className="glyphicon glyphicon-chevron-left" />
-       <span className="sr-only">Previous</span>
-     </a>
-     <a className="right carousel-control" href="#myCarousel" data-slide="next">
-       <span className="glyphicon glyphicon-chevron-right" />
-       <span className="sr-only">Next</span>
-     </a>
-   </div>
+            <Col md={6} xs={12} className="aboutSect">
+            <Carousel>
+                <Carousel.Item>
+                  <img width={900} height={600} alt="900x600" src="../images/landingAbout.png"/>
+                  <Carousel.Caption>
+                    <h4 className="slide-title">Control Questions From Your Phone</h4>
+
+                  </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img width={900} height={600} alt="900x600" src="../images/landingAbout02.png"/>
+                  <Carousel.Caption>
+                    <h4 className="slide-title">Set Polling For More Interactivity</h4>
+
+                  </Carousel.Caption>
+                </Carousel.Item>
+                <Carousel.Item>
+                  <img width={900} height={600} alt="900x600" src="../images/landingAbout03.png"/>
+                  <Carousel.Caption>
+                    <h4 className="slide-title">Access Your Room History</h4>
+
+                  </Carousel.Caption>
+                </Carousel.Item>
+              </Carousel>
             </Col>
 
             <Col md={6} xs={12} className="aboutText-box">

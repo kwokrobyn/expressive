@@ -56,7 +56,7 @@ class LandingFeatures extends Component {
 
           <div className="how-card">
             <h1 className="how-title">
-            How to use
+            Features
             </h1>
           </div>
 
@@ -73,16 +73,16 @@ class LandingFeatures extends Component {
 
                 <i className="fa fa-question-circle"></i>
 
-                <h4>Post Real-Time Questions</h4>
+                <h4 className="feature-title">Post Real-Time Questions</h4>
               </div>
               {/* <!-- End ButtonTop --> */}
               <div className="featurette-btns-bottom">
 
                 <i className="fa fa-question-circle-o"></i>
 
-                <h4>No More Class Interruptions</h4>
+                <h4 className="feature-title-content">No More Class Interruptions</h4>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus.</p>
+                <p>Ever felt that talks are often interrupted halfway due to impatience of wanting to get their questions answered? You can now post questions to the speaker without interrupting the session.</p>
 
 
               </div>
@@ -98,16 +98,16 @@ class LandingFeatures extends Component {
 
                 <i className="fa fa-thumbs-up"></i>
 
-                <h4>Get Real-time Votes</h4>
+                <h4 className="feature-title">Get Real-time Votes</h4>
               </div>
               {/* <!-- End ButtonTop --> */}
               <div className="featurette-btns-bottom">
 
                 <i className="fa fa-thumbs-o-up"></i>
 
-                <h4>Want to Get Heard?</h4>
+                <h4 className="feature-title-content">Want to Get Heard?</h4>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus.</p>
+                <p>Feel like your questions are of some importance that needs to be addressed? Maybe the audience feels the same way about your questions too! Vote for your favourite question!</p>
 
 
               </div>
@@ -123,16 +123,16 @@ class LandingFeatures extends Component {
 
                 <i className="fa fa-user-secret"></i>
 
-                <h4>Post Questions Anonymously</h4>
+                <h4 className="feature-title">Post Questions Anonymously</h4>
               </div>
               {/* <!-- End ButtonTop --> */}
               <div className="featurette-btns-bottom">
 
                 <i className="fa fa-user-secret"></i>
 
-                <h4>Too Shy?</h4>
+                <h4 className="feature-title-content">Too Shy?</h4>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec odio ipsum. Suspendisse cursus.</p>
+                <p>Don't like the attention but yet still want to get answers? You can post questions anonymously.</p>
 
               </div>
 
