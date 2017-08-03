@@ -1,8 +1,11 @@
-
+/*
+ROOM ACTIONS
+Components - Room, Dashboard, CreateRoom
+*/
 import firebase from '../firebase';
 
 /*
-* ROOM EXIST actions
+Redux Actions - CreateRoom (modal)
 */
 const roomStringExists = () => {
   return {
@@ -17,7 +20,7 @@ const roomStringAvail = () => {
 }
 
 /*
-* DASHBOARD ROOM LIST actions
+Redux Actions - Dashboard Room List
 */
 const getUserRoomsAction = (rooms) => {
   return {
@@ -33,9 +36,8 @@ const noRooms = () => {
 }
 
 /*
-* JOIN & LEAVE ROOM actions
+Redux Actions - Join and Leave Room
 */
-//join room
 const joinRoomAction = (room) => {
   return {
     type: 'JOIN_ROOM',
@@ -43,14 +45,15 @@ const joinRoomAction = (room) => {
   }
 }
 
-//leave room
 const leaveRoomAction = () => {
   return {
     type: 'LEAVE_ROOM'
   }
 }
 
-// if master signs out, ensure that master view changes to anon view
+/*
+Redux Actions - In Room Toggles
+*/
 export const toggleMaster = (toggle) => {
   return {
     type: 'TOGGLE_MASTER',
@@ -73,13 +76,15 @@ const updateRoomNameAction = (roomName) => {
 }
 
 /*
-* DATABASE METHODS
+Firebase Actions
 */
 const db = firebase.database();
 
 /*
-* CHECK EXISTING (to checkExistReducer)
+Firebase Actions - CreateRoom
 */
+
+// called by CreateRoom, check if room string exists in firebase
 export const checkExisting = (roomString) => {
   return (dispatch) => {
     const ref = db.ref("rooms/" + roomString);
@@ -98,7 +103,11 @@ export const checkExisting = (roomString) => {
   }
 }
 
-// GET USER ROOMS
+/*
+Firebase Actions - Dashboard Room List
+*/
+
+// Dashboard listener for updated ownedRooms list
 export const getUserRooms = (id) => {
   return (dispatch) => {
     const ownedRoomsRef = db.ref("users/" + id + '/ownedRooms/');
@@ -119,14 +128,14 @@ export const getUserRooms = (id) => {
   }
 }
 
-// END GET USER ROOMS
+// detach ownedRooms listener when Dashboard unmounts
 export const endGetUserRooms = (id) => {
   return (dispatch) => {
     db.ref("users/" + id + '/ownedRooms').off('value');
   }
 }
 
-// ADD ROOM TO USER
+// called by createRoom action, add room to ownedRooms
 const addRoomToUserRoomList = (roomInfo) => {
   const userRef = db.ref('users/' + roomInfo.master.uid + '/ownedRooms/' + roomInfo.uid);
   userRef.set({
@@ -138,7 +147,7 @@ const addRoomToUserRoomList = (roomInfo) => {
   })
 }
 
-// CREATE ROOM
+// called by createRoom component, add room to room db
 export const createRoom = (roomInfo) => {
   return (dispatch) => {
 
@@ -169,7 +178,10 @@ export const createRoom = (roomInfo) => {
   }
 }
 
-// JOIN ROOM
+/*
+Firebase Actions - Join and Leave Rooms
+*/
+
 export const joinRoom = (roomInfo) => {
   return (dispatch) => {
     console.log(roomInfo);
@@ -190,7 +202,6 @@ export const joinRoom = (roomInfo) => {
   }
 }
 
-//LEAVE ROOM
 export const leaveRoom = (roomInfo) => {
   return (dispatch) => {
 
@@ -206,7 +217,6 @@ export const leaveRoom = (roomInfo) => {
   }
 }
 
-//DELETE ROOM
 export const deleteRoom = (deleteInfo) => {
   return (dispatch) => {
     console.log(deleteInfo);
@@ -229,7 +239,11 @@ export const deleteRoom = (deleteInfo) => {
   }
 }
 
-//TOGGLE ROOM Active
+/*
+Firebase Actions - In Room Toggles
+*/
+
+// TOGGLE ROOM Active
 export const toggleRoom = (roomInfo) => {
   return (dispatch) => {
     console.log(roomInfo);
