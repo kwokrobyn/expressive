@@ -186,7 +186,7 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
   }
 
   componentWillUnmount() {
-    this.props.endGetQuestions(this.props.roomString);
+    this.props.endGetQuestions(this.props.roomString); 
   }
 
 }

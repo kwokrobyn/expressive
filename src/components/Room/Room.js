@@ -129,7 +129,7 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
             </div>
 
           ) : (
-            <div>Room Not Active</div>
+            <div className="room-not-active">Room Not Active</div>
           )}
           { /* /.row */ }
           </div>

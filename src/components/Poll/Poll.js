@@ -71,13 +71,15 @@ export class Poll extends Component { // eslint-disable-line react/prefer-statel
 
     return (
       <div>
-        {
+        { // is poll active?
           pollActive ? (
-            <div> {
+            <div> { // has user entered their choice?
               userEntered ? (
-                <div> {
+                <div> { // is the user the master?
                   isMaster ? (
+
                     <div className="row" id="room-pollbox">
+                    {/* master results: render results with end pol option */}
                       <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 room-pollbox-question">
                         <div id="room-pollbox-question-polltitle">Results:</div>
                         <div id="room-pollbox-question-text">{this.props.poll.question}</div>
@@ -99,7 +101,9 @@ export class Poll extends Component { // eslint-disable-line react/prefer-statel
                       </div>
                     </div>
                   ) : (
+
                     <div className="row" id="room-pollbox">
+                    {/* user results: render results option */}
                       <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 room-pollbox-question">
                         <div id="room-pollbox-question-polltitle">Results:</div>
                         <div id="room-pollbox-question-text">{this.props.poll.question}</div>
@@ -115,17 +119,14 @@ export class Poll extends Component { // eslint-disable-line react/prefer-statel
                           <div className="option2-bar option-bar"><div className="color-bar color-bar-2"><div className='count-2'>{this.props.poll.option2.count}</div></div></div>
                         </div>
                       </div>
-
-                      <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 room-pollbox-question">
-                        <button type="button" className="btn">Close</button>
-                      </div>
                     </div>
                   )
                 }
                 </div>
               ) : (
-                <div className="row" id="room-pollbox">
 
+                <div className="row" id="room-pollbox">
+                  {/* user choices */}
                   <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 room-pollbox-question">
                     <div id="room-pollbox-question-polltitle">Poll</div>
                     <div id="room-pollbox-question-text">{this.props.poll.question}</div>
