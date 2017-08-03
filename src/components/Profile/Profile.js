@@ -99,7 +99,7 @@ class Profile extends Component {
 					       <input className="input__field input__field--update"
                         type="text"
                         id="form-displayName"
-                        maxLength={16}
+                        maxLength={20}
                         defaultValue={this.props.user.displayName}/>
   					<label className="input__label input__label--update" htmlFor="form-displayName">
   						<span className="input__label-content input__label-content--update">Update First Name Here</span>
@@ -112,7 +112,7 @@ class Profile extends Component {
   					<input className="input__field input__field--update"
                    type="email"
                    id="form-email"
-                   maxLength={16}
+                   maxLength={30}
                    defaultValue={this.props.user.email}/>
   					<label className="input__label input__label--update" htmlFor="form-email">
   						<span className="input__label-content input__label-content--update">Update email here</span>
@@ -124,7 +124,7 @@ class Profile extends Component {
   				<span className="input input--update">
   					<input className="input__field input__field--update"
                    type="password"
-                   maxLength={16}
+                   maxLength={30}
                    id="form-newpassword" />
   					<label className="input__label input__label--update" htmlFor="form-newpassword">
   						<span className="input__label-content input__label-content--update">Update password here</span>

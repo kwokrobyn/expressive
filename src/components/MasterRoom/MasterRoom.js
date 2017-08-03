@@ -98,7 +98,7 @@ export class MasterRoom extends Component { // eslint-disable-line react/prefer-
         <div className="row master-room-stats">
           <div className="col-md-offset-3 col-md-2 master-room-asked-col">
             <div className="stat-display">{this.props.stats.questionCount}</div>
-            Total Questions
+              Total Questions
           </div>
           <div className="col-md-2 master-room-complete-col">
             <div className="stat-display">{this.props.stats.completeCount}</div>
