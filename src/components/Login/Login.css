@@ -114,8 +114,6 @@
 .loginSubmit {
   padding-top: 45px;
   text-align: center;
-  /*margin-left: 255px;*/
-
 }
 
 a.submitLogIn {
@@ -372,8 +370,8 @@ label input {
   border-bottom: 2px solid #686868;
   color: #686868;
   font-size: 18px;
-  font-family: "Work Sans", sans-serif;
-  font-weight: 500;
+  font-family: "Raleway", sans-serif;
+  /*font-weight: 500;*/
   letter-spacing: 1px;
   outline: 0;
   padding: 5px 20px;
@@ -410,47 +408,63 @@ label input:valid + .label-text {
 
 /* for lg  */
 @media (min-width: 1200px) {
-  div.login-error-message {
-    left: 400px;
+  .login-error-message-row {
+    margin-left: 35vw;
+    margin-right: 35vw;
   }
-  .submitLogIn {
-    margin-left: 20vw;
+  .loginSubmit {
+    margin-left: 10vw;
+  }
+  div.login-error-message {
+    left: 50vw;
   }
 }
 
 /* for md  */
 @media (min-width: 993px) and (max-width: 1200px) {
-  div.login-error-message {
-    left: 300px;
-  }
-  .submitLogIn {
+  .login-error-message-row {
     margin-left: 30vw;
+    margin-right: 30vw;
+  }
+  .loginSubmit {
+    margin-left: 13.5vw;
+  }
+  div.login-error-message {
+    left: 50vw;
   }
 }
 
 /* for sm  */
 @media (min-width: 768px) and (max-width: 992px) {
-  div.login-error-message {
-    left: 100px;
-    width: 70vw;
+  .login-error-message-row {
+    margin-left: 25vw;
+    margin-right: 25vw;
   }
-  .submitLogIn {
-    margin-left: 37vw;
+  .loginSubmit {
+    margin-left: 15vw;
+  }
+  div.login-error-message {
+    padding-left: 0px;
+    padding-right: 0px;
+    left: 50vw;
   }
 }
 
 /* for xs  */
 @media (max-width: 768px) {
-  div.login-error-message {
-    left: 20px;
-    width: 70vw;
+  .login-error-message-row {
+    margin-left: 22vw;
+    margin-right: 22vw;
   }
-  .submitLogIn {
-    margin-left: 45vw;
+  .loginSubmit {
+    margin-left: 19vw;
+  }
+  div.login-error-message {
+    width: 70vw;
   }
 }
 
-h4.error-message {
+h4.login-error-message {
   background-color: #e04242;
   border-radius: 5px;
   padding: 5px;
@@ -458,17 +472,17 @@ h4.error-message {
   display: inline-block;
   position: relative;
   text-align: center;
-  /*margin-right: 1vw;*/
 }
 
-svg.login-error-message {
-  position: absolute;
-  max-width: 10%;
-  min-width: 3%;
+svg.login-error-message-svg {
+  position: relative;
   display: inline-block;
-  margin-bottom: 3vw auto 0;
-  display: inline-block;
-  padding-bottom: 5px;
+  max-width: 3vw;
+  min-width: 30px;
+  top: 1vw;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  cursor: pointer;
 }
 
 .path {

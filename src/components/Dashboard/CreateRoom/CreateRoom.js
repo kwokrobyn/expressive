@@ -37,7 +37,7 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
       // this sets the state of the 2 input fields to "" after room is created.
       this.setState({roomname: "", roomstring: ""});
 
-      // shady shit
+      // Closing of error message footer
       document.getElementById('create-room-footer-close').click();
       this.setState({errMessage: false,});
       this.props.createRoom(roomInfo);
@@ -123,7 +123,7 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
                       {/* flash message */}
                       {this.props.existing ? (
                         <div>
-                        <h4 className="errormsg" data-content="This room has been taken">This room has been taken</h4>
+                        <h4 className="errormsg">This room has been taken</h4>
                         <svg version="1.1"
                              xmlns="http://www.w3.org/2000/svg"
                              viewBox="-10 -10 160.2 160.2">

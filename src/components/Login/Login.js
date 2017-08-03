@@ -109,20 +109,20 @@ class Login extends Component {
         </Row>
 
           {/* Error Message */}
-          <Row>
+          <Row className="login-error-message-row">
 
           {this.props.user.hasAuthError &&
 
-            <Col lg={12} md={12} sm={12} xs={12} className="login-error-message ">
-              <h4 className="error-message"           data-content="{this.props.user.errorMessage}">{this.props.user.errorMessage}</h4>
+            <Col lg={12} md={12} sm={12} xs={12} className="login-error-message-group">
+              <h4 className="login-error-message"           data-content="{this.props.user.errorMessage}">{this.props.user.errorMessage}</h4>
               <svg version="1.1"
-                   className="login-error-message"
+                   className="login-error-message-svg"
                    xmlns="http://www.w3.org/2000/svg"
                    viewBox="-10 -10 160.2 160.2"
                    onClick={this.dismissError}>
               <circle className="path circle"
                       fill="none"
-                      stroke="#D06079"
+                      stroke="#e04242"
                       strokeWidth={6}
                       strokeMiterlimit={10}
                       cx="65.1"
@@ -130,7 +130,7 @@ class Login extends Component {
                       r="62.1"/>
                <line className="path line"
                      fill="none"
-                     stroke="#D06079"
+                     stroke="#e04242"
                      strokeWidth={6}
                      strokeLinecap="round"
                      strokeMiterlimit={10}
@@ -139,7 +139,7 @@ class Login extends Component {
                      y2="92.3"/>
                <line className="path line"
                      fill="none"
-                     stroke="#D06079"
+                     stroke="#e04242"
                      strokeWidth={6}
                      strokeLinecap="round"
                      strokeMiterlimit={10}

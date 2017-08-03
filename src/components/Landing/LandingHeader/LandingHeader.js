@@ -24,10 +24,10 @@ class LandingHeader extends Component {
             </p>
             {/* Header Title content*/}
             <ul className="content__container__list">
-              <li className="content__container__list__item">Q and A !</li>
-              <li className="content__container__list__item">People !</li>
-              <li className="content__container__list__item">Votes !</li>
-              <li className="content__container__list__item">Rooms !</li>
+              <li className="content__container__list__item">Q & A!</li>
+              <li className="content__container__list__item">People!</li>
+              <li className="content__container__list__item">Votes!</li>
+              <li className="content__container__list__item">Rooms!</li>
             </ul>
           </div>
         </div>
