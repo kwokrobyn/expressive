@@ -43,7 +43,7 @@ class LandingAbout extends Component {
           <div className="about-section-box">
 
             <Col md={6} xs={12} className="aboutSect">
-              <div className="aboutImg">About</div>
+              <div className="aboutImg"></div>
             </Col>
 
             <Col md={6} xs={12} className="aboutText-box">

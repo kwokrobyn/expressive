@@ -1,8 +1,6 @@
 /*
-* about
+* about title
 */
-
-
 
 .about-card {
   left: 20vw;
@@ -22,10 +20,11 @@
 }
 .about-card:hover .about-title {
   background-position: -100% 0;
+  color: white;
 }
 
 .about-title {
-  background: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, #09f3d6 50%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, #ff9600 50%);
   background-size: 200%;
   background-position: 0 0;
   /*display: inline;*/
@@ -86,7 +85,11 @@
 }
 
 div.aboutImg {
-  background-color: rgba(243,150,72,1);
+  background: url("/images/landingAbout.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px;
+  border: 5px solid #ff9600;
   text-align: center;
   font-family: 'Work Sans', sans-serif;
   color: white;
