@@ -189,7 +189,7 @@ export const socialSignIn = (platform) => {
 
     firebase.auth().signInWithPopup(provider)
     .then((result) => {
-      var token = result.credential.accessToken;
+      // var token = result.credential.accessToken;
 
       console.log('user passed by platform: ', result.user);
 

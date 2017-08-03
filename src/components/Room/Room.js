@@ -1,17 +1,11 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom'
 
 //Importing static assets (i.e. stylesheets, images)
 import './Room.css';
 
 //Importing React Components
 import Navbar from '../Navbar/Navbar';
-import Footer from '../Footer/Footer';
 import QuestionList from './QuestionList/QuestionList';
 
 import { addQuestion, getQuestions } from '../../actions/questionActions';

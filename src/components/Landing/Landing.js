@@ -1,7 +1,6 @@
 //Importing required packages
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { localSignUp, localSignIn, signOut } from '../../actions/userActions';
 import { Row, Grid } from 'react-bootstrap';
 
 //Importing static assets (i.e. stylesheets, images)
@@ -20,11 +19,6 @@ import firebase from 'firebase';
  * Landing
  */
 export class Landing extends Component {
-
-  constructor(props){
-    super(props)
-  }
-
   componentDidMount() {
 
     if (this.props.user.isSignedIn) {

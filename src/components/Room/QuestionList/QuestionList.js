@@ -1,11 +1,6 @@
 //Importing required packages
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom'
 
 // Importing Redux Actions
 import { getQuestions, endGetQuestions, addVote, unVote, markComplete, markIncomplete } from '../../../actions/questionActions';
@@ -20,11 +15,6 @@ import './QuestionList.css';
  * Dash
  */
 export class QuestionList extends Component { // eslint-disable-line react/prefer-stateless-function
-
-  constructor(props){
-    super(props);
-  }
-
   componentDidMount() {
     this.props.getQuestions(this.props.roomString);
     console.log('this.props.roomString: ', this.props.roomString);
@@ -50,14 +40,14 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
       question: upvote.dataset.id,
       room: this.props.room.roomId
     }
-    if (upvote.dataset.toggle == 'false' && this.props.room.isActive == true) {
+    if (upvote.dataset.toggle === 'false' && this.props.room.isActive === true) {
       upvote.dataset.toggle = true;
       upvote.style.color = "rgba(243,150,72,1)";
       console.log('question: ', upvote.dataset.id);
       console.log('room:', this.props.room.roomId);
 
       this.props.addVote(voteInfo);
-    } else if (this.props.room.isActive == true) {
+    } else if (this.props.room.isActive === true) {
       this.props.unVote(voteInfo);
       upvote.dataset.toggle = false;
       upvote.style.color = "white";
@@ -71,7 +61,7 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
       room: this.props.room.roomId
     }
 
-    if (complete.dataset.toggle == 'false') {
+    if (complete.dataset.toggle === 'false') {
       complete.dataset.toggle = true;
       complete.style.color = "rgba(243,150,72,1)"; // completed style
       this.props.markComplete(completeInfo);
@@ -186,7 +176,7 @@ export class QuestionList extends Component { // eslint-disable-line react/prefe
   }
 
   componentWillUnmount() {
-    this.props.endGetQuestions(this.props.roomString); 
+    this.props.endGetQuestions(this.props.roomString);
   }
 
 }

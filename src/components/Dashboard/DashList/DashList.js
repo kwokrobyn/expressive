@@ -1,7 +1,7 @@
 //Importing required packages
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {Grid, Col, form, FormGroup, FormControl, ControlLabel, HelpBlock, Row} from 'react-bootstrap';
+import {Grid, Col, Row} from 'react-bootstrap';
 
 //Importing static assets (i.e. stylesheets, images)
 
@@ -12,19 +12,10 @@ import { getUserRooms, deleteRoom } from '../../../actions/roomActions';
 
 import './DashList.css';
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 
 export class DashList extends Component { // eslint-disable-line react/prefer-stateless-function
-
-  constructor(props){
-    super(props);
-  }
-
   deleteRoom = (e) => {
     console.log('delted');
     e.preventDefault();
@@ -45,14 +36,6 @@ export class DashList extends Component { // eslint-disable-line react/prefer-st
         name: this.props.ownedRooms[key].name
       })
     })
-
-    {/*const deleteRoomButton = (
-        <div className="delete-room-outer pull-right">
-          <div className="delete-room-inner" onClick={this.deleteRoom} >
-            <label className="delete-room-inner-label">Delete</label>
-          </div>
-        </div>
-    ) */}
 
     const rooms = roomArray.map((e) => {
       return (
