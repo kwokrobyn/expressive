@@ -55,12 +55,36 @@ class Navbar extends Component {
   let squareLogoElement = null;
   let titledLogoElement = null;
 
+  //Add profile picture to navbar
   let profilePicture = null;
+  var user = firebase.auth().currentUser;
+
   if (this.props.user.photoURL == null || this.props.user.photoURL == "") {
-    profilePicture = monkeyPic2;
+    let getRandomInt = (min, max) => {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+    };
+    switch (getRandomInt(1,4)) {
+      case 1:
+        profilePicture = monkeyPic1;
+        console.log(1);
+        break;
+      case 2:
+        profilePicture = monkeyPic2;
+        console.log(2);
+        break;
+      case 3:
+        profilePicture = monkeyPic3;
+        console.log(3);
+        break;
+      default:
+    };
+  } else if (user != null) {
+      profilePicture = this.props.user.photoURL;
   } else {
-    profilePicture = monkeyPic2;
-  };
+    profilePicture = monkeyPic3;
+  }
 
   if (isSignedIn) {
 
