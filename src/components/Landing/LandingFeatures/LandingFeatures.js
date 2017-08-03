@@ -1,18 +1,13 @@
 //Importing required packages
 import React, { Component } from 'react';
-import {Grid, Col, form, FormGroup, FormControl, ControlLabel, HelpBlock, Row, Button} from 'react-bootstrap';
+import {Grid, FormGroup, FormControl, ControlLabel, Row } from 'react-bootstrap';
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 //Importing static assets (i.e. stylesheets, images)
 import './LandingFeatures.css';
 
 //Importing React Components
-
 
 class LandingFeatures extends Component {
   constructor(props) {

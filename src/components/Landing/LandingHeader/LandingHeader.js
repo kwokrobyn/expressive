@@ -1,25 +1,16 @@
 //Importing required packages
 import React, { Component } from 'react';
-import {Col, Grid, Row} from 'react-bootstrap';
+import {Col, Row} from 'react-bootstrap';
 
 //Importing static assets (i.e. stylesheets, images)
 import './LandingHeader.css';
 
 //Importing React Components
 
-
-/**
- * LandingHeader
- */
-
- class LandingHeader extends Component {
-   constructor(props) {
-     super(props);
-   }
-
-   render() {
-     return (
-       <div>
+class LandingHeader extends Component {
+  render() {
+    return (
+      <div>
          <div className="headerArt">
            <Col md={12} className="headerArtImg">
            </Col>
@@ -41,11 +32,9 @@ import './LandingHeader.css';
           </div>
         </div>
         </Row>
-        </div>
-
+      </div>
      );
    }
-
  }
 
  export default LandingHeader;

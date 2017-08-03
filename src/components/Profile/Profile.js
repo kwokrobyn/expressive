@@ -1,7 +1,7 @@
 //Importing required packages
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Grid, Col, Button, Row } from 'react-bootstrap';
+import { Grid, Col } from 'react-bootstrap';
 import { deleteUser, updateUser } from '../../actions/userActions';
 
 //Importing static assets (i.e. stylesheets, images)
@@ -14,10 +14,6 @@ import Navbar from '../Navbar/Navbar';
 import firebase from '../../firebase';
 
 class Profile extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     // this is test code to see if there is firebase user
     firebase.auth().onAuthStateChanged((user) => {

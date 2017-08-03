@@ -2,11 +2,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { localSignIn, socialSignIn, dismissAuthError } from '../../actions/userActions';
-import {Grid, Col, form, FormGroup, FormControl, ControlLabel, HelpBlock, Row, Button} from 'react-bootstrap';
-import FontAwesome from 'react-fontawesome';
+import {Grid, Col, form, Row} from 'react-bootstrap';
 import {
-  BrowserRouter as Router,
-  Route,
   Link
 } from 'react-router-dom';
 
@@ -15,16 +12,11 @@ import './Login.css';
 import squareLogo from '../Navbar/logo_v1.png';
 
 //Importing React Components
-import Navbar from '../Navbar/Navbar';
 
 // Importing Firebase
 import firebase from '../../firebase';
 
 class Login extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     // this is test code to see if there is firebase user
     firebase.auth().onAuthStateChanged((user) => {
@@ -79,7 +71,7 @@ class Login extends Component {
         <Row>
           <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 logInTitle">
             <a href="/dashboard" className="signup-img">
-              <img src={squareLogo}/>
+              <img src={squareLogo} alt="squareLogo"/>
             </a>
             <h1>Log in to your <b>expressive</b> account</h1>
           </div>

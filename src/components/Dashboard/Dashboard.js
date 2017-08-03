@@ -1,7 +1,7 @@
 //Importing required packages
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {Grid, Col, form, FormGroup, FormControl, ControlLabel, HelpBlock, Row, Button} from 'react-bootstrap';
+import {Grid, Col} from 'react-bootstrap';
 
 //Importing static assets (i.e. stylesheets, images)
 import Navbar from '../Navbar/Navbar';
@@ -12,25 +12,12 @@ import DashList from './DashList/DashList';
 import { signOut } from '../../actions/userActions';
 import { getUserRooms, endGetUserRooms } from '../../actions/roomActions';
 
-
-
 import './Dashboard.css';
-
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom'
 
 /**
  * Dash
  */
 export class Dashboard extends Component { // eslint-disable-line react/prefer-stateless-function
-
-  constructor(props){
-    super(props);
-  }
-
   componentDidMount() {
     this.props.getUserRooms(this.props.user.uid)
   }
