@@ -20,10 +20,8 @@ import Landing from '../Landing/Landing';
 import Signup from '../Signup/Signup';
 import Login from '../Login/Login';
 import Dashboard from '../Dashboard/Dashboard';
-import Room from '../Room/Room';
 import InitRoom from '../InitRoom/InitRoom';
 import Profile from '../Profile/Profile';
-import Navbar from '../Navbar/Navbar';
 import Princess from '../Princess/Princess';
 
 // Import Actions
@@ -34,16 +32,12 @@ import { signInSuccess } from '../../actions/userActions';
  */
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     // updates user redux state based on firebase current user
     firebase.auth().onAuthStateChanged((user) => {
       console.log('Auth state changed', user);
         if (user) {
-          if (user.isAnonymous == true) {
+          if (user.isAnonymous === true) {
             console.log('You are Anon');
           } else {
             this.props.dispatch(signInSuccess(user));
