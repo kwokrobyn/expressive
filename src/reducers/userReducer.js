@@ -6,7 +6,8 @@ const defaultUser = {
   displayName: "Guest",
   isSignedIn: false,
   hasAuthError: false,
-  errorMessage: ""
+  errorMessage: "",
+  photoURL: ""
 }
 
 const userReducer = (state = defaultUser, action) => {
@@ -20,6 +21,7 @@ const userReducer = (state = defaultUser, action) => {
         uid: action.user.uid,
         email: action.user.email,
         displayName: action.user.displayName,
+        photoURL: action.user.photoURL,
         isSignedIn: true,
         hasAuthError: false,
         errorMessage: ""
@@ -37,6 +39,7 @@ const userReducer = (state = defaultUser, action) => {
       return defaultUser;
     case "UPDATE_USER":
       return {
+        ...state,
         uid: action.user.uid,
         email: action.user.email,
         displayName: action.user.displayName,
