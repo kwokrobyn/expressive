@@ -469,7 +469,7 @@ svg.signup-error-message-svg {
   display: inline-block;
   max-width: 3vw;
   min-width: 30px;
-  top: 1.5vh;
+  top: 1vw;
   margin: 0 0 0 0.5vw;
   padding: 0 0 0 0;
   cursor: pointer;
