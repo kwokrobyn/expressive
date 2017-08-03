@@ -31,7 +31,7 @@ export class JoinRoom extends Component { // eslint-disable-line react/prefer-st
       // this sets the state of the 2 input fields to "" after joining room.
       this.setState({roomname: "", roomstring: ""});
 
-      // shady shit
+      // Closing of error message footer
       document.getElementById('join-room-footer-close').click();
       this.setState({errMessage: false,});
       window.location.href = "/room/" + id;

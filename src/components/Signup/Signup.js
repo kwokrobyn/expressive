@@ -122,12 +122,47 @@ class Signup extends Component {
           </Row>
 
           {/* Error Message */}
-          <Row>
-            {this.props.user.hasAuthError &&
-              <div>
-                <div className="error-message">{this.props.user.errorMessage}<Button className="delete-room" onClick={this.dismissError}></Button></div>
-              </div>
-            }
+          <Row className="signup-error-message-row">
+
+          {this.props.user.hasAuthError &&
+
+            <Col lg={12} md={12} sm={12} xs={12} className="signup-error-message-group">
+              <h4 className="signup-error-message"           data-content="{this.props.user.errorMessage}">{this.props.user.errorMessage}</h4>
+              <svg version="1.1"
+                   className="signup-error-message-svg"
+                   xmlns="http://www.w3.org/2000/svg"
+                   viewBox="-10 -10 160.2 160.2"
+                   onClick={this.dismissError}>
+              <circle className="path circle"
+                      fill="none"
+                      stroke="#e04242"
+                      strokeWidth={6}
+                      strokeMiterlimit={10}
+                      cx="65.1"
+                      cy="65.1"
+                      r="62.1"/>
+               <line className="path line"
+                     fill="none"
+                     stroke="#e04242"
+                     strokeWidth={6}
+                     strokeLinecap="round"
+                     strokeMiterlimit={10}
+                     x1="34.4" y1="37.9"
+                     x2="95.8"
+                     y2="92.3"/>
+               <line className="path line"
+                     fill="none"
+                     stroke="#e04242"
+                     strokeWidth={6}
+                     strokeLinecap="round"
+                     strokeMiterlimit={10}
+                     x1="95.8"
+                     y1={38}
+                     x2="34.4"
+                     y2="92.2"/>
+              </svg>
+            </Col>
+          }
           </Row>
 
           {/* Social Sign In */}
@@ -136,7 +171,7 @@ class Signup extends Component {
             <div className="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4 sicon">
             {/* Facebook */}
               <Col md={6} sm={6} xs={4} className="text-center">
-    				      <div className="icon-circle" >
+    				      <div className="icon-circle">
     					         <a href="#" className="ifacebook"><i className="fa fa-facebook" id="facebook" onClick={this.socialSignIn}></i></a>
     				      </div>
               </Col>

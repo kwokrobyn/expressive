@@ -37,7 +37,7 @@ export class CreateRoom extends Component { // eslint-disable-line react/prefer-
       // this sets the state of the 2 input fields to "" after room is created.
       this.setState({roomname: "", roomstring: ""});
 
-      // shady shit
+      // Closing of error message footer
       document.getElementById('create-room-footer-close').click();
       this.setState({errMessage: false,});
       this.props.createRoom(roomInfo);

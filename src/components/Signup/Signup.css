@@ -220,7 +220,7 @@ a.submitButton:active .line.-bottom {
 @media (min-width:400px) and (max-width:400px) {
 
 
- .icon-circle .fa{
+ .icon-circle .fa {
     font-size           : 15px;
     color               : #e84700;
     margin              : 0 auto;
@@ -237,7 +237,7 @@ a.submitButton:active .line.-bottom {
     transition          : all  ease-in-out 0.20s,background-color ease-in-out 0.05s;
 }
 
-.icon-circle  .fa:hover{
+.icon-circle  .fa:hover {
     background-color        : #e84700;
     color                   : #fff;
     border                  : 1px solid #e84711;
@@ -406,4 +406,126 @@ label input:valid + .label-text {
     30% { top: 0.1em; }
     50% { opacity: 0; font-size: 0.85em; }
     100% { top: 3em; opacity: 1; }
+}
+
+/*
+* Error Message
+*/
+
+/* for lg  */
+@media (min-width: 1200px) {
+  .signup-error-message-row {
+    margin-left: 35vw;
+  }
+  div.signup-error-message {
+    left: 50vw;
+  }
+}
+
+/* for md  */
+@media (min-width: 993px) and (max-width: 1200px) {
+  .signup-error-message-row {
+    margin-left: 30vw;
+  }
+  div.signup-error-message {
+    left: 50vw;
+  }
+}
+
+/* for sm  */
+@media (min-width: 768px) and (max-width: 992px) {
+  .signup-error-message-row {
+    margin-left: 25vw;
+  }
+  div.signup-error-message {
+    padding-left: 0px;
+    padding-right: 0px;
+    left: 50vw;
+  }
+}
+
+/* for xs  */
+@media (max-width: 768px) {
+  .signup-error-message-row {
+    margin-left: 10vw;
+  }
+  div.signup-error-message {
+    width: 70vw;
+  }
+}
+
+h4.signup-error-message {
+  background-color: #e04242;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+}
+
+svg.signup-error-message-svg {
+  position: relative;
+  display: inline-block;
+  max-width: 3vw;
+  min-width: 30px;
+  top: 1.5vh;
+  margin: 0 0 0 0.5vw;
+  padding: 0 0 0 0;
+  cursor: pointer;
+}
+
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+}
+.path.circle {
+  stroke-width: 5px;
+  -webkit-animation: dash 0.9s ease-in-out;
+  animation: dash 0.9s ease-in-out;
+}
+.path.line {
+  stroke-width: 5px;
+  stroke-dashoffset: 1000;
+  -webkit-animation: dash 0.9s 0.35s ease-in-out forwards;
+  animation: dash 0.9s 0.35s ease-in-out forwards;
+}
+.path.check {
+  stroke-dashoffset: -100;
+  stroke-width: 5px;
+  -webkit-animation: dash-check 0.9s 0.35s ease-in-out forwards;
+  animation: dash-check 0.9s 0.35s ease-in-out forwards;
+}
+
+@-webkit-keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@-webkit-keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100;
+  }
+  100% {
+    stroke-dashoffset: 900;
+  }
+}
+@keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100;
+  }
+  100% {
+    stroke-dashoffset: 900;
+  }
 }
