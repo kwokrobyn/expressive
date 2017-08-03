@@ -1,5 +1,5 @@
 //Importing required packages
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import {Row} from 'react-bootstrap';
 
 //Importing static assets (i.e. stylesheets, images)
@@ -11,24 +11,20 @@ import './Footer.css';
  * Footer
  */
  class Footer extends Component {
-   constructor(props) {
-     super(props);
-   }
-
-   render() {
-     return (
-       <Row>
-         <footer>
+  render() {
+    return (
+      <Row>
+        <footer>
           <div id="footer-group-left">
-            <img src ="../../images/logo_v1.png" id="footer-logo"/>
+            <img src ="../../images/logo_v1.png" id="footer-logo" alt="logo"/>
             <p id="footer-credits">
               <b>expressive</b> is a Q & A management web service created by Robyn Kwok, Bryan Lee, Dionne Phua & Woody See
             </p>
           </div>
-         </footer>
-       </Row>
-     );
-   }
+        </footer>
+      </Row>
+    );
+  }
  }
 
  export default Footer;

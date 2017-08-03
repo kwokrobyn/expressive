@@ -24,17 +24,10 @@ export class JoinRoom extends Component { // eslint-disable-line react/prefer-st
 
   goToRoom = (e) => {
     e.preventDefault();
-    const name = this.state.roomname;
     console.log(this.state.roomstring);
     const id = this.state.roomstring
     // unique string checker to input here
     if (this.props.existing) {
-      // pass room info to actions for firebase call. current user object is passed.
-      const roomInfo = {
-        name: name,
-        uid: id,
-        master: this.props.user,
-        }
       // this sets the state of the 2 input fields to "" after joining room.
       this.setState({roomname: "", roomstring: ""});
 
@@ -99,7 +92,6 @@ export class JoinRoom extends Component { // eslint-disable-line react/prefer-st
                         placeholder="Type the room URL here, e.g. room"
                         id="roomstring"
                         onChange={this.onChange}
-                        value ={this.state.joinroom}
                         onKeyPress={this.preventSpaces}
                         value={this.state.roomstring}/>
               </div>
