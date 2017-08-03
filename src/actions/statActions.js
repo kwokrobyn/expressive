@@ -1,3 +1,8 @@
+/*
+STAT ACTIONS
+Components - MasterRoom
+*/
+
 import firebase from '../firebase';
 const db = firebase.database();
 

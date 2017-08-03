@@ -1,8 +1,18 @@
+/*
+QN ACTIONS
+Components - QuestionList, Room
+*/
+
 import uuid from 'uuid';
 import firebase from '../firebase';
 
 const db = firebase.database();
 
+/*
+Redux Actions
+*/
+
+// update redux with updated questions from firebase
 const getQuestionsAction = (questions) => {
   return {
     type: 'GET_QUESTIONS',
@@ -10,12 +20,18 @@ const getQuestionsAction = (questions) => {
   }
 }
 
+// clear questions state on QuestionList unmount
 const clearQuestions = () => {
   return {
     type: 'CLEAR_QUESTIONS'
   }
 }
 
+/*
+Firebase Actions - Questions
+*/
+
+// called by questionList, firebase listener for updated questions in current room
 export const getQuestions = (roomId) => {
   return (dispatch) => {
     console.log('getQuestions method.');
@@ -24,6 +40,7 @@ export const getQuestions = (roomId) => {
     questionsRef.on("value", (snapshot) => {
       questionsRef.once("value", (innerSnapshot) => {
         console.log('About to dispatch', innerSnapshot.val());
+        // only calls redux action if questions exist
         if (innerSnapshot.exists()) {
           dispatch(getQuestionsAction(innerSnapshot.val()));
         } else {
@@ -35,6 +52,7 @@ export const getQuestions = (roomId) => {
   }
 }
 
+// called on QuestionList unmount, detach question listener
 export const endGetQuestions = (roomId) => {
   return (dispatch) => {
     db.ref("rooms/" + roomId + '/questions').off('value');
@@ -42,6 +60,7 @@ export const endGetQuestions = (roomId) => {
   }
 }
 
+// called by Room, adds question to firebase
 export const addQuestion = (questionInfo) => {
   return (dispatch) => {
     const uid = uuid.v4();
@@ -63,9 +82,14 @@ export const addQuestion = (questionInfo) => {
   }
 }
 
+/*
+Firebase Actions - Votes
+*/
+
+// called by questionList, increment vote count on question in firebase
 export const addVote = (voteInfo) => {
   return (dispatch) => {
-    // const uid = uuid.v4();
+
     const questionRef = db.ref('rooms/' + voteInfo.room + '/questions/' + voteInfo.question);
 
     questionRef.once('value', (snapshot) => {
@@ -81,6 +105,7 @@ export const addVote = (voteInfo) => {
   }
 }
 
+// called by questionList, decrease vote count on question
 export const unVote = (voteInfo) => {
   return (dispatch) => {
     const questionRef = db.ref('rooms/' + voteInfo.room + '/questions/' + voteInfo.question);
@@ -99,6 +124,11 @@ export const unVote = (voteInfo) => {
   }
 }
 
+/*
+Firebase Actions - Completion
+*/
+
+// called by QuestionList (in MasterRoom), question isComplete to true
 export const markComplete = (completeInfo) => {
   return (dispatch) => {
     const questionRef =  db.ref('rooms/' + completeInfo.room + '/questions/' + completeInfo.question);
@@ -110,6 +140,7 @@ export const markComplete = (completeInfo) => {
   }
 }
 
+// called by QuestionList (in MasterRoom), question isComplete to false  
 export const markIncomplete = (completeInfo) => {
   return (dispatch) => {
     const questionRef =  db.ref('rooms/' + completeInfo.room + '/questions/' + completeInfo.question);

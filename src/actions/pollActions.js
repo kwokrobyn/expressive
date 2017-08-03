@@ -1,7 +1,16 @@
+/*
+POLL ACTIONS
+Components - Poll, MasterRoom, QuestionList
+*/
+
 import firebase from '../firebase';
 const db = firebase.database();
 
-// updates poll state in redux
+/*
+Redux Actions
+*/
+
+// updates an active poll with current changes
 const createPollAction = (pollInfo) => {
   return {
     type: "CREATE_POLL",
@@ -9,20 +18,18 @@ const createPollAction = (pollInfo) => {
   }
 }
 
+// switches poll isActive state to false
 export const clearPollAction = () => {
   return {
     type: "CLEAR_POLL"
   }
 }
 
-// options
-// { 1:
-//       text: "orange"
-//       result: 5
-//    2: text: "blue
-//       result : "}
+/*
+Firebase Actions
+*/
 
-// creates poll in firebase and dispatches to redux
+// called by MasterRoom, create poll in firebase
 export const createPoll = (pollInfo) => {
   return (dispatch) => {
     console.log('pollInfo', pollInfo);
@@ -39,11 +46,10 @@ export const createPoll = (pollInfo) => {
     }).catch((error) => {
       console.log('Error creating poll: ', error.message);
     })
-
   }
-
 }
 
+// called by QuestionList, listener for currently active poll
 export const getPoll = (roomId) => {
   return (dispatch) => {
 
@@ -70,6 +76,7 @@ export const getPoll = (roomId) => {
   }
 }
 
+// called by QuestionList, updates poll with vote
 export const addPollVote = (roomId, option) => {
   return (dispatch) => {
     const pollRef = db.ref('rooms/' + roomId + '/poll');
@@ -96,6 +103,7 @@ export const addPollVote = (roomId, option) => {
   }
 }
 
+// called by Poll detaches listener on dismount
 export const endPoll = (roomId) => {
   return (dispatch) => {
     const pollRef = db.ref('rooms/' + roomId + '/poll');
