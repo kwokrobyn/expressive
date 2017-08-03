@@ -26,6 +26,27 @@
     max-height: 60px;
   }
 
+#navbar-profile-pic-a {
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+
+#navbar-profile-pic {
+  height: 50px;
+  width: 50px;
+  margin: 0px 15px 0px 0px;
+  top: -5px;
+  position: relative;
+  border: solid 5px rgba(8,154,136,1);
+  border-radius: 0.8em 0.8em 0.8em 0.8em;
+}
+
+@media only screen and (max-width: 781px) {
+  #navbar-profile-pic {
+    display: none;
+  }
+}
+
   /* Bootstrap - Medium desktop */
   @media (min-width: 979px) and (max-width: 1200px) {
     .navbar-page-title {

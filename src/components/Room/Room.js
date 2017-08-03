@@ -152,13 +152,15 @@ export class Room extends Component { // eslint-disable-line react/prefer-statel
               <div className="modal-header">
                 <h4 className="modal-title">Choose a Display Name</h4>
               </div>
-              <div className="modal-body">
+              <div className="modal-body" id="">
                 <p>Choose a display name, or post anonymously.</p>
                 <input type="text"
                        className="form-control display-name-input"
                        id="roomname"/>
                 <button type="button" className="btn btn-default" data-dismiss="modal" onClick={this.setDisplayName}>Use Name</button>
-                <p>(Once you choose a display name, it cannot be changed for the rest of the session.)</p>
+                <p>
+                  <i>Once you choose a display name, it cannot be changed for the rest of the session.</i>
+                </p>
               </div>
               <div className="modal-footer">
                 <button type="button" className="btn btn-default" data-dismiss="modal" onClick={this.revertAnon}>Post anonymously</button>

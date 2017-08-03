@@ -8,11 +8,15 @@ import {
   Route,
   Link
 } from 'react-router-dom';
+import firebase from 'firebase';
 
 //Importing static assets (i.e. stylesheets, images)
 import './Navbar.css';
 import squareLogo from './logo_v1.png';
 import titledLogo from './logo_v1.png';
+import monkeyPic1 from './monkey1.png';
+import monkeyPic2 from './monkey2.png';
+import monkeyPic3 from './monkey3.png';
 
 //Importing React Components
 import JoinRoom from './JoinRoom/JoinRoom';
@@ -51,6 +55,13 @@ class Navbar extends Component {
   let squareLogoElement = null;
   let titledLogoElement = null;
 
+  let profilePicture = null;
+  if (this.props.user.photoURL == null || this.props.user.photoURL == "") {
+    profilePicture = monkeyPic2;
+  } else {
+    profilePicture = monkeyPic2;
+  };
+
   if (isSignedIn) {
 
     squareLogoElement = (
@@ -68,6 +79,11 @@ class Navbar extends Component {
     /* Navbar unordered list of buttons if user is LOGGED IN */
     profileElement = (
       <ul className="nav navbar-nav" id="navbar-list">
+        <li>
+          <a id="navbar-profile-pic-a" href="/profile">
+            <img id="navbar-profile-pic" src={profilePicture}/>
+          </a>
+        </li>
         <li>
           <Link to="/profile"
                 className="col-lg-1 col-md-1 col-sm-2"
