@@ -100,7 +100,7 @@ class Navbar extends Component {
     profileElement = (
       <ul className="nav navbar-nav" id="navbar-list">
         <li>
-          <a id="navbar-profile-pic-a" href="/profile">
+          <a id="navbar-profile-pic-a">
             <img id="navbar-profile-pic" src={profilePicture}/>
           </a>
         </li>
