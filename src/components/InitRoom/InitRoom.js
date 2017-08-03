@@ -1,11 +1,6 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {Grid, Col, Row} from 'react-bootstrap';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom'
+import {Grid, Col } from 'react-bootstrap';
 
 //Importing static assets (i.e. stylesheets, images)
 import './InitRoom.css';
@@ -14,8 +9,6 @@ import './InitRoom.css';
 import firebase from '../../firebase';
 
 //Importing React Components
-import Navbar from '../Navbar/Navbar';
-import Footer from '../Footer/Footer';
 import Room from '../Room/Room';
 import MasterRoom from '../MasterRoom/MasterRoom';
 import Princess from '../Princess/Princess';

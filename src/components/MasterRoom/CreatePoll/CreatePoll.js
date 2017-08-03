@@ -1,31 +1,15 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom'
 
 //Importing static assets (i.e. stylesheets, images)
 import './CreatePoll.css';
 
 import { createPoll } from '../../../actions/pollActions';
 
-
-
 /**
  * CreatePoll
  */
 export class CreatePoll extends Component { // eslint-disable-line react/prefer-stateless-function
-
-  constructor(props){
-    super(props);
-  }
-
-  componentDidMount() {
-
-  }
-
   createPoll = () => {
     const question = document.getElementById('poll-question').value;
     const opt1 = document.getElementById('option1').value;

@@ -1,4 +1,3 @@
-import uuid from 'uuid';
 
 const defaultState = false;
 
