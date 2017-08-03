@@ -328,7 +328,7 @@ h1#how-title {
 /* Media Queries */
 @media all and (max-width: 951px) and (min-width: 701px) {
   .btn {
-    width: 48%;
+    width: 100%;
   }
 
   .featurette-btns:nth-child(-n+2) {
