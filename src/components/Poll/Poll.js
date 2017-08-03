@@ -1,11 +1,6 @@
 //Importing required packages
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom'
 
 import { getPoll, clearPollAction, addPollVote, endPoll } from '../../actions/pollActions';
 
@@ -84,7 +79,7 @@ export class Poll extends Component { // eslint-disable-line react/prefer-statel
                         <div id="room-pollbox-question-polltitle">Results:</div>
                         <div id="room-pollbox-question-text">{this.props.poll.question}</div>
                       </div>
-                      
+
                       <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 poll-results">
                         <div className="option1-result-div">
                           <div className="option1-result-text">{this.props.poll.option1.text}</div>

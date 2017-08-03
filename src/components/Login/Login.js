@@ -1,5 +1,5 @@
 //Importing required packages
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { localSignIn, socialSignIn, dismissAuthError } from '../../actions/userActions';
 import {Grid, Col, form, FormGroup, FormControl, ControlLabel, HelpBlock, Row, Button} from 'react-bootstrap';

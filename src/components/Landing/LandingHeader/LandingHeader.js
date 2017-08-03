@@ -1,5 +1,5 @@
 //Importing required packages
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import {Col, Grid, Row} from 'react-bootstrap';
 
 //Importing static assets (i.e. stylesheets, images)

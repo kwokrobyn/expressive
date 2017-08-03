@@ -1,5 +1,5 @@
 //Importing required packages
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { signOut } from '../../actions/userActions';
 import { toggleMaster } from '../../actions/roomActions';
