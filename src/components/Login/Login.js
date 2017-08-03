@@ -114,7 +114,7 @@ class Login extends Component {
           {this.props.user.hasAuthError &&
 
             <Col lg={12} md={12} sm={12} xs={12} className="login-error-message ">
-              <h4 className="error-message"           data-content="{this.props.user.errorMessage}">{this.props.user.errorMessage}</h4>
+              <h4 className="error-message">{this.props.user.errorMessage}</h4>
               <svg version="1.1"
                    className="login-error-message"
                    xmlns="http://www.w3.org/2000/svg"

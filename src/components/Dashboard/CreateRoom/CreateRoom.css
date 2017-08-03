@@ -157,91 +157,18 @@ svg {
 * Error Msg
 */
 
- h4.errormsg {
+h4.errormsg {
   background-color: #c70000;
   border-radius: 5px;
   padding: 5px;
   color: white;
-  z-index: 0;
-}
-
- h4.errormsg {
-  position: relative;
   display: inline-block;
-  color: #fff;
-  z-index: 0;
-}
-h4.errormsg:before,
-h4.errormsg:after {
-  content: attr(data-content);
-  padding:5px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-h4.errormsg:before {
-  color: #00ffff;
-  z-index: 1;
-}
-h4.errormsg:after {
-  color: #ff00ff;
-  z-index: -1;
-}
-h4.errormsg:before {
-  -webkit-animation: glitchy 0.3s ease 0.3s infinite;
-          animation: glitchy 0.3s ease 0.3s infinite;
-}
-h4.errormsg:after {
-  -webkit-animation: glitchy 0.3s ease infinite reverse;
-          animation: glitchy 0.3s ease infinite reverse;
+  position: relative;
+  margin-right: 1vw;
 }
 
-@-webkit-keyframes glitchy {
-  0% {
-    -webkit-transform: translate(-1px, 1px);
-            transform: translate(-1px, 1px);
-  }
-  25% {
-    -webkit-transform: translate(-1px, -1px);
-            transform: translate(-1px, -1px);
-  }
-  50% {
-    -webkit-transform: translate(1px, 1px);
-            transform: translate(1px, 1px);
-  }
-  75% {
-    -webkit-transform: translate(1px, -1px);
-            transform: translate(1px, -1px);
-  }
-  100% {
-    -webkit-transform: translate(-1px, 1px);
-            transform: translate(-1px, 1px);
-  }
-}
-@keyframes glitchy {
-  0% {
-    -webkit-transform: translate(-1px, 1px);
-            transform: translate(-1px, 1px);
-  }
-  25% {
-    -webkit-transform: translate(-1px, -1px);
-            transform: translate(-1px, -1px);
-  }
-  50% {
-    -webkit-transform: translate(1px, 1px);
-            transform: translate(1px, 2px);
-  }
-  75% {
-    -webkit-transform: translate(1px, -1px);
-            transform: translate(1px, -1px);
-  }
-  100% {
-    -webkit-transform: translate(-1px, 1px);
-            transform: translate(-1px, 1px);
-  }
-}
+
+
 
 /*
 * Modal Input

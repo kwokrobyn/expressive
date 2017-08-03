@@ -59,6 +59,9 @@ p#landing-mission-paragraph {
   .social-icons  {
     bottom: 1vw;
   }
+  .landing-footer-img {
+    top: 60px;
+  }
 }
 
 /* for md  */
@@ -77,12 +80,17 @@ p#landing-mission-paragraph {
   .social-icons  {
     bottom: 1vw;
   }
+  .landing-footer-img {
+    top: 60px;
+  }
 }
 
 /* for sm  */
 @media (min-width: 768px) and (max-width: 992px) {
   p#landing-mission-paragraph {
     font-size: 0.8em;
+    width: 50vw;
+    left: 23vw;
   }
   #landing-mission-title {
     left: 40vw;
@@ -94,6 +102,9 @@ p#landing-mission-paragraph {
   .social-icons  {
       bottom: -2vw;
   }
+  .landing-footer-img {
+    top: 0vw;
+  }
 }
 
 /* for xs  */
@@ -101,15 +112,16 @@ p#landing-mission-paragraph {
   p#landing-mission-paragraph {
     font-size: 0.8em;
     background-color: #7fd0c5;
-    top: 40vw;
-    width: 100vw;
+    top: 33vw;
+    width: 70vw;
     padding: 10px;
-    left: -5vw;
+    left: 15vw;
   }
   #landing-mission-title {
-    left: 38vw;
+    left: 43vw;
     font-size: 1em;
-    top: 33vw;
+    top: 30vw;
+    z-index: 1;
   }
   footer {
     bottom: -7vw;
@@ -117,6 +129,10 @@ p#landing-mission-paragraph {
   .social-icons  {
     bottom: 7vw;
   }
+  .landing-footer-img {
+    top: -20vw;
+  }
+
 }
 
 
@@ -125,7 +141,6 @@ div.landing-footer-img {
   background: url('/images/footerArt.png') center center;
   background-repeat: no-repeat;
   background-size: contain;
-  top: -3vw;
   height: 50vw;
   position: relative;
 }
