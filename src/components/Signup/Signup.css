@@ -416,6 +416,7 @@ label input:valid + .label-text {
 @media (min-width: 1200px) {
   .signup-error-message-row {
     margin-left: 35vw;
+    margin-right: 35vw;
   }
   div.signup-error-message {
     left: 50vw;
@@ -426,6 +427,7 @@ label input:valid + .label-text {
 @media (min-width: 993px) and (max-width: 1200px) {
   .signup-error-message-row {
     margin-left: 30vw;
+    margin-right: 30vw;
   }
   div.signup-error-message {
     left: 50vw;
@@ -436,6 +438,7 @@ label input:valid + .label-text {
 @media (min-width: 768px) and (max-width: 992px) {
   .signup-error-message-row {
     margin-left: 25vw;
+    margin-right: 25vw;
   }
   div.signup-error-message {
     padding-left: 0px;
@@ -448,6 +451,7 @@ label input:valid + .label-text {
 @media (max-width: 768px) {
   .signup-error-message-row {
     margin-left: 10vw;
+    margin-right: 10vw;
   }
   div.signup-error-message {
     width: 70vw;

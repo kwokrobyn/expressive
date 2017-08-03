@@ -410,6 +410,7 @@ label input:valid + .label-text {
 @media (min-width: 1200px) {
   .login-error-message-row {
     margin-left: 35vw;
+    margin-right: 35vw;
   }
   .loginSubmit {
     margin-left: 10vw;
@@ -423,6 +424,7 @@ label input:valid + .label-text {
 @media (min-width: 993px) and (max-width: 1200px) {
   .login-error-message-row {
     margin-left: 30vw;
+    margin-right: 30vw;
   }
   .loginSubmit {
     margin-left: 13.5vw;
@@ -436,6 +438,7 @@ label input:valid + .label-text {
 @media (min-width: 768px) and (max-width: 992px) {
   .login-error-message-row {
     margin-left: 25vw;
+    margin-right: 25vw;
   }
   .loginSubmit {
     margin-left: 15vw;
@@ -451,6 +454,7 @@ label input:valid + .label-text {
 @media (max-width: 768px) {
   .login-error-message-row {
     margin-left: 22vw;
+    margin-right: 22vw;
   }
   .loginSubmit {
     margin-left: 19vw;
@@ -476,7 +480,7 @@ svg.login-error-message-svg {
   max-width: 3vw;
   min-width: 30px;
   top: 1vw;
-  margin: 0 0 0 0.5vw;
+  margin: 0 0 0 0;
   padding: 0 0 0 0;
   cursor: pointer;
 }
