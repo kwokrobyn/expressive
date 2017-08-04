@@ -37,7 +37,10 @@ Add additional notes about how to deploy this on a live system
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Robyn Kwok** - *Initial work* - [](https://github.com/)
+* **Bryan Lee** - *Initial work* - [](https://github.com/)
+* **Woody See** - *Initial work* - [](https://github.com/)
+* **Dionne Phua** - *Initial work* - [](https://github.com/)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
